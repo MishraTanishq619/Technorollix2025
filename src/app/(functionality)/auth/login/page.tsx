@@ -1,0 +1,121 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+	Form,
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from "@/components/ui/form";
+import { toast } from "@/hooks/use-toast";
+import useFetch from "@/hooks/use-fetch";
+import { userLogin } from "@/actions/user-actions";
+
+// Define the form schema
+const loginFormSchema = z.object({
+	email: z.string().email({ message: "Please enter a valid email address." }),
+	password: z
+		.string()
+		.regex(/^\d+$/, { message: "Password must contain only numbers." })
+		.min(6, { message: "Password must be at least 6 digits." }),
+});
+
+export default function LoginForm() {
+	const router = useRouter();
+
+	const form = useForm<z.infer<typeof loginFormSchema>>({
+		resolver: zodResolver(loginFormSchema),
+		defaultValues: {
+			email: "",
+			password: "",
+		},
+	});
+
+	const {
+		data: userLoginData,
+		// loading: userLoginLoading,
+		error: userLoginError,
+		fn: userLoginFn,
+	} = useFetch(userLogin);
+
+	const onSubmit = async (values: z.infer<typeof loginFormSchema>) => {
+		// Here you would typically send the form data to your backend
+		await userLoginFn(values);
+		if (userLoginError) {
+			toast({
+				title: "Error",
+				description: userLoginError.message,
+				variant: "destructive",
+			});
+			return;
+		}
+		if (userLoginData && userLoginData.token) {
+			localStorage.setItem("auth-token", userLoginData.token);
+			toast({
+				title: "Success",
+				description: "You have logged in successfully!",
+			});
+			router.push("/dashboard"); // Redirect to the dashboard or any other page
+		}
+	};
+
+	return (
+		<div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+			<h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
+			<Form {...form}>
+				<form
+					onSubmit={form.handleSubmit(onSubmit)}
+					className="space-y-4"
+				>
+					<FormField
+						control={form.control}
+						name="email"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Email</FormLabel>
+								<FormControl>
+									<Input
+										type="email"
+										placeholder="john@example.com"
+										{...field}
+									/>
+								</FormControl>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+					<FormField
+						control={form.control}
+						name="password"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Password</FormLabel>
+								<FormControl>
+									<Input
+										type="password"
+										placeholder="Enter your password"
+										{...field}
+									/>
+								</FormControl>
+								<FormDescription>
+									Enter your numeric password.
+								</FormDescription>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+					<Button type="submit" className="w-full">
+						Login
+					</Button>
+				</form>
+			</Form>
+		</div>
+	);
+}
