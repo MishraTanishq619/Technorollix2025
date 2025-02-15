@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-
-const MONGODB_URI: string = process.env.MONGODB_URI || "";
+const MONGODB_URI: string = process.env.NEXT_PUBLIC_MONGODB_URI || "";
 console.log("MONGODB_URI : ", MONGODB_URI);
 if (!MONGODB_URI) {
 	throw new Error("Please define the MONGODB_URI environment variable");
@@ -30,7 +29,7 @@ export async function connectToDatabase() {
 	if (!cached.promise) {
 		cached.promise = mongoose
 			.connect(MONGODB_URI, {
-				dbName: "your_database_name",
+				dbName: "Techno2025",
 				bufferCommands: false,
 			})
 			.then((mongoose) => mongoose);
