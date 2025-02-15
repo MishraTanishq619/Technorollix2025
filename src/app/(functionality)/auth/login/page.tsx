@@ -48,6 +48,7 @@ export default function LoginForm() {
 	const onSubmit = async (values: z.infer<typeof loginFormSchema>) => {
 		// Here you would typically send the form data to your backend
 		await userLoginFn(values);
+		console.log("error login : ", userLoginError);
 		if (userLoginError) {
 			toast({
 				title: "Error",
@@ -56,6 +57,7 @@ export default function LoginForm() {
 			});
 			return;
 		}
+		console.log("login func : ", userLoginData, userLoginData?.token);
 		if (userLoginData && userLoginData.token) {
 			localStorage.setItem("auth-token", userLoginData.token);
 			toast({

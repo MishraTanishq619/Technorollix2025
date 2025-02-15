@@ -1,8 +1,12 @@
+"use server";
 import mongoose from "mongoose";
-const MONGODB_URI: string = process.env.NEXT_PUBLIC_MONGODB_URI || "";
-console.log("MONGODB_URI : ", MONGODB_URI);
-if (!MONGODB_URI) {
-	throw new Error("Please define the MONGODB_URI environment variable");
+const NEXT_PUBLIC_MONGODB_URI: string =
+	process.env.NEXT_PUBLIC_MONGODB_URI || "";
+console.log("NEXT_PUBLIC_MONGODB_URI : ", NEXT_PUBLIC_MONGODB_URI);
+if (!NEXT_PUBLIC_MONGODB_URI) {
+	throw new Error(
+		"Please define the NEXT_PUBLIC_MONGODB_URI environment variable"
+	);
 }
 
 interface MongooseCache {
@@ -28,7 +32,7 @@ export async function connectToDatabase() {
 
 	if (!cached.promise) {
 		cached.promise = mongoose
-			.connect(MONGODB_URI, {
+			.connect(NEXT_PUBLIC_MONGODB_URI, {
 				dbName: "Techno2025",
 				bufferCommands: false,
 			})
@@ -36,5 +40,5 @@ export async function connectToDatabase() {
 	}
 
 	cached.conn = await cached.promise;
-	return cached.conn;
+	// return cached.conn;
 }

@@ -1,4 +1,4 @@
-import mongoose, { Schema, model, Document } from "mongoose";
+import { Schema, model, Document, models } from "mongoose";
 
 // Define the interface for the User document
 interface IUser extends Document {
@@ -9,7 +9,7 @@ interface IUser extends Document {
 	mobileNumber: string;
 	email: string;
 	password: string;
-	isAdmin: boolean;
+	isAdmin?: boolean;
 }
 
 // Define the user schema
@@ -60,8 +60,7 @@ const userSchema = new Schema<IUser>(
 );
 
 // Create and export the user model
-
-const User = mongoose.models.User || model<IUser>("User", userSchema);
+const User = models?.User || model<IUser>("User", userSchema);
 
 export { User };
 export type { IUser };

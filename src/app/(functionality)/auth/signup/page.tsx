@@ -73,7 +73,7 @@ export default function SignupForm() {
 	});
 
 	const {
-		// data: userSignupData,
+		data: userSignupData,
 		// loading: userSignupLoading,
 		error: userSignupError,
 		fn: userSignupFn,
@@ -106,6 +106,7 @@ export default function SignupForm() {
 		setSentPassword(generatedPassword);
 		setIsPasswordSent(true);
 
+		console.log("generatedPassword: ", generatedPassword);
 		// await sendWelcomeEmail(email, generatedPassword);
 
 		toast({
@@ -136,6 +137,7 @@ export default function SignupForm() {
 			});
 			return;
 		}
+		console.log("userSignupData : ", userSignupData);
 		toast({
 			title: "Success",
 			description: "Your account has been created successfully!",
