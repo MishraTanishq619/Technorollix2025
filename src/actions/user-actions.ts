@@ -1,3 +1,4 @@
+"use server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { IUser, User } from "@/models/user.model";
 import jwt from "jsonwebtoken";
@@ -83,6 +84,28 @@ export const userLogin = async (
 	};
 };
 
-export function logout(): void {
-	localStorage.removeItem("auth-token");
-}
+export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
+	await connectToDatabase();
+
+	if (!token) {
+		throw new Error("No auth token provided");
+	}
+
+	try {
+		const decoded = jwt.verify(
+			token,
+			process.env.JWT_SECRET || "your_jwt_secret"
+		) as { userId: string };
+		const userId = decoded.userId;
+
+		const user = await User.findById(userId).lean();
+		if (!user) {
+			throw new Error("User not found");
+		}
+
+		return user;
+	} catch (error) {
+		console.error("Error verifying token or finding user:", error);
+		throw new Error("Invalid or expired token");
+	}
+};

@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -74,7 +74,7 @@ export default function SignupForm() {
 
 	const {
 		data: userSignupData,
-		// loading: userSignupLoading,
+		loading: userSignupLoading,
 		error: userSignupError,
 		fn: userSignupFn,
 	} = useFetch(userSignup);
@@ -129,21 +129,26 @@ export default function SignupForm() {
 		console.log(values);
 		// Here you would typically send the form data to your backend
 		await userSignupFn(values);
+	};
+
+	useEffect(() => {
 		if (userSignupError) {
+			console.log("userSignupError : ", userSignupError);
 			toast({
 				title: "Error",
 				description: userSignupError.message,
 				variant: "destructive",
 			});
-			return;
 		}
-		console.log("userSignupData : ", userSignupData);
-		toast({
-			title: "Success",
-			description: "Your account has been created successfully!",
-		});
-		router.push("/auth/login");
-	};
+		if (userSignupData) {
+			console.log("userSignupData : ", userSignupData);
+			toast({
+				title: "Success",
+				description: "Your account has been created successfully!",
+			});
+			router.push("/auth/login"); // Redirect to the login page
+		}
+	}, [userSignupError, userSignupData, userSignupLoading, router]);
 
 	return (
 		<div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">

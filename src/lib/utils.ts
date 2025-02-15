@@ -27,3 +27,12 @@ export function isUserAuthenticated(): boolean {
 		return false;
 	}
 }
+
+export function getAuthToken(): string | null {
+	return localStorage.getItem("auth-token");
+}
+
+// Should be done at client-side only : localStorage is for client-side storage
+export const logout = async (): Promise<void> => {
+	localStorage.removeItem("auth-token");
+};

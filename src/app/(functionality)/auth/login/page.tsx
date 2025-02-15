@@ -17,6 +17,7 @@ import {
 import { toast } from "@/hooks/use-toast";
 import useFetch from "@/hooks/use-fetch";
 import { userLogin } from "@/actions/user-actions";
+import { useEffect } from "react";
 
 // Define the form schema
 const loginFormSchema = z.object({
@@ -40,7 +41,7 @@ export default function LoginForm() {
 
 	const {
 		data: userLoginData,
-		// loading: userLoginLoading,
+		loading: userLoginLoading,
 		error: userLoginError,
 		fn: userLoginFn,
 	} = useFetch(userLogin);
@@ -48,6 +49,9 @@ export default function LoginForm() {
 	const onSubmit = async (values: z.infer<typeof loginFormSchema>) => {
 		// Here you would typically send the form data to your backend
 		await userLoginFn(values);
+	};
+
+	useEffect(() => {
 		console.log("error login : ", userLoginError);
 		if (userLoginError) {
 			toast({
@@ -66,7 +70,7 @@ export default function LoginForm() {
 			});
 			router.push("/dashboard"); // Redirect to the dashboard or any other page
 		}
-	};
+	}, [userLoginData, userLoginError, userLoginLoading, router]);
 
 	return (
 		<div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
