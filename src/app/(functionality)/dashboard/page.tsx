@@ -1,10 +1,12 @@
 "use client";
 import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import useFetch from "@/hooks/use-fetch";
 import { getUserFromAuth } from "@/actions/user-actions";
 import { getAuthToken } from "@/lib/utils";
 
 const DashboardPage = () => {
+    const router = useRouter();
     const {
         data: userData,
         error: userError,
@@ -12,8 +14,13 @@ const DashboardPage = () => {
     } = useFetch(getUserFromAuth);
 
     useEffect(() => {
-        userFn(getAuthToken());
-    }, []);
+        const token = getAuthToken();
+        if (!token) {
+            router.push("/auth/login");
+        } else {
+            userFn(token);
+        }
+    }, [userFn, router]);
 
     return (
         <div className="container mx-auto p-4">
