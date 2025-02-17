@@ -18,6 +18,7 @@ import { toast } from "@/hooks/use-toast";
 import useFetch from "@/hooks/use-fetch";
 import { userLogin } from "@/actions/user-actions";
 import { useEffect } from "react";
+import Cookies from "js-cookie";
 
 // Define the form schema
 const loginFormSchema = z.object({
@@ -63,7 +64,11 @@ export default function LoginForm() {
 		}
 		console.log("login func : ", userLoginData, userLoginData?.token);
 		if (userLoginData && userLoginData.token) {
-			localStorage.setItem("auth-token", userLoginData.token);
+			Cookies.set("auth-token", userLoginData.token, {
+				expires: 1,
+				secure: true,
+				sameSite: "Strict",
+			});
 			toast({
 				title: "Success",
 				description: "You have logged in successfully!",

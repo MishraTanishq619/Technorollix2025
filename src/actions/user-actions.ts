@@ -2,6 +2,7 @@
 import { connectToDatabase } from "@/lib/mongodb";
 import { IUser, User } from "@/models/user.model";
 import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 
 interface UserData {
 	email: string;
@@ -45,7 +46,7 @@ export const userSignup = async (userData: UserData): Promise<IUser> => {
 
 	await newUser.save();
 
-	return newUser;
+	return JSON.parse(JSON.stringify(newUser));
 };
 
 interface LoginData {
@@ -78,10 +79,12 @@ export const userLogin = async (
 		{ expiresIn: "1h" }
 	);
 
-	return {
-		user: existingUser,
-		token,
-	};
+	return JSON.parse(
+		JSON.stringify({
+			user: existingUser,
+			token,
+		})
+	);
 };
 
 export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
@@ -95,17 +98,41 @@ export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
 		const decoded = jwt.verify(
 			token,
 			process.env.JWT_SECRET || "your_jwt_secret"
-		) as { userId: string };
+		) as { userId: string; email: string };
 		const userId = decoded.userId;
 
-		const user = await User.findById(userId).lean();
+		const user = await User.findById(userId);
 		if (!user) {
 			throw new Error("User not found");
 		}
 
-		return user;
+		return JSON.parse(JSON.stringify(user));
 	} catch (error) {
 		console.error("Error verifying token or finding user:", error);
 		throw new Error("Invalid or expired token");
 	}
 };
+
+// for server-side
+export async function getUser() {
+	await connectToDatabase();
+
+	const authToken = (await cookies()).get("auth-token")?.value;
+	if (!authToken) return null;
+
+	try {
+		const decoded = jwt.verify(
+			authToken,
+			process.env.JWT_SECRET || "your_jwt_secret"
+		) as { userId: string; email: string };
+		const user = await User.findOne({
+			_id: decoded.userId,
+			email: decoded.email,
+		});
+
+		return JSON.parse(JSON.stringify(user));
+	} catch (error) {
+		console.error("Error verifying token or finding user:", error);
+		return null; // Invalid token
+	}
+}

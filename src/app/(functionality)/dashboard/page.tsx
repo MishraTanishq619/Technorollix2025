@@ -1,8 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import useFetch from "@/hooks/use-fetch";
-import { getUserFromAuth } from "@/actions/user-actions";
-import { getAuthToken } from "@/lib/utils";
+import { getUser } from "@/actions/user-actions";
 
 const DashboardPage = () => {
 	const {
@@ -10,9 +9,9 @@ const DashboardPage = () => {
 		// loading: userLoading,
 		error: userError,
 		fn: userFn,
-	} = useFetch(getUserFromAuth);
+	} = useFetch(getUser);
 	useEffect(() => {
-		userFn(getAuthToken());
+		userFn();
 	}, []);
 
 	return (

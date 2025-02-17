@@ -1,13 +1,14 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import jwt from "jsonwebtoken";
+import Cookies from "js-cookie";
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 // Task : use this function to create a middleware for protected routes.
 export function isUserAuthenticated(): boolean {
-	const token = localStorage.getItem("auth-token");
+	const token = Cookies.get("auth-token");
 	if (!token) {
 		return false;
 	}
@@ -29,10 +30,10 @@ export function isUserAuthenticated(): boolean {
 }
 
 export function getAuthToken(): string | null {
-	return localStorage.getItem("auth-token");
+	return Cookies.get("auth-token") || null;
 }
 
-// Should be done at client-side only : localStorage is for client-side storage
+// Should be done at client-side only : localStorage is for client-side storage || Now, we can use Cookies for this purpose.
 export const logout = async (): Promise<void> => {
-	localStorage.removeItem("auth-token");
+	Cookies.remove("auth-token");
 };

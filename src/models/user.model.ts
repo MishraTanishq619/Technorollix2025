@@ -1,4 +1,4 @@
-import { Schema, model, Document, models } from "mongoose";
+import { Schema, model, Document, Types, models } from "mongoose";
 
 // Define the interface for the User document
 interface IUser extends Document {
@@ -10,6 +10,8 @@ interface IUser extends Document {
 	email: string;
 	password: string;
 	isAdmin?: boolean;
+	teams: Types.ObjectId[];
+	invitations: Types.ObjectId[];
 }
 
 // Define the user schema
@@ -53,6 +55,18 @@ const userSchema = new Schema<IUser>(
 			type: Boolean,
 			default: false,
 		},
+		teams: [
+			{
+				type: Types.ObjectId,
+				ref: "Team",
+			},
+		],
+		invitations: [
+			{
+				type: Types.ObjectId,
+				ref: "Invitation",
+			},
+		],
 	},
 	{
 		timestamps: true,
