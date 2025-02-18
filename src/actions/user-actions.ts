@@ -103,7 +103,10 @@ export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
 			throw new Error("User not found");
 		}
 
-		return user;
+		// Convert user object to plain object
+		const plainUser = JSON.parse(JSON.stringify(user));
+
+		return plainUser;
 	} catch (error) {
 		console.error("Error verifying token or finding user:", error);
 		throw new Error("Invalid or expired token");

@@ -1,22 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { logout, isUserAuthenticated } from "@/lib/utils";
+import UserDropdown from "@/components/user-dropdown";
 
 const Header = () => {
-  const router = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {
-    setIsAuthenticated(isUserAuthenticated());
-  }, []);
-
-  const handleLogout = async () => {
-    await logout();
-    setIsAuthenticated(false);
-    router.push("/auth/login");
-  };
+  
 
   return (
     <header className="bg-gray-800 text-white p-4">
@@ -28,19 +16,7 @@ const Header = () => {
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
-          {isAuthenticated ? (
-            <>
-              <Link href="/dashboard">Dashboard</Link>
-              <button onClick={handleLogout} className="ml-4">
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link href="/auth/login">Login</Link>
-              <Link href="/auth/signup">Signup</Link>
-            </>
-          )}
+          {<UserDropdown />}
         </nav>
       </div>
     </header>

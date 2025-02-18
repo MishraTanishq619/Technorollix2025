@@ -15,11 +15,11 @@ export function isUserAuthenticated(): boolean {
 	try {
 		const decoded = jwt.verify(
 			token,
-			process.env.JWT_SECRET || "your_jwt_secret"
+			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
 		);
 		return !!decoded;
-	} catch (error) {
-		if (error instanceof Error && error.name === "TokenExpiredError") {
+	} catch (error: any) {
+		if (error.name === "TokenExpiredError") {
 			console.error("Token expired:", error);
 		} else {
 			console.error("Invalid token:", error);
