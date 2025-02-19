@@ -60,6 +60,7 @@ export async function getRegisteredEventsAction() {
 	}
 }
 
+// Task : Testing this is left.
 // Fetch pending team invites
 export async function getPendingInvitesAction() {
 	try {
@@ -72,14 +73,13 @@ export async function getPendingInvitesAction() {
 
 		const eventIds: string[] = [];
 
-		// Loop over the user's invitations
-		for (const invitationId of user.invitations) {
-			// Find the invitation
-			const invitation = await Invitation.findById(invitationId);
-			if (!invitation) {
-				throw new Error(`Invitation with ID ${invitationId} not found`);
-			}
+		// Find all invitations having inviteeEmail as user.email
+		const invitations = await Invitation.find({
+			inviteeEmail: user.email,
+		});
 
+		// Loop over the invitations
+		for (const invitation of invitations) {
 			// Get the teamId from the invitation
 			const teamId = invitation.teamId;
 

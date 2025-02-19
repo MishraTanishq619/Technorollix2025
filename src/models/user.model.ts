@@ -11,7 +11,6 @@ interface IUser extends Document {
 	password: string;
 	isAdmin?: boolean;
 	teams: Types.ObjectId[];
-	invitations: Types.ObjectId[];
 }
 
 // Define the user schema
@@ -59,12 +58,6 @@ const userSchema = new Schema<IUser>(
 			{
 				type: Types.ObjectId,
 				ref: "Team",
-			},
-		],
-		invitations: [
-			{
-				type: Types.ObjectId,
-				ref: "Invitation",
 			},
 		],
 	},
