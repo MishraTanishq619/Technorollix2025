@@ -1,4 +1,4 @@
-import mongoose, { Schema, model, Document } from "mongoose";
+import { Schema, model, Document, Types, models } from "mongoose";
 
 // Define the interface for the User document
 interface IUser extends Document {
@@ -9,7 +9,8 @@ interface IUser extends Document {
 	mobileNumber: string;
 	email: string;
 	password: string;
-	isAdmin: boolean;
+	isAdmin?: boolean;
+	teams: Types.ObjectId[];
 }
 
 // Define the user schema
@@ -53,6 +54,12 @@ const userSchema = new Schema<IUser>(
 			type: Boolean,
 			default: false,
 		},
+		teams: [
+			{
+				type: Types.ObjectId,
+				ref: "Team",
+			},
+		],
 	},
 	{
 		timestamps: true,
@@ -60,8 +67,7 @@ const userSchema = new Schema<IUser>(
 );
 
 // Create and export the user model
-
-const User = mongoose.models.User || model<IUser>("User", userSchema);
+const User = models?.User || model<IUser>("User", userSchema);
 
 export { User };
 export type { IUser };
