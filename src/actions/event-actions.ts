@@ -134,7 +134,7 @@ export async function submitEventsAction(data: { eventIds: string[] }) {
 				leader: existingUser.email,
 				members: [existingUser.email],
 				event: event._id,
-				size: event.teamsize,
+				size: event.teamSize,
 				invites: [],
 			});
 

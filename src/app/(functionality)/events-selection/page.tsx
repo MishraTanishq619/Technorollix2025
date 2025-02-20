@@ -14,6 +14,7 @@ import {
 } from "@/actions/event-actions";
 import { IEvent } from "@/models/event.model";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function EventsSelection() {
 	const [selectedEvents, setSelectedEvents] = useState<string[]>([]);
@@ -26,8 +27,8 @@ export default function EventsSelection() {
 	// Fetch all events
 	const {
 		data: allEventsData,
-		loading: allEventsLoading,
-		error: allEventsError,
+		// loading: allEventsLoading,
+		// error: allEventsError,
 		fn: fetchAllEventsFn,
 	} = useFetch(getAllEventsAction);
 
@@ -35,7 +36,7 @@ export default function EventsSelection() {
 	const {
 		data: registeredData,
 		loading: registeredLoading,
-		error: registeredError,
+		// error: registeredError,
 		fn: fetchRegisteredEventsFn,
 	} = useFetch(getRegisteredEventsAction);
 
@@ -43,7 +44,7 @@ export default function EventsSelection() {
 	const {
 		data: invitesData,
 		loading: invitesLoading,
-		error: invitesError,
+		// error: invitesError,
 		fn: fetchPendingInvitesFn,
 	} = useFetch(getPendingInvitesAction);
 
@@ -90,7 +91,7 @@ export default function EventsSelection() {
 				variant: "destructive",
 			});
 		}
-	}, [submitData]);
+	}, [submitData, submitError]);
 
 	const toggleEventSelection = (eventId: string) => {
 		if (registeredEvents.includes(eventId)) return; // Prevent toggling registered events
@@ -171,10 +172,12 @@ export default function EventsSelection() {
 									}
 								>
 									<CardHeader>
-										<img
+										<Image
 											src={event.image}
 											alt={event.name}
 											className="w-full h-48 object-cover rounded-t-lg mb-4"
+											width={800}
+											height={400}
 										/>
 										<CardTitle className="text-lg flex justify-between items-center">
 											{event.name}
@@ -199,11 +202,11 @@ export default function EventsSelection() {
 										<div className="text-sm space-y-2">
 											<p>
 												<strong>Team Size:</strong>{" "}
-												{event.teamsize} members
+												{event.teamSize} members
 											</p>
 											<p>
 												<strong>Prize Pool:</strong> ₹
-												{event.prizemoney.toLocaleString()}
+												{event.prizeMoney.toLocaleString()}
 											</p>
 										</div>
 									</CardContent>

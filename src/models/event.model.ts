@@ -4,8 +4,8 @@ import { Schema, model, Document, models } from "mongoose";
 interface IEvent extends Document {
 	name: string;
 	image: string;
-	teamsize: number;
-	prizemoney: number;
+	teamSize: number;
+	prizeMoney: number;
 }
 
 // Define the event schema
@@ -19,11 +19,11 @@ const eventSchema = new Schema<IEvent>(
 			type: String,
 			required: true,
 		},
-		teamsize: {
+		teamSize: {
 			type: Number,
 			required: true,
 		},
-		prizemoney: {
+		prizeMoney: {
 			type: Number,
 			required: true,
 		},

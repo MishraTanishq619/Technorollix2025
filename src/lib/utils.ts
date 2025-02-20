@@ -16,7 +16,7 @@ export function isUserAuthenticated(): boolean {
 	try {
 		const decoded = jwt.verify(
 			token,
-			process.env.JWT_SECRET || "your_jwt_secret"
+			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
 		);
 		return !!decoded;
 	} catch (error) {

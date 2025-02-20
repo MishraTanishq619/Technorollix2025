@@ -2,71 +2,71 @@
 	{
 		"id": "1",
 		"name": "Hackathon 2025",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 4,
-		"prizemoney": 50000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 4,
+		"prizeMoney": 50000
 	},
 	{
 		"id": "2",
 		"name": "Capture The Flag",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 3,
-		"prizemoney": 30000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 3,
+		"prizeMoney": 30000
 	},
 	{
 		"id": "3",
 		"name": "Code Sprint",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 2,
-		"prizemoney": 25000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 2,
+		"prizeMoney": 25000
 	},
 	{
 		"id": "4",
 		"name": "UI/UX Challenge",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 2,
-		"prizemoney": 20000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 2,
+		"prizeMoney": 20000
 	},
 	{
 		"id": "5",
 		"name": "Data Science Competition",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 3,
-		"prizemoney": 40000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 3,
+		"prizeMoney": 40000
 	},
 	{
 		"id": "6",
 		"name": "Gaming Tournament",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 5,
-		"prizemoney": 35000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 5,
+		"prizeMoney": 35000
 	},
 	{
 		"id": "7",
 		"name": "Robotics Challenge",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 4,
-		"prizemoney": 45000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 4,
+		"prizeMoney": 45000
 	},
 	{
 		"id": "8",
 		"name": "AI Innovation Contest",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 3,
-		"prizemoney": 38000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 3,
+		"prizeMoney": 38000
 	},
 	{
 		"id": "9",
 		"name": "Web Development Jam",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 2,
-		"prizemoney": 28000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 2,
+		"prizeMoney": 28000
 	},
 	{
 		"id": "10",
 		"name": "IoT Project Showcase",
-		"image": "/events-selection/placeholder-pic.jpeg",
-		"teamsize": 4,
-		"prizemoney": 42000
+		"image": "/event-selection/placeholder-pic.jpeg",
+		"teamSize": 4,
+		"prizeMoney": 42000
 	}
 ]

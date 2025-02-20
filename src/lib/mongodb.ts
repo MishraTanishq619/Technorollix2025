@@ -2,10 +2,21 @@
 import mongoose from "mongoose";
 const NEXT_PUBLIC_MONGODB_URI: string =
 	process.env.NEXT_PUBLIC_MONGODB_URI || "";
-console.log("NEXT_PUBLIC_MONGODB_URI : ", NEXT_PUBLIC_MONGODB_URI);
+const NEXT_PUBLIC_MONGODB_DBNAME: string =
+	process.env.NEXT_PUBLIC_MONGODB_DBNAME || "";
+console.log(
+	"NEXT_PUBLIC_MONGODB_URI, NEXT_PUBLIC_MONGODB_DBNAME : ",
+	NEXT_PUBLIC_MONGODB_URI,
+	NEXT_PUBLIC_MONGODB_DBNAME
+);
 if (!NEXT_PUBLIC_MONGODB_URI) {
 	throw new Error(
 		"Please define the NEXT_PUBLIC_MONGODB_URI environment variable"
+	);
+}
+if (!NEXT_PUBLIC_MONGODB_DBNAME) {
+	throw new Error(
+		"Please define the NEXT_PUBLIC_MONGODB_DBNAME environment variable"
 	);
 }
 
@@ -33,7 +44,7 @@ export async function connectToDatabase() {
 	if (!cached.promise) {
 		cached.promise = mongoose
 			.connect(NEXT_PUBLIC_MONGODB_URI, {
-				dbName: "Techno2025",
+				dbName: NEXT_PUBLIC_MONGODB_DBNAME,
 				bufferCommands: false,
 			})
 			.then((mongoose) => mongoose);

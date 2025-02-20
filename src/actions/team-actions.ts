@@ -1,10 +1,11 @@
 "use server";
 
 import { connectToDatabase } from "@/lib/mongodb";
-import { Team, ITeam } from "@/models/team.model";
+import { ITeam, Team } from "@/models/team.model";
 import { Event, IEvent } from "@/models/event.model";
-import { User, IUser } from "@/models/user.model";
-import { Invitation, IInvitation } from "@/models/invitation.model";
+import { User } from "@/models/user.model";
+import { IInvitation, Invitation } from "@/models/invitation.model";
+import { getUser } from "./user-actions";
 
 export async function getTeamDetailsAction(teamId: string) {
 	try {
@@ -40,24 +41,106 @@ export async function getTeamDetailsAction(teamId: string) {
 			})
 		);
 	} catch (error) {
-		throw new Error(`Failed to get team details: ${error.message}`);
+		if (error instanceof Error) {
+			throw new Error(`Failed to get team details: ${error.message}`);
+		} else {
+			throw new Error(
+				"Failed to get team details due to an unknown error"
+			);
+		}
 	}
 }
-// Send team invite
-export async function sendTeamInviteAction({
-	teamId,
-	inviteeEmail,
-}: {
-	teamId: string;
-	inviteeEmail: string;
-}) {
+
+export async function getParticipatingTeams() {
 	try {
-		// 1. Verify current user is team leader
-		// 2. Verify team has space for more members
-		// 3. Verify email is valid and user exists
-		// 4. Create invite record in database
-		return { success: true };
+		await connectToDatabase();
+
+		const user = await getUser();
+		if (!user) {
+			throw new Error("User not found");
+		}
+
+		const teams = await Team.find({ members: user.email }).lean<ITeam[]>();
+
+		// Fetch leader and event details manually
+		const populatedTeams = await Promise.all(
+			teams.map(async (team) => {
+				const leader = await User.findOne({
+					email: team.leader,
+				})
+					.select("fullName email")
+					.lean<{ fullName: string; email: string }>();
+				const event = await Event.findById(team.event)
+					.select("name")
+					.lean<{ name: string }>();
+				return {
+					...team,
+					leader,
+					event,
+				};
+			})
+		);
+
+		return JSON.parse(JSON.stringify(populatedTeams));
 	} catch (error) {
-		throw new Error("Failed to send invite");
+		if (error instanceof Error) {
+			throw new Error(
+				`Failed to fetch participating teams: ${error.message}`
+			);
+		} else {
+			throw new Error(
+				"Failed to fetch participating teams due to an unknown error"
+			);
+		}
+	}
+}
+
+export async function getInvitedTeams() {
+	try {
+		await connectToDatabase();
+
+		const user = await getUser();
+		if (!user) {
+			throw new Error("User not found");
+		}
+
+		const invites = await Invitation.find({
+			inviteeEmail: user.email,
+		}).lean<IInvitation[]>();
+
+		// Fetch team, leader, and event details manually
+		const populatedInvites = await Promise.all(
+			invites.map(async (invite) => {
+				const team = await Team.findById(invite.teamId).lean<ITeam>();
+				const members = await User.find({
+					email: { $in: team?.members },
+				}).select("fullName email");
+				if (team) {
+					team.members = members;
+				}
+				const leader = await User.findOne({
+					email: team?.leader,
+				}).select("fullName email");
+				const event = await Event.findById(team?.event).lean<IEvent>();
+				return {
+					...invite,
+					team: {
+						...team,
+						leader,
+						event,
+					},
+				};
+			})
+		);
+
+		return JSON.parse(JSON.stringify(populatedInvites));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to fetch invited teams: ${error.message}`);
+		} else {
+			throw new Error(
+				"Failed to fetch invited teams due to an unknown error"
+			);
+		}
 	}
 }

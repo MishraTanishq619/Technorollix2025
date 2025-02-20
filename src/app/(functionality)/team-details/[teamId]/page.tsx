@@ -14,19 +14,21 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
 import useFetch from "@/hooks/use-fetch";
-import {
-	getTeamDetailsAction,
-	sendTeamInviteAction,
-} from "@/actions/team-actions";
+import { getTeamDetailsAction } from "@/actions/team-actions";
 import { useParams } from "next/navigation";
 import { getUser } from "@/actions/user-actions";
 import Image from "next/image";
+import {
+	cancelInviteAction,
+	sendTeamInviteAction,
+} from "@/actions/invite-actions";
 
 export default function TeamDetails() {
 	const params = useParams();
 	const [isLeader, setIsLeader] = useState(false);
 	const [inviteeEmail, setInviteeEmail] = useState("");
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [canSendMoreInvites, setCanSendMoreInvites] = useState(false);
 
 	// Fetch team details
 	const {
@@ -44,6 +46,14 @@ export default function TeamDetails() {
 		fn: sendInviteFn,
 	} = useFetch(sendTeamInviteAction);
 
+	// Cancel invite
+	const {
+		data: cancelInviteData,
+		loading: cancelInviteLoading,
+		error: cancelInviteError,
+		fn: cancelInviteFn,
+	} = useFetch(cancelInviteAction);
+
 	// user
 	const {
 		data: userData,
@@ -51,6 +61,7 @@ export default function TeamDetails() {
 		error: userError,
 		fn: userFn,
 	} = useFetch(getUser);
+
 	useEffect(() => {
 		userFn();
 	}, []);
@@ -65,6 +76,18 @@ export default function TeamDetails() {
 			// Check if current user is team leader
 			if (userData?.email === teamData?.team?.leader) {
 				setIsLeader(true);
+			}
+			const pendingInvites = teamData?.invites.filter(
+				(invite) => invite.status === "PENDING"
+			).length;
+
+			if (
+				teamData?.team?.members.length + pendingInvites <
+				teamData?.event?.teamSize
+			) {
+				setCanSendMoreInvites(true);
+			} else {
+				setCanSendMoreInvites(false);
 			}
 		}
 	}, [userData, teamData]);
@@ -81,15 +104,24 @@ export default function TeamDetails() {
 
 		await sendInviteFn({
 			teamId: params.teamId,
-			email: inviteeEmail,
+			inviteeEmail: inviteeEmail,
 		});
 
 		if (!inviteError) {
 			setInviteeEmail("");
 			setIsModalOpen(false);
 			// Refresh team details to get updated invites list
-			fetchTeamDetailsFn({ teamId: params.teamId });
+			fetchTeamDetailsFn(params.teamId);
 		}
+	};
+
+	const handleCancelInvite = async (inviteId: string) => {
+		await cancelInviteFn(inviteId);
+		toast({
+			title: "Invite Canceled",
+			description: `The invite has been canceled.`,
+		});
+		fetchTeamDetailsFn(params.teamId);
 	};
 
 	if (teamLoading) {
@@ -130,11 +162,11 @@ export default function TeamDetails() {
 						<div className="text-sm space-y-2">
 							<p>
 								<strong>Team Size:</strong>{" "}
-								{teamData.event.teamsize} members
+								{teamData.event.teamSize} members
 							</p>
 							<p>
 								<strong>Prize Pool:</strong> ₹
-								{teamData.event.prizemoney.toLocaleString()}
+								{teamData.event.prizeMoney.toLocaleString()}
 							</p>
 						</div>
 					</CardContent>
@@ -150,7 +182,10 @@ export default function TeamDetails() {
 							open={isModalOpen}
 							onOpenChange={setIsModalOpen}
 						>
-							<DialogTrigger asChild>
+							<DialogTrigger
+								asChild
+								disabled={!canSendMoreInvites}
+							>
 								<Button>Invite Member</Button>
 							</DialogTrigger>
 							<DialogContent>
@@ -274,30 +309,50 @@ export default function TeamDetails() {
 					</CardContent>
 				</Card>
 
-				{/* Pending Invites Section */}
+				{/* Invites Section */}
 				<Card>
 					<CardHeader>
-						<CardTitle className="text-md">
-							Pending Invites
-						</CardTitle>
+						<CardTitle className="text-md">Invites</CardTitle>
 					</CardHeader>
 					<CardContent>
 						{teamData.invites.length > 0 ? (
 							<div className="space-y-2">
 								{teamData.invites.map((invite) => (
 									<div
-										key={invite}
-										className="flex items-center justify-between p-2 bg-yellow-50 rounded"
+										key={invite._id}
+										className={`flex items-center justify-between p-2 rounded ${
+											invite.status === "ACCEPTED"
+												? "bg-green-50"
+												: invite.status === "PENDING"
+												? "bg-yellow-50"
+												: invite.status === "REJECTED"
+												? "bg-red-50"
+												: "bg-gray-50"
+										}`}
 									>
-										<span>{invite}</span>
+										<span>{invite.inviteeEmail}</span>
 										<Badge variant="secondary">
-											Pending
+											{invite.status}
 										</Badge>
+										{isLeader &&
+											invite.status === "PENDING" && (
+												<Button
+													variant="destructive"
+													size="sm"
+													onClick={() =>
+														handleCancelInvite(
+															invite._id
+														)
+													}
+												>
+													Cancel
+												</Button>
+											)}
 									</div>
 								))}
 							</div>
 						) : (
-							<p className="text-gray-500">No pending invites</p>
+							<p className="text-gray-500">No invites found</p>
 						)}
 					</CardContent>
 				</Card>

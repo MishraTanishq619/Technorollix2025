@@ -75,7 +75,7 @@ export const userLogin = async (
 	// Generate JWT token
 	const token = jwt.sign(
 		{ userId: existingUser._id, email: existingUser.email },
-		process.env.JWT_SECRET || "your_jwt_secret",
+		process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret",
 		{ expiresIn: "1h" }
 	);
 
@@ -97,7 +97,7 @@ export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
 	try {
 		const decoded = jwt.verify(
 			token,
-			process.env.JWT_SECRET || "your_jwt_secret"
+			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
 		) as { userId: string; email: string };
 		const userId = decoded.userId;
 
@@ -123,7 +123,7 @@ export async function getUser() {
 	try {
 		const decoded = jwt.verify(
 			authToken,
-			process.env.JWT_SECRET || "your_jwt_secret"
+			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
 		) as { userId: string; email: string };
 		const user = await User.findOne({
 			_id: decoded.userId,
