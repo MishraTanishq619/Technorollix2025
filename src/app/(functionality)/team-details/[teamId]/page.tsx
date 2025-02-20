@@ -40,17 +40,17 @@ export default function TeamDetails() {
 
 	// Send invite
 	const {
-		data: inviteData,
-		loading: inviteLoading,
+		// data: inviteData,
+		loading: inviteLoading = false,
 		error: inviteError,
 		fn: sendInviteFn,
 	} = useFetch(sendTeamInviteAction);
 
 	// Cancel invite
 	const {
-		data: cancelInviteData,
-		loading: cancelInviteLoading,
-		error: cancelInviteError,
+		// data: cancelInviteData,
+		// loading: cancelInviteLoading,
+		// error: cancelInviteError,
 		fn: cancelInviteFn,
 	} = useFetch(cancelInviteAction);
 
@@ -58,7 +58,7 @@ export default function TeamDetails() {
 	const {
 		data: userData,
 		// loading: userLoading,
-		error: userError,
+		// error: userError,
 		fn: userFn,
 	} = useFetch(getUser);
 
@@ -78,7 +78,7 @@ export default function TeamDetails() {
 				setIsLeader(true);
 			}
 			const pendingInvites = teamData?.invites.filter(
-				(invite) => invite.status === "PENDING"
+				(invite: { status: string }) => invite.status === "PENDING"
 			).length;
 
 			if (
@@ -205,7 +205,7 @@ export default function TeamDetails() {
 									/>
 									<Button
 										onClick={handleSendInvite}
-										disabled={inviteLoading}
+										disabled={inviteLoading || false}
 										className="w-full"
 									>
 										{inviteLoading
@@ -224,40 +224,31 @@ export default function TeamDetails() {
 						<CardTitle className="text-md">Team Leader</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<div className="space-y-2">
-							<p>
-								<strong>Name:</strong>{" "}
-								{
-									teamData.members.find(
-										(m) => m.email === teamData.team.leader
-									)?.fullName
-								}
-							</p>
-							<p>
-								<strong>Email:</strong>{" "}
-								{
-									teamData.members.find(
-										(m) => m.email === teamData.team.leader
-									)?.email
-								}
-							</p>
-							<p>
-								<strong>Branch:</strong>{" "}
-								{
-									teamData.members.find(
-										(m) => m.email === teamData.team.leader
-									)?.branch
-								}
-							</p>
-							<p>
-								<strong>Enrollment:</strong>{" "}
-								{
-									teamData.members.find(
-										(m) => m.email === teamData.team.leader
-									)?.enrollmentNumber
-								}
-							</p>
-						</div>
+						{(() => {
+							const leader = teamData.members.find(
+								(m: { email: string }) =>
+									m.email === teamData.team.leader
+							);
+							return (
+								<div className="space-y-2">
+									<p>
+										<strong>Name:</strong>{" "}
+										{leader?.fullName}
+									</p>
+									<p>
+										<strong>Email:</strong> {leader?.email}
+									</p>
+									<p>
+										<strong>Branch:</strong>{" "}
+										{leader?.branch}
+									</p>
+									<p>
+										<strong>Enrollment:</strong>{" "}
+										{leader?.enrollmentNumber}
+									</p>
+								</div>
+							);
+						})()}
 					</CardContent>
 				</Card>
 
@@ -277,33 +268,40 @@ export default function TeamDetails() {
 							) : (
 								teamData.members
 									.filter(
-										(member) =>
+										(member: { email: string }) =>
 											member.email !==
 											teamData.team.leader
 									)
-									.map((member) => (
-										<div
-											key={member.email}
-											className="p-4 bg-gray-50 rounded-lg"
-										>
-											<p>
-												<strong>Name:</strong>{" "}
-												{member.fullName}
-											</p>
-											<p>
-												<strong>Email:</strong>{" "}
-												{member.email}
-											</p>
-											<p>
-												<strong>Branch:</strong>{" "}
-												{member.branch}
-											</p>
-											<p>
-												<strong>Enrollment:</strong>{" "}
-												{member.enrollmentNumber}
-											</p>
-										</div>
-									))
+									.map(
+										(member: {
+											email: string;
+											fullName: string;
+											branch: string;
+											enrollmentNumber: string;
+										}) => (
+											<div
+												key={member.email}
+												className="p-4 bg-gray-50 rounded-lg"
+											>
+												<p>
+													<strong>Name:</strong>{" "}
+													{member.fullName}
+												</p>
+												<p>
+													<strong>Email:</strong>{" "}
+													{member.email}
+												</p>
+												<p>
+													<strong>Branch:</strong>{" "}
+													{member.branch}
+												</p>
+												<p>
+													<strong>Enrollment:</strong>{" "}
+													{member.enrollmentNumber}
+												</p>
+											</div>
+										)
+									)
 							)}
 						</div>
 					</CardContent>
@@ -317,39 +315,47 @@ export default function TeamDetails() {
 					<CardContent>
 						{teamData.invites.length > 0 ? (
 							<div className="space-y-2">
-								{teamData.invites.map((invite) => (
-									<div
-										key={invite._id}
-										className={`flex items-center justify-between p-2 rounded ${
-											invite.status === "ACCEPTED"
-												? "bg-green-50"
-												: invite.status === "PENDING"
-												? "bg-yellow-50"
-												: invite.status === "REJECTED"
-												? "bg-red-50"
-												: "bg-gray-50"
-										}`}
-									>
-										<span>{invite.inviteeEmail}</span>
-										<Badge variant="secondary">
-											{invite.status}
-										</Badge>
-										{isLeader &&
-											invite.status === "PENDING" && (
-												<Button
-													variant="destructive"
-													size="sm"
-													onClick={() =>
-														handleCancelInvite(
-															invite._id
-														)
-													}
-												>
-													Cancel
-												</Button>
-											)}
-									</div>
-								))}
+								{teamData.invites.map(
+									(invite: {
+										_id: string;
+										inviteeEmail: string;
+										status: string;
+									}) => (
+										<div
+											key={invite._id}
+											className={`flex items-center justify-between p-2 rounded ${
+												invite.status === "ACCEPTED"
+													? "bg-green-50"
+													: invite.status ===
+													  "PENDING"
+													? "bg-yellow-50"
+													: invite.status ===
+													  "REJECTED"
+													? "bg-red-50"
+													: "bg-gray-50"
+											}`}
+										>
+											<span>{invite.inviteeEmail}</span>
+											<Badge variant="secondary">
+												{invite.status}
+											</Badge>
+											{isLeader &&
+												invite.status === "PENDING" && (
+													<Button
+														variant="destructive"
+														size="sm"
+														onClick={() =>
+															handleCancelInvite(
+																invite._id
+															)
+														}
+													>
+														Cancel
+													</Button>
+												)}
+										</div>
+									)
+								)}
 							</div>
 						) : (
 							<p className="text-gray-500">No invites found</p>
