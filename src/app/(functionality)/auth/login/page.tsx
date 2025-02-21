@@ -24,8 +24,6 @@ const loginFormSchema = z.object({
     email: z.string().email({ message: "Please enter a valid email address." }),
     password: z
         .string()
-        .regex(/^\d+$/, { message: "Password must contain only numbers." })
-        .min(6, { message: "Password must be at least 6 digits." }),
 });
 
 export default function LoginForm() {
