@@ -15,7 +15,7 @@ const UserDropdown = () => {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger>
-				<Button variant={"outline"}>Login</Button>
+				<Button variant={"outline"} className="bg-transparent border-none font-bold">Login</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent>
 				<DropdownMenuLabel>My Account</DropdownMenuLabel>

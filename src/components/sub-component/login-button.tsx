@@ -3,7 +3,7 @@ import UserDropdown from "../user-dropdown";
 
 const LoginButton = () => {
   return (
-    <button className="bg-gradient-to-r from-orange-400 to-red-600 flex items-center justify-center border-[3px] border-orange-300 rounded-full px-6 hover:scale-105 hover:text-orange-500 text-yellow-400 font-bold">
+    <button className="bg-gradient-to-r from-[#ff2020] via-[#AA0406] to-[#8F0c11] flex items-center justify-center border-[3px] border-orange-300 rounded-full px-6 hover:scale-105 text-yellow-400 font-bold">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
