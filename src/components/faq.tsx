@@ -1,93 +1,36 @@
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
-import { GoPlus } from "react-icons/go";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Plus, Minus } from "lucide-react";
 
-const FAQSection = () => {
+const faqData = [
+  { question: "What is Technorollix, and how can I participate?", answer: "Technorollix is an annual tech and cultural fest. You can register online via our website to participate in events." },
+  { question: "How can companies or brands collaborate as sponsors, and what benefits do they get?", answer: "College students with a valid email can register. External students need to pay for entry." },
+  { question: "What events and competitions are available, and how do I register?", answer: "Visit the website, sign in with your college email, and select your events." },
+  { question: "Where can I find event schedules, updates, and whom should I contact for queries?", answer: "Yes! Winners receive certificates and cash prizes." },
+  { question: "Are there any facilities for outstation participants, such as accommodation and food?", answer: "Yes, you can register for multiple events based on availability." },
+  { question: "Can I attend the fest without participating in any events?", answer: "Check the website for the latest updates on registration deadlines." },
+];
+
+const FAQAccordion = () => {
   return (
-    <div className="text-white text-center max-w-3xl mx-auto my-10">
-      <h2 className="text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] mb-6">
-        FAQ’s
-      </h2>
-      <p className="text-xl mb-8 font-medium">
-        ANSWERS TO ALL YOUR QUESTIONS
-      </p>
-
-      <Accordion type="single" collapsible className="space-y-4">
-        <AccordionItem value="item-1">
-          <AccordionTrigger className="text-lg font-semibold bg-[#4b1d12] p-4 rounded-lg text-left border border-orange-400">
-            What is Technorollix, and how can I participate?
-            <GoPlus/>
-          </AccordionTrigger>
-          <AccordionContent className="bg-[#2c0a02] p-4 text-gray-300 border border-orange-400 rounded-lg">
-            Technorollix is an annual tech and cultural fest. You can register
-            online via our website to participate in events.
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="item-2">
-          <AccordionTrigger className="text-lg font-semibold bg-[#4b1d12] p-4 rounded-lg text-left border border-orange-400">
-            What events and competitions are available, and how do I register?
-            <GoPlus/>
-          </AccordionTrigger>
-          <AccordionContent className="bg-[#2c0a02] p-4 text-gray-300 border-2 border-orange-400 rounded-lg">
-            The fest includes various tech, cultural, and gaming events.
-            Registration is available on our official website.
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="item-3">
-          <AccordionTrigger className="text-lg font-semibold bg-[#4b1d12] p-4 rounded-lg text-left border border-orange-400">
-            Are there any facilities for outstation participants, such as
-            accommodation and food?
-            <GoPlus/>
-          </AccordionTrigger>
-          <AccordionContent className="bg-[#2c0a02] p-4 text-gray-300 border border-orange-400 rounded-lg">
-            Yes, we provide accommodation and food facilities for outstation
-            participants. Details are available on the website.
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="item-4">
-          <AccordionTrigger className="text-lg font-semibold bg-[#4b1d12] p-4 rounded-lg text-left border border-orange-400">
-            How can companies or brands collaborate as sponsors, and what
-            benefits do they get?
-            <GoPlus/>
-          </AccordionTrigger>
-          <AccordionContent className="bg-[#2c0a02] p-4 text-gray-300 border border-orange-400 rounded-lg">
-            Sponsors receive branding opportunities, promotional benefits, and
-            engagement with a large audience.
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="item-5">
-          <AccordionTrigger className="text-lg font-semibold bg-[#4b1d12] p-4 rounded-lg text-left border border-orange-400">
-            Where can I find event schedules, updates, and whom should I contact
-            for queries?
-            <GoPlus/>
-          </AccordionTrigger>
-          <AccordionContent className="bg-[#2c0a02] p-4 text-gray-300 border border-orange-400 rounded-lg">
-            The event schedule and contact details are available on our official
-            website and social media pages.
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="item-6">
-          <AccordionTrigger className="text-lg font-semibold bg-[#4b1d12] p-4 rounded-lg text-left border border-orange-400">
-            Can I attend the fest without participating in any events?
-            <GoPlus/>
-          </AccordionTrigger>
-          <AccordionContent className="bg-[#2c0a02] p-4 text-gray-300 border border-orange-400 rounded-lg">
-            Yes! You can attend and enjoy the fest even if you’re not
-            participating in any competitions.
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 max-w-7xl mx-auto">
+      {faqData.map((faq, index) => (
+        <Accordion key={index} type="single" collapsible>
+          <AccordionItem value={`item-${index}`}>
+            <AccordionTrigger className="flex p-3 items-center justify-between text-[#ABA9B3] text-lg font-medium w-[566px] h-[122px] bg-gradient-to-b from-[#4f0000] rounded-2xl shadow-[0px_11px_12.5px_0px_rgba(7,10,23,0.25)]">
+              <span>{faq.question}</span>
+              <span className="transition-transform duration-300">
+                <Plus className="w-5 h-5 group-data-[state=open]:hidden" />
+                <Minus className="w-5 h-5 hidden group-data-[state=open]:block" />
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="w-[429.02px] text-[#595959] text-lg font-normal font-['DM Sans'] leading-[30px]">
+              {faq.answer}
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      ))}
     </div>
   );
 };
 
-export default FAQSection;
+export default FAQAccordion;

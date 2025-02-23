@@ -3,11 +3,9 @@ import AboutSection from "@/components/aboutSection";
 import CountdownTimer from "@/components/countdown-timer";
 import EventSection from "@/components/eventsSection";
 import FAQSection from "@/components/faq";
+import Navbar from "@/components/nav";
 import Sponser from "@/components/sponser";
 import ButtonLanding from "@/components/sub-component/button-landing";
-import RegisterButton from "@/components/sub-component/button-landing";
-import { Button } from "@/components/ui/button";
-import UserDropdown from "@/components/user-dropdown";
 
 export default function Home() {
   return (
