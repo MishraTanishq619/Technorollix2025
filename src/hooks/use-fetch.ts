@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { useState } from "react";
 // import { toast } from "./use-toast";
+import { useState, useCallback } from "react";
 
 type FetchCallback<T> = (...args: any[]) => Promise<T>;
 
@@ -10,12 +10,12 @@ const useFetch = <T>(cb: FetchCallback<T>) => {
 	const [loading, setLoading] = useState<boolean | null>(null);
 	const [error, setError] = useState<Error | null>(null);
 
-	const fn = async (...args: any[]) => {
+	const execute = useCallback(async (...args: any[]) => {
 		setLoading(true);
 		setError(null);
 		try {
 			const res = await cb(...args);
-			setData(res);
+			setData(res ? JSON.parse(JSON.stringify(res)) : null); // Ensure plain object
 		} catch (error: any) {
 			setError(error);
 			// toast({
@@ -26,9 +26,9 @@ const useFetch = <T>(cb: FetchCallback<T>) => {
 		} finally {
 			setLoading(false);
 		}
-	};
+	}, [cb]);
 
-	return { data, loading, error, fn, setData };
+	return { data, loading, error, fn: execute, setData };
 };
 
 export default useFetch;

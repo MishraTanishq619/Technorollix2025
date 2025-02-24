@@ -1,73 +1,100 @@
 "use client";
-// import { useEffect, useState } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
 import { logout } from "@/lib/utils";
+import { getUserFromAuth } from "@/actions/user-actions";
 
 const UserDropdown = () => {
-	const router = useRouter();
+    const router = useRouter();
+    const [token, setToken] = useState<string | null>(null);
+    const [user, setUser] = useState<{ fullName?: string; email?: string } | null>(null);
 
-	// Task : add a functionality to render login and signup button if user is not authenticated and logout button if user is authenticated
+    useEffect(() => {
+        const authToken = localStorage.getItem("auth-token");
+        setToken(authToken);
 
-	// const [user, setUser] = useState(false);
-	// useEffect(() => {
-	// 	setUser(isUserAuthenticated());
-	// }, [router]);
+        if (authToken) {
+            fetchUser(authToken).then((userData) => {
+                setUser(userData);
+            });
+        }
+    }, []);
 
-	const logoutHandler = async () => {
-		await logout();
-		router.push("/auth/login");
-	};
-	return (
-		<DropdownMenu>
-			<DropdownMenuTrigger>
-				<Button variant={"outline"}>Open</Button>
-			</DropdownMenuTrigger>
-			<DropdownMenuContent>
-				<DropdownMenuLabel>My Account</DropdownMenuLabel>
-				<DropdownMenuSeparator />
-				{/* {user ? ( */}
-				<>
-					<DropdownMenuItem
-						onClick={() => {
-							router.push("/auth/signup");
-						}}
-					>
-						SignUp
-					</DropdownMenuItem>
-					<DropdownMenuItem
-						onClick={() => {
-							router.push("/auth/login");
-						}}
-					>
-						Login
-					</DropdownMenuItem>
-				</>
-				{/* ) : ( */}
-				<DropdownMenuItem
-					onClick={() => {
-						logoutHandler();
-					}}
-				>
-					Logout
-				</DropdownMenuItem>
-				{/* )} */}
-				{/* <DropdownMenuItem>Profile</DropdownMenuItem>
-				<DropdownMenuItem>Billing</DropdownMenuItem>
-				<DropdownMenuItem>Team</DropdownMenuItem>
-				<DropdownMenuItem>Subscription</DropdownMenuItem> */}
-			</DropdownMenuContent>
-		</DropdownMenu>
-	);
+    useEffect(() => {
+        if (token) {
+            fetchUser(token).then((userData) => {
+                setUser(userData);
+            });
+        } else {
+            setUser(null);
+        }
+    }, [token]);
+
+
+    const logoutHandler = async () => {
+        await logout();
+        localStorage.removeItem("auth-token");
+        setToken(null);
+        router.push("/auth/login");
+    };
+
+    const fetchUser = async (token: string) => {
+        try {
+            const userData = await getUserFromAuth(token);
+            return userData;
+        } catch (error) {
+            console.error("Failed to fetch user data:", error);
+            return null;
+        }
+    };
+
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger>
+                <Button variant={"outline"}>Open</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                {token ? (
+                    <>
+                        <DropdownMenuItem>
+                            {user?.fullName || user?.email}
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={logoutHandler}>
+                            Logout
+                        </DropdownMenuItem>
+                    </>
+                ) : (
+                    <>
+                        <DropdownMenuItem
+                            onClick={() => {
+                                router.push("/auth/signup");
+                            }}
+                        >
+                            SignUp
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                            onClick={() => {
+                                router.push("/auth/login");
+                            }}
+                        >
+                            Login
+                        </DropdownMenuItem>
+                    </>
+                )}
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
 };
 
 export default UserDropdown;
