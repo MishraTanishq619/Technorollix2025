@@ -1,0 +1,255 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Input } from "@/components/ui/input";
+import { toast } from "@/hooks/use-toast";
+import useFetch from "@/hooks/use-fetch";
+import { getUser } from "@/actions/user-actions";
+import {
+	getAllEventsAction,
+	getManagedEventsAction,
+} from "@/actions/event-actions";
+import { IEvent } from "@/models/event.model";
+import { User, CalendarDays, ChevronRight, Search } from "lucide-react";
+
+export default function AdminDashboard() {
+	const router = useRouter();
+	const [eventsData, setEventsData] = useState<IEvent[]>([]);
+	const [filteredEvents, setFilteredEvents] = useState<IEvent[]>([]);
+	const [searchQuery, setSearchQuery] = useState("");
+	const [loading, setLoading] = useState(true);
+
+	const {
+		data: userFetchData,
+		error: userFetchError,
+		fn: userFetchFn,
+	} = useFetch(getUser);
+
+	const {
+		data: eventsFetchData,
+		error: eventsFetchError,
+		fn: eventsFetchFn,
+	} = useFetch(getAllEventsAction);
+
+	const {
+		data: managedEventsFetchData,
+		error: managedEventsFetchError,
+		fn: managedEventsFetchFn,
+	} = useFetch(getManagedEventsAction);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			await userFetchFn();
+		};
+
+		fetchData();
+	}, []);
+
+	useEffect(() => {
+		if (userFetchData) {
+			if (userFetchData.permissions.isManager) {
+				managedEventsFetchFn(userFetchData.permissions.managedEvents);
+			} else {
+				eventsFetchFn();
+			}
+		}
+	}, [userFetchData]);
+
+	useEffect(() => {
+		if (eventsFetchData) {
+			setEventsData(eventsFetchData.events);
+			setFilteredEvents(eventsFetchData.events);
+			setLoading(false);
+		}
+
+		if (managedEventsFetchData) {
+			setEventsData(managedEventsFetchData.events);
+			setFilteredEvents(managedEventsFetchData.events);
+			setLoading(false);
+		}
+	}, [eventsFetchData, managedEventsFetchData]);
+
+	useEffect(() => {
+		if (userFetchError || eventsFetchError || managedEventsFetchError) {
+			toast({
+				title: "Error",
+				description: "Failed to fetch data",
+				variant: "destructive",
+			});
+			setLoading(false);
+		}
+	}, [userFetchError, eventsFetchError, managedEventsFetchError]);
+
+	// Filter events based on search query
+	useEffect(() => {
+		const filtered = eventsData.filter((event) =>
+			event.name.toLowerCase().includes(searchQuery.toLowerCase())
+		);
+		setFilteredEvents(filtered);
+	}, [searchQuery, eventsData]);
+
+	const handleEventClick = (eventId: string) => {
+		router.push(`/admin/event-data/${eventId}`);
+	};
+
+	if (loading) {
+		return (
+			<div className="container mx-auto p-6 space-y-6">
+				<div className="space-y-4">
+					<Skeleton className="h-8 w-[200px] mx-auto" />
+					<Card>
+						<CardHeader>
+							<Skeleton className="h-6 w-[150px]" />
+						</CardHeader>
+						<CardContent className="space-y-4">
+							<Skeleton className="h-4 w-full" />
+							<Skeleton className="h-4 w-full" />
+							<Skeleton className="h-4 w-full" />
+						</CardContent>
+					</Card>
+					<Card>
+						<CardHeader>
+							<Skeleton className="h-6 w-[150px]" />
+						</CardHeader>
+						<CardContent className="space-y-4">
+							{[1, 2, 3].map((i) => (
+								<Skeleton key={i} className="h-12 w-full" />
+							))}
+						</CardContent>
+					</Card>
+				</div>
+			</div>
+		);
+	}
+
+	return (
+		<div className="container mx-auto p-6">
+			<h1 className="text-3xl font-bold mb-8 text-center">
+				Admin Dashboard
+			</h1>
+
+			<div className="grid md:grid-cols-2 gap-6">
+				{userFetchData && (
+					<Card className="md:col-span-1">
+						<CardHeader>
+							<CardTitle className="flex items-center gap-2">
+								<User className="w-5 h-5" />
+								Admin Profile
+							</CardTitle>
+						</CardHeader>
+						<CardContent className="grid gap-4">
+							<div className="space-y-2">
+								<div>
+									<p className="text-sm text-muted-foreground">
+										Email
+									</p>
+									<p className="font-medium">
+										{userFetchData.email}
+									</p>
+								</div>
+								<div>
+									<p className="text-sm text-muted-foreground">
+										Full Name
+									</p>
+									<p className="font-medium">
+										{userFetchData.fullName}
+									</p>
+								</div>
+								<div>
+									<p className="text-sm text-muted-foreground">
+										Branch
+									</p>
+									<p className="font-medium">
+										{userFetchData.branch}
+									</p>
+								</div>
+								<div className="flex items-center gap-2">
+									<p className="text-sm text-muted-foreground">
+										Role
+									</p>
+									<Badge
+										variant={
+											userFetchData.permissions?.isManager
+												? "default"
+												: "secondary"
+										}
+									>
+										{userFetchData.permissions?.isManager
+											? "Event Manager"
+											: "Admin"}
+									</Badge>
+								</div>
+							</div>
+						</CardContent>
+					</Card>
+				)}
+
+				<Card className="md:col-span-1">
+					<CardHeader>
+						<CardTitle className="flex items-center gap-2">
+							<CalendarDays className="w-5 h-5" />
+							Managed Events
+						</CardTitle>
+						<div className="flex items-center gap-2 mt-2 relative">
+							<Search className="w-4 h-4 absolute left-3 text-muted-foreground" />
+							<Input
+								placeholder="Search events..."
+								value={searchQuery}
+								onChange={(e) => setSearchQuery(e.target.value)}
+								className="pl-9"
+							/>
+						</div>
+					</CardHeader>
+					<CardContent>
+						<ScrollArea className="h-[300px] pr-4">
+							{filteredEvents.length > 0 ? (
+								<div className="space-y-4">
+									{filteredEvents.map((event) => (
+										<Card
+											key={event._id as React.Key}
+											className="cursor-pointer hover:bg-accent transition-colors"
+											onClick={() =>
+												handleEventClick(
+													event._id as string
+												)
+											}
+										>
+											<CardContent className="p-4 flex items-center justify-between">
+												<div className="space-y-1">
+													<p className="font-medium">
+														{event.name}
+													</p>
+													{/* {event.date && (
+														<p className="text-sm text-muted-foreground">
+															{new Date(
+																event.date
+															).toLocaleDateString()}
+														</p>
+													)} */}
+												</div>
+												<ChevronRight className="w-5 h-5 text-muted-foreground" />
+											</CardContent>
+										</Card>
+									))}
+								</div>
+							) : (
+								<div className="text-center py-8 text-muted-foreground">
+									<CalendarDays className="w-12 h-12 mx-auto mb-4 opacity-50" />
+									<p>
+										{searchQuery
+											? "No matching events found"
+											: "No events found"}
+									</p>
+								</div>
+							)}
+						</ScrollArea>
+					</CardContent>
+				</Card>
+			</div>
+		</div>
+	);
+}
