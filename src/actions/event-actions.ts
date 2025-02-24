@@ -1,9 +1,9 @@
 "use server";
 
 import { connectToDatabase } from "@/lib/mongodb";
-import { Event } from "@/models/event.model";
+import { Event, IEvent } from "@/models/event.model";
 import { getUser } from "./user-actions";
-import { Team } from "@/models/team.model";
+import { ITeam, Team } from "@/models/team.model";
 import { Invitation } from "@/models/invitation.model";
 import { User } from "@/models/user.model";
 
@@ -155,6 +155,57 @@ export async function submitEventsAction(data: { eventIds: string[] }) {
 			);
 		} else {
 			throw new Error("Failed to submit event registrations");
+		}
+	}
+}
+
+export async function getManagedEventsAction(eventIds: string[]) {
+	try {
+		await connectToDatabase();
+		const managedEvents = await Event.find({ _id: { $in: eventIds } }).lean<
+			IEvent[]
+		>();
+		return JSON.parse(JSON.stringify({ events: managedEvents }));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to fetch managed events: ${error.message}`);
+		} else {
+			throw new Error("Failed to fetch managed events");
+		}
+	}
+}
+
+export async function getEventById(eventId: string): Promise<IEvent> {
+	try {
+		await connectToDatabase();
+		const event = await Event.findById(eventId).lean<IEvent>();
+		if (!event) {
+			throw new Error(`Event with ID ${eventId} not found`);
+		}
+		return JSON.parse(JSON.stringify(event));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to fetch event: ${error.message}`);
+		} else {
+			throw new Error("Failed to fetch event");
+		}
+	}
+}
+
+export async function getTeamsByEventId(
+	eventId: string
+): Promise<(ITeam & { createdAt: Date })[]> {
+	try {
+		await connectToDatabase();
+		const teams = await Team.find({ event: eventId })
+			.select("event members leader createdAt")
+			.lean();
+		return JSON.parse(JSON.stringify(teams));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to fetch teams: ${error.message}`);
+		} else {
+			throw new Error("Failed to fetch teams");
 		}
 	}
 }

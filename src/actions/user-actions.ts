@@ -113,7 +113,6 @@ export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
 	}
 };
 
-// for server-side
 export async function getUser() {
 	await connectToDatabase();
 
@@ -134,5 +133,23 @@ export async function getUser() {
 	} catch (error) {
 		console.error("Error verifying token or finding user:", error);
 		return null; // Invalid token
+	}
+}
+
+export async function getUsersByEmails(
+	emails: string[]
+): Promise<(IUser & { createdAt: Date })[]> {
+	try {
+		await connectToDatabase();
+		const users = await User.find({ email: { $in: emails } })
+			.select("email fullName branch year enrollmentNumber createdAt")
+			.lean();
+		return JSON.parse(JSON.stringify(users));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to fetch users: ${error.message}`);
+		} else {
+			throw new Error("Failed to fetch users");
+		}
 	}
 }

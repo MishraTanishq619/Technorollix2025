@@ -73,7 +73,11 @@ export default function LoginForm() {
 				title: "Success",
 				description: "You have logged in successfully!",
 			});
-			router.push("/dashboard"); // Redirect to the dashboard or any other page
+			if (userLoginData.user.isAdmin) {
+				router.push("/admin/dashboard"); // Redirect to the admin dashboard
+			} else {
+				router.push("/dashboard"); // Redirect to the user dashboard
+			}
 		}
 	}, [userLoginData, userLoginError, userLoginLoading, router]);
 

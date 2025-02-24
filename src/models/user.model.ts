@@ -10,6 +10,10 @@ interface IUser extends Document {
 	email: string;
 	password: string;
 	isAdmin?: boolean;
+	permissions?: {
+		isManager: boolean;
+		managedEvents: Types.ObjectId[];
+	};
 	teams: Types.ObjectId[];
 }
 
@@ -53,6 +57,10 @@ const userSchema = new Schema<IUser>(
 		isAdmin: {
 			type: Boolean,
 			default: false,
+		},
+		permissions: {
+			isManager: { type: Boolean, default: false },
+			managedEvents: [{ type: Schema.Types.ObjectId, ref: "Event" }],
 		},
 		teams: [
 			{
