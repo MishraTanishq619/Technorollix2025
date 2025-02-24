@@ -6,6 +6,7 @@ import FAQSection from "@/components/faq";
 import Navbar from "@/components/nav";
 import Sponser from "@/components/sponser";
 import ButtonLanding from "@/components/sub-component/button-landing";
+import CardwithImage from "@/components/sub-component/card-with-image";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
 
         {/* Countdown Timer */}
         <CountdownTimer />
+
 
         {/* Register Button */}
           <ButtonLanding label="Register"/>

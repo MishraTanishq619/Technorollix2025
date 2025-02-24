@@ -4,10 +4,10 @@ const CountdownTimer = () => {
   const eventDate = new Date(2025, 2, 20, 0, 0, 0).getTime();
 
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    Days: 0,
+    Hours: 0,
+    Minutes: 0,
+    Seconds: 0,
   });
 
   useEffect(() => {
@@ -17,27 +17,36 @@ const CountdownTimer = () => {
 
       if (difference > 0) {
         setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
+          Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          Hours: Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          ),
+          Minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          Seconds: Math.floor((difference % (1000 * 60)) / 1000),
         });
       } else {
         clearInterval(timer);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setTimeLeft({ Days: 0, Hours: 0, Minutes: 0, Seconds: 0 });
       }
     }, 1000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="flex items-center justify-center space-x-4 mt-10">
+    <div className="flex items-center justify-center space-x-12 mt-12">
       {Object.entries(timeLeft).map(([label, value]) => (
-        <div key={label} className="flex flex-col items-center">
-          <div className="bg-gradient-to-br from-red-700 to-orange-500 text-white px-6 py-4 text-3xl font-bold rounded-lg border-2 border-yellow-500 shadow-md">
-            {value < 10 ? `0${value}` : value}
+        <div key={label} className="flex flex-col items-center ">
+          <div
+            className="h-32 w-[110px] flex flex-col items-center justify-center "
+            style={{ background: "url(./card.png)", backgroundSize: "cover" }}
+          >
+            <p className="text-center text-[#ffad3c] text-5xl font-bold font-['Inria Serif'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+              {value < 10 ? `0${value}` : value}
+            </p>
           </div>
-          <p className="text-white mt-2 text-sm uppercase">{label}</p>
+          <p className="text-center text-[#aea8a8] text-2xl font-normal font-['Poppins'] tracking-[2.64px] ">
+            {label}
+          </p>
         </div>
       ))}
     </div>
