@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
 import { Toaster } from "@/components/ui/toaster";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
@@ -35,13 +34,10 @@ export default function RootLayout({
         
         <div className="max-w-screen-xl mx-auto">
           <BackgroundVideo />
-          <Header />
           <Nav />
           </div>
-          
-          <Footer />
           {children}
-        
+          <Footer />
         <Toaster />
         
         

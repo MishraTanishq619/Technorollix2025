@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen mt-16">
-        <Image src="./technorollix.png" alt="technorollix" />
+        <Image src="/technorollix.png" alt="technorollix" width={500} height={500}/>
         <p className="mt-2 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em]">
           Central India's Biggest Techno-Cultural Fest
         </p>
