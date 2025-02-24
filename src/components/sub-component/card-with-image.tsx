@@ -7,7 +7,7 @@ interface CardwithImageProps {
   scale?: number;
 }
 
-const CardwithImage: React.FC<CardwithImageProps> = ({ imageUrl, title ,scale=100}) => {
+const CardwithImage: React.FC<CardwithImageProps> = ({ imageUrl, title ,scale=90}) => {
   console.log(imageUrl);
   return (
     <div

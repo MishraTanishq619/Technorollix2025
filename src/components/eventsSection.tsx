@@ -16,7 +16,7 @@ const EventSection = () => {
       </p>
       <div className="flex mt-28 w-full justify-between">
         <CardwithImage imageUrl="./Rectangle 197.png" title="Antaragni" />
-        <CardwithImage imageUrl="./Rectangle 197.png" title="Tech-Lab" scale={110} />
+        <CardwithImage imageUrl="./Rectangle 197.png" title="Tech-Lab" scale={100} />
         <CardwithImage imageUrl="./Rectangle 197.png" title="Kalakriti" />
       </div>
       <ButtonLanding label="Explore More" />
