@@ -12,7 +12,7 @@ const CardwithImage: React.FC<CardwithImageProps> = ({ imageUrl, title ,scale=90
   return (
     <div
       className="h-96 w-80 flex flex-col items-center"
-      style={{ background: "url(./card.png)", backgroundSize: "cover" ,transform:`scale(${scale/100})` }}
+      style={{ background: "url(/card.png)", backgroundSize: "cover" ,transform:`scale(${scale/100})` }}
     >
       <img
         src={imageUrl}
