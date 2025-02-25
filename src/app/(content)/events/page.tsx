@@ -7,7 +7,7 @@ const Page = () => {
   return (
     <div className="">
       <EventIntro
-        imageUrl="./Rectangle 197.png"
+        imageUrl="/card.png"
         title="Antaragni"
         registrations={300}
         pricepool={30000}
