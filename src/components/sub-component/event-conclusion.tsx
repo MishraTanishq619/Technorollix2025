@@ -78,25 +78,7 @@ const EventConclusion = () => {
         </div>
 
         <ManagerCard />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
-          repellendus possimus. Ducimus voluptatem beatae ratione minus eveniet
-          fugit soluta quod dicta doloremque in magnam, eos aperiam ullam modi
-          quam recusandae!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, fuga
-          repellat, temporibus natus quaerat quas facilis itaque quis quibusdam
-          voluptates quos recusandae omnis dolorem quidem repudiandae quod ad
-          nesciunt illum. Quae facilis sequi aut pariatur expedita autem eum
-          impedit molestiae velit sed vitae qui accusamus labore perferendis,
-          placeat iusto ipsam reprehenderit ab optio numquam unde repellendus
-          commodi ipsum fuga? Quaerat? Ea incidunt aspernatur autem, repellendus
-          hic impedit qui, dolor aut consequatur optio necessitatibus
-          perspiciatis soluta harum mollitia. Pariatur, laboriosam. Assumenda,
-          expedita. Sit maiores accusamus quaerat aspernatur voluptate
-          voluptatibus recusandae adipisci.
-        </p>
+        
       </div>
     </div>
   );
