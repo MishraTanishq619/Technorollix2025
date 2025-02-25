@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonLanding from "./sub-component/button-landing";
 import CardwithImage from "./sub-component/card-with-image";
+import Link from "next/link";
 
 const EventSection = () => {
   return (
@@ -19,7 +20,9 @@ const EventSection = () => {
         <CardwithImage imageUrl="./Rectangle 197.png" title="Tech-Lab" scale={100} />
         <CardwithImage imageUrl="./Rectangle 197.png" title="Kalakriti" />
       </div>
-      <ButtonLanding label="Explore More" />
+      <Link href="/events">
+          <ButtonLanding label="Explore More" />
+      </Link>
     </div>
   );
 };
