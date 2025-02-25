@@ -1,3 +1,5 @@
+"use client";
+// import { useEffect, useState } from "react";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
+import { logout } from "@/lib/utils";
 
 const UserDropdown = () => {
   const router = useRouter();
