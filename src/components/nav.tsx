@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-10 bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 pt-2">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <img src="/opjulogo.png" alt="opju" className="h-[72px] w-[157px]" />

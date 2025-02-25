@@ -28,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1c0404]`}
       >
-        <div className="max-w-screen-xl mx-auto">
-          <BackgroundVideo />
+        <div className="max-w-screen-xl mx-auto ">
+          
           <Nav />
           {children}
         </div>
