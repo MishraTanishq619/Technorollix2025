@@ -34,9 +34,7 @@ const Navbar = () => {
           </div>
 
           {/* Login Button */}
-          <Link href="/login">
             <UserDropdown /> 
-          </Link>
         </div>
       </div>
     </nav>
