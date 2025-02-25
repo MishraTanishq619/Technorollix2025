@@ -1,6 +1,8 @@
+"use server";
 import { connectToDatabase } from "@/lib/mongodb";
 import { IUser, User } from "@/models/user.model";
 import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 
 interface UserData {
 	email: string;
@@ -44,7 +46,7 @@ export const userSignup = async (userData: UserData): Promise<IUser> => {
 
 	await newUser.save();
 
-	return newUser;
+	return JSON.parse(JSON.stringify(newUser));
 };
 
 interface LoginData {
@@ -73,16 +75,81 @@ export const userLogin = async (
 	// Generate JWT token
 	const token = jwt.sign(
 		{ userId: existingUser._id, email: existingUser.email },
-		process.env.JWT_SECRET || "your_jwt_secret",
+		process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret",
 		{ expiresIn: "1h" }
 	);
 
-	return {
-		user: existingUser,
-		token,
-	};
+	return JSON.parse(
+		JSON.stringify({
+			user: existingUser,
+			token,
+		})
+	);
 };
 
-export function logout(): void {
-	localStorage.removeItem("auth-token");
+export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
+	await connectToDatabase();
+
+	if (!token) {
+		throw new Error("No auth token provided");
+	}
+
+	try {
+		const decoded = jwt.verify(
+			token,
+			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
+		) as { userId: string; email: string };
+		const userId = decoded.userId;
+
+		const user = await User.findById(userId);
+		if (!user) {
+			throw new Error("User not found");
+		}
+
+		return JSON.parse(JSON.stringify(user));
+	} catch (error) {
+		console.error("Error verifying token or finding user:", error);
+		throw new Error("Invalid or expired token");
+	}
+};
+
+export async function getUser() {
+	await connectToDatabase();
+
+	const authToken = (await cookies()).get("auth-token")?.value;
+	if (!authToken) return null;
+
+	try {
+		const decoded = jwt.verify(
+			authToken,
+			process.env.NEXT_PUBLIC_JWT_SECRET || "your_jwt_secret"
+		) as { userId: string; email: string };
+		const user = await User.findOne({
+			_id: decoded.userId,
+			email: decoded.email,
+		});
+
+		return JSON.parse(JSON.stringify(user));
+	} catch (error) {
+		console.error("Error verifying token or finding user:", error);
+		return null; // Invalid token
+	}
+}
+
+export async function getUsersByEmails(
+	emails: string[]
+): Promise<(IUser & { createdAt: Date })[]> {
+	try {
+		await connectToDatabase();
+		const users = await User.find({ email: { $in: emails } })
+			.select("email fullName branch year enrollmentNumber createdAt")
+			.lean();
+		return JSON.parse(JSON.stringify(users));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to fetch users: ${error.message}`);
+		} else {
+			throw new Error("Failed to fetch users");
+		}
+	}
 }
