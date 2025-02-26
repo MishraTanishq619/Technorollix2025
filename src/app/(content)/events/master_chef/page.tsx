@@ -1,5 +1,4 @@
 import ButtonLanding from "@/components/sub-component/button-landing";
-import EventConclusion from "@/components/sub-component/event-conclusion";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import ManagerCard from "@/components/sub-component/manager-card";
