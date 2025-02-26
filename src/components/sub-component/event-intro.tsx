@@ -8,9 +8,11 @@ interface EventIntroProps {
   registrations: number;
   pricepool: number;
   description: string;
+  time: string;
+  venue: string;
 }
 
-const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations, pricepool, description }) => {
+const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations, pricepool, description, time, venue }) => {
   return (
     <div className="">
       <section>
@@ -28,10 +30,10 @@ const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations,
 
           <div className="absolute left-32 p-4 space-y-4 top-40 z-10 text-white text-4xl text-left mb-6">
               <p className="flex items-center">
-                <span className="mr-2">🕘</span> 8:00 a.m.
+                <span className="mr-2">🕘</span> {time}
               </p>
               <p className=" flex items-center">
-                <span className="mr-2">📍</span> MP Hall
+                <span className="mr-2">📍</span> {venue}
               </p>
             </div>
 
