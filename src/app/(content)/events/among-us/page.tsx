@@ -11,6 +11,8 @@ const page = () => {
         title="Among-us" // Updated title
         registrations={300}
         pricepool={89000}
+        time='8 am'
+        venue='MP hall'
         description="Among Us – Real Life Edition is a thrilling strategy-based event where teams of 5 players compete in real-world gameplay. Each round features two teams (10 players total), with Crewmates completing tasks while Impostors secretly eliminate them. Players hold emergency meetings to discuss suspicions and vote out potential Impostors. The winning team is determined based on task completion, eliminations, or a points-based system. The best teams will advance to the next rounds, leading to a final showdown to crown the champion."
       />
 
