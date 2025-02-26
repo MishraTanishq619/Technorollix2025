@@ -1,6 +1,8 @@
 import CardwithImage from "@/components/sub-component/card-with-image";
 import React from "react";
-import Antaragni from "./antaragni/page";
+// import Antaragni from "./antaragni/page";
+// import EventIntro from "@/components/sub-component/event-intro";
+// import EventConclusion from "@/components/sub-component/event-conclusion";
 
 const technicalEvents = [
   { imageUrl: "./Rectangle 197.png", title: "Antaragni", link: "/antaragni" },
@@ -45,13 +47,18 @@ const EventSection: React.FC<EventSectionProps> = ({ title, description, events 
 );
 
 const Page = () => {
-  const technicalDescription = "Our fest offers a diverse range of technical and non-technical events, ensuring there's something for everyone. From innovative tech showcases to fun and engaging activities, we bring together creativity, skills, and excitement for an unforgettable experience!";
-  const culturalDescription = "Our fest offers a diverse range of technical and non-technical events, ensuring there's something for everyone. From innovative tech showcases to fun and engaging activities, we bring together creativity, skills, and excitement for an unforgettable experience!";
+  const technicalDescription =
+    "Our fest offers a diverse range of technical and non-technical events, ensuring there's something for everyone. From innovative tech showcases to fun and engaging activities, we bring together creativity, skills, and excitement for an unforgettable experience!";
+
+  const culturalDescription =
+    "Our fest offers a diverse range of technical and non-technical events, ensuring there's something for everyone. From innovative tech showcases to fun and engaging activities, we bring together creativity, skills, and excitement for an unforgettable experience!";
 
   return (
+
     <div className="events mt-28">
       <EventSection title="TECHNICAL EVENTS" description={technicalDescription} events={technicalEvents} />
       <EventSection title="CULTURAL EVENTS" description={culturalDescription} events={culturalEvents} />
+
     </div>
   );
 };
