@@ -1,5 +1,6 @@
 import CardwithImage from "@/components/sub-component/card-with-image";
 import React from "react";
+import Antaragni from "./antaragni/page";
 
 const technicalEvents = [
   { imageUrl: "./Rectangle 197.png", title: "Antaragni", link: "/antaragni" },
