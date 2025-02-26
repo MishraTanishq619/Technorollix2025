@@ -5,8 +5,13 @@ import SubEventCard from "@/components/sub-component/sub-event-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
 import CardwithImage from "@/components/sub-component/card-with-image";
 import Image from "next/image";
+import RulesAndRegulation from "@/components/sub-component/rule-regulation";
+import WhyParticipate from "@/components/sub-component/why-participate";
 
 const Antaragni = () => {
+  const rules = ["Rule 3","Rule 3","Rule 3","Rule 3","Rule 3","Rule 3"];
+  const reasons = ["Reason 1","Reason 2","Reason 3","Reason 4","Reason 5"]
+
   return (
     <div className="flex flex-col space-y-10">
       {/* Event Intro Section */}
@@ -14,7 +19,7 @@ const Antaragni = () => {
 
       <section>
         <EventIntro
-          imageUrl="./Rectangle 197.png"
+          imageUrl="/antaragni.png"
           title="Antaragni"
           registrations={20}
           pricepool={30000}
@@ -77,6 +82,8 @@ const Antaragni = () => {
 
       <section>
         <EventConclusion />
+        <WhyParticipate reasons={reasons}/>
+        <RulesAndRegulation rules={rules} />
       </section>
     </div>
   );
