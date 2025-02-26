@@ -2,7 +2,7 @@ import React from 'react'
 
 function Junoon() {
   return (
-    <div>Junoon</div>
+    <div className='h-screen w-full'></div>
   )
 }
 

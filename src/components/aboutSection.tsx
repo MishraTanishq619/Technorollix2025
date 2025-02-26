@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonLanding from "./sub-component/button-landing";
+import Image from "next/image";
 
 const AboutSection = () => {
   return (
@@ -46,9 +47,11 @@ const AboutSection = () => {
             spirit of innovation! <b className="text-[#FF9D00]">Read more</b>
           </p>
         </div>
+
         <div className="ml-20">
           <img src="./Rectangle 243.png" alt="" />
         </div>
+        
       </div>
       <ButtonLanding label="Know More" />
     </div>
