@@ -11,18 +11,21 @@ const EventConclusion = () => {
           </h2>
           <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
             <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
-              <li>Exciting prizes worth ₹</li>
+              <li>Exciting prizes worth ₹45,000</li>
               <li>
-                Funding opportunity for innovative artistic projects (as per
-                OPJU Innovation Centre terms)
+Funding opportunity for innovative prototypes (subject to OPJU Innovation Centre terms)
               </li>
               <li>
-                Recognition certificates for all participating universities
+Recognition certificates for all participating universities
               </li>
-              <li>Participation certificates for all participants</li>
-              <li>Special category-wise winning prizes</li>
+              <li>Participation certificates for all participants
+
+              </li>
+              <li>Special category-wise winning prizes
+
+              </li>
               <li>
-                Hands-on experience in creativity, performance, and storytelling
+                Hands-on experience in new-age innovations
               </li>
               <li>
                 Reimbursement of one-way sleeper class fare for outside
@@ -39,29 +42,20 @@ const EventConclusion = () => {
           <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
             <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
               <li>
-                All participants must arrive at the venue 30 minutes before the
-                event; latecomers will be disqualified.
+                Two chances are given in case of battery  or part failure.
               </li>
               <li>
-                No direct participation is allowed in the final round without
-                clearing auditions.
+                Maximum battery capacity: 3 4 A cell (2200 3000 mah)
               </li>
-              <li>No vulgarity in clothing or song selection is permitted.</li>
+              <li>Drone Weight: 2KG.</li>
               <li>
-                Participants must submit their selected song and background
-                video to the event coordinator one day before auditions and
-                performances.
+               Drone size: 4 to 8 inches.
               </li>
               <li>
-                Participants must be prepared with their song and attire before
-                the event.
+                Factory made drones are not allowed
               </li>
               <li>
-                Performance scores will be based on six evaluation criteria.
-              </li>
-              <li>
-                The judges' decisions are final and must be accepted by all
-                participants.
+                Participants must arrive 30 minutes before the event starts.
               </li>
             </ul>
           </div>
@@ -77,7 +71,7 @@ const EventConclusion = () => {
           experience for you!
         </div>
 
-        <ManagerCard />
+        <ManagerCard/>
         
       </div>
     </div>
