@@ -1,0 +1,137 @@
+"use client"
+import ButtonLanding from '@/components/sub-component/button-landing'
+import React from 'react'
+import EventIntro from '@/components/sub-component/event-intro';
+import SubEventCard from '@/components/sub-component/sub-event-card';
+import WhyParticipate from '@/components/sub-component/why-participate';
+import RulesAndRegulation from '@/components/sub-component/rule-regulation';
+import ManagerCard from '@/components/sub-component/manager-card';
+
+const Page = () => {
+  const rules = [
+    "No third party tools or hacks are allowed in the game. If anyone caught in suspicious activity or act his/her team will be disqualified from the game immediately.",
+"In case if any person is caught in using third party tools, the whole match will be replayed again.",
+"Kindly bring your own headsets and earphones, organizing committee won’t provide headsets and all.",
+"Internet interruption or high ping issue is not the concern for organizing committee. Kindly play in the provided conditions.",
+"Please stick to the timings, organizing committee won’t wait for the late teams, if facing issuewhile joining the lobby please contact the coordinators accordingly.",
+"Room ID and Password will be shared on the Whatsapp Group of the BGMI/FreeFire group.",
+"No emulator or tablet players are allowed in this tournament for BGMI/Freefire.",
+"Every match results will be shared on the Whatsapp Group after the match.",
+"Overall Points Table will be shared on the group after all the matches. ","For Valorant, every participants have to bring his/her own laptops.",
+
+  ];
+  const reasons =    [ 
+    "Exciting prizes upto ₹15000",
+"Opportunity for funding innovative gaming projects (as per OPJU Innovation Centre terms)",
+"Recognition certificates for all participating universities",
+"Participation certificates for all gamers.",
+"Special category-wise winning prizes",
+"Hands-on experience in competitive gaming, strategy, and teamwork",
+"Reimbursement of one-way Sleeper class fare for outside participants",
+
+  ];
+  
+  
+  return (
+    <div className="flex flex-col space-y-10">
+      {/* Event Intro Section */}
+
+      <section>
+        <EventIntro
+          imageUrl="/antaragni.png"
+          title="GAME FUSION : THE LAN EVENT"
+          registrations={20}
+          pricepool={45000}
+          description="The Lan Event is a high-energy gaming extravaganza designed to
+bring together the gaming community within our college. It's an immersive experience
+that transcends traditional gaming, creating a platform for participants to showcase their
+skills, engage in friendly competition, and celebrate the spirit of gaming."
+          time=""
+          venue="TB01 , TB05 , TB07 (OPJU CAMPUS)"
+        />
+      </section>
+
+      {/* Theme section */}
+      <section className="flex flex-col items-center justify-center">
+        <h2 className="w-[397px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          THEME
+        </h2>
+        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px]">
+        Unleash the Gaming Warriors: A Battle for Supremacy in the Virtual Realm of Gaming!
+        </div>
+      </section>
+
+      <section>
+        {/* Sub-Events section */}
+        <section className="flex flex-col items-center justify-center">
+          <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            sub-events
+          </div>
+          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+            The following are the sub-events of this main event. Read the
+            details carefully and choose the ones that best match your interests
+            and expertise. Don't miss your chance to participate and showcase
+            your skills!
+          </div>
+        </section>
+
+        {/* Sub-Events Cards Section */}
+        <section className="">
+          <div className="flex justify-around m-20">
+            <SubEventCard
+              imageUrl="/gamefusion/bgmi.png"
+              title="Battlegrounds Mobile India (BGMI)"
+              description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
+            />
+            <SubEventCard
+              imageUrl="/gamefusion/freefire.png"
+              title="FREEFIRE"
+              description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
+            />
+          </div>
+          <div className="flex justify-around m-20">
+            <SubEventCard
+              imageUrl="/gamefusion/valorant.png"
+              title="VALORANT"
+              description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
+            />
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <WhyParticipate reasons={reasons} />
+        <RulesAndRegulation rules={rules} />
+      </section>
+      <section>
+      <div className="flex flex-col items-center justify-center" >
+        <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          EVENT MANAGERS
+        </div>
+        <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+          For any queries regarding the event, feel free to reach out to any of
+          the managers listed below. They are here to help and ensure a smooth
+          experience for you!
+        </div>
+
+        <div className="flex justify-center space-x-10 items-center mt-20">
+            <ManagerCard imageUrl="/dallE.png" name="Hussain Kapadia" contact={8265013186}/>
+            <ManagerCard imageUrl="/dallE.png" name="Sanjeet Kumar Gourth" contact={6260294300}/>
+            <ManagerCard imageUrl="/dallE.png" name="Abhishek Panda" contact={9124648483}/>
+            <ManagerCard imageUrl="/dallE.png" name="Yashwant Patel" contact={8817556527}/>
+            <ManagerCard imageUrl="/dallE.png" name="Shomya Sinha" contact={7091799799}/>
+            <ManagerCard imageUrl="/dallE.png" name="Om Chilbule" contact={9575759551}/>
+        </div>
+        <ButtonLanding label="Register Now" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        
+      </div>
+      </section>
+    </div>
+  );}
+
+export default Page;
