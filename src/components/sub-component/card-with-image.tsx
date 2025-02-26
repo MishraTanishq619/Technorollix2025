@@ -18,7 +18,7 @@ const CardwithImage: React.FC<CardwithImageProps> = ({ imageUrl, title ,scale=90
         alt="inside image"
         className="cover mt-[53px] rounded-xl pl-1"
       />
-      <h5 className=" w-[200.21px] h-[54.70px] text-center text-[#ffad3c] text-[40px] font-bold font-['Inria Serif'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">{title}</h5>
+      <h5 className=" w-[200.21px] h-[54.70px] text-center text-[#ffad3c] text-[34px] font-bold font-['Inria Serif'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">{title}</h5>
     </div>
   );
 };

@@ -3,14 +3,14 @@ import EventConclusion from '@/components/sub-component/event-conclusion';
 import EventIntro from '@/components/sub-component/event-intro';
 import ManagerCard from '@/components/sub-component/manager-card'; // Ensure this is the correct path
 
-const Page = () => {
+const page = () => {
   return (
     <div className="">
       <EventIntro
-        imageUrl="/card.png"
+        imageUrl=""
         title="Among-us" // Updated title
         registrations={300}
-        pricepool={60000}
+        pricepool={89000}
         description="Among Us in Real Life - College Fest Edition is a thrilling social deduction game where players become Crewmates or Impostors, completing tasks or secretly eliminating others. Designed for strategy, teamwork, and quick thinking, the event features multiple rounds, increasing challenges, and a competitive tournament format. It fosters engagement, problem-solving, and communication skills, making it a fun and immersive experience for all participants."
       />
 
@@ -21,14 +21,10 @@ const Page = () => {
               WHY PARTICIPATE
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
-                <li>Thrilling Experience – Engage in real-time strategy, deception, and teamwork.</li>
-                <li>Boosts Skills – Improve critical thinking, communication, and decision-making.</li>
-                <li>Fun & Interactive – A unique way to enjoy the festival with friends and rivals.</li>
-                <li>Competitive Spirit – Compete in a tournament-style event to prove your skills.</li>
-                <li>Unforgettable Memories – Enjoy a creative, immersive, and laughter-filled experience!</li>
-                <li>Hands-on experience in creativity, performance, and storytelling</li>  
-              </ul>
+              <p>
+              Craft is the vehicle for expressing your vision. Craft is the visible edge of Art. Here we are with "Kalakriti," which is a unique event driven by our artists' ideas, the context of space, season, and the vibes of the region. You will perceive "Fiction turning into Reality." You are going to witness a different field of abstract painting, fine arts photography, sculpture, and many more.
+
+              </p>
             </div>
           </section>
 
@@ -74,4 +70,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;
