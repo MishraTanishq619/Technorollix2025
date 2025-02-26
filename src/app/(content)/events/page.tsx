@@ -1,8 +1,5 @@
 import CardwithImage from "@/components/sub-component/card-with-image";
 import React from "react";
-// import Antaragni from "./antaragni/page";
-// import EventIntro from "@/components/sub-component/event-intro";
-// import EventConclusion from "@/components/sub-component/event-conclusion";
 
 const technicalEvents = [
   { imageUrl: "/aerodrone.png", title: "Aerodrone", link: "/events/aerodrone" },
@@ -48,7 +45,7 @@ const EventSection: React.FC<EventSectionProps> = ({ title, description, events 
     <p className="mt-4 md:mt-10 w-full md:w-[943px] h-auto md:h-[78px] text-center text-white text-lg md:text-xl font-medium font-['Poppins'] uppercase mx-auto">
       {description}
     </p>
-    <div className="mt-10 md:mt-28 w-full flex flex-wrap justify-center md:justify-between gap-4">
+    <div className="mt-10 md:mt-28 w-full flex flex-wrap justify-center md:justify-evenly gap-4">
       {events.map((event, index) => (
         <a key={index} href={event.link} className="block w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
           <CardwithImage imageUrl={event.imageUrl} title={event.title} />
