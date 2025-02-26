@@ -12,7 +12,7 @@ const Page = () => {
     "No third party tools or hacks are allowed in the game. If anyone caught in suspicious activity or act his/her team will be disqualified from the game immediately.",
 "In case if any person is caught in using third party tools, the whole match will be replayed again.",
 "Kindly bring your own headsets and earphones, organizing committee won’t provide headsets and all.",
-"Internet interruption or high ping issue is not the concern for organizing committee. Kindly play in the provided conditions.",
+// "Internet interruption or high ping issue is not the concern for organizing committee. Kindly play in the provided conditions.",
 "Please stick to the timings, organizing committee won’t wait for the late teams, if facing issuewhile joining the lobby please contact the coordinators accordingly.",
 "Room ID and Password will be shared on the Whatsapp Group of the BGMI/FreeFire group.",
 "No emulator or tablet players are allowed in this tournament for BGMI/Freefire.",
@@ -39,7 +39,7 @@ const Page = () => {
       <section>
         <EventIntro
           imageUrl="/antaragni.png"
-          title="GAME FUSION : THE LAN EVENT"
+          title="GAME FUSION"
           registrations={20}
           pricepool={45000}
           description="The Lan Event is a high-energy gaming extravaganza designed to
@@ -115,12 +115,11 @@ skills, engage in friendly competition, and celebrate the spirit of gaming."
         </div>
 
         <div className="flex justify-center space-x-10 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Hussain Kapadia" contact={8265013186}/>
-            <ManagerCard imageUrl="/dallE.png" name="Sanjeet Kumar Gourth" contact={6260294300}/>
-            <ManagerCard imageUrl="/dallE.png" name="Abhishek Panda" contact={9124648483}/>
-            <ManagerCard imageUrl="/dallE.png" name="Yashwant Patel" contact={8817556527}/>
-            <ManagerCard imageUrl="/dallE.png" name="Shomya Sinha" contact={7091799799}/>
-            <ManagerCard imageUrl="/dallE.png" name="Om Chilbule" contact={9575759551}/>
+            <ManagerCard imageUrl="/dallE.png" name="Saket Bhagat" contact={6203182795}/>
+            <ManagerCard imageUrl="/dallE.png" name="Sarvesh Rathore" contact={8349374721}/>
+            <ManagerCard imageUrl="/dallE.png" name="Shubham Singh Baghel" contact={6296507314}/>
+            <ManagerCard imageUrl="/dallE.png" name="Rohan Prasad" contact={7903654631}/>
+            <ManagerCard imageUrl="/dallE.png" name="Devwrat" contact={6263757750}/>
         </div>
         <ButtonLanding label="Register Now" />
         <br />
