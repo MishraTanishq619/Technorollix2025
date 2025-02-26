@@ -1,12 +1,13 @@
-import EventConclusion from "@/components/sub-component/event-conclusion";
+//import EventConclusion from "@/components/sub-component/event-conclusion";
 import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 
+
 interface SubEventCardProps {
   imageUrl: string;
   title: string;
-  description: string | React.ReactNode;
+  description: string | React.ReactNode; // Updated type
 }
 
 const page = () => {
@@ -15,7 +16,7 @@ const page = () => {
       {/* Event Intro Section */}
       <section>
         <EventIntro
-          imageUrl="/subeventcard1.png" // Updated path
+          imageUrl="/defaultImage.png" // Updated path
           title="Kalakriti"
           registrations={200}
           pricepool={30000}
@@ -94,93 +95,98 @@ const page = () => {
             <SubEventCard
               imageUrl="/subEventLogo.png" // Updated path
               title="Pradarshini (Exhibition)"
-              description={
-                <>
-                    <ul>
-                      <li>Theme: All Kinds of Art and Collection.</li>
-                      <li>Venue: Central Library </li>
-                      <li>Rounds: 1 round</li>
-                      <li>Rules and Regulations: </li>
-                      <li>1.All participants must register before the event.</li>
-                      <li>2.All should submit their artistic piece, art or craft 2 to 3 days before the event.    </li>
-                      <li>3.Last  minute changes in the above rules, if </li>
-                    </ul>
-                </>
-              }
+              description="	Theme: All Kinds of Art and Collection.	About: Imagine what life would have been without colors, art and aesthetics boring right? And what Techno would be without an Art exhibition indeed boring. But don't worry we would not give you a millisecond of it. So, to dazzle your eyes we have Pradarshini, an art exhibition by Kalakriti. and to quench the thirst of your imagination and take you on a bewildering journey worth remembering. Get yourself a pair of sunglasses and come engulf yourself in the art and aesthetics.
+              	Venue:OPJU Library
+            	Rules:
+                1.	All the participants must register before the event.
+                2.	All should Submit their Artistic Piece, Art or craft 2-3 days before the event.
+                3.	Last minute changes in the above rules, if necessary, can be made.
+
+               	Rounds:1 Round
+               	Judgement Criteria: No Grading"
             />
            
 
            <SubEventCard
-              imageUrl="/subeventcard1.png" // Updated path
+              imageUrl="/defaultImage.png" // Updated path
               title="drishyaam (Decoration)"
-              description={
-                <>
-                    <ul>
-                      <li>Theme: Cultural Heritage.</li>
-                      <li>Venue: Library Lawn & opposite to Chemistry Lab </li>
-                      <li>Rounds: 1 round </li>
-                      <li>Rules and Regulations: </li>
-                      <li>1.The theme of the competition is restricted to “Cultural Heritage.</li>
-                      <li>2.In a group, there must be a minimum of 4 and a maximum of 6 members, and boys’ participation in a group is mandatory.</li>
-                    </ul>
-                </>
-              }
+              description=" 	Theme: Festivals of India
+                 	About: India is a land of diverse cultures, reflected in its vibrant array of festivals, with major celebrations including Holi (Festival of Colors), Diwali (Festival of Lights), Ganesh Chaturthi (celebrating Lord Ganesha's birth), Durga Puja (worshipping Goddess Durga), Onam (Kerala harvest festival), and Maha Shivratri (dedicated to Lord Shiva), each marked by unique rituals, food, and festivities across the country; showcasing India's rich heritage and unity in diversity.  
+                	Venue: OPJU Campus
+                	Rules:
+                  1.	Theme of the competition is restricted to “Festivals of India”.
+                  2.	In group there must be minimum 4 and maximum 6 members and boys’ participation in a group is Mandatory.
+                 3.	There will be only one round of competition.
+                 4.	Everything Will be provided by Organizers. 
+                 5.	The participants will have to Decorate their respective Sets On or before the 1st day of Technorollix. 
+                6.	Cash prizes will be awarded to First, Second and Third position holders, along with Certificates of Achievement. A Certificate of Participation will be given to all present participants.
+                7.	The participant strictly adhere to the timings.
+                8.	The decision of jury shall remain final and no correspondence will be entertained.
+                9.	Last minute changes in the above rules, if necessary, can be made.
+                	Rounds: 1 Round
+               	Judgement Criteria: Judges’ marks"
+
+
+              
             />
           </div>
           <div className="flex justify-around m-20">
-          <SubEventCard
-              imageUrl="/subeventcard1.png" // Updated path
-              title="Photorollix"
-              description={
-                <>
-                    <ul>
-                      <li>Theme: Bird view, Fish view, Insect view, OPJU Campus, and Nature. </li>
-                      <li>Venue:  Library Lawn & opposite to Chemistry Lab.</li>
-                      <li>Rounds: 2 round</li>
-                      <li>Rules and Regulations: </li>
-                      <li>1.The event will happen in two rounds and continue for two days.</li>
-                      <li>2.Every participant will have to submit a single photo at the end of the day via a Google Form, which will be framed at the gallery.</li>
-                    </ul>
-                </>
-              }
-            />
+             <SubEventCard
+                imageUrl="/subeventcard1.png" // Ensure this path is correct
+               title="Photorollix"
+                description="
+                 • Theme: Raigarh, JSP, Opju campus and Nature
+                 • About: Photorollix is a recreational event where participants are welcomed to openly participate to show their 'third eye handling skill.' As it is said, 'The picture that you took with your camera is the imagination you want to create with the reality.' It will be the hall of fame showcasing different beautiful moments captured by photographers. It will make you re-live amazing moments again and again.
+                • Venue: Online.
+                • Rules:<br/>
+                1. The event will happen in 2 rounds and continue for two days.
+                2. i.e., 1st round before 1st Mar. and 2nd round before 2nd Feb 2023.
+                3. Every participant will have to submit a single photo at the end of the day via Google Form, which will be framed at the gallery.
+                4. Last-minute changes in the above rules, if necessary, can be made.
+                • Rounds: 2 Rounds.
+                • Judgement Criteria: Judges"
+              />
+
             <SubEventCard
               imageUrl="/subeventcard1.png" // Updated path
               title="Rangoli"
-              description={
-                <>
-                    <ul>
-                      <li>Theme: On the Spot. </li>
-                      <li>Venue: Library Lawn & opposite to Chemistry Lab.</li>
-                      <li>Rounds: 1 round</li>
-                      <li>Rules and Regulations: </li>
-                      <li>1.In a group, there must be a minimum of 4 and a maximum of 6 members, and boys’ participation in a group is mandatory.</li>
-                      <li>2.There will be only one round of competition.</li>
-                      <li>3.Participants have to bring their own</li>
-                    </ul>
-                </>
-              }
+              description= "	Theme: On the Spot.
+              	About: Rangoli is a very popular folk art that has several connotations across India. It is a spiritual distribution of colors Which represents the happiness, positivity and liveliness of a household, and is intended to welcome the goddess of wealth and Prosperity.
+             	Venue: In front of Chemistry Lab / 
+             	Rules:
+             1.	Theme of the competition is restricted to “ ”.
+             2.	In group there must be minimum 4 and maximum 6 members and boys’ participation in a group is Mandatory.
+             3.	There will be only one round of competition.
+             4.	The participants have to bring their own material which they require in making rangoli. Colors Will be provided by Organizers. 
+             5.	The participants will be given 2hr for making rangoli. No extra time will be given in any case.
+             6.	Prizes will be awarded to First, Second and Third position holders, along with Certificates of Achievement. A Certificate of Participation will be given to all present participants.
+             7.	The participant must strictly adhere to the timings.
+             8.	The decision of jury shall remain final and no correspondence will be entertained.
+             9.	Last minute changes in the above rules, if necessary, can be made.
+             	Rounds: 1 Round"
+
             />
+
           </div>
 
           <div className="flex justify-around m-20">
           <SubEventCard
               imageUrl="/subeventcard1.png" // Updated path
               title="Colour Painting /Sketching"
-              description={
-                <>
-                    <ul>
-                      <li>Theme: On the Spot. </li>
-                      <li>Venue: Central Library </li>
-                      <li>Rounds: 1 round</li>
-                      <li>Rules and Regulations: </li>
-                      <li>1.In a group, there must be a minimum of 4 and a maximum of 6 members, and boys’ participation in a group is mandatory.</li>
-                      <li>2.Participants have to bring their own requirements. Paper/</li>
-
-                    </ul>
-                </>
-              }
-            />
+              description= "	Theme: On the Spot
+                            	About:In order to create, we draw from our inner well. This inner well, an artistic reservoir, is ideally like a well-stocked fish pond… If we don’t give some attention to upkeep, our well is apt to become depleted, stagnant, or blocked…As artists, we must learn to be self-nourishing. We must become alert enough to consciously replenish our creative resources as we draw on them — to restock the trout pond, Speak up…. Just Speak up…. on Canvas….
+                          	Venue: Library
+                          	Rules:
+                         1.	Theme of the competition is restricted to “ ”.
+                         2.	There will be only one round of competition.
+                         3.	The participants have to bring their own Requirements.Paper/Canvas Will be provided by Organizers. 
+                          4.	The participants will be given 2 hr for making the Art No extra time will be given in any case.
+                         5.	Prizes will be awarded to First, Second and Third position holders, along with Certificates of Achievement. A Certificate of Participation will be given to all present participants.
+                        6.	The participant must strictly adhere to the timings.
+                        7.	The decision of jury shall remain final and no correspondence will be entertained.
+                        8.	Last minute changes in the above rules, if necessary, can be made.
+                       	Rounds: 1 Round"
+          />
             <SubEventCard
               imageUrl="/subeventcard1.png" // Updated path
               title="Bottle painting"
@@ -193,7 +199,13 @@ const page = () => {
       </section>
 
       <section>
-        <EventConclusion />
+
+      <div className="flex justify-center space-x-4">
+          <img src="/Group 37147.png" alt="profile" />
+          <img src="/Group 37147.png" alt="profile" />
+          <img src="/Group 37147.png" alt="profile" />
+        </div>
+
       </section>
     </div>
   );
