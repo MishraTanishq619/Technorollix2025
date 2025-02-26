@@ -1,5 +1,6 @@
 import CardwithImage from "@/components/sub-component/card-with-image";
 import React from "react";
+import Antaragni from "./antaragni/page";
 
 const technicalEvents = [
   { imageUrl: "./Rectangle 197.png", title: "Antaragni", link: "/antaragni" },
@@ -50,6 +51,9 @@ const Page = () => {
   return (
 <<<<<<< HEAD
     <div className="">
+<<<<<<< HEAD
+      <Antaragni />
+=======
       <EventIntro
         imageUrl="/card.png"
         title="Antaragni"
@@ -63,6 +67,7 @@ const Page = () => {
       <EventSection title="TECHNICAL EVENTS" description={technicalDescription} events={technicalEvents} />
       <EventSection title="CULTURAL EVENTS" description={culturalDescription} events={culturalEvents} />
 >>>>>>> 3c23cd4a8797ee4694b9e78b58c8628b39ab279f
+>>>>>>> c2fefd621790ba8d8fe344270faa2cf561b368aa
     </div>
   );
 };

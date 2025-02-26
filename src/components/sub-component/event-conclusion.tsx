@@ -1,5 +1,6 @@
 import React from "react";
 import ManagerCard from "./manager-card";
+import ButtonLanding from "./button-landing";
 
 const EventConclusion = () => {
   return (
@@ -78,6 +79,13 @@ const EventConclusion = () => {
         </div>
 
         <ManagerCard />
+
+        <ButtonLanding label="Register Now" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         
       </div>
     </div>

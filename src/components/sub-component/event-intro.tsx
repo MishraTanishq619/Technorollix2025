@@ -1,5 +1,6 @@
 import React from "react";
 import CardwithImage from "./card-with-image";
+import Image from "next/image";
 
 interface EventIntroProps {
   imageUrl: string;
@@ -15,7 +16,7 @@ const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations,
       <CardwithImage
         imageUrl={imageUrl}
         title={title}
-        scale={90}
+        scale={80}
       />
       <div className="flex justify-center text-center text-[#ffad3c] text-4xl font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
         Registrations
@@ -36,6 +37,8 @@ const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations,
         {description}
         <br />
       </div>
+      </section>
+      
     </div>
   );
 };
