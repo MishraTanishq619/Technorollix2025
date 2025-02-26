@@ -2,11 +2,9 @@ import React from "react";
 
 const ManagerCard = () => {
   return (
-    <div className="w-[303px] h-[443px] flex items-center justify-center">
-        <img src="./Group 37147.png" alt="profile" />
-        <img src="./Group 37147.png" alt="profile" />
-        <img src="./Group 37147.png" alt="profile" />
-        
+    <div className="w-[303px] h-[443px] flex flex-col bg-slate-500 items-center justify-center">
+        <div></div>
+        <div></div>
     </div>
   );
 };

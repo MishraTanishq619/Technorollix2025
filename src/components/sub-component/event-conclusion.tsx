@@ -1,8 +1,10 @@
 import React from "react";
 import ManagerCard from "./manager-card";
 import ButtonLanding from "./button-landing";
+import RulesAndRegulation from "./rule-regulation";
 
 const EventConclusion = () => {
+
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="bg-transparent text-white p-6 md:p-12">
@@ -34,40 +36,10 @@ const EventConclusion = () => {
         </section>
 
         <section className="mb-20">
-          <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-            RULES & REGULATION
-          </h2>
-          <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-            <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
-              <li>
-                All participants must arrive at the venue 30 minutes before the
-                event; latecomers will be disqualified.
-              </li>
-              <li>
-                No direct participation is allowed in the final round without
-                clearing auditions.
-              </li>
-              <li>No vulgarity in clothing or song selection is permitted.</li>
-              <li>
-                Participants must submit their selected song and background
-                video to the event coordinator one day before auditions and
-                performances.
-              </li>
-              <li>
-                Participants must be prepared with their song and attire before
-                the event.
-              </li>
-              <li>
-                Performance scores will be based on six evaluation criteria.
-              </li>
-              <li>
-                The judges' decisions are final and must be accepted by all
-                participants.
-              </li>
-            </ul>
-          </div>
         </section>
       </div>
+
+      
       <div className="flex flex-col items-center justify-center">
         <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           EVENT MANAGERS
