@@ -8,23 +8,73 @@ import FAQSection from "@/components/faq";
 import Sponser from "@/components/sponser";
 import ButtonLanding from "@/components/sub-component/button-landing";
 // import CardwithImage from "@/components/sub-component/card-with-image";
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen mt-16">
+        <div className="absolute top-0 right-0 w-1/5 h-auto">
+          <Image
+            src="/homeDecor.svg"
+            alt="Decoration"
+            width={500}
+            height={500}
+            className="opacity-100"
+          />
+        </div>
+        <div className="absolute top-0 right-0 w-1/5 h-auto">
+        <Image
+            src="/homeDecor1.svg"
+            alt="Decoration"
+            width={500}
+            height={500}
+            className="opacity-100"
+          />
+        </div>
+        <div className="absolute left-0 top-3/4 w-1/5">
+          <Image
+            src="/homeDecor3.svg"
+            alt="Decoration"
+            width={500}
+            height={500}
+            className="opacity-100"
+          />
+        </div>
+        <div className="absolute top-0 left-0 w-1/5">
+          <Image
+            src="/homeDecor2.svg"
+            alt="Decoration"
+            width={500}
+            height={500}
+            className="opacity-100"
+          />
+        </div>
+        <div className="absolute right-0 bottom-0 w-60">
+          <Image
+            src="/homeDecor5.svg"
+            alt="Decoration"
+            width={500}
+            height={500}
+            className="opacity-100"
+          />
+        </div>
         <BackgroundVideo />
-        <Image src="/technorollix.png" alt="technorollix" width={600} height={300} />
+        <Image
+          src="/technorollix.png"
+          alt="technorollix"
+          width={909}
+          height={265}
+        />
         <p className="mt-2 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em]">
           Central India's Biggest Techno-Cultural Fest
         </p>
 
         {/* Countdown Timer */}
         <CountdownTimer />
-        
+
         {/* Register Button */}
-        <ButtonLanding label="Register"/>
+        <ButtonLanding label="Register" />
       </div>
 
       {/* EventsSection */}

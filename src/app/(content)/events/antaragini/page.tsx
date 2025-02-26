@@ -5,17 +5,21 @@ import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
 
-const Antaragni = () => {
-  const rules = ["Rule 3", "Rule 3", "Rule 3", "Rule 3", "Rule 3", "Rule 3"];
+const Antaragini = () => {
+  const rules = ["Nikhil", "Rule 3", "Rule 3", "Rule 3", "Rule 3", "Rule 3"];
   const reasons = ["Reason 1", "Reason 2", "Reason 3", "Reason 4", "Reason 5"];
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
+    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
+    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+  ];
 
   return (
     <div className="flex flex-col space-y-10">
       {/* Event Intro Section */}
-
       <section>
         <EventIntro
-          imageUrl="/antaragni.png"
+          imageUrl="/antaragini.png"
           title="Antaragni"
           registrations={20}
           pricepool={30000}
@@ -79,10 +83,10 @@ const Antaragni = () => {
       <section>
         <WhyParticipate reasons={reasons} />
         <RulesAndRegulation rules={rules} />
-        <EventManagers />
+        <EventManagers managers={managers} />
       </section>
     </div>
   );
 };
 
-export default Antaragni;
+export default Antaragini;
