@@ -1,6 +1,8 @@
 import CardwithImage from "@/components/sub-component/card-with-image";
 import React from "react";
 import Antaragni from "./antaragni/page";
+import EventIntro from "@/components/sub-component/event-intro";
+import EventConclusion from "@/components/sub-component/event-conclusion";
 
 const technicalEvents = [
   { imageUrl: "./Rectangle 197.png", title: "Antaragni", link: "/antaragni" },
@@ -45,15 +47,18 @@ const EventSection: React.FC<EventSectionProps> = ({ title, description, events 
 );
 
 const Page = () => {
-  const technicalDescription = "Our fest offers a diverse range of technical and non-technical events, ensuring there's something for everyone. From innovative tech showcases to fun and engaging activities, we bring together creativity, skills, and excitement for an unforgettable experience!";
-  const culturalDescription = "Our fest offers a diverse range of technical and non-technical events, ensuring there's something for everyone. From innovative tech showcases to fun and engaging activities, we bring together creativity, skills, and excitement for an unforgettable experience!";
+  const technicalDescription =
+    "Our fest offers a diverse range of technical and non-technical events, ensuring there's something for everyone. From innovative tech showcases to fun and engaging activities, we bring together creativity, skills, and excitement for an unforgettable experience!";
+
+  const culturalDescription =
+    "Our fest offers a diverse range of technical and non-technical events, ensuring there's something for everyone. From innovative tech showcases to fun and engaging activities, we bring together creativity, skills, and excitement for an unforgettable experience!";
 
   return (
-<<<<<<< HEAD
     <div className="">
-<<<<<<< HEAD
+      {/* Antaragni Section */}
       <Antaragni />
-=======
+
+      {/* Event Intro */}
       <EventIntro
         imageUrl="/card.png"
         title="Antaragni"
@@ -61,13 +66,15 @@ const Page = () => {
         pricepool={30000}
         description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
       />
+
+      {/* Event Conclusion */}
       <EventConclusion />
-=======
-    <div className="events mt-28">
-      <EventSection title="TECHNICAL EVENTS" description={technicalDescription} events={technicalEvents} />
-      <EventSection title="CULTURAL EVENTS" description={culturalDescription} events={culturalEvents} />
->>>>>>> 3c23cd4a8797ee4694b9e78b58c8628b39ab279f
->>>>>>> c2fefd621790ba8d8fe344270faa2cf561b368aa
+
+      {/* Events Section */}
+      <div className="events mt-28">
+        <EventSection title="TECHNICAL EVENTS" description={technicalDescription} events={technicalEvents} />
+        <EventSection title="CULTURAL EVENTS" description={culturalDescription} events={culturalEvents} />
+      </div>
     </div>
   );
 };
