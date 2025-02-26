@@ -14,18 +14,21 @@ const EventConclusion = () => {
           </h2>
           <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
             <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
-              <li>Exciting prizes worth ₹</li>
+              <li>Exciting prizes worth ₹45,000</li>
               <li>
-                Funding opportunity for innovative artistic projects (as per
-                OPJU Innovation Centre terms)
+Funding opportunity for innovative prototypes (subject to OPJU Innovation Centre terms)
               </li>
               <li>
-                Recognition certificates for all participating universities
+Recognition certificates for all participating universities
               </li>
-              <li>Participation certificates for all participants</li>
-              <li>Special category-wise winning prizes</li>
+              <li>Participation certificates for all participants
+
+              </li>
+              <li>Special category-wise winning prizes
+
+              </li>
               <li>
-                Hands-on experience in creativity, performance, and storytelling
+                Hands-on experience in new-age innovations
               </li>
               <li>
                 Reimbursement of one-way sleeper class fare for outside
@@ -58,6 +61,7 @@ const EventConclusion = () => {
         <br />
         <br />
         <br />
+        <ManagerCard/>
         
       </div>
     </div>
