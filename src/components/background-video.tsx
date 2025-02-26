@@ -15,7 +15,7 @@ const BackgroundVideo = () => {
       </video>
 
       {/* Overlay Content */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[rgba(70,24,21,0.90)]"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[rgba(70,24,21,0.80)]"></div>
     </div>
   );
 }

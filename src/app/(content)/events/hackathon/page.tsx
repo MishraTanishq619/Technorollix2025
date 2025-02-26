@@ -11,6 +11,8 @@ const Page = () => {
         title="hackathon"
         registrations={300}
         pricepool={60000}
+        time='8 am'
+        venue='Opju'
         description="The OPJU HackSprint 2025 is a hackathon event at OP Jindal University that aims to inspire students to use their creativity to develop innovative, cost-effective, and practical solutions with code, creating a sustainable impact through technology."
       />
 

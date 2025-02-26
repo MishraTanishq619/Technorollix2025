@@ -8,14 +8,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-2 left-0 w-full z-20 bg-transparent">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between h-20 items-center">
-          {/* Logo */}
-          <img src="/opjulogo.png" alt="opju" className="h-[72px] w-[157px]" />
+    <nav className="fixed top-2 left-0 w-full z-20 bg-transparent px-24 flex justify-between h-20 items-center">
+        {/* Logo */}
+        <img src="/opjulogo.png" alt="opju" className="h-[72px] w-[157px]" />
 
-          {/* Desktop Menu */}
-          <div className="text-white text-2xl flex space-x-20">
+        {/* Desktop Menu */}
+        <div className="flex items-center space-x-10 bg-[#955E07] rounded-full p-2 pl-10 shadow-2xl">
+          <div className="text-white text-2xl flex space-x-10">
             <Link href="/" className="hover:text-orange-500">
               Home
             </Link>
@@ -28,16 +27,18 @@ const Navbar = () => {
             <Link href="/schedule" className="hover:text-orange-500">
               Schedule
             </Link>
+            <Link href="/aimbiation" className="hover:text-orange-500">
+              aiMBiAtion
+            </Link>
             <Link href="/junoon" className="hover:text-orange-500">
               Junoon
             </Link>
           </div>
 
           {/* Login Button */}
-            <UserDropdown /> 
+          <UserDropdown />
         </div>
-      </div>
-    </nav>
+      </nav>
   );
 };
 

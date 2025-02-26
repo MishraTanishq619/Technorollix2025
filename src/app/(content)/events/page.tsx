@@ -11,7 +11,7 @@ const technicalEvents = [
 ];
 const nonTechnicalEvents = [
   { imageUrl: "/spotlightsaga.png", title: "Spotlight Saga", link: "/events/spots-saga" },
-  { imageUrl: "/amongus.png", title: "Among Us", link: "/events/anong-us" },
+  { imageUrl: "/amongus.png", title: "Among Us", link: "/events/among-us" },
   { imageUrl: "/gamefusion.png", title: "Game Fusion", link: "/events/game-fusion" },
   { imageUrl: "/masterchef.png", title: "Master Chef", link: "/events/master_chef" },
   { imageUrl: "/roadies.png", title: "Roadies", link: "/events/roadies" },
