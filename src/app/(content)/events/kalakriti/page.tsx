@@ -63,7 +63,7 @@ const page = () => {
 
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="/Rectangle 197.png" // Updated path
+              imageUrl="/subeventcard1.png" // Updated path
               title="Colour Painting"
               description="Colour Painting/Sketching is the art of bringing imagination to life. Dip into your creative reservoir and let your brush or pencil speak on canvas—express, create, and inspire"
             />
@@ -87,7 +87,7 @@ const page = () => {
           </div>
           
         </section>
-
+      
         {/* Sub-Events details */}
         <section>
           <div className="flex justify-around m-20">

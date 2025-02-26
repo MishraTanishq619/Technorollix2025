@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div className="">
       <EventIntro
-        imageUrl="/card.png"
+        imageUrl=""
         title="Among-us" // Updated title
         registrations={300}
         pricepool={89000}
