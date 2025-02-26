@@ -1,8 +1,8 @@
 import CardwithImage from "@/components/sub-component/card-with-image";
 import React from "react";
-import Antaragni from "./antaragni/page";
-import EventIntro from "@/components/sub-component/event-intro";
-import EventConclusion from "@/components/sub-component/event-conclusion";
+// import Antaragni from "./antaragni/page";
+// import EventIntro from "@/components/sub-component/event-intro";
+// import EventConclusion from "@/components/sub-component/event-conclusion";
 
 const technicalEvents = [
   { imageUrl: "./Rectangle 197.png", title: "Antaragni", link: "/antaragni" },
@@ -54,27 +54,11 @@ const Page = () => {
     "Our fest offers a diverse range of technical and non-technical events, ensuring there's something for everyone. From innovative tech showcases to fun and engaging activities, we bring together creativity, skills, and excitement for an unforgettable experience!";
 
   return (
-    <div className="">
-      {/* Antaragni Section */}
-      <Antaragni />
 
-      {/* Event Intro */}
-      <EventIntro
-        imageUrl="/card.png"
-        title="Antaragni"
-        registrations={300}
-        pricepool={30000}
-        description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
-      />
+    <div className="events mt-28">
+      <EventSection title="TECHNICAL EVENTS" description={technicalDescription} events={technicalEvents} />
+      <EventSection title="CULTURAL EVENTS" description={culturalDescription} events={culturalEvents} />
 
-      {/* Event Conclusion */}
-      <EventConclusion />
-
-      {/* Events Section */}
-      <div className="events mt-28">
-        <EventSection title="TECHNICAL EVENTS" description={technicalDescription} events={technicalEvents} />
-        <EventSection title="CULTURAL EVENTS" description={culturalDescription} events={culturalEvents} />
-      </div>
     </div>
   );
 };
