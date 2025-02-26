@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center justify-center h-screen mt-16">
         <BackgroundVideo />
-        <Image src="/technorollix.png" alt="technorollix" width={500} height={300} />
+        <Image src="/technorollix.png" alt="technorollix" width={600} height={300} />
         <p className="mt-2 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em]">
           Central India's Biggest Techno-Cultural Fest
         </p>

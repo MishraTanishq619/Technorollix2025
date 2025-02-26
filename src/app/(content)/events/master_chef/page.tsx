@@ -6,9 +6,9 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div className="mb-10">
       <EventIntro
-        imageUrl="/Rectangle 197.png"
+        imageUrl="/antaragni.png"
         title="Master-Chef"
         registrations={346}
         pricepool={30000}
@@ -75,16 +75,9 @@ const page = () => {
           experience for you!
         </div>
 
-        <ManagerCard />
+        {/* <ManagerCard /> */}
 
         <ButtonLanding label="Register Now" />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <ManagerCard />
-        <EventConclusion />
       </div>
     </div>
   );
