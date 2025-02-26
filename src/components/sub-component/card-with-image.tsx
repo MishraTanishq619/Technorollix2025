@@ -8,7 +8,6 @@ interface CardwithImageProps {
 }
 
 const CardwithImage: React.FC<CardwithImageProps> = ({ imageUrl, title ,scale=90}) => {
-  console.log(imageUrl);
   return (
     <div
       className="h-96 w-80 flex flex-col items-center"

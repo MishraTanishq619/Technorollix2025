@@ -20,7 +20,7 @@ const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations,
             <Image
               src="/decor.svg"
               alt="Background"
-              layout="fill"
+              fill
               objectFit="cover"
               className="opacity-100"
             />
@@ -60,7 +60,7 @@ const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations,
 
             {/* Card Component (Box Wrapper) */}
             <div className="p-4 pt-64  rounded-lg shadow-lg bg-transparent">
-              <CardwithImage imageUrl="./Rectangle 197.png" title="Antaragni " />
+              <CardwithImage imageUrl={imageUrl} title={title} />
             </div>
           </div>
         </div>
