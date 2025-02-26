@@ -1,21 +1,17 @@
-import EventConclusion from "@/components/sub-component/event-conclusion";
 import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
-import ButtonLanding from "@/components/sub-component/button-landing";
-import CardwithImage from "@/components/sub-component/card-with-image";
-import Image from "next/image";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
+import EventManagers from "@/components/sub-component/event-managers";
 
 const Antaragni = () => {
-  const rules = ["Rule 3","Rule 3","Rule 3","Rule 3","Rule 3","Rule 3"];
-  const reasons = ["Reason 1","Reason 2","Reason 3","Reason 4","Reason 5"]
+  const rules = ["Rule 3", "Rule 3", "Rule 3", "Rule 3", "Rule 3", "Rule 3"];
+  const reasons = ["Reason 1", "Reason 2", "Reason 3", "Reason 4", "Reason 5"];
 
   return (
     <div className="flex flex-col space-y-10">
       {/* Event Intro Section */}
-
 
       <section>
         <EventIntro
@@ -55,24 +51,24 @@ const Antaragni = () => {
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="./Vector.svg"
+              // imageUrl="/Vector.svg"
               title="Dance Competition"
               description="Unleash your passion for dance at antaragni the ultimate dance competition!  Show off your moves, rhythm, and expression as you captivate the audience with your performance. Whether you specialize in classical, hip-hop, contemporary, or freestyle, this is your chance to shine on stage. Impress the judges and crowd with your energy, creativity, and stage presence!"
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              // imageUrl="./Rectangle 197.png"
               title="Antaragni"
               description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
             />
           </div>
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              // imageUrl="./Rectangle 197.png"
               title="Antaragni"
               description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              // imageUrl="./Rectangle 197.png"
               title="Antaragni"
               description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
             />
@@ -81,9 +77,9 @@ const Antaragni = () => {
       </section>
 
       <section>
-        <EventConclusion />
-        <WhyParticipate reasons={reasons}/>
+        <WhyParticipate reasons={reasons} />
         <RulesAndRegulation rules={rules} />
+        <EventManagers />
       </section>
     </div>
   );

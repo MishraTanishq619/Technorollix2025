@@ -1,19 +1,19 @@
 import React from "react";
 
 interface SubEventCardProps {
-  imageUrl: string;
+  // imageUrl: string;
   title: string;
   description: string;
 }
 
 const SubEventCard: React.FC<SubEventCardProps> = ({
-  imageUrl,
+  // imageUrl,
   title,
   description,
 }) => {
   return (
     <div className="w-96 h-[400px] bg-[#5D2019] border-4 border-#FBDA7A rounded-lg shadow-md flex flex-col justify-center">
-      <img src={imageUrl} alt="subEvent" className="h-28" />
+      {/* <img src={imageUrl} alt="subEvent" className="h-28" /> */}
       <svg
         width="227"
         height="80"
