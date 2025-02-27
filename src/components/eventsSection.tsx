@@ -15,8 +15,8 @@ const EventSection = () => {
         to fun and engaging activities, we bring together creativity, skills,
         and excitement for an unforgettable experience!
       </p>
-      <div className="flex mt-28 w-full justify-around">
-        <CardwithImage imageUrl="/antaragni.png" title="Antaragni" />
+      <div className="flex mt-28 w-full justify-evenly">
+        <CardwithImage imageUrl="/antaragni.png" title="Antaragini" />
         <CardwithImage imageUrl="/antaragni.png" title="Tech-Lab" scale={100} />
         <CardwithImage imageUrl="/antaragni.png" title="Kalakriti" />
       </div>

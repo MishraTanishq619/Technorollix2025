@@ -6,7 +6,17 @@ import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
 
 const Antaragini = () => {
-  const rules = ["Nikhil", "Rule 3", "Rule 3", "Rule 3", "Rule 3", "Rule 3"];
+  const rules = [
+    "All participants must arrive at least 30 minutes before the event starts. Latecomers will not be allowed to perform",
+    " No student can directly participate in the final round without clearing the previous rounds",
+    "Inappropriate or vulgar clothing and songs are not allowed.",
+    " Participants must submit their chosen song and background video to the event coordinator one day before their audition and performance.",
+    "Students should be fully prepared with their song and outfit before the event.",
+    "Performances will be judged based on talent, decency, and discipline.",
+    " The judges' decision is final and must be accepted by all participants. No appeals or objections will be entertained.",
+    "Participants will be eliminated after each round based on the judges' evaluation.",
+    "Participants must respect event coordinators, judges, and fellow contestants at all times. Any misbehavior may lead to disqualification.",
+  ];
   const reasons = ["Reason 1", "Reason 2", "Reason 3", "Reason 4", "Reason 5"];
   const managers = [
     { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
@@ -23,6 +33,8 @@ const Antaragini = () => {
           title="Antaragni"
           registrations={20}
           pricepool={30000}
+          time="8:00 am"
+          venue="Bapuji Chawk"
           description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
         />
       </section>

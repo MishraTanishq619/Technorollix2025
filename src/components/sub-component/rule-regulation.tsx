@@ -6,11 +6,11 @@ interface RulesAndRegulationProps {
 
 const RulesAndRegulation: React.FC<RulesAndRegulationProps> = ({ rules }) => {
   return (
-    <div className='text-white'>
-      <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+    <div className='text-white my-40'>
+      <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
         RULES & REGULATION
       </h2>
-      <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+      <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto tracking-[6.72px] leading-[29.08px]">
         <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
           {rules.map((rule, index) => (
             <li key={index}>{rule}</li>
