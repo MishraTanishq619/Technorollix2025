@@ -56,17 +56,17 @@ Treasure Hunt Event is open for everyoneâ€”insiders and outsiders alike! If youâ
             <div className="flex justify-center w-full">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                 <SubEventCard
-                  imageUrl=""
+                  imageUrl="/user.svg"
                   title="ROUND1"
                   description=": The Unseen Twist"
                 />
                 <SubEventCard
-                  imageUrl=""
+                  imageUrl="/user.svg"
                   title="ROUND 2 "
                   description="Hold It, Solve It!"
                 />
                 <SubEventCard
-                  imageUrl=""
+                  imageUrl="/user.svg"
                   title="ROUND 3 "
                   description="Decode or Die!"
                 />
