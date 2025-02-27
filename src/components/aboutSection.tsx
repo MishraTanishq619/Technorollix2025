@@ -2,7 +2,7 @@ import React from "react";
 import ButtonLanding from "./sub-component/button-landing";
 import Image from "next/image";
 
-const AboutSection = () => {
+const  AboutSection = () => {
   return (
     <div className="text-white flex flex-col text-center items-center mt-20 min-h-screen px-4 md:px-0">
       <h2 className="text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">

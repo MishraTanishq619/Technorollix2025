@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <Nav />
         {children}
-        <Footer />
+        {/* <Footer /> */}
         <Toaster />
       </body>
     </html>
