@@ -35,7 +35,7 @@ const EventManagers: React.FC<EventManagersProps> = ({ managers }) => {
             />
           ))}
         </div>
-        <ButtonLanding label="Register Now" />
+        <ButtonLanding label="Register Now" link="/dashboard"/>
         <br />
         <br />
         <br />

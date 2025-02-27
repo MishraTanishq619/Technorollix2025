@@ -18,7 +18,7 @@ const Page = () => {
           time = "20-03-25 , 11:00 am"
           venue= "TB 09"
         />
-      </section>
+      </section><br/><br/>
 
       {/* Theme section */}
       <section className="flex flex-col items-center justify-center">
@@ -81,7 +81,6 @@ const Page = () => {
                 
             </div>
           </section>
-          </div>
 
           <section className="mb-20">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
@@ -165,7 +164,7 @@ const Page = () => {
           <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
         </div>
         <div className="mb-10">
-          <ButtonLanding label="Register Now" link="/events"/>
+          <ButtonLanding label="Register Now" link="/dashboard"/>
         </div>
       </section>
     </div>

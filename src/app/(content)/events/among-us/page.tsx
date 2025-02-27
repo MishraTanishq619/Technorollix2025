@@ -6,9 +6,9 @@ import EventManagers from "@/components/sub-component/event-managers";
 
 const page = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+    { imageUrl: "/dallE.png", name: "Priyanshu Dash", contact: 9078942095 },
+    { imageUrl: "/dallE.png", name: "Shomya Sinha", contact: 7091799799 },
+    { imageUrl: "/dallE.png", name: "Mayank Sharma", contact: 7024189586 },
   ];
 
   return (
