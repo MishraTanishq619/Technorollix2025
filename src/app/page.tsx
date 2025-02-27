@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen mt-16">
-        <div className="absolute top-0 right-0 w-1/5 h-auto">
+        {/* <div className="absolute top-0 right-0 w-1/5 h-auto">
           <Image
             src="/homeDecor.svg"
             alt="Decoration"
@@ -58,14 +58,22 @@ export default function Home() {
             height={500}
             className="opacity-100"
           />
-        </div>
+        </div> */}
         <BackgroundVideo />
         <Image
           src="/technorollix.png"
           alt="technorollix"
           width={909}
           height={265}
+
         />
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+          <img
+            src="/background.svg"
+            className="w-full h-auto opacity-100"
+            alt="Scrolling Background"
+          />
+        </div>
         <p className="mt-2 text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em]">
           Central India's Biggest Techno-Cultural Fest
         </p>
