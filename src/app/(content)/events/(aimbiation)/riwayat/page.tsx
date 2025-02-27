@@ -104,7 +104,7 @@ Career Advancement: Achievements in such events can enhance your portfolio, maki
             <ManagerCard imageUrl="/dallE.png" name="Somya Yadav" contact={9893723614}/>
           </div>
           <div className="mb-10">
-            <ButtonLanding label="Register Now" link="/dashboard" />
+            <ButtonLanding label="Register Now" link="" />
             </div>
         </div>
       </div>

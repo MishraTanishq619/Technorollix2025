@@ -83,8 +83,24 @@ const Aerodrone = () => {
             </p>
           </div>
         </div>
-      </div>
-      <WhyParticipate reasons={reasons} />
+      </div><br/><br/>
+
+      <section className="mb-20">
+    <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+    WHY PARTICIPATE IN AERODRONE:
+    </h2>
+
+    <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+        <p className="list-decimal pl-5 text-2xl space-y-4 font-['Inter']  leading-10 tracking-[3.75px] text-white">
+        Skill Enhancement: Engage in creative challenges that refine your design, modeling, and event coordination abilities.
+        Exposure and Recognition: Showcase your talent to a broader audience, gaining visibility and potential accolades.
+        Networking Opportunities: Connect with industry professionals, peers, and mentors, fostering valuable relationships.
+        Personal Growth: Build confidence, resilience, and adaptability by stepping out of your comfort zone.<br/><br/>
+        
+        </p>
+    </div>
+</section>
+
       <RulesAndRegulation rules={rules} />
       <EventManagers managers={managers} />
     </div>
