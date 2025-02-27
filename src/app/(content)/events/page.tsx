@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const technicalEvents = [
   {
-    imageUrl: "/techno-events-logo/aerodrone.png",
-    link: "/events/aerodrone",
+    imageUrl: "/techno-events-logo/codigo.png",
+    link: "/events/codigo",
   },
   {
     imageUrl: "/techno-events-logo/techlab.png",
@@ -19,9 +19,10 @@ const technicalEvents = [
     link: "/events/hackathon",
   },
   {
-    imageUrl: "/techno-events-logo/codigo.png",
-    link: "/events/codigo",
-  },
+    imageUrl: "/techno-events-logo/aerodrone.png",
+    link: "/events/aerodrone",
+  }
+  ,
   {
     imageUrl: "/techno-events-logo/ideathon.png",
     link: "/events/ideathon",
@@ -29,17 +30,18 @@ const technicalEvents = [
 ];
 const nonTechnicalEvents = [
   {
+    imageUrl: "/techno-events-logo/kalakriti.png",
+    link: "/events/kalakriti",
+  },
+  {
     imageUrl: "/techno-events-logo/spotlightsaga.png",
     link: "/events/spotlight-saga",
   },
   {
     imageUrl: "/techno-events-logo/amongus.png",
     link: "/events/among-us",
-  },
-  {
-    imageUrl: "/techno-events-logo/gamefusion.png",
-    link: "/events/game-fusion",
-  },
+  }
+  ,
   {
     imageUrl: "/techno-events-logo/masterchef.png",
     link: "/events/master_chef",
@@ -53,9 +55,10 @@ const nonTechnicalEvents = [
     link: "/events/antaragni",
   },
   {
-    imageUrl: "/techno-events-logo/kalakriti.png",
-    link: "/events/kalakriti",
-  },
+    imageUrl: "/techno-events-logo/gamefusion.png",
+    link: "/events/game-fusion",
+  }
+  ,
 ];
 
 const aimbiationEvents = [

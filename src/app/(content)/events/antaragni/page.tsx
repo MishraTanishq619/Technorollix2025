@@ -5,7 +5,7 @@ import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
 
-const Antaragini = () => {
+const Antaragni = () => {
   const rules = [
     "All participants must arrive at least 30 minutes before the event starts. Latecomers will not be allowed to perform",
     " No student can directly participate in the final round without clearing the previous rounds",
@@ -37,7 +37,7 @@ const Antaragini = () => {
       <section>
 
         <EventIntro
-          imageUrl="/techno-events-logo/antaragini.png"
+          imageUrl="/techno-events-logo/antaragni.png"
           title="Antaragni"
           registrations={20}
           pricepool={20000}
@@ -132,4 +132,4 @@ const Antaragini = () => {
   );
 };
 
-export default Antaragini;
+export default Antaragni;

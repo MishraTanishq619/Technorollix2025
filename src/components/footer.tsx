@@ -4,7 +4,7 @@ import ButtonLanding from "./sub-component/button-landing";
 
 const Footer = () => {
   return (
-    <footer className="bg-transparent text-white py-6 relative w-full ">
+    <footer className="bg-transparent text-white py-6 relative w-full">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
         {/* Social Media Icons */}
         <div className="flex space-x-4 ml-40">
