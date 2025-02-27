@@ -29,10 +29,7 @@ export default function Home() {
           alt="technorollix"
           width={909}
           height={265}
-<<<<<<< HEAD
-=======
           className="w-full max-w-[850px] md:w-[600px] h-auto p-4 mt-10 md:mt-28 sm:mt-32"
->>>>>>> e07304051f1d9602e1e1c3e8885eef4f899f7f54
         />
         
         <p className="mt-2 text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em] text-center">

@@ -138,7 +138,7 @@ const Page = () => {
               contact={9234531358}
             />
           </div>
-          <ButtonLanding label="Register Now" />
+          <ButtonLanding label="Register Now" link="/dashboard"/>
           <br />
           <br />
           <br />

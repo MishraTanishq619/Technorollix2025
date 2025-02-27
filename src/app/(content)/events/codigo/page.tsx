@@ -106,12 +106,12 @@ const Page = () => {
         {/* Sub-Events Cards Section */}
         <div className="flex justify-around m-20">
           <SubEventCard
-            imageUrl="./Vector.svg"
+            Icon={FaCode}
             title="Code Competition"
             description="Showcase your problem-solving skills, logic, and speed as you tackle challenging coding problems. Compete with the best and prove your mastery!"
           />
           <SubEventCard
-            imageUrl="./Rectangle 197.png"
+            Icon={FaPenNib}
             title="Design Challenge"
             description="Unleash your creativity and craft intuitive, user-friendly designs that stand out. Showcase your design thinking and usability skills."
           />

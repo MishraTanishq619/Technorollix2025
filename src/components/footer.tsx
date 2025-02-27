@@ -33,7 +33,7 @@ const Footer = () => {
             <FaPhoneAlt className="ml-2" />
             <span className="absolute inset-0 rounded-full blur-md bg-yellow-500 opacity-50 group-hover:opacity-80 transition"></span>
           </button> */}
-          <ButtonLanding  label="contact us"/>
+          <ButtonLanding  label="contact us" link="/contact"/>
         </div>
       </div>
 
