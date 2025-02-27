@@ -10,15 +10,6 @@ const Page = () => {
       {/* Event Intro Section */}
       <section>
         <EventIntro
-<<<<<<< HEAD
-          imageUrl="/techno-events-logo/antaragini.png"
-          title="Codigo"
-          registrations={20}
-          pricepool={30000}
-          description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
-          time="8:00 AM"
-          venue="MP Hall"
-=======
           imageUrl="/techno-events-logo/codigo.png"
           title="Codigo"
           registrations={0}
@@ -26,7 +17,6 @@ const Page = () => {
           description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
           time = "20-03-25"
           venue= "TB 09"
->>>>>>> 101faabc15e7b7494c18a984b8ad663034bd843b
         />
       </section>
 
@@ -42,15 +32,6 @@ const Page = () => {
 
       {/* Sub-Events Section */}
       <section>
-<<<<<<< HEAD
-        <div className="flex flex-col items-center justify-center">
-          <h2 className="text-[#ffad3c] text-5xl font-medium tracking-[2.88px] text-center uppercase">
-            Sub-events
-          </h2>
-          <div className="text-white text-2xl text-center tracking-[5.28px]">
-            The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don't miss your chance to participate and showcase your skills!
-          </div>
-=======
         {/* Sub-Events section */}
         <section className="flex flex-col items-center justify-center">
           <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
@@ -101,6 +82,7 @@ const Page = () => {
                 
             </div>
           </section>
+          </div>
 
           <section className="mb-20">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
@@ -120,7 +102,6 @@ const Page = () => {
               </ul>
             </div>
           </section>
->>>>>>> 101faabc15e7b7494c18a984b8ad663034bd843b
         </div>
 
         {/* Sub-Events Cards Section */}
@@ -185,7 +166,7 @@ const Page = () => {
           <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
         </div>
         <div className="mb-10">
-          <ButtonLanding label="Register Now" />
+          <ButtonLanding label="Register Now" link="/events"/>
         </div>
       </section>
     </div>
