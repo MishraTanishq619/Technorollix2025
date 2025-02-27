@@ -157,7 +157,7 @@ skills, engage in friendly competition, and celebrate the spirit of gaming."
               contact={6263757750}
             />
           </div>
-          <ButtonLanding label="Register Now" />
+          <ButtonLanding label="Register Now" link="/dashboard"/>
           <br />
           <br />
           <br />

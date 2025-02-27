@@ -2,6 +2,7 @@ import React from "react";
 import CardwithImage from "./card-with-image";
 import Image from "next/image";
 import { FaLocationDot } from "react-icons/fa6";
+import { GoClockFill } from "react-icons/go";
 
 interface EventIntroProps {
   imageUrl: string;
@@ -13,84 +14,61 @@ interface EventIntroProps {
   venue: string;
 }
 
-const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations, pricepool, description, time, venue }) => {
+const EventIntro: React.FC<EventIntroProps> = ({
+  imageUrl,
+  title,
+  registrations,
+  pricepool,
+  description,
+  time,
+  venue,
+}) => {
   return (
     <div className="">
-      <section>
-        <div className="relative min-h-screen flex items-center justify-center bg-transparent">
-          {/* Background Image */}
-          {/* <div className="absolute inset-0">
-            <Image
-              src="/decor.svg"
-              alt="Background"
-              fill
-              objectFit="cover"
-              className="opacity-100"
-            />
-          </div> */}
+      <div className="relative min-h-screen flex items-center justify-center bg-transparent">
+        <div className="absolute left-14 p-4 space-y-4 top-28 z-10 text-white text-2xl text-left mb-6">
+          <p className="flex items-center">
+            <span className="mr-2 text-yellow-400">
+              <GoClockFill />
+            </span>{" "}
+            {time}
+          </p>
+          <p className=" flex items-center">
+            <span className="mr-2 text-yellow-400">
+              <FaLocationDot />
+            </span>{" "}
+            {venue}
+          </p>
+        </div>
 
-          <div className="absolute left-32 p-4 space-y-4 top-40 z-10 text-white text-4xl text-left mb-6">
-              <p className="flex items-center">
-                <span className="mr-2">🕘</span> {time}
-              </p>
-              <p className=" flex items-center">
-                <span className="mr-2 text-yellow-400"><FaLocationDot /></span> {venue}
-              </p>
-          </div>
+        {/* Main Content (Ensuring it's above the background) */}
 
-          {/* Decorative SVG (Positioning it absolutely) */}
-          {/* <div className="absolute top-0 right-0 w-1/4 h-auto">
-            <Image
-              src="/vector.svg"
-              alt="Decoration"
-              width={500}
-              height={500}
-              className="opacity-100"
-            />
-          </div> */}
-
-          {/* Main Content (Ensuring it's above the background) */}
-          <div className="relative z-10 flex flex-col items-center text-white">
-            {/* Event Details */}
-            {/* <div className="text-left mb-6">
-              <p className="text-lg flex items-center">
-                <span className="mr-2">🕘</span> 8:00 a.m.
-              </p>
-              <p className="text-lg flex items-center">
-                <span className="mr-2">📍</span> MP Hall
-              </p>
-            </div> */}
-
-            {/* Card Component (Box Wrapper) */}
-            <div className="p-4 pt-64  rounded-lg shadow-lg bg-transparent">
-              <CardwithImage imageUrl={imageUrl} title={title} />
+        <div className="p-4 pt-48  rounded-lg shadow-lg bg-transparent relative z-10 flex flex-col items-center text-white">
+          <CardwithImage imageUrl={imageUrl} title={title} scale={110} />
+          <div className="flex mt-10 justify-center text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            Registrations
+            <div className="text-center px-4 text-white text-4xl font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+              {registrations}
             </div>
           </div>
+
+          <div className="text-center mt-5 mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl mx-2 font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+              Prize Pool{" "}
+            </span>
+            <span className="text-white text-4xl font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+              Rs.{pricepool}
+            </span>
+          </div>
         </div>
-      </section>
+      </div>
 
       <section className="flex flex-col items-center">
-        <div className="flex justify-center text-center text-[#ffad3c] text-4xl font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-        Registrations
-        <div className="text-center px-4 text-white text-4xl font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          {registrations}
+        <div className="w-2/3 text-center text-white text-2xl font-medium font-['Inter'] tracking-[3.75px]">
+          {description}
+          <br />
         </div>
-      </div>
-
-      <div className="text-center mt-5 mb-4">
-        <span className="text-[#ffad3c] text-4xl mx-2 font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          Prize Pool{" "}
-        </span>
-        <span className="text-white text-4xl font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          Rs.{pricepool}
-        </span>
-      </div>
-      <div className="w-2/3 text-center text-white text-2xl font-medium font-['Inter'] tracking-[3.75px]">
-        {description}
-        <br />
-      </div>
       </section>
-      
     </div>
   );
 };

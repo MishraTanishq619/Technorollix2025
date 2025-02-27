@@ -18,7 +18,15 @@ const Antaragini = () => {
     "Participants will be eliminated after each round based on the judges' evaluation.",
     "Participants must respect event coordinators, judges, and fellow contestants at all times. Any misbehavior may lead to disqualification.",
   ];
-  const reasons = ["Exciting prizes worth ₹ 20000", "Funding opportunity for innovative artistic projects (as per OPJU Innovation Centre terms)", "Recognition certificates for all participating universities", "Participation certificates for all participants", "Special category-wise winning prizes","Hands-on experience in creativity, performance, and storytelling","Reimbursement of one-way Sleeper class fare for outside participants"];
+  const reasons = [
+    "Exciting prizes worth ₹ 20000",
+    "Funding opportunity for innovative artistic projects (as per OPJU Innovation Centre terms)",
+    "Recognition certificates for all participating universities",
+    "Participation certificates for all participants",
+    "Special category-wise winning prizes",
+    "Hands-on experience in creativity, performance, and storytelling",
+    "Reimbursement of one-way Sleeper class fare for outside participants",
+  ];
   const managers = [
     { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
     { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
@@ -28,15 +36,14 @@ const Antaragini = () => {
   return (
     <div className="flex flex-col space-y-10">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-          <img
-            src="/Eventdedicatedbg.svg"
-            className="w-full h-auto opacity-150"
-            alt="Scrolling Background"
-          />
-        </div>
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       {/* Event Intro Section */}
       <section>
-
         <EventIntro
           imageUrl="/techno-events-logo/antaragini.png"
           title="Antaragni"
@@ -53,19 +60,19 @@ const Antaragini = () => {
       </section>
 
       {/* Theme section */}
-      <section className="flex flex-col items-center justify-center">
-        <h2 className="w-[397px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      <div className="flex flex-col items-center justify-center">
+        <h2 className="w-[397px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           THEME
         </h2>
         <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px] uppercase">
           Fusion Fiesta
         </div>
-      </section>
+      </div>
 
       <section>
         {/* Sub-Events section */}
-        <section className="flex flex-col items-center justify-center">
-          <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <section className="flex flex-col items-center justify-center m-20">
+          <div className="w-[324.06px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             sub-events
           </div>
           <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
@@ -105,23 +112,39 @@ const Antaragini = () => {
         </section>
       </section>
       <section>
-      <div className="grid grid-cols-2 gap-6 p-8 m-auto">
-        {[
-          { title: "ROUND 1", subtitle: "AUDITION - 1", detail: "(INTERNAL)" },
-          { title: "ROUND 2", subtitle: "AUDITION - 2", detail: "(OUTSIDERS)" },
-          { title: "ROUND 3", subtitle: "SCREENING", detail: "" },
-          { title: "ROUND 4", subtitle: "FINAL DEMO", detail: "" },
-        ].map((round, index) => (
-          <div
-            key={index}
-            className="border-2 border-yellow-500 p-6 rounded-lg text-center text-white bg-opacity-20 bg-black"
-          >
-            <h2 className="text-2xl text-[#EDE0E0] font-bold mb-5">{round.title}</h2>
-            <p className="text-xl text-[#EDE0E0] tracking-widest font-['Inter'] mt-2">{round.subtitle}</p>
-            {round.detail && <p className="text-xl font-['Inter'] tracking-[6px] text-[#EDE0E0] mt-1">{round.detail}</p>}
-          </div>
-        ))}
-      </div>
+        <div className="grid grid-cols-2 gap-6 p-8 m-auto">
+          {[
+            {
+              title: "ROUND 1",
+              subtitle: "AUDITION - 1",
+              detail: "(INTERNAL)",
+            },
+            {
+              title: "ROUND 2",
+              subtitle: "AUDITION - 2",
+              detail: "(OUTSIDERS)",
+            },
+            { title: "ROUND 3", subtitle: "SCREENING", detail: "" },
+            { title: "ROUND 4", subtitle: "FINAL DEMO", detail: "" },
+          ].map((round, index) => (
+            <div
+              key={index}
+              className="border-2 border-yellow-500 p-6 rounded-lg text-center text-white bg-opacity-20 bg-black"
+            >
+              <h2 className="text-2xl text-[#EDE0E0] font-bold mb-5">
+                {round.title}
+              </h2>
+              <p className="text-xl text-[#EDE0E0] tracking-widest font-['Inter'] mt-2">
+                {round.subtitle}
+              </p>
+              {round.detail && (
+                <p className="text-xl font-['Inter'] tracking-[6px] text-[#EDE0E0] mt-1">
+                  {round.detail}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
       </section>
 
       <section>
