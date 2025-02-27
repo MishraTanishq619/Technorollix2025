@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <div className="Beatbattle">
       <EventIntro
-        imageUrl=""
+        imageUrl="/aimbiation-events-logo/beatbattle.jpg"
         title="Beatbattle"
         registrations={300}
         pricepool={60000}
