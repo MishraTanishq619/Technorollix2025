@@ -13,7 +13,7 @@ const Navbar = () => {
         <img src="/opjulogo.png" alt="opju" className="h-[72px] w-[157px]" />
 
         {/* Desktop Menu */}
-        <div className="flex items-center space-x-10 bg-[#955E07] rounded-full p-2 pl-10 shadow-2xl">
+        <div className="flex items-center space-x-10 bg-gradient-to-b from-[rgba(255,255,255,0.25)] to-[rgba(153,153,153,0)] backdrop-blur-md rounded-full p-2 pl-10 shadow-2xl">
           <div className="text-white text-2xl flex space-x-10">
             <Link href="/" className="hover:text-orange-500">
               Home
