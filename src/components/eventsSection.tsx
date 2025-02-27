@@ -16,9 +16,9 @@ const EventSection = () => {
         and excitement for an unforgettable experience!
       </p>
       <div className="flex mt-28 w-full justify-around">
-        <CardwithImage imageUrl="/antaragni.png" title="Antaragni" />
-        <CardwithImage imageUrl="/antaragni.png" title="Tech-Lab" scale={100} />
-        <CardwithImage imageUrl="/antaragni.png" title="Kalakriti" />
+        <CardwithImage imageUrl="/techno-events-logo/antaragini.png" title="Antaragni" />
+        <CardwithImage imageUrl="/techno-events-logo/techlab.png" title="Tech-Lab" scale={100} />
+        <CardwithImage imageUrl="/techno-events-logo/kalakriti.png" title="Kalakriti" />
       </div>
       <Link href="/events">
           <ButtonLanding label="Explore More" />
