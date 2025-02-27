@@ -10,10 +10,13 @@ const page = () => {
         imageUrl="/antaragini.png"
         title="Voice of Youths"
         registrations={20}
-        pricepool={30000}
-        description="Virtual trading is a simulation where you can practice buying and selling stocks without using real money. It helps you learn how the stock market works, test strategies, and gain confidence before investing real funds."
-        time={''}
-        venue={'MULTIPURPOSE HALL'} 
+        pricepool={12000}
+        description="Step into the intellectual battlefield of Tarkash, where logic meets leadership, and arguments shape innovation. This high-energy debate competition is designed for aspiring managers, entrepreneurs, and business enthusiasts as well as others to challenge conventional wisdom and present groundbreaking perspectives.
+
+       Participants will engage in thought-provoking debates on current business trends, corporate ethics, financial strategies, and emerging market dynamics and also current happening. Whether you're defending or opposing, your ability to think critically, articulate persuasively, and counter strategically will determine your victory.
+"
+        time={'22-03-2025, 10:00AM'}
+        venue={'MP HALL'} 
       />
        <section className="flex flex-col items-center justify-center">
         <h2 className="w-[397px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
@@ -63,8 +66,8 @@ const page = () => {
             <li>•	Team Structure & Speaking Order</li>
             <li>1.	Debate teams usually consist of two to four members per side.</li>
             <li>2.	The two sides are:
-○	Affirmative/Proposition (supports the motion)
-○	Negative/Opposition (opposes the motion)
+               ○	Affirmative/Proposition (supports the motion)
+               ○	Negative/Opposition (opposes the motion)
 </li>
             <li>3.	Each speaker is given a set time to present arguments, rebuttals, and conclusions.</li>
             <li>•	SPEECH TIMING </li>
@@ -96,6 +99,24 @@ const page = () => {
             </ul>
             </div>
             </section>
+
+
+
+            <section className="mt-20 mb-20">
+        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        Judgement Criteria:
+        </h2>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <ul className="list-disc pl-5 text-2xl space-y-6 uppercase font-['Inter'] leading-[32px] tracking-[6.72px] text-white">
+            <li>Content: 40%</li>
+            <li>Delivery: 30%</li>
+            <li>Rebuttal and refutation: 20%</li>
+            <li>Strategy and structure : 10%</li>
+            </ul>
+            </div>
+            </section>
+
+
             <section className="mt-20 mb-20">
         <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
         EFFICIENT  PRIZES:

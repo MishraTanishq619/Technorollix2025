@@ -7,13 +7,13 @@ const BullvsBear = () => {
   return (
     <div className='mb-10'>
       <EventIntro
-        imageUrl="/antaragini.png"
+        imageUrl="/aimbiation-events-logo/bullvsbear.jpg"
         title="BullvsBear"
-        registrations={20}
-        pricepool={30000}
+        registrations={0}
+        pricepool={12000}
         description="Virtual trading is a simulation where you can practice buying and selling stocks without using real money. It helps you learn how the stock market works, test strategies, and gain confidence before investing real funds."
-        time={''}
-        venue={''} 
+        time={'4:00 PM'}
+        venue={'LIVE CLASSROOM'} 
       />
       
       <section className="mt-20 mb-20">
