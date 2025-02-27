@@ -33,10 +33,14 @@ const Antaragini = () => {
           title="Antaragni"
           registrations={20}
           pricepool={30000}
+<<<<<<< HEAD
           time="8:00 am"
           venue="Bapuji Chawk"
           description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
         />
+=======
+          description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences." time={""} venue={""}        />
+>>>>>>> 0e8f3e869c4c00178e4fba94a0f8d70d044f5ce6
       </section>
 
       {/* Theme section */}
@@ -67,24 +71,24 @@ const Antaragini = () => {
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              // imageUrl="/Vector.svg"
+              imageUrl="/Vector.svg"
               title="Dance Competition"
               description="Unleash your passion for dance at antaragni the ultimate dance competition!  Show off your moves, rhythm, and expression as you captivate the audience with your performance. Whether you specialize in classical, hip-hop, contemporary, or freestyle, this is your chance to shine on stage. Impress the judges and crowd with your energy, creativity, and stage presence!"
             />
             <SubEventCard
-              // imageUrl="./Rectangle 197.png"
+              imageUrl="./Rectangle 197.png"
               title="Antaragni"
               description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
             />
           </div>
           <div className="flex justify-around m-20">
             <SubEventCard
-              // imageUrl="./Rectangle 197.png"
+              imageUrl="./Rectangle 197.png"
               title="Antaragni"
               description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
             />
             <SubEventCard
-              // imageUrl="./Rectangle 197.png"
+              imageUrl="./Rectangle 197.png"
               title="Antaragni"
               description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
             />

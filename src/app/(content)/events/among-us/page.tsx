@@ -19,11 +19,11 @@ const page = () => {
       <div className="flex flex-col items-center justify-center">
         <div className="bg-transparent text-white p-6 md:p-12">
           <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-                NUMBER OF ROUNDS:- 
+            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+              NUMBER OF ROUNDS:- 
             </h2>
-            <div className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
-              <p>
+            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+              <p className="text-2xl uppercase tracking-[6.72px]">
               Group Stage + Knockout (Fast & Fair)<br/><br/>
              🕒Duration: 3 Rounds<br/><br/>
 
@@ -48,8 +48,8 @@ const page = () => {
             <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             EVALUATION PROCESS:-  
             </h2>
-            <div className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
-              <p>
+            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+              <p className="text-2xl uppercase tracking-[6.72px]">
               Impostor Team Points:
 Each successful elimination: +10 points
 Winning the match (if impostors eliminate enough crewmates): +20 points
@@ -75,13 +75,14 @@ Each crewmate surviving till the end: +5 points<br/><br/>
           <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           PRIZE MONEY:- 
           </div>
-          <div className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white">
-
-          🥇Winner (1st Place Team): ₹5,000<br/><br/>
-          🥈Runner-Up (2nd Place Team): ₹3,000<br/><br/>
-          🥉3rd Place Team: ₹2,000<br/><br/>
-          🏅Special Awards: ₹1000 (Best Impostor, Best Crewmate, or Survivor Award)
-
+          <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <p className="text-2xl uppercase tracking-[6.72px] text-white">
+            🥇Winner (1st Place Team): ₹5,000<br/><br/>
+            🥈Runner-Up (2nd Place Team): ₹3,000<br/><br/>
+            🥉3rd Place Team: ₹2,000<br/><br/>
+            🏅Special Awards: ₹1000 (Best Impostor, Best Crewmate, or Survivor Award)
+          </p>
+          
           </div>
         </div><br/><br/>
 
@@ -96,19 +97,24 @@ Each crewmate surviving till the end: +5 points<br/><br/>
 
           </div>
         </div>
+      </div><br/>
+
+      {/* Event Managers */}
+      <div className="text-center text-[#ffad3c] text-5xl font-medium uppercase">
+        EVENT MANAGERS
+      </div><br/>
+      <div className="text-center text-white text-2xl font-normal">
+        For any queries regarding the event, feel free to reach out to any of the managers listed below.
       </div>
 
-      <div
-        className="w-[303px] h-[443px] flex items-center justify-center"
-        style={{ backgroundImage: "url('./Rectangle 4317.png')" }}
-      >
-        <div className="flex justify-center space-x-4">
-          <img src="/Group 37147.png" alt="profile" />
-          <img src="/Group 37147.png" alt="profile" />
-          <img src="/Group 37147.png" alt="profile" />
-        </div>
+      {/* Manager Images */}
+      <div className="flex justify-center space-x-4 mt-6">
+        <img src="/Group 37147.png" alt="profile" />
+        <img src="/Group 37147.png" alt="profile" />
+        <img src="/Group 37147.png" alt="profile" />
       </div>
-    </div>
+      </div>
+
   );
 };
 

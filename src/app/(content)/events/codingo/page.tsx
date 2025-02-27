@@ -24,6 +24,8 @@ const page = () => {
           registrations={20}
           pricepool={30000}
           description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
+          time = "8:00 Am"
+          venue= "MP Hall"
         />
       </section>
 
