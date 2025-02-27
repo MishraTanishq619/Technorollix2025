@@ -2,9 +2,18 @@ import React from 'react'
 
 const Ambiation = () => {
   return (
-    <div className='h-screen w-full flex justify-center items-center text-white'>
-      <h1 className='text-9xl text-orange-400'>aiMBiAtion</h1>
+
+    <div className=''>
+      <div className='h-[625vh]'>.</div>
+      <div className="absolute top-0 left-0 w-full h-auto pointer-events-none -z-10" id="bg-container">
+      <img
+        src="/aimbiationbg.svg"
+        className="w-full opacity-100"
+        alt="Scrolling Background"
+      />.
     </div>
+    </div>
+    
   )
 }
 

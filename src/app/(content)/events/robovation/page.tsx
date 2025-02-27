@@ -5,6 +5,9 @@ import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import React from "react";
+import { BsRobot } from "react-icons/bs";
+import { FaFlagCheckered } from "react-icons/fa";
+import { IoFootballOutline } from "react-icons/io5";
 
 const page = () => {
   const rules = [
@@ -43,7 +46,7 @@ const page = () => {
       </p>
       <div className="flex justify-evenly m-20">
         <SubEventCard
-          imageUrl="./Rectangle 197.png"
+          Icon={BsRobot}
           title="ROBO WAR"
           description="Robo war is the most exciting challenge of this event It celebrates the sport of Robotic Combat through a contest of 
 battling machines. This game gives the opportunity to youngsters to design, build and control combat robots to 
@@ -51,7 +54,7 @@ demonstrate their creativity, engineering skills and driving ability.
 The most rewarding part of designing bots is that students have fun, and work together as a team."
         />
         <SubEventCard
-          imageUrl="./Rectangle 197.png"
+          Icon={FaFlagCheckered}
           title="ROBO RACE"
           description="Design a robot wireless or Bluetooth control within the specified dimensions that can be operated 
 manually and can travel through all turns of the track. The robot that will complete the specified task in the 
@@ -60,7 +63,7 @@ least time will be the winner. and not allowed to skip any obstacles or hurdles.
       </div>
       <div className="flex justify-evenly m-20">
         <SubEventCard
-          imageUrl="./Rectangle 197.png"
+          Icon={IoFootballOutline}
           title="FAST LINE FOLLOWER"
           description="Team to build own autonomous robot within the specified dimensions to achieve the maximum speed on                              
 given track and reach the destination in minimum time. The robot must start behind the starting point and is considered to have 
@@ -68,7 +71,7 @@ crossed the finishing line if any part of the robot crosses it in a full lap of 
 competition area has a special place defined for the robot’s operation."
         />
         <SubEventCard
-          imageUrl="./Rectangle 197.png"
+          Icon={BsRobot}
           title="ROBO SOCCER"
           description="DESCRIPTION: 
 Robo soccer is one of the Famous challenges of robovation in this event teams comes with single 

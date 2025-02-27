@@ -65,7 +65,6 @@ export default function Home() {
           alt="technorollix"
           width={909}
           height={265}
-
         />
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
           <img
