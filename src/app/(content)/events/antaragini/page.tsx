@@ -33,14 +33,7 @@ const Antaragini = () => {
           title="Antaragni"
           registrations={20}
           pricepool={30000}
-<<<<<<< HEAD
-          time="8:00 am"
-          venue="Bapuji Chawk"
-          description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
-        />
-=======
           description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences." time={""} venue={""}        />
->>>>>>> 0e8f3e869c4c00178e4fba94a0f8d70d044f5ce6
       </section>
 
       {/* Theme section */}
@@ -48,8 +41,8 @@ const Antaragini = () => {
         <h2 className="w-[397px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           THEME
         </h2>
-        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px]">
-          BOLLYWOOD
+        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px] uppercase">
+        Fusion Fiesta
         </div>
       </section>
 

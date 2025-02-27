@@ -1,23 +1,23 @@
 import React from 'react';
-import EventConclusion from '@/components/sub-component/event-conclusion';
 import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card'; // Ensure this is the correct path
-import ManagerCard from '@/components/sub-component/manager-card'; // Ensure this is the correct path
 
 const Page = () => {
   return (
     <div className="Ideathon">
       <EventIntro
-        imageUrl="/card.png"
+        imageUrl="/techno-events-logo/ideathon.png"
         title="Ideathon"
         registrations={300}
         pricepool={60000}
         description="An Ideathon is an engaging brainstorming event where individuals collaborate to address pressing challenges through innovative solutions. Participants work in teams, utilizing design thinking to develop viable ideas across diverse subjects like marketing, philosophy, and sci"
+        time='8:00 am'
+        venue='MP Hall'
       />
 
       <div className="flex flex-col items-center justify-center">
-        <div className="bg-transparent text-white p-6 md:p-12">
-          <section className="mb-20">
+        <div className="bg-transparent text-white p-6 md:p-12 flex flex-col items-center space-y-32">
+          <section className="my-20">
             <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
               WHY PARTICIPATE
             </h2>

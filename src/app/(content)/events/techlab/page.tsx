@@ -24,7 +24,7 @@ const Page = () => {
 
       <section>
         <EventIntro
-          imageUrl="/antaragni.png"
+          imageUrl="/techno-events-logo/techlab.png"
           title="TECH LAB"
           registrations={20}
           pricepool={45000}

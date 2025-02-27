@@ -13,8 +13,8 @@ const SubEventCard: React.FC<SubEventCardProps> = ({
 }) => {
   return (
     <div className="w-96 h-[400px] bg-[#5D2019] border-4 border-#FBDA7A rounded-lg shadow-md flex flex-col justify-center">
-      <img src={imageUrl} alt="subEvent" className="h-20 w-20 self-center" />
-      {/* <svg
+      {/* <img src={imageUrl} alt="subEvent" className="h-20 w-20 self-center" /> */}
+      <svg
         width="227"
         height="80"
         viewBox="0 0 227 242"
@@ -76,7 +76,7 @@ const SubEventCard: React.FC<SubEventCardProps> = ({
             <stop offset="1" stopColor="#F9D7A1" />
           </linearGradient>
         </defs>
-      </svg> */}
+      </svg>
       <div className="text-center text-[#ffad3c] text-3xl font-medium font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:_0px_7px_10px_rgb(0_0_0_/_0.78)]">
         {title}
       </div>

@@ -7,12 +7,12 @@ const Page = () => {
   return (
     <div className="Hackathon">
       <EventIntro
-        imageUrl=""
+        imageUrl="/techno-events-logo/hackathon.png"
         title="hackathon"
         registrations={300}
         pricepool={60000}
         time='8 am'
-        venue='Opju'
+        venue='MP Hall'
         description="The OPJU HackSprint 2025 is a hackathon event at OP Jindal University that aims to inspire students to use their creativity to develop innovative, cost-effective, and practical solutions with code, creating a sustainable impact through technology."
       />
 

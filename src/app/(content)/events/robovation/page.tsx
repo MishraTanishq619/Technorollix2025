@@ -9,8 +9,8 @@ const page = () => {
     <div>
       <EventIntro
         venue={" BAPUJI CHOWK (OPJU)"}
-        time={" "}
-        imageUrl="/antaragni.png"
+        time={"8:00 am"}
+        imageUrl="/techno-events-logo/robovation.png"
         title="Robovation"
         registrations={346}
         pricepool={30000}
@@ -66,7 +66,7 @@ ROUND 1 AND ROUND 2."
         />
       </div>
       <section className="mb-20">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           WHY TO PARTICIPATE
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
@@ -101,7 +101,7 @@ ROUND 1 AND ROUND 2."
       </section>
 
       <section className="mb-20">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           RULES & REGULATION
         </h2>
         <div className="flex justify-around m-20">
@@ -372,7 +372,7 @@ Date & time: 22/03/2025 & 10:00 AM "
       </section>
       <section>
         <div className="flex flex-col items-center justify-center">
-          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          <div className="w-[577.70px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             EVENT MANAGERS
           </div>
           <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
