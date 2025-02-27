@@ -111,7 +111,7 @@ const page = () => {
             <ManagerCard imageUrl="/dallE.png" name="NITIN GOYAL " contact={9669464118}/>
             <ManagerCard imageUrl="/dallE.png" name="Ronit sharma" contact={9893240461}/>
         </div>
-        <ButtonLanding label="Register Now" link={""} />
+        <ButtonLanding label="Register Now" link="/dashboard" />
         <br />
         <br />
         <br />
