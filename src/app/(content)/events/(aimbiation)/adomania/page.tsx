@@ -5,10 +5,10 @@ import ManagerCard from '@/components/sub-component/manager-card';
 
 const Page = () => {
   return (
-    <div className="Hackathon">
+    <div className="Adomania">
       <EventIntro
         imageUrl=""
-        title="hackathon"
+        title="Adomania"
         registrations={300}
         pricepool={60000}
         time='8 am'
