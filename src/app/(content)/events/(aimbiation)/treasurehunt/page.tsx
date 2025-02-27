@@ -8,7 +8,7 @@ const Page = () => {
   return (
     <div className="Treasure hunt">
       <EventIntro
-        imageUrl=""
+        imageUrl="/aimbiation-events-logo/treasurehunt.png"
         title="Treasure hunt"
         registrations={300}
         pricepool={60000}
@@ -21,43 +21,35 @@ Treasure Hunt Event is open for everyone—insiders and outsiders alike! If you�
 "
       /><br/><br/>
        <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-              TREASURE HUNT RULES
-            </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl uppercase tracking-[6.72px]">
-                <li>⦁Every team must have a leader and a cool team name!
-                </li>
-                <li>⦁ Your squad must have exactly 5 members—no more, no less!
-                </li>
-                <li>⦁ Respect the coordinators, no misbehaviour allowed!</li>
-                <li>⦁ Respect the coordinators, no misbehaviour allowed!</li>
-                <li>⦁	No splitting up! The team moves as one.</li>
-                
-              </ul>
-            </div>
-          </section>
-          <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-              DISQUALIFICATION RULES
-            </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl uppercase tracking-[6.72px]">
-                <li>⦁	Don’t mess with other teams, play fair!
+  <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+    TREASURE HUNT RULES
+  </h2>
+  <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+    <ul className="list-none pl-5 text-2xl uppercase tracking-[6.72px] text-white">
+      <li>⦁ Every team must have a leader and a cool team name!</li>
+      <li>⦁ Your squad must have exactly 5 members—no more, no less!</li>
+      <li>⦁ Respect the coordinators, no misbehaviour allowed!</li>
+      <li>⦁ Respect the coordinators, no misbehaviour allowed!</li>
+      <li>⦁ No splitting up! The team moves as one.</li>
+    </ul>
+  </div>
+</section>
 
-                </li>
-                <li>⦁	Damage university stuff? Pay the fine!
+<section className="mb-20">
+  <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+    DISQUALIFICATION RULES
+  </h2>
+  <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+    <ul className="list-none pl-5 text-2xl uppercase tracking-[6.72px] text-white">
+      <li>⦁ Don’t mess with other teams, play fair!</li>
+      <li>⦁ Damage university stuff? Pay the fine!</li>
+      <li>⦁ Break the instructions, and you're out!</li>
+      <li>⦁ All teams must arrive on time.</li>
+    </ul>
+  </div>
+</section>
 
-                </li>
-                <li>⦁	Break the instructions, and you're out!
-                </li>
-                <li>⦁	All teams must arrive on time</li>
-              </ul>
-            </div>
-          </section>
-
-
-      <section className="flex flex-col items-center gap-8">
+<section className="flex flex-col items-center gap-8">
             <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
               SUB EVENT
             </h2>
@@ -82,15 +74,6 @@ Treasure Hunt Event is open for everyone—insiders and outsiders alike! If you�
             </div>
           </section>
           <br/><br/>
-      {/* Event Managers */}
-      <div className="text-center text-[#ffad3c] text-5xl font-medium uppercase">
-        EVENT MANAGERS
-      </div>
-      <br/><br/>
-      <div className="text-center text-white text-2xl font-normal">
-        For any queries regarding the event, feel free to reach out to any of the managers listed below.
-      </div>
-
       {/* Manager Images */}
       <section>
         <div className="flex flex-col items-center justify-center">

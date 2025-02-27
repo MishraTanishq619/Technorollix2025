@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const EventSection = () => {
   return (
-    <div className="text-white flex flex-col items-center justify-center  font-medium text-center min-h-screen">
+    <div className="text-white flex flex-col items-center justify-center font-medium text-center min-h-screen">
       <h2 className="text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
         EVENTS
       </h2>
@@ -15,13 +15,18 @@ const EventSection = () => {
         to fun and engaging activities, we bring together creativity, skills,
         and excitement for an unforgettable experience!
       </p>
+<<<<<<< HEAD
       <div className="flex mt-28 w-full justify-evenly">
+=======
+      <div className="flex mt-28 w-full justify-around">
+>>>>>>> b00c6ac787c7d33b77e69774c9212cd3d18c0c8b
         <CardwithImage imageUrl="/techno-events-logo/antaragini.png" title="Antaragni" />
         <CardwithImage imageUrl="/techno-events-logo/techlab.png" title="Tech-Lab" scale={100} />
         <CardwithImage imageUrl="/techno-events-logo/kalakriti.png" title="Kalakriti" />
       </div>
+
       <Link href="/events">
-          <ButtonLanding label="Explore More" />
+        <ButtonLanding label="Explore More" />
       </Link>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 interface SubEventCardProps {
-  imageUrl: string;
+  imageUrl: string | null;
   title: string;
   description: string;
 }
@@ -13,6 +13,7 @@ const SubEventCard: React.FC<SubEventCardProps> = ({
 }) => {
   return (
     <div className="w-96 h-[400px] bg-[#5D2019] border-4 border-#FBDA7A rounded-lg shadow-md flex flex-col justify-center">
+<<<<<<< HEAD
       {/* <img src={imageUrl} alt="subEvent" className="h-20 w-20 self-center" /> */}
       <svg
         width="227"
@@ -77,11 +78,16 @@ const SubEventCard: React.FC<SubEventCardProps> = ({
           </linearGradient>
         </defs>
       </svg>
+=======
+      {imageUrl && (
+      <img src={imageUrl} alt="subEvent" className="h-20 w-20 self-center" />
+      )}
+>>>>>>> b00c6ac787c7d33b77e69774c9212cd3d18c0c8b
       <div className="text-center text-[#ffad3c] text-3xl font-medium font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:_0px_7px_10px_rgb(0_0_0_/_0.78)]">
-        {title}
+      {title}
       </div>
       <div className="text-justify text-white text-sm p-6 font-medium font-['Poppins'] overflow-hidden overflow-y-auto custom-scrollbar" style={{ maxHeight: '6.6rem', display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' }}>
-        {description}
+      {description}
       </div>
     </div>
   );
