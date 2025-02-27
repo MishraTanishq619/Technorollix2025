@@ -11,7 +11,7 @@ const RulesAndRegulation: React.FC<RulesAndRegulationProps> = ({ rules }) => {
         RULES & REGULATION
       </h2>
       <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto tracking-[6.72px] leading-[29.08px]">
-        <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
+        <ul className="list-decimal pl-5 text-2xl space-y-4 font-['Inter']  leading-10 tracking-[3.75px]">
           {rules.map((rule, index) => (
             <li key={index}>{rule}</li>
           ))}
