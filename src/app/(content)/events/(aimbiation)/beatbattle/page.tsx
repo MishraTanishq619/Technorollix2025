@@ -8,12 +8,12 @@ const Page = () => {
   return (
     <div className="Beatbattle">
       <EventIntro
-        imageUrl=""
+        imageUrl="/aimbiation-events-logo/beatbattle.jpg"
         title="Beatbattle"
         registrations={300}
-        pricepool={60000}
-        time="8 am"
-        venue="OAT (Open Air Theatre)"
+        pricepool={10500}
+        time="21-03-2025, 2:30 PM"
+        venue="Babuji Chowk"
         description="This is not just any dance competition—it’s a high-energy battle where only the best dancers shine! Get ready for exciting challenges, head-to-head battles, and nonstop fun as you show off your skills, creativity, and confidence.
         Open for all department and even outsiders! If you love dancing and have the moves to impress, this is your chance to step up, own the stage, and become the “Beat Battle champion!”"
       />
@@ -35,7 +35,7 @@ const Page = () => {
 
       <section className="flex flex-col items-center gap-8">
         <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-          EVENT FORMATS AND ROUNDS
+          EVENT FORMATS & ROUNDS
         </h2>
         <div className="flex justify-center w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -53,7 +53,7 @@ const Page = () => {
               imageUrl=""
               title="ROUND 2: BOLLYWOOD TADKA MIX"
               description="Themes will be revealed later"
-            />
+            /><br/><br/>
           </div>
         </div>
       </section>
@@ -64,6 +64,13 @@ const Page = () => {
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white">
           <ul className="list-disc pl-5 text-2xl uppercase tracking-[6.72px]">
+           Judging Criteria:
+            <li>
+              <li>o Musicality & rythm 25%</li>
+              <li>o Creativity & originality 25%</li>
+              <li>o Energy & stage Presence 20%</li>
+              <li>oOverall Impact 10%</li>
+            </li>
             <li>Musicality & Rhythm: How well the dancer syncs with the beats.</li>
             <li>Creativity & Originality: Unique moves and transitions.</li>
             <li>Energy & Stage Presence: Confidence, engagement, and crowd interaction.</li>
