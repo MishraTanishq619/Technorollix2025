@@ -16,10 +16,10 @@ const Page = () => {
           registrations={0}
           pricepool={20000}
           description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
-          time = "20-03-25"
+          time = "20-03-25 , 11:00 am"
           venue= "TB 09"
         />
-      </section>
+      </section><br/><br/>
 
       {/* Theme section */}
       <section className="flex flex-col items-center justify-center">
@@ -30,7 +30,6 @@ const Page = () => {
           <p>Dream your Fantasy, Code it in your Reality!!!</p>
         </div>
       </section>
-
       {/* Sub-Events Section */}
       <section>
         {/* Sub-Events section */}
@@ -62,7 +61,7 @@ const Page = () => {
         
         </section>
         
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center"></div>
         <div className="bg-transparent text-white p-6 md:p-12">
           <section className="mb-20">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
@@ -83,7 +82,6 @@ const Page = () => {
                 
             </div>
           </section>
-          </div>
 
           <section className="mb-20">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
@@ -167,7 +165,7 @@ const Page = () => {
           <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
         </div>
         <div className="mb-10">
-          <ButtonLanding label="Register Now" link="/events"/>
+          <ButtonLanding label="Register Now" link="/dashboard"/>
         </div>
       </section>
     </div>
