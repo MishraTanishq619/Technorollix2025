@@ -4,6 +4,7 @@ import BackgroundVideo from "@/components/background-video";
 import CountdownTimer from "@/components/countdown-timer";
 import EventSection from "@/components/eventsSection";
 import FAQSection from "@/components/faq";
+import Footer from "@/components/footer";
 // import Navbar from "@/components/nav";
 import Sponser from "@/components/sponser";
 import ButtonLanding from "@/components/sub-component/button-landing";
@@ -55,6 +56,9 @@ export default function Home() {
       </section>
       <section>
         <FAQSection />
+      </section>
+      <section>
+        <Footer/>
       </section>
     </>
   );

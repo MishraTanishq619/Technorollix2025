@@ -4,7 +4,7 @@ import ButtonLanding from "@/components/sub-component/button-landing";
 
 const About = () => {
   return (
-    <div className="h-screen w-full">
+    <div className=" w-full">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
