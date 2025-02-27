@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const technicalEvents = [
   {
-    imageUrl: "/techno-events-logo/aerodrone.png",
-    link: "/events/aerodrone",
+    imageUrl: "/techno-events-logo/codigo.png",
+    link: "/events/codigo",
   },
   {
     imageUrl: "/techno-events-logo/techlab.png",
@@ -19,9 +19,10 @@ const technicalEvents = [
     link: "/events/hackathon",
   },
   {
-    imageUrl: "/techno-events-logo/codigo.png",
-    link: "/events/codigo",
-  },
+    imageUrl: "/techno-events-logo/aerodrone.png",
+    link: "/events/aerodrone",
+  }
+  ,
   {
     imageUrl: "/techno-events-logo/ideathon.png",
     link: "/events/ideathon",
@@ -29,17 +30,18 @@ const technicalEvents = [
 ];
 const nonTechnicalEvents = [
   {
+    imageUrl: "/techno-events-logo/kalakriti.png",
+    link: "/events/kalakriti",
+  },
+  {
     imageUrl: "/techno-events-logo/spotlightsaga.png",
     link: "/events/spotlight-saga",
   },
   {
     imageUrl: "/techno-events-logo/amongus.png",
     link: "/events/among-us",
-  },
-  {
-    imageUrl: "/techno-events-logo/gamefusion.png",
-    link: "/events/game-fusion",
-  },
+  }
+  ,
   {
     imageUrl: "/techno-events-logo/masterchef.png",
     link: "/events/master_chef",
@@ -53,9 +55,10 @@ const nonTechnicalEvents = [
     link: "/events/antaragni",
   },
   {
-    imageUrl: "/techno-events-logo/kalakriti.png",
-    link: "/events/kalakriti",
-  },
+    imageUrl: "/techno-events-logo/gamefusion.png",
+    link: "/events/game-fusion",
+  }
+  ,
 ];
 
 const aimbiationEvents = [
@@ -111,12 +114,12 @@ const EventSection: React.FC<EventSectionProps> = ({
   <>
     <div className="absolute top-0 left-0 w-full h-auto pointer-events-none -z-10" id="bg-container">
       <img
-        src="/background.svg"
+        src="/homebackground.svg"
         className="w-full opacity-100"
         alt="Scrolling Background"
       />
     </div>
-    <h2 className="text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-center mt-60">
+    <h2 className="text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-center mt-40">
       {title}
     </h2>
     <p className="mt-4 md:mt-10 w-full md:w-[943px] h-auto md:h-[78px] text-center text-white text-lg md:text-xl font-medium font-['Poppins'] uppercase mx-auto">

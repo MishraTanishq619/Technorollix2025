@@ -95,7 +95,8 @@ const BullvsBear = () => {
             <ManagerCard imageUrl="/dallE.png" name="Badugu Karthik Kumar" contact={6261741894}/>
             <ManagerCard imageUrl="/dallE.png" name="Snehlata" contact={8102210327}/>
           </div>
-          <ButtonLanding label="Register Now" />
+          <ButtonLanding label="Register Now" link="/dashboard" />
+
         </div>
       </section>
     </div>

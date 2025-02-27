@@ -79,16 +79,11 @@ const About = () => {
           <div className="text-left">
             <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">JUNOON</h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
-              Technorollix is Central India's biggest techno-cultural
-              extravaganza, bringing together innovation, creativity, and
-              entertainment on a grand scale. With a diverse mix of technical
-              competitions, cultural performances, and engaging workshops, it’s
-              a platform where technology meets artistry. Join us for an
-              electrifying experience that pushes boundaries and celebrates the
-              spirit of innovation! Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Velit, dolor modi iusto officia voluptas
-              quibusdam ipsum consectetur, repellendus obcaecati, laborum non.
-              Quia sunt at nihil minus, placeat molestiae maiores totam!
+            OPJU Junoon is an annual cultural extravaganza hosted by the O.P. Jindal
+        University (OPJU) in Chhattisgarh, India. This vibrant event showcases
+        the diverse talents of people across various domains including music and
+        dance. In 2018, We had Shirley Sethia. In 2020, we had Jubin Nautiyal
+        and Sunburn and in the year 2023, we had DJ Perisha.
             </p>
           </div>
         </div>

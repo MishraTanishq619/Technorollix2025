@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonLanding from "./sub-component/button-landing";
-import CardwithImage from "./sub-component/card-with-image";
 import Link from "next/link";
+import Image from "next/image";
 
 const EventSection = () => {
   return (
@@ -15,14 +15,44 @@ const EventSection = () => {
         to fun and engaging activities, we bring together creativity, skills,
         and excitement for an unforgettable experience!
       </p>
-      <div className="flex flex-col md:flex-row mt-28 w-full justify-evenly items-center">
-        <CardwithImage imageUrl="/techno-events-logo/antaragini.png" title="Antaragni" />
-        <CardwithImage imageUrl="/techno-events-logo/techlab.png" title="Tech-Lab" scale={100} />
-        <CardwithImage imageUrl="/techno-events-logo/kalakriti.png" title="Kalakriti" />
+      <div className="flex flex-wrap my-20 w-full justify-center gap-8">
+        <div className="h-96 w-full sm:w-1/4 md:w-1/3 lg:w-1/4 flex items-center justify-center">
+          <Image
+            src="/techno-events-logo/codigo.png"
+            width={300}
+            height={350}
+            alt="inside image"
+            layout="responsive"
+            objectFit="cover"
+            className="rounded-xl"
+          />
+        </div>
+        <div className="h-96 w-full sm:w-1/2 md:w-1/3 lg:w-1/3 flex items-center justify-center">
+          <Image
+            src="/techno-events-logo/techlab.png"
+            width={400}
+            height={450}
+            alt="inside image"
+            layout="responsive"
+            objectFit="cover"
+            className="rounded-xl"
+          />
+        </div>
+        <div className="h-96 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex items-center justify-center">
+          <Image
+            src="/techno-events-logo/masterchef.png"
+            width={300}
+            height={350}
+            alt="inside image"
+            layout="responsive"
+            objectFit="cover"
+            className="rounded-xl"
+          />
+        </div>
       </div>
 
       <Link href="/events">
-        <ButtonLanding label="Explore More" link="/events"/>
+        <ButtonLanding label="Explore More" link="/events" />
       </Link>
     </div>
   );

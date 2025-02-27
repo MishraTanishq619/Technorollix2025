@@ -6,7 +6,7 @@ import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
 import { FaMusic, FaFilm, FaMicrophone, FaRunning } from "react-icons/fa";
 
-const Antaragini = () => {
+const Antaragni = () => {
   const rules = [
     "All participants must arrive at least 30 minutes before the event starts. Latecomers will not be allowed to perform",
     " No student can directly participate in the final round without clearing the previous rounds",
@@ -45,7 +45,7 @@ const Antaragini = () => {
       {/* Event Intro Section */}
       <section>
         <EventIntro
-          imageUrl="/techno-events-logo/antaragini.png"
+          imageUrl="/techno-events-logo/antaragni.png"
           title="Antaragni"
           registrations={20}
           pricepool={20000}
@@ -156,4 +156,4 @@ const Antaragini = () => {
   );
 };
 
-export default Antaragini;
+export default Antaragni;

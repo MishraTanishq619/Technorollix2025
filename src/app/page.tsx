@@ -14,6 +14,15 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen px-4 md:px-0">
+      <div className="absolute top-0 w-full h-full pointer-events-none bg-fit -z-10 ">
+          <Image
+            width={500}
+            height={500}
+            src="/homebackground.svg"
+            className="w-full h-auto absolute opacity-100"
+            alt="Scrolling Background"
+          />
+        </div>
         <BackgroundVideo />
         <Image
           src="/technorollix.png"
@@ -22,15 +31,7 @@ export default function Home() {
           height={265}
           className="w-full max-w-[850px] md:w-[600px] h-auto p-4 mt-10 md:mt-28 sm:mt-32"
         />
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-          <Image
-            width={500}
-            height={500}
-            src="/.svg"
-            className="w-full h-auto opacity-100"
-            alt="Scrolling Background"
-          />
-        </div>
+        
         <p className="mt-2 text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em] text-center">
           Central India's Biggest Annual Techno-Cultural Fest
         </p>
@@ -46,7 +47,7 @@ export default function Home() {
       <section className="mt-28">
         <EventSection />
       </section>
-      <section>
+      <section className="mx-auto">
         <AboutSection />
       </section>
       <section>
