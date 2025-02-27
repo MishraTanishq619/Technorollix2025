@@ -2,6 +2,7 @@
 import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
+import EventManagers from "@/components/sub-component/event-managers";
 
 
 interface SubEventCardProps {
@@ -11,16 +12,25 @@ interface SubEventCardProps {
 }
 
 const page = () => {
+
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
+    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
+    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+  ];
+
   return (
     <div className="flex flex-col space-y-10">
       {/* Event Intro Section */}
       <section>
         <EventIntro
-          imageUrl="/defaultImage.png" // Updated path
+          imageUrl="/techno-events-logo/kalakriti.png" // Updated path
           title="Kalakriti"
-          registrations={200}
-          pricepool={30000}
+          registrations={0}
+          pricepool={23000}
           description="Craft is the vehicle for expressing your vision. Craft is the visible edge of Art. Here we are with 'Kalakriti,' which is a unique event driven by our artists' ideas, the context of space, season, and the vibes of the region. You will perceive 'Fiction turning into Reality.' You are going to witness a different field of abstract painting, fine arts photography, sculpture, and many more."
+          time="21-03-25 , 11:00 am"
+          venue="LIBRARY,LAWN,OPPOSITE TO CHEMISTRY LAB"
         />
       </section>
 
@@ -58,7 +68,7 @@ const page = () => {
             <SubEventCard
               imageUrl="/Rectangle 197.png" // Updated path
               title="Rangoli"
-              description="Put your photography skills to the test in our exciting photography contest! Capture stunning images that tell a story and showcase your unique perspective."
+              description="Rangoli is more than just art—it's a vibrant expression of joy, positivity, and tradition. Let your colors weave stories and welcome prosperity with every design!"
             />
           </div>
 
@@ -84,9 +94,11 @@ const page = () => {
         {/* Sub-Events details */}
         <section className="flex flex-col items-center justify-center">
           <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-            Subevents-details
+            ROUNDS
           </div>
-          
+          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+          The following are the details for this event. Read the details carefully and about the rounds this events have. Don't miss your chance to participate and showcase your skills!
+          </div>
         </section>
       
         {/* Sub-Events details */}
@@ -173,8 +185,7 @@ const page = () => {
           <SubEventCard
               imageUrl="/subeventcard1.png" // Updated path
               title="Colour Painting /Sketching"
-              description= "	Theme: On the Spot
-                            	About:In order to create, we draw from our inner well. This inner well, an artistic reservoir, is ideally like a well-stocked fish pond… If we don’t give some attention to upkeep, our well is apt to become depleted, stagnant, or blocked…As artists, we must learn to be self-nourishing. We must become alert enough to consciously replenish our creative resources as we draw on them — to restock the trout pond, Speak up…. Just Speak up…. on Canvas….
+              description= "	Theme: On the Spot	About:In order to create, we draw from our inner well. This inner well, an artistic reservoir, is ideally like a well-stocked fish pond… If we don’t give some attention to upkeep, our well is apt to become depleted, stagnant, or blocked…As artists, we must learn to be self-nourishing. We must become alert enough to consciously replenish our creative resources as we draw on them — to restock the trout pond, Speak up…. Just Speak up…. on Canvas….
                           	Venue: Library
                           	Rules:
                          1.	Theme of the competition is restricted to “ ”.
@@ -200,11 +211,7 @@ const page = () => {
 
       <section>
 
-      <div className="flex justify-center space-x-4">
-          <img src="/Group 37147.png" alt="profile" />
-          <img src="/Group 37147.png" alt="profile" />
-          <img src="/Group 37147.png" alt="profile" />
-        </div>
+      <EventManagers managers={managers}/>
 
       </section>
     </div>

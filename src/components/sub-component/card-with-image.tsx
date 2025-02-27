@@ -16,15 +16,15 @@ const CardwithImage: React.FC<CardwithImageProps> = ({ imageUrl, title, scale = 
       <div className="relative mt-[53px] w-full h-[200px]">
         <Image
           src={imageUrl}
-          width={200}
-          height={200}
+          width={235}
+          height={235}
           alt="inside image"
           layout="fit"
           objectFit="cover"
           className="rounded-xl pl-1 mx-auto"
         />
       </div>
-      <h5 className="w-[200.21px] h-[54.70px] text-center text-[#ffad3c] text-2xl font-bold font-['Inria Serif'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      <h5 className="w-[200.21px] h-[54.70px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#ffd23d] via-[#f7e7ac] to-[#A6660D] text-4xl font-bold font-['Inria Serif']">
         {title}
       </h5>
     </div>

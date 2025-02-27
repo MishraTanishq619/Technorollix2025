@@ -28,11 +28,11 @@ const Page = () => {
         <EventIntro
           imageUrl="/aimbiation-events-logo/bizesawaal.jpg"
           title="Biz E Sawaal"
-          registrations={20}
-          pricepool={45000}
+          registrations={0}
+          pricepool={6000}
           description="Biz E Sawaal is an engaging and competitive quiz event designed to test participants' knowledge
 of the business world, including finance, economics, startups, and corporate trends."
-          time="8:00 a.m."
+          time="1:00 PM."
           venue="MP Hall"
         />
       </section>
@@ -99,10 +99,8 @@ of the business world, including finance, economics, startups, and corporate tre
         </div>
 
         <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Shruti Sharma" contact={8102012514}/>
-            <ManagerCard imageUrl="/dallE.png" name="Shruti Kumari" contact={9165245727}/>
-            <ManagerCard imageUrl="/dallE.png" name="Ashish Kumar" contact={9122132979}/>
-            <ManagerCard imageUrl="/dallE.png" name="Priya Kumari" contact={9234531358}/>
+            <ManagerCard imageUrl="/dallE.png" name="Om Kumar Singh " contact={7999425422 }/>
+            <ManagerCard imageUrl="/dallE.png" name="Satyendra Vishwakarma" contact={7024332255}/>
         </div>
         <ButtonLanding label="Register Now" />
         <br />
