@@ -7,6 +7,7 @@ import CardwithImage from "@/components/sub-component/card-with-image";
 import Image from "next/image";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
+import ManagerCard from "@/components/sub-component/manager-card";
 
 const page = () => {
   const rules = ["Rule 3","Rule 3","Rule 3","Rule 3","Rule 3","Rule 3"];
@@ -20,7 +21,7 @@ const page = () => {
       <section>
         <EventIntro
           imageUrl="/antaragni.png"
-          title="Codingo"
+          title="Codigo"
           registrations={20}
           pricepool={30000}
           description="Unlock your coding potential at our University’s premier Coding Event!! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
@@ -143,7 +144,12 @@ const page = () => {
           </section>
         </div>
         
-        <div className="flex flex-col items-center justify-center">
+       
+      </div>
+
+      
+
+      <div className="flex flex-col items-center justify-center">
           <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             EVENT MANAGERS
           </div>
@@ -152,13 +158,15 @@ const page = () => {
             the managers listed below. They are here to help and ensure a smooth
             experience for you!
           </div>
-        </div>
-      </div>
 
-      <div className="flex justify-center space-x-4">
-          <img src="/Group 37147.png" alt="profile" />
-          <img src="/Group 37147.png" alt="profile" />
-          <img src="/Group 37147.png" alt="profile" />
+          <div className="flex justify-center space-x-40 items-center mt-20">
+            <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6260294300}/>
+            <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={ 6371745801}/>
+            <ManagerCard imageUrl="/dallE.png" name="Lorem " contact={7853032508}/>
+          </div>
+          <div className="mb-10">
+            <ButtonLanding label="Register Now" />
+            </div>
         </div>
      </section>
 

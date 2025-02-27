@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const EventSection = () => {
   return (
-    <div className="text-white flex flex-col items-center justify-center  font-medium text-center min-h-screen">
+    <div className="text-white flex flex-col items-center justify-center font-medium text-center min-h-screen">
       <h2 className="text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
         EVENTS
       </h2>
@@ -20,8 +20,9 @@ const EventSection = () => {
         <CardwithImage imageUrl="/techno-events-logo/techlab.png" title="Tech-Lab" scale={100} />
         <CardwithImage imageUrl="/techno-events-logo/kalakriti.png" title="Kalakriti" />
       </div>
+
       <Link href="/events">
-          <ButtonLanding label="Explore More" />
+        <ButtonLanding label="Explore More" />
       </Link>
     </div>
   );
