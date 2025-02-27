@@ -2,33 +2,33 @@ import CardwithImage from "@/components/sub-component/card-with-image";
 import React from "react";
 
 const technicalEvents = [
-  { imageUrl: "/aerodrone.png", title: "Aerodrone", link: "/events/aerodrone" },
-  { imageUrl: "/techlab.png", title: "Tech-Lab", link: "/events/techlab" },
-  { imageUrl: "/robovation.png", title: "Robovation", link: "/events/robovation" },
-  { imageUrl: "/hackathon.png", title: "Hackathon", link: "/events/hackathon" },
-  { imageUrl: "/codigo.png", title: "Codigo", link: "/events/codigo" },
-  { imageUrl: "/ideathon.png", title: "Ideathon", link: "/events/ideathon" },
+  { imageUrl: "/techno-events-logo/aerodrone.png", title: "Aerodrone", link: "/events/aerodrone" },
+  { imageUrl: "/techno-events-logo/techlab.png", title: "Tech-Lab", link: "/events/techlab" },
+  { imageUrl: "/techno-events-logo/robovation.png", title: "Robovation", link: "/events/robovation" },
+  { imageUrl: "/techno-events-logo/hackathon.png", title: "Hackathon", link: "/events/hackathon" },
+  { imageUrl: "/techno-events-logo/codigo.png", title: "Codigo", link: "/events/codigo" },
+  { imageUrl: "/techno-events-logo/ideathon.png", title: "Ideathon", link: "/events/ideathon" },
 ];
 const nonTechnicalEvents = [
-  { imageUrl: "/spotlightsaga.png", title: "Spotlight Saga", link: "/events/spots-saga" },
-  { imageUrl: "/amongus.png", title: "Among Us", link: "/events/among-us" },
-  { imageUrl: "/gamefusion.png", title: "Game Fusion", link: "/events/game-fusion" },
-  { imageUrl: "/masterchef.png", title: "Master Chef", link: "/events/master_chef" },
-  { imageUrl: "/roadies.png", title: "Roadies", link: "/events/roadies" },
-  { imageUrl: "/antaragini.png", title: "Antaragini", link: "/events/antaragini" },
-  { imageUrl: "/kalakriti.png", title: "Kalakriti", link: "/events/kalakriti" },
+  { imageUrl: "/techno-events-logo/spotlightsaga.png", title: "Spotlight Saga", link: "/events/spots-saga" },
+  { imageUrl: "/techno-events-logo/amongus.png", title: "Among Us", link: "/events/among-us" },
+  { imageUrl: "/techno-events-logo/gamefusion.png", title: "Game Fusion", link: "/events/game-fusion" },
+  { imageUrl: "/techno-events-logo/masterchef.png", title: "Master Chef", link: "/events/master_chef" },
+  { imageUrl: "/techno-events-logo/roadies.png", title: "Roadies", link: "/events/roadies" },
+  { imageUrl: "/techno-events-logo/antaragini.png", title: "Antaragini", link: "/events/antaragini" },
+  { imageUrl: "/techno-events-logo/kalakriti.png", title: "Kalakriti", link: "/events/kalakriti" },
 ];
 
 const aimbiationEvents = [
-  { imageUrl: "/bizesawaal.png", title: "Biz-e-Sawaal", link: "/events/bizesawaal" },
-  { imageUrl: "/nexgenstartup.png", title: "NeXgen Startup", link: "/events//nexgenstartup" },
-  { imageUrl: "/adomania.png", title: "Ad-O-Mania", link: "/events/adomania" },
-  { imageUrl: "/voiceofyouth.png", title: "Voice of Youth", link: "/events/voiceofyouth" },
-  { imageUrl: "/reelandroles.png", title: "Reels & Roles", link: "/events/Reelsandroles" },
-  { imageUrl: "/bullvsbear.png", title: "Bull vs Bear", link: "/events/bullvsbear" },
-  { imageUrl: "/riwayat.png", title: "Riwayat", link: "/events/riwayat" },
-  { imageUrl: "/beatbattle.png", title: "Beat Battle", link: "/events/beatbattle" },
-  { imageUrl: "/treasurehunt.png", title: "Treasure Hunt", link: "/events/treasurehunt" },
+  { imageUrl: "/aimbiation-events-logo/bizesawaal.jpg", title: "Biz-e-Sawaal", link: "/events/bizesawaal" },
+  { imageUrl: "/aimbiation-events-logo/nexgenstartup.jpg", title: "NeXgen Startup", link: "/events//nexgenstartup" },
+  { imageUrl: "/aimbiation-events-logo/adomania.jpg", title: "Ad-O-Mania", link: "/events/adomania" },
+  { imageUrl: "/aimbiation-events-logo/voiceofyouth.jpg", title: "Voice of Youth", link: "/events/voiceofyouth" },
+  { imageUrl: "/aimbiation-events-logo/reelandroles.jpg", title: "Reels & Roles", link: "/events/Reelsandroles" },
+  { imageUrl: "/aimbiation-events-logo/bullvsbear.jpg", title: "Bull vs Bear", link: "/events/bullvsbear" },
+  { imageUrl: "/aimbiation-events-logo/riwayat.jpg", title: "Riwayat", link: "/events/riwayat" },
+  { imageUrl: "/aimbiation-events-logo/beatbattle.jpg", title: "Beat Battle", link: "/events/beatbattle" },
+  { imageUrl: "/aimbiation-events-logo/treasurehunt.png", title: "Treasure Hunt", link: "/events/treasurehunt" },
 ];
 
 interface EventSectionProps {
