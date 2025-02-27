@@ -16,6 +16,10 @@ const SubEventCard: React.FC<SubEventCardProps> = ({
       {imageUrl && (
       <img src={imageUrl} alt="subEvent" className="h-20 w-20 self-center" />
       )}
+<<<<<<< HEAD
+=======
+>>>>>>> 3fb772891f376b65ee377a8d3aef0472a6c31480
+>>>>>>> 101faabc15e7b7494c18a984b8ad663034bd843b
       <div className="text-center text-[#ffad3c] text-3xl font-medium font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:_0px_7px_10px_rgb(0_0_0_/_0.78)]">
       {title}
       </div>

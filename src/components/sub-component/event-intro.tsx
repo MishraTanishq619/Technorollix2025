@@ -1,6 +1,7 @@
 import React from "react";
 import CardwithImage from "./card-with-image";
 import Image from "next/image";
+import { FaLocationDot } from "react-icons/fa6";
 
 interface EventIntroProps {
   imageUrl: string;
@@ -16,9 +17,9 @@ const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations,
   return (
     <div className="">
       <section>
-        <div className="relative min-h-screen flex items-center justify-center bg-black">
+        <div className="relative min-h-screen flex items-center justify-center bg-transparent">
           {/* Background Image */}
-          <div className="absolute inset-0">
+          {/* <div className="absolute inset-0">
             <Image
               src="/decor.svg"
               alt="Background"
@@ -26,19 +27,19 @@ const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations,
               objectFit="cover"
               className="opacity-100"
             />
-          </div>
+          </div> */}
 
           <div className="absolute left-32 p-4 space-y-4 top-40 z-10 text-white text-4xl text-left mb-6">
               <p className="flex items-center">
                 <span className="mr-2">🕘</span> {time}
               </p>
               <p className=" flex items-center">
-                <span className="mr-2">📍</span> {venue}
+                <span className="mr-2 text-yellow-400"><FaLocationDot /></span> {venue}
               </p>
-            </div>
+          </div>
 
           {/* Decorative SVG (Positioning it absolutely) */}
-          <div className="absolute top-0 right-0 w-1/4 h-auto">
+          {/* <div className="absolute top-0 right-0 w-1/4 h-auto">
             <Image
               src="/vector.svg"
               alt="Decoration"
@@ -46,7 +47,7 @@ const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations,
               height={500}
               className="opacity-100"
             />
-          </div>
+          </div> */}
 
           {/* Main Content (Ensuring it's above the background) */}
           <div className="relative z-10 flex flex-col items-center text-white">
@@ -84,7 +85,7 @@ const EventIntro: React.FC<EventIntroProps> = ({ imageUrl, title, registrations,
           Rs.{pricepool}
         </span>
       </div>
-      <div className="w-2/3 text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px]">
+      <div className="w-2/3 text-center text-white text-2xl font-medium font-['Inter'] tracking-[3.75px]">
         {description}
         <br />
       </div>
