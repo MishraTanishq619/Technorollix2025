@@ -7,10 +7,10 @@ const page = () => {
   return (
     <div>
       <EventIntro 
-        imageUrl="/antaragini.png"
+        imageUrl="/aimbiation-events-logo/nexgenstartup.jpg"
         title="Nexgen Start-up"
-        registrations={20}
-        pricepool={30000}
+        registrations={0}
+        pricepool={8000}
         description="Empowering Startups:  Your Gateway to Success. Dive into our event tailored for entrepreneurs like you. Discover insider tips, forge valuable connections, and kickstart your business journey. From startup dreams to tangible results, this event is your ultimate resource. Seize this opportunity to fuel your passion and unlock the potential of your startup."
         time={'2:30 PM'}
         venue={'LIVE CLASSROOM'} 
