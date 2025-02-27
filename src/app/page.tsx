@@ -26,7 +26,7 @@ export default function Home() {
           <Image
             width={500}
             height={500}
-            src="/background.svg"
+            src="/.svg"
             className="w-full h-auto opacity-100"
             alt="Scrolling Background"
           />

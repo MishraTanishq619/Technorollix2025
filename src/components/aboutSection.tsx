@@ -52,7 +52,7 @@ const AboutSection = () => {
           <img src="./Rectangle 243.png" alt="" className="w-full max-w-[500px] h-auto" />
         </div>
       </div>
-      <ButtonLanding label="Know More" />
+      <ButtonLanding label="Know More" link="/about"/>
     </div>
   );
 };
