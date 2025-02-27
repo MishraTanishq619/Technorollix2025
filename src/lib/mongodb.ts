@@ -38,7 +38,7 @@ if (!global.mongoose) {
 
 export async function connectToDatabase() {
 	if (cached.conn) {
-		return cached.conn;
+		return;
 	}
 
 	if (!cached.promise) {
