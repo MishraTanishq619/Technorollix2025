@@ -9,6 +9,7 @@ interface IUser extends Document {
 	mobileNumber: string;
 	email: string;
 	password: string;
+	isOutsider?: boolean;
 	isAdmin?: boolean;
 	permissions?: {
 		isManager: boolean;
@@ -53,6 +54,10 @@ const userSchema = new Schema<IUser>(
 			required: true,
 			minlength: 6,
 			match: /^\d+$/,
+		},
+		isOutsider: {
+			type: Boolean,
+			default: false,
 		},
 		isAdmin: {
 			type: Boolean,

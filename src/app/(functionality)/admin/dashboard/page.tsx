@@ -96,6 +96,10 @@ export default function AdminDashboard() {
 		router.push(`/admin/event-data/${eventId}`);
 	};
 
+	const handleOthersNavigation = (path: string) => {
+		router.push(path);
+	};
+
 	if (loading) {
 		return (
 			<div className="container mx-auto p-6 space-y-6">
@@ -250,6 +254,56 @@ export default function AdminDashboard() {
 					</CardContent>
 				</Card>
 			</div>
+
+			{!userFetchData.permissions.isManager && (
+				<div className="my-4 space-y-4">
+					<Card>
+						<CardHeader>
+							<CardTitle>Other Data</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<ScrollArea className="">
+								<div className="space-y-4">
+									<Card
+										className="cursor-pointer hover:bg-accent transition-colors"
+										onClick={() =>
+											handleOthersNavigation(
+												"/admin/accommodation-data"
+											)
+										}
+									>
+										<CardContent className="p-4 flex items-center justify-between">
+											<div className="space-y-1">
+												<p className="font-medium">
+													Accommodation Data
+												</p>
+											</div>
+											<ChevronRight className="w-5 h-5 text-muted-foreground" />
+										</CardContent>
+									</Card>
+									<Card
+										className="cursor-pointer hover:bg-accent transition-colors"
+										onClick={() =>
+											handleOthersNavigation(
+												"/admin/payment-data"
+											)
+										}
+									>
+										<CardContent className="p-4 flex items-center justify-between">
+											<div className="space-y-1">
+												<p className="font-medium">
+													Payments Data
+												</p>
+											</div>
+											<ChevronRight className="w-5 h-5 text-muted-foreground" />
+										</CardContent>
+									</Card>
+								</div>
+							</ScrollArea>
+						</CardContent>
+					</Card>
+				</div>
+			)}
 		</div>
 	);
 }

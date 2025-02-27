@@ -22,9 +22,13 @@ import {
 	acceptInviteAction,
 	rejectInviteAction,
 } from "@/actions/invite-actions";
+import AccommodationModal from "@/components/accomodation-modal";
+import { getAccommodationDetailsAction } from "@/actions/accomodation-actions";
 
 const DashboardPage = () => {
 	const router = useRouter();
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
 	interface SelectedInvite {
 		_id: string;
 		status: string;
@@ -51,11 +55,13 @@ const DashboardPage = () => {
 	const { data: userData, fn: userFn } = useFetch(getUser);
 	const {
 		data: participatingTeamsData,
+		loading: participatingTeamsLoading,
 		// error: participatingTeamsError,
 		fn: participatingTeamsFn,
 	} = useFetch(getParticipatingTeams);
 	const {
 		data: invitedTeamsData,
+		loading: invitedTeamsLoading,
 		// error: invitedTeamsError,
 		fn: invitedTeamsFn,
 	} = useFetch(getInvitedTeams);
@@ -64,10 +70,18 @@ const DashboardPage = () => {
 
 	const { fn: rejectInvitationFn } = useFetch(rejectInviteAction);
 
+	const {
+		data: accommodationFetchData,
+		loading: accommodationFetchLoading,
+		// error: accommodationFetchError,
+		fn: accommodationFetchFn,
+	} = useFetch(getAccommodationDetailsAction);
+
 	useEffect(() => {
 		userFn();
 		participatingTeamsFn();
 		invitedTeamsFn();
+		accommodationFetchFn();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
@@ -78,7 +92,11 @@ const DashboardPage = () => {
 		if (participatingTeamsData) {
 			console.log("Participating Teams:", participatingTeamsData);
 		}
-	}, [participatingTeamsData, invitedTeamsData]);
+
+		if (accommodationFetchData) {
+			console.log("accommodationFetchData :", accommodationFetchData);
+		}
+	}, [participatingTeamsData, invitedTeamsData, accommodationFetchData]);
 
 	const handleTeamClick = (teamId: string) => {
 		router.push(`/team-details/${teamId}`);
@@ -99,6 +117,15 @@ const DashboardPage = () => {
 		rejectInvitationFn(inviteId);
 		setSelectedInvite(null);
 		invitedTeamsFn();
+	};
+
+	const handleOpenModal = () => {
+		setIsModalOpen(true);
+	};
+
+	const handleCloseModal = () => {
+		accommodationFetchFn();
+		setIsModalOpen(false);
 	};
 
 	return (
@@ -144,6 +171,80 @@ const DashboardPage = () => {
 				</Card>
 			)}
 
+			<Card className="mb-6">
+				<CardHeader>
+					<CardTitle>Accommodation Details</CardTitle>
+				</CardHeader>
+				<CardContent>
+					{!accommodationFetchLoading ? (
+						accommodationFetchData ? (
+							<div>
+								<p>
+									Arrival Time:{" "}
+									{new Date(
+										accommodationFetchData.arrivalTime
+									).toLocaleString()}
+								</p>
+								<p>
+									Departure Time:{" "}
+									{new Date(
+										accommodationFetchData.departureTime
+									).toLocaleString()}
+								</p>
+								<p>
+									Additional Details:{" "}
+									{accommodationFetchData.additionalDetails}
+								</p>
+								<Button
+									className="mt-4"
+									disabled={!userData?.isOutsider}
+									onClick={handleOpenModal}
+								>
+									Edit Accommodation
+								</Button>
+							</div>
+						) : (
+							<div>
+								<p>Accommodation not availed.</p>
+								<p>
+									Note: Avail if you are an outsider
+									participant.
+								</p>
+								<Button
+									className="mt-4"
+									disabled={!userData?.isOutsider}
+									onClick={handleOpenModal}
+								>
+									Add Accommodation
+								</Button>
+							</div>
+						)
+					) : (
+						<div>Loading Accommodation details...</div>
+					)}
+				</CardContent>
+			</Card>
+			{userData && (
+				<AccommodationModal
+					isOpen={isModalOpen}
+					onClose={handleCloseModal}
+					initialData={
+						accommodationFetchData
+							? {
+									...accommodationFetchData,
+									arrivalTime: new Date(
+										accommodationFetchData.arrivalTime
+									).toISOString(),
+									departureTime: new Date(
+										accommodationFetchData.departureTime
+									).toISOString(),
+									userId: userData?._id,
+							  }
+							: { userId: userData?._id }
+					}
+				/>
+			)}
+
 			<div className="grid md:grid-cols-2 gap-6">
 				{/* Participating Teams Section */}
 				<Card className="h-full">
@@ -155,7 +256,11 @@ const DashboardPage = () => {
 					</CardHeader>
 					<CardContent>
 						<ScrollArea className="h-[400px] pr-4">
-							{participatingTeamsData?.length > 0 ? (
+							{participatingTeamsLoading ? (
+								<p className="text-center text-muted-foreground">
+									Loading Participating Teams...
+								</p>
+							) : participatingTeamsData?.length > 0 ? (
 								<div className="space-y-4">
 									{participatingTeamsData.map((team: any) => (
 										<Card
@@ -209,7 +314,11 @@ const DashboardPage = () => {
 					</CardHeader>
 					<CardContent>
 						<ScrollArea className="h-[400px] pr-4">
-							{invitedTeamsData?.length > 0 ? (
+							{invitedTeamsLoading ? (
+								<p className="text-center text-muted-foreground">
+									Loading Invitations...
+								</p>
+							) : invitedTeamsData?.length > 0 ? (
 								<div className="space-y-4">
 									{invitedTeamsData.map((invite: any) => (
 										<Card
