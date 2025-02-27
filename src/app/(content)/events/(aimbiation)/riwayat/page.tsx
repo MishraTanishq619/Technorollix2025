@@ -19,13 +19,13 @@ const page = () => {
 
       <section>
         <EventIntro
-          imageUrl="/antaragni.png"
+          imageUrl="/aimbiation-events-logo/riwayat.jpg"
           title="Riwayat"
-          registrations={5000}
-          pricepool={45000}
+          registrations={0}
+          pricepool={18000}
           description="The fashion show is a fashion show that celebrates the perfect blend of style and intellect. It displays fashion as a symbol of confidence, creativity, and empowerment. A platform to display your talent and creativity and present yourself as a perfect example of beauty with brain."
-          time = "8:00 Am"
-          venue= "Open Theatre"
+          time = "7:00 PM"
+          venue= "GROUND"
         />
       </section><br/>
 
@@ -68,18 +68,18 @@ Career Advancement: Achievements in such events can enhance your portfolio, maki
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="./Vector.svg"
+              imageUrl="/Vector.svg"
               title="Round-1"
               description="Introduction + Outfit Info"
             />
 
             <SubEventCard
-              imageUrl="./Vector.svg"
+              imageUrl="/Vector.svg"
               title="Round-2:"
               description="Introduction + Outfit Info + Tas. "
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              imageUrl="/Vector.svg"
               title="Round-3:"
               description="Introduction + Q/A Round"
             />
@@ -100,9 +100,8 @@ Career Advancement: Achievements in such events can enhance your portfolio, maki
           </div>
 
           <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6260294300}/>
-            <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={ 6371745801}/>
-            <ManagerCard imageUrl="/dallE.png" name="Lorem " contact={7853032508}/>
+            <ManagerCard imageUrl="/dallE.png" name="Priya Singh" contact={7389067920}/>
+            <ManagerCard imageUrl="/dallE.png" name="Somya Yadav" contact={9893723614}/>
           </div>
           <div className="mb-10">
             <ButtonLanding label="Register Now" />
