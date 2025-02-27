@@ -1,57 +1,61 @@
-import ButtonLanding from '@/components/sub-component/button-landing'
-import EventIntro from '@/components/sub-component/event-intro'
-import ManagerCard from '@/components/sub-component/manager-card'
-import SubEventCard from '@/components/sub-component/sub-event-card'
-import React from 'react'
+import ButtonLanding from "@/components/sub-component/button-landing";
+import EventIntro from "@/components/sub-component/event-intro";
+import ManagerCard from "@/components/sub-component/manager-card";
+import SubEventCard from "@/components/sub-component/sub-event-card";
+import React from "react";
 
 const page = () => {
   return (
     <div>
       <EventIntro
-      venue={" BAPUJI CHOWK (OPJU)"}
-      time={" "}
+        venue={" BAPUJI CHOWK (OPJU)"}
+        time={" "}
         imageUrl="/antaragni.png"
         title="Robovation"
         registrations={346}
         pricepool={30000}
-        description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste!." time={''} venue={''}      />
-       <div className="mt-16 mb-16"></div>
-<h1 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          SUB EVENTS
-        </h1>
-        <p className="text-2xl font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white text-center max-w-4xl mx-auto">
-        Robovation features three exciting sub-events. Robo Race tests speed and precision as robots navigate an obstacle-filled track. Robo Soccer challenges teams to score goals using their self-built bots. Robo War is a fierce battle where combat robots fight to dominate the arena.
-        </p>
-        <div className="flex justify-around m-20">
+        description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste!."
+      />
+      <div className="mt-16 mb-16"></div>
+      <h1 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        SUB EVENTS
+      </h1>
+      <p className="text-2xl font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white text-center max-w-4xl mx-auto">
+        Robovation features three exciting sub-events. Robo Race tests speed and
+        precision as robots navigate an obstacle-filled track. Robo Soccer
+        challenges teams to score goals using their self-built bots. Robo War is
+        a fierce battle where combat robots fight to dominate the arena.
+      </p>
+      <div className="flex justify-around m-20">
         <SubEventCard
-              // imageUrl="./Rectangle 197.png"
-              title="ROBO WAR"
-              description="Robo war is the most exciting challenge of this event It celebrates the sport of Robotic Combat through a contest of 
+          imageUrl="./Rectangle 197.png"
+          title="ROBO WAR"
+          description="Robo war is the most exciting challenge of this event It celebrates the sport of Robotic Combat through a contest of 
 battling machines. This game gives the opportunity to youngsters to design, build and control combat robots to 
 demonstrate their creativity, engineering skills and driving ability. 
 The most rewarding part of designing bots is that students have fun, and work together as a team."
-            />
-            <SubEventCard
-              // imageUrl="./Rectangle 197.png"
-              title="ROBO RACE"
-              description="Design a robot wireless or Bluetooth control within the specified dimensions that can be operated 
+        />
+        <SubEventCard
+          imageUrl="./Rectangle 197.png"
+          title="ROBO RACE"
+          description="Design a robot wireless or Bluetooth control within the specified dimensions that can be operated 
 manually and can travel through all turns of the track. The robot that will complete the specified task in the 
 least time will be the winner. and not allowed to skip any obstacles or hurdles."
-            />
-            </div>
-            <div className="flex justify-around m-20">
-            <SubEventCard
-              // imageUrl="./Rectangle 197.png"
-              title="FAST LINE FOLLOWER"
-              description="Team to build own autonomous robot within the specified dimensions to achieve the maximum speed on                              
+        />
+      </div>
+      <div className="flex justify-around m-20">
+        <SubEventCard
+          imageUrl="./Rectangle 197.png"
+          title="FAST LINE FOLLOWER"
+          description="Team to build own autonomous robot within the specified dimensions to achieve the maximum speed on                              
 given track and reach the destination in minimum time. The robot must start behind the starting point and is considered to have 
 crossed the finishing line if any part of the robot crosses it in a full lap of the course. The robot must follow the black line. The 
 competition area has a special place defined for the robot’s operation."
-            />
-            <SubEventCard
-              // imageUrl="./Rectangle 197.png"
-              title="ROBO SOCCER"
-              description="DESCRIPTION: 
+        />
+        <SubEventCard
+          imageUrl="./Rectangle 197.png"
+          title="ROBO SOCCER"
+          description="DESCRIPTION: 
 Robo soccer is one of the Famous challenges of robovation in this event teams comes with single 
 robot and chase ball around the big size of arena with the aim to kick more goals than the opponent 
 these games give opportunity to youngsters to solve robotic challenges, built creative bots while 
@@ -59,21 +63,39 @@ learning engineering technology. the most rewarding part of designing bots is th
 work together as a team and robot specially design for robo soccer match. the event is aimed at 
 testing the flipping, kicking maneuvering skills and control of the robot. The event mainly consists of 
 ROUND 1 AND ROUND 2."
-            />
-            </div>
-            <section className="mb-20">
+        />
+      </div>
+      <section className="mb-20">
         <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           WHY TO PARTICIPATE
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
           <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white">
-            <li>Showcase Innovation – Demonstrate your creativity and technical skills in robotics. </li>
-            <li>Hands-on Learning – Gain practical experience in robot design, automation, and problem-solving.</li>
-            <li>Competitive Edge – Test your abilities against top talents in a high-energy environment.</li>
+            <li>
+              Showcase Innovation – Demonstrate your creativity and technical
+              skills in robotics.{" "}
+            </li>
+            <li>
+              Hands-on Learning – Gain practical experience in robot design,
+              automation, and problem-solving.
+            </li>
+            <li>
+              Competitive Edge – Test your abilities against top talents in a
+              high-energy environment.
+            </li>
             <li>Time & Number of Rounds: To be intimated later</li>
-            <li>Networking Opportunity – Connect with like-minded enthusiasts, mentors, and industry experts.</li>
-            <li>Exciting Prizes – Compete for recognition and a grand prize of ₹30,000. </li>
-            <li>Real-World Exposure – Enhance your technical expertise and boost your career prospects.</li>
+            <li>
+              Networking Opportunity – Connect with like-minded enthusiasts,
+              mentors, and industry experts.
+            </li>
+            <li>
+              Exciting Prizes – Compete for recognition and a grand prize of
+              ₹30,000.{" "}
+            </li>
+            <li>
+              Real-World Exposure – Enhance your technical expertise and boost
+              your career prospects.
+            </li>
           </ul>
         </div>
       </section>
@@ -83,10 +105,10 @@ ROUND 1 AND ROUND 2."
           RULES & REGULATION
         </h2>
         <div className="flex justify-around m-20">
-        <SubEventCard
-              // imageUrl="/Vector.svg"
-              title="ROBO SOCCER"
-              description="ROBOT SPECIFICATIONS: - 
+          <SubEventCard
+            imageUrl="/Vector.svg"
+            title="ROBO SOCCER"
+            description="ROBOT SPECIFICATIONS: - 
 • The robot should fit inside a box of 30cm*30cm*20cm. 
 • Robot should not exceed 3 kg. 
 • The robot can be wireless. 
@@ -138,11 +160,11 @@ Total Price for This Game: ₹10,000
 Venue:  BAPUJI CHOWK (OPJU) 
 Date & time: 21/03/2025 & 10:00 AM 
 "
-            />
-<SubEventCard
-              // imageUrl="/Vector.svg"
-              title="ROBO WAR"
-              description="The most rewarding part of designing bots is that students have fun, and work together as a team. 
+          />
+          <SubEventCard
+            imageUrl="/Vector.svg"
+            title="ROBO WAR"
+            description="The most rewarding part of designing bots is that students have fun, and work together as a team. 
 FIELD DIMENSION 
 The Battle ring is a fully enclosed 11 feet by 6 feet rectangle raised 1 foot off the 
 ground. The Battle Box door is approximately level, Arena is open at the four sides of the corner. 
@@ -209,13 +231,13 @@ opponent from the ring b) No of times move out opponent from the ring.
 9. Certificates of Participation will be given to all the teams participating in the event, but 
 not to the teams that get disqualified due to disobeying any of the competition rules. 
 *Co–ordination committee reserves the right to add or update any rule."
-            />
-            </div>
-            <div className="flex justify-around m-20">
-<SubEventCard
-              // imageUrl="/Vector.svg"
-              title="ROBO RACE"
-              description="ROBOT SPECIFICATIONS: 
+          />
+        </div>
+        <div className="flex justify-around m-20">
+          <SubEventCard
+            imageUrl="/Vector.svg"
+            title="ROBO RACE"
+            description="ROBOT SPECIFICATIONS: 
 1. The maximum dimension of the robot can be 30cm x 30cm x20 cm (l x b x h). 
 2. The robot should be wireless. 
 3. Motor rpm specification 200rpm to 300 rpm. 
@@ -272,11 +294,11 @@ Total Price for This Game: ₹10,000
 • Third Prize:₹2000 
 Venue:  VolleyBall Court (OPJU) 
 Date & time: 21/03/2025 & 2:00 PM"
-            />
-            <SubEventCard
-              // imageUrl="/Vector.svg"
-              title="FAST LINE FOLLOWER"
-              description="ROBOT SPECIFICATIONS: - 
+          />
+          <SubEventCard
+            imageUrl="/Vector.svg"
+            title="FAST LINE FOLLOWER"
+            description="ROBOT SPECIFICATIONS: - 
 1. The participating bots must be wireless and autonomous. 
 2. The maximum dimension of the robot can be 30cm x 30cm x20 cm (l x b x h). 
 3. Batteries must be sealed, immobilized electrolyte type (gel cell, lithium, NiCad, or dry cells). 
@@ -345,39 +367,47 @@ Prize Money:-
 • Third Prize:₹2000 
 Venue:  BAPUJI CHOWK (OPJU) 
 Date & time: 22/03/2025 & 10:00 AM "
-            />
-          </div>
+          />
+        </div>
       </section>
       <section>
-      <div className="flex flex-col items-center justify-center" >
-        <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          EVENT MANAGERS
-        </div>
-        <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
-          For any queries regarding the event, feel free to reach out to any of
-          the managers listed below. They are here to help and ensure a smooth
-          experience for you!
-        </div>
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            EVENT MANAGERS
+          </div>
+          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+            For any queries regarding the event, feel free to reach out to any
+            of the managers listed below. They are here to help and ensure a
+            smooth experience for you!
+          </div>
 
-        <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Nikhil Patel" contact={8305216569}/>
-            <ManagerCard imageUrl="/dallE.png" name="Nikhil Patel" contact={8305216569}/>
-            <ManagerCard imageUrl="/dallE.png" name="Nikhil Patel" contact={8305216569}/>
+          <div className="flex justify-center space-x-40 items-center mt-20">
+            <ManagerCard
+              imageUrl="/dallE.png"
+              name="Nikhil Patel"
+              contact={8305216569}
+            />
+            <ManagerCard
+              imageUrl="/dallE.png"
+              name="Nikhil Patel"
+              contact={8305216569}
+            />
+            <ManagerCard
+              imageUrl="/dallE.png"
+              name="Nikhil Patel"
+              contact={8305216569}
+            />
+          </div>
+          <ButtonLanding label="Register Now" />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
-        <ButtonLanding label="Register Now" />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        
-      </div>
       </section>
-
     </div>
-    
-    
-  )
-}
+  );
+};
 
-export default page
+export default page;
