@@ -6,6 +6,7 @@ import CardwithImage from "@/components/sub-component/card-with-image";
 import Image from "next/image";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
+import ManagerCard from "@/components/sub-component/manager-card";
 
 const page = () => {
   const rules = ["Rule 3","Rule 3","Rule 3","Rule 3","Rule 3","Rule 3"];
@@ -237,24 +238,21 @@ const page = () => {
             the managers listed below. They are here to help and ensure a smooth
             experience for you!
           </div>
+
+          <div className="flex justify-center space-x-40 items-center mt-20">
+            <ManagerCard imageUrl="/dallE.png" name="Sanjeet kumar Gourh" contact={6260294300}/>
+            <ManagerCard imageUrl="/dallE.png" name="Shubham Narayan Singh" contact={ 6371745801}/>
+            <ManagerCard imageUrl="/dallE.png" name="Nishika Agrawal " contact={7853032508}/>
+          </div>
+          <div className="mb-10">
+            <ButtonLanding label="Register Now" />
+            </div>
         </div>
       </div>
-
-      <div className="flex justify-center space-x-4">
-          <img src="/Group 37147.png" alt="profile" />
-          <img src="/Group 37147.png" alt="profile" />
-          <img src="/Group 37147.png" alt="profile" />
-        </div>
-
-        <div className="flex justify-center">
-        <ButtonLanding label="Register Now" />
-        </div>
-
 
      </section>
 
     </div>
-
     
   );
 };
