@@ -2,6 +2,7 @@
 import { connectToDatabase } from "@/lib/mongodb";
 import { Accommodation, IAccommodation } from "@/models/accomodation.model";
 import { getUser } from "./user-actions";
+import { IUser, User } from "@/models/user.model";
 
 export async function getAccommodationDetailsAction(): Promise<IAccommodation | null> {
 	try {
@@ -63,6 +64,39 @@ export async function setAccommodationDetailsAction(
 			);
 		} else {
 			throw new Error("Failed to set accommodation details");
+		}
+	}
+}
+
+interface AccommodationWithUser {
+	user: IUser;
+	accommodation: IAccommodation;
+}
+
+export async function getAllAccommodationsWithUsers(): Promise<
+	AccommodationWithUser[]
+> {
+	try {
+		await connectToDatabase();
+		const accommodations = await Accommodation.find().lean();
+		const userIds = accommodations.map(
+			(accommodation) => accommodation.userId
+		);
+		const users = await User.find({ _id: { $in: userIds } }).lean();
+
+		const accommodationsWithUsers = accommodations.map((accommodation) => {
+			const user = users.find((user) =>
+				user._id.equals(accommodation.userId)
+			);
+			return { user, accommodation };
+		});
+
+		return JSON.parse(JSON.stringify(accommodationsWithUsers));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to fetch accommodations: ${error.message}`);
+		} else {
+			throw new Error("Failed to fetch accommodations");
 		}
 	}
 }

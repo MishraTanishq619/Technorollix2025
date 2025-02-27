@@ -58,9 +58,7 @@ export default function SignupForm() {
 	const router = useRouter();
 
 	const form = useForm<z.infer<typeof completeFormSchema>>({
-		resolver: zodResolver(
-			isPasswordSent ? completeFormSchema : initialFormSchema
-		),
+		resolver: zodResolver(completeFormSchema),
 		defaultValues: {
 			fullName: "",
 			course: "",

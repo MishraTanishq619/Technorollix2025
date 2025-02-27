@@ -233,9 +233,9 @@ const DashboardPage = () => {
 							? {
 									...accommodationFetchData,
 									arrivalTime:
-										accommodationFetchData.arrivalTime.toISOString(),
+										accommodationFetchData.arrivalTime,
 									departureTime:
-										accommodationFetchData.departureTime.toISOString(),
+										accommodationFetchData.departureTime,
 									userId: userData?._id,
 							  }
 							: { userId: userData?._id }

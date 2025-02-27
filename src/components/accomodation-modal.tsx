@@ -59,7 +59,7 @@ const accommodationFormSchema = z.object({
 const generateTimeOptions = () => {
 	const options = [];
 	for (let hour = 0; hour < 24; hour++) {
-		for (let minute of [0, 30]) {
+		for (const minute of [0, 30]) {
 			// Store 24-hour format as value for processing
 			const militaryTime = `${hour.toString().padStart(2, "0")}:${minute
 				.toString()
@@ -85,10 +85,10 @@ const generateTimeOptions = () => {
 const timeOptions = generateTimeOptions();
 
 // Format date function to replace date-fns format
-const formatDate = (date: any) => {
+const formatDate = (date: Date | undefined) => {
 	if (!date) return "";
 
-	const options = {
+	const options: Intl.DateTimeFormatOptions = {
 		weekday: "short",
 		year: "numeric",
 		month: "long",
@@ -99,7 +99,7 @@ const formatDate = (date: any) => {
 };
 
 // Extract time from date object and convert to AM/PM format
-const extractTime = (date: any) => {
+const extractTime = (date: Date | undefined) => {
 	if (!date) return "";
 
 	// Get hours and minutes in 24-hour format
@@ -111,7 +111,8 @@ const extractTime = (date: any) => {
 };
 
 // Convert 24-hour time to 12-hour format with AM/PM
-const formatTimeForDisplay = (time: any) => {
+// @typescript-eslint/no-unused-vars
+const formatTimeForDisplay = (time: string) => {
 	if (!time) return "";
 
 	const [hourStr, minuteStr] = time.split(":");
@@ -172,7 +173,13 @@ export default function AccommodationModal({
 		}
 	}, [initialData, form]);
 
-	const onSubmit = async (values: any) => {
+	const onSubmit = async (values: {
+		arrivalDate: Date;
+		arrivalTime: string;
+		departureDate: Date;
+		departureTime: string;
+		additionalDetails?: string;
+	}) => {
 		try {
 			// Combine date and time values
 			const arrivalDateTime = new Date(values.arrivalDate);
@@ -212,7 +219,7 @@ export default function AccommodationModal({
 	};
 
 	// Find display time from stored 24-hour time value
-	const getDisplayTime = (timeValue: any) => {
+	const getDisplayTime = (timeValue: string) => {
 		const option = timeOptions.find((option) => option.value === timeValue);
 		return option ? option.display : "Select time";
 	};
