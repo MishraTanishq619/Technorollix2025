@@ -13,7 +13,7 @@ const page = () => {
         title="MasterChef"
         registrations={346}
         pricepool={30000}
-        description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste!." time={""} venue={""}      />
+        description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste!."  />
       <div className="mt-16 mb-16">
         <h1 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           THEME

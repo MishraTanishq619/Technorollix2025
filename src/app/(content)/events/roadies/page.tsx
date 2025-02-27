@@ -12,7 +12,7 @@ const Roadies = () => {
         title="Roadies"
         registrations={346}
         pricepool={30000}
-        description="Welcome to   Roadies  , the ultimate test of skill and endurance! Join us at the University for an adrenaline-packed event filled with sports-inspired challenges. From obstacle courses to team relays, Roadies promises to push your limits and ignite your competitive spirit. Are you ready to conquer the road ahead?" time={''} venue={''}      />
+        description="Welcome to   Roadies  , the ultimate test of skill and endurance! Join us at the University for an adrenaline-packed event filled with sports-inspired challenges. From obstacle courses to team relays, Roadies promises to push your limits and ignite your competitive spirit. Are you ready to conquer the road ahead?"  />
        <div className="mt-16 mb-16">
         <h1 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           THEME
