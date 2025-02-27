@@ -1,9 +1,136 @@
+import ButtonLanding from '@/components/sub-component/button-landing'
+import EventIntro from '@/components/sub-component/event-intro'
+import ManagerCard from '@/components/sub-component/manager-card'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      Page
+       <EventIntro
+        imageUrl="/antaragini.png"
+        title="Voice of Youths"
+        registrations={20}
+        pricepool={30000}
+        description="Virtual trading is a simulation where you can practice buying and selling stocks without using real money. It helps you learn how the stock market works, test strategies, and gain confidence before investing real funds."
+        time={''}
+        venue={'MULTIPURPOSE HALL'} 
+      />
+       <section className="flex flex-col items-center justify-center">
+        <h2 className="w-[397px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          THEME
+        </h2>
+        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px]">
+        Debate Competition , Management ,Business, Current affairs
+        </div>
+      </section>
+      
+      <section className="mt-20 mb-20">
+        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        EVENT DESCRIPTION
+        </h2>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <ul className="list-disc pl-5 text-2xl space-y-6 uppercase font-['Inter'] leading-[32px] tracking-[6.72px] text-white">
+            <li>
+            Step into the intellectual battlefield of Tarkash, where logic meets leadership, and arguments shape innovation. This high-energy debate competition is designed for aspiring managers, entrepreneurs, and business enthusiasts as well as others to challenge conventional wisdom and present groundbreaking perspectives.
+            </li>
+            <li>
+            Participants will engage in thought-provoking debates on current business trends, corporate ethics, financial strategies, and emerging market dynamics and also current happening. Whether you're defending or opposing, your ability to think critically, articulate persuasively, and counter strategically will determine your victory.
+            </li>
+            </ul>
+            </div>
+            </section>
+
+            <section className="mt-20 mb-20">
+        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        EVENT FORMAT:
+        </h2>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <ul className="list-disc pl-5 text-2xl space-y-6 uppercase font-['Inter'] leading-[32px] tracking-[6.72px] text-white">
+            <li>●	Round 1: Opening Statements Teams present their stance on pre-assigned business topics.</li>
+            <li>●	Round 2: Rebuttal Round - Counter-arguments and analytical reasoning take center stage.</li>
+            <li>●	Final Showdown: Face-Off Round The top teams battle it out with impromptu challenges and cross-questioning.</li>
+            </ul>
+            </div>
+            </section>
+
+            <section className="mt-20 mb-20">
+        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        EVENT RULES:
+        </h2>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <ul className="list-none pl-5 text-2xl space-y-6 uppercase font-['Inter'] leading-[32px] tracking-[6.72px] text-white">
+            <li>TEAM SIZE= 2-4 MEMBERS</li>
+            <li>•	Team Structure & Speaking Order</li>
+            <li>1.	Debate teams usually consist of two to four members per side.</li>
+            <li>2.	The two sides are:
+○	Affirmative/Proposition (supports the motion)
+○	Negative/Opposition (opposes the motion)
+</li>
+            <li>3.	Each speaker is given a set time to present arguments, rebuttals, and conclusions.</li>
+            <li>•	SPEECH TIMING </li>
+            <li>1.	Each speaker gets a fixed time limit (e.g., 3–7 minutes per speech).</li>
+            <li>2.	Rebuttal speeches are usually shorter than constructive speeches.</li>
+            <li>3.	Exceeding the time limit may result in penalties.</li>
+            <li>•	SPEAKING RULES</li>
+            <li>1.	Speakers must respect time limits and follow the order of speeches.</li>
+            <li>2.	No interruptions are allowed except for structured interjections.</li>
+            <li>3.	Arguments must be fact-based and logically structured.</li>
+            <li>•	REBUTTAL & CROSS-EXAMINATION</li>
+            <li>1.	Teams must respond to opponents' arguments through rebuttals.</li>
+            <li>2.	Some formats allow cross-examination where teams ask direct questions to opponents.</li>
+            <li>3.	Attacks should focus on arguments, not personal attacks.</li>
+            <li>•	•	USE OF EVIDENCE</li>
+            <li>1.	Debaters should cite sources for factual claims.</li>
+            <li>2.	Misrepresentation or fabrication of evidence is strictly prohibited.</li>
+            <li>•	POINTS OF INFORMATION (POI) & INTERRUPATIONS </li>
+            <li>1.	In some formats debaters can raise POIs during opponents’ speeches.</li>
+            <li>2.	The speaker may accept or reject POIs.</li>
+            <li>•	CODE OF CONDUCT & ETHICS</li>
+            <li>1.	Respect for judges, opponents, and audience is mandatory.</li>
+            <li>2.	No offensive language, discrimination, or personal attacks.</li>
+            <li>3.	Plagiarism or using pre-written speeches is not allowed.</li>
+            <li>•	DECISION & SCORING</li>
+            <li>1.	Judges score based on content, delivery, rebuttals, and structure.</li>
+            <li>2.	The team with the higher overall score wins.</li>
+            <li>3.	In case of a tie, judges may re-evaluate key arguments or consider audience engagements.</li>
+            </ul>
+            </div>
+            </section>
+            <section className="mt-20 mb-20">
+        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        EFFICIENT  PRIZES:
+        </h2>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <ul className="list-none pl-5 text-2xl space-y-6 uppercase font-['Inter'] leading-[32px] tracking-[6.72px] text-white">
+            <li>●	First prize: 6000</li>
+            <li>●	Second prize:4000</li>
+            <li>●	Third prize:2000</li>
+            </ul>
+            </div>
+            </section>
+
+            <section>
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            EVENT MANAGERS
+          </div>
+          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+            For any queries regarding the event, feel free to reach out to any of
+            the managers listed below. They are here to help and ensure a smooth
+            experience for you!
+          </div>
+
+          <div className="flex justify-center space-x-40 items-center mt-20">
+            <ManagerCard imageUrl="/dallE.png" name="Sanjeet kumar Gourh" contact={6260294300}/>
+            <ManagerCard imageUrl="/dallE.png" name="Shubham Narayan Singh" contact={ 6371745801}/>
+            <ManagerCard imageUrl="/dallE.png" name="Nishika Agrawal " contact={7853032508}/>
+          </div>
+          <div className="mb-10">
+            <ButtonLanding label="Register Now" />
+            </div>
+        </div>
+      </section>
+            
     </div>
   )
 }
