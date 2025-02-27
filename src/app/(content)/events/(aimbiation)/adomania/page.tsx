@@ -2,12 +2,13 @@ import React from 'react';
 import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card';
 import ManagerCard from '@/components/sub-component/manager-card';
+import ButtonLanding from '@/components/sub-component/button-landing';
 
 const Page = () => {
   return (
     <div className="Adomania">
       <EventIntro
-        imageUrl="\aimbiation-events-logo\adomania.jpg"
+        imageUrl="/aimbiation-events-logo/adomania.jpg"
         title="Adomania"
         registrations={300}
         pricepool={12000}
@@ -77,6 +78,12 @@ Total Points: 50
         <img src="/Group 37147.png" alt="profile" />
         <img src="/Group 37147.png" alt="profile" />
       </div>
+
+      <div className='mb-10'><ButtonLanding label='Register Now' link='/dashboard'/></div>
+
+      
+
+
     </div>
   );
 };

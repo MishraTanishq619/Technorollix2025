@@ -4,6 +4,7 @@ import SubEventCard from "@/components/sub-component/sub-event-card";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
+import { FaMusic, FaFilm, FaMicrophone, FaRunning } from "react-icons/fa";
 
 const Antaragni = () => {
   const rules = [
@@ -79,24 +80,24 @@ const Antaragni = () => {
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="/Vector.svg"
+              Icon={FaRunning}
               title="DANCE COMPETITION"
               description="Unleash your passion for dance at antaragni the ultimate dance competition!  Show off your moves, rhythm, and expression as you captivate the audience with your performance. Whether you specialize in classical, hip-hop, contemporary, or freestyle, this is your chance to shine on stage. Impress the judges and crowd with your energy, creativity, and stage presence!"
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={FaMusic}
               title="SINGING COMPETITION"
               description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
             />
           </div>
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={FaFilm}
               title="SHORT FILM PRESENTATION"
               description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={FaMicrophone}
               title="RAP BATTLE"
               description="A Treasure Hunt is an engaging activity where participants follow a series of clues or challenges to locate hidden objects or specific destinations. Designed to foster teamwork, problem-solving, and exploration, treasure hunts can be tailored for various settings and audiences."
             />
