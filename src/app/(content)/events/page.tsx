@@ -1,120 +1,98 @@
-import CardwithImage from "@/components/sub-component/card-with-image";
 import React from "react";
+import Image from "next/image";
 
 const technicalEvents = [
   {
     imageUrl: "/techno-events-logo/aerodrone.png",
-    title: "Aerodrone",
     link: "/events/aerodrone",
   },
   {
     imageUrl: "/techno-events-logo/techlab.png",
-    title: "Tech-Lab",
     link: "/events/techlab",
   },
   {
     imageUrl: "/techno-events-logo/robovation.png",
-    title: "Robovation",
     link: "/events/robovation",
   },
   {
     imageUrl: "/techno-events-logo/hackathon.png",
-    title: "Hackathon",
     link: "/events/hackathon",
   },
   {
     imageUrl: "/techno-events-logo/codigo.png",
-    title: "Codigo",
     link: "/events/codigo",
   },
   {
     imageUrl: "/techno-events-logo/ideathon.png",
-    title: "Ideathon",
     link: "/events/ideathon",
   },
 ];
 const nonTechnicalEvents = [
   {
     imageUrl: "/techno-events-logo/spotlightsaga.png",
-    title: "Spotlight Saga",
     link: "/events/spotlight-saga",
   },
   {
     imageUrl: "/techno-events-logo/amongus.png",
-    title: "Among Us",
     link: "/events/among-us",
   },
   {
     imageUrl: "/techno-events-logo/gamefusion.png",
-    title: "Game Fusion",
     link: "/events/game-fusion",
   },
   {
     imageUrl: "/techno-events-logo/masterchef.png",
-    title: "Master Chef",
     link: "/events/master_chef",
   },
   {
     imageUrl: "/techno-events-logo/roadies.png",
-    title: "Roadies",
     link: "/events/roadies",
   },
   {
-    imageUrl: "/techno-events-logo/antaragini.png",
-    title: "Antaragini",
-    link: "/events/antaragini",
+    imageUrl: "/techno-events-logo/antaragni.png",
+    link: "/events/antaragni",
   },
   {
     imageUrl: "/techno-events-logo/kalakriti.png",
-    title: "Kalakriti",
     link: "/events/kalakriti",
   },
 ];
 
 const aimbiationEvents = [
   {
-    imageUrl: "/aimbiation-events-logo/bizesawaal.jpg",
-    title: "Biz-e-Sawaal",
+    imageUrl: "/aimbiation-events-logo/bizesawaal.png",
     link: "/events/bizesawaal",
   },
   {
-    imageUrl: "/aimbiation-events-logo/nexgenstartup.jpg",
-    title: "NeXgen Startup",
+    imageUrl: "/aimbiation-events-logo/nexgenstartup.png",
     link: "/events//nexgenstartup",
   },
   {
-    imageUrl: "/aimbiation-events-logo/adomania.jpg",
-    title: "Ad-O-Mania",
+    imageUrl: "/aimbiation-events-logo/adomania.png",
     link: "/events/adomania",
   },
   {
-    imageUrl: "/aimbiation-events-logo/voiceofyouth.jpg",
-    title: "Voice of Youth",
+    imageUrl: "/aimbiation-events-logo/voiceofyouth.png",
     link: "/events/voiceofyouth",
   },
   {
-    imageUrl: "/aimbiation-events-logo/reelandroles.jpg",
-    title: "Reels & Roles",
+    imageUrl: "/aimbiation-events-logo/reelandroles.png",
     link: "/events/Reelsandroles",
   },
   {
-    imageUrl: "/aimbiation-events-logo/bullvsbear.jpg",
-    title: "Bull vs Bear",
+    imageUrl: "/aimbiation-events-logo/bullvsbear.png",
     link: "/events/bullvsbear",
   },
   {
-    imageUrl: "/aimbiation-events-logo/riwayat.jpg",
-    title: "Riwayat",
+    imageUrl: "/aimbiation-events-logo/riwayat.png",
     link: "/events/riwayat",
   },
   {
-    imageUrl: "/aimbiation-events-logo/beatbattle.jpg",
-    title: "Beat Battle",
+    imageUrl: "/aimbiation-events-logo/beatbattle.png",
     link: "/events/beatbattle",
   },
   {
     imageUrl: "/aimbiation-events-logo/treasurehunt.png",
-    title: "Treasure Hunt",
     link: "/events/treasurehunt",
   },
 ];
@@ -122,7 +100,7 @@ const aimbiationEvents = [
 interface EventSectionProps {
   title: string;
   description: string;
-  events: { imageUrl: string; title: string; link: string }[];
+  events: { imageUrl: string; link: string }[];
 }
 
 const EventSection: React.FC<EventSectionProps> = ({
@@ -144,14 +122,14 @@ const EventSection: React.FC<EventSectionProps> = ({
     <p className="mt-4 md:mt-10 w-full md:w-[943px] h-auto md:h-[78px] text-center text-white text-lg md:text-xl font-medium font-['Poppins'] uppercase mx-auto">
       {description}
     </p>
-    <div className="mt-10 md:mt-28 w-full flex flex-wrap justify-center md:justify-evenly gap-4">
+    <div className="mt-10 md:mt-28 w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4 md:px-8 lg:px-16 justify-center">
       {events.map((event, index) => (
         <a
           key={index}
           href={event.link}
-          className="block w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
+          className="block w-full"
         >
-          <CardwithImage imageUrl={event.imageUrl} title={event.title} />
+          <Image src={event.imageUrl} width={200} height={250} alt={event.link} className="w-full h-auto rounded-xl" />
         </a>
       ))}
     </div>
