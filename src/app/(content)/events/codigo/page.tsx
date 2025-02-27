@@ -3,6 +3,7 @@ import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
 import ManagerCard from "@/components/sub-component/manager-card";
+import { FaCode,FaPenNib } from "react-icons/fa6";
 
 const Page = () => {
   return (
@@ -47,12 +48,12 @@ const Page = () => {
 
 
             <SubEventCard
-              imageUrl="./Vector.svg"
+              Icon={FaCode}
               title="code competition"
               description="Showcase your problem-solving skills, logic, and speed as you tackle challenging coding problems. Whether you're a beginner or a pro, this is your chance to impress the judges and compete with the best. Write efficient code, optimize solutions, and prove your mastery—let the challenge begin!"
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={FaPenNib}
               title="design challenge"
               description="Unleash your creativity and craft intuitive, user-friendly designs that stand out. Whether it’s wireframes or full-fledged prototypes, this is your chance to impress the judges and wow the audience. Showcase your design thinking, usability skills, and aesthetic vision—let the challenge begin!"
             />

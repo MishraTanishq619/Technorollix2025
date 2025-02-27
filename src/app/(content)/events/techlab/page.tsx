@@ -6,6 +6,9 @@ import SubEventCard from "@/components/sub-component/sub-event-card";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import ManagerCard from "@/components/sub-component/manager-card";
+import { GiTargetPoster, GiRobotLeg } from "react-icons/gi";
+import { PiPathBold } from "react-icons/pi";
+import { FaAppStore } from "react-icons/fa";
 
 const Page = () => {
   const rules = [
@@ -73,24 +76,24 @@ const Page = () => {
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="/Vector.svg"
+              Icon={GiTargetPoster}
               title="POSTER PRESENTATION"
               description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={GiRobotLeg}
               title="WORKING MODEL PRESENTATION"
               description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
             />
           </div>
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={PiPathBold}
               title="PROTOTYPE PRESENTATION"
               description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={FaAppStore}
               title="APP PRESENTATION"
               description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
             />

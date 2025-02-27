@@ -20,7 +20,10 @@ export default function Home() {
           alt="technorollix"
           width={909}
           height={265}
+<<<<<<< HEAD
+=======
           className="w-full max-w-[850px] md:w-[600px] h-auto p-4 mt-10 md:mt-28 sm:mt-32"
+>>>>>>> e07304051f1d9602e1e1c3e8885eef4f899f7f54
         />
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
           <Image

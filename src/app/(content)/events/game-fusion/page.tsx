@@ -6,6 +6,8 @@ import SubEventCard from "@/components/sub-component/sub-event-card";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import ManagerCard from "@/components/sub-component/manager-card";
+import { SiPubg,SiValorant } from "react-icons/si";
+import {IoGameController} from "react-icons/io5"
 
 const Page = () => {
   const rules = [
@@ -77,19 +79,19 @@ skills, engage in friendly competition, and celebrate the spirit of gaming."
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="/gamefusion/bgmi.png"
+              Icon={SiPubg}
               title="BGMI"
               description="Show off your shooting skills, tactical gameplay, and survival instincts in an intense battle royale. Whether you're a lone wolf or part of a squad, this is your chance to impress the judges and thrill the crowd. Loot, strategize, and outlast your opponents—let the battle begin!"
             />
             <SubEventCard
-              imageUrl="/gamefusion/freefire.png"
+              Icon={IoGameController}
               title="FREEFIRE"
               description="Show off your shooting skills, tactical gameplay, and survival instincts in an intense battle royale. Whether you're a lone wolf or part of a squad, this is your chance to impress the judges and thrill the crowd. Loot, strategize, and outlast your opponents—let the battle begin!"
             />
           </div>
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="/gamefusion/valorant.png"
+              Icon={SiValorant}
               title="VALORANT"
               description="Show off your shooting skills, tactical gameplay, and survival instincts in an intense battle royale. Whether you're a lone wolf or part of a squad, this is your chance to impress the judges and thrill the crowd. Loot, strategize, and outlast your opponents—let the battle begin!"
             />

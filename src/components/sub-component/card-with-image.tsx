@@ -16,8 +16,8 @@ const CardwithImage: React.FC<CardwithImageProps> = ({ imageUrl, title, scale = 
       <div className="relative mt-[53px] w-full h-[200px]">
         <Image
           src={imageUrl}
-          width={235}
-          height={235}
+          width={238}
+          height={238}
           alt="inside image"
           layout="fit"
           objectFit="cover"

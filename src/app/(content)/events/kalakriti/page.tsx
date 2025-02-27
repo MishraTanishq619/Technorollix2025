@@ -162,20 +162,16 @@ const page = () => {
             <SubEventCard
               imageUrl="/subeventcard1.png" // Updated path
               title="Rangoli"
-              description= "	Theme: On the Spot.
-              	About: Rangoli is a very popular folk art that has several connotations across India. It is a spiritual distribution of colors Which represents the happiness, positivity and liveliness of a household, and is intended to welcome the goddess of wealth and Prosperity.
-             	Venue: In front of Chemistry Lab / 
-             	Rules:
-             1.	Theme of the competition is restricted to “ ”.
-             2.	In group there must be minimum 4 and maximum 6 members and boys’ participation in a group is Mandatory.
-             3.	There will be only one round of competition.
-             4.	The participants have to bring their own material which they require in making rangoli. Colors Will be provided by Organizers. 
-             5.	The participants will be given 2hr for making rangoli. No extra time will be given in any case.
-             6.	Prizes will be awarded to First, Second and Third position holders, along with Certificates of Achievement. A Certificate of Participation will be given to all present participants.
-             7.	The participant must strictly adhere to the timings.
-             8.	The decision of jury shall remain final and no correspondence will be entertained.
-             9.	Last minute changes in the above rules, if necessary, can be made.
-             	Rounds: 1 Round"
+              description= "Theme: On the Spot. Venue:  Library Lawn & opposite to Chemistry Lab.Rounds: 1 round
+Rules and Regulations: 
+1. In a group, there must be a minimum of 4 and a maximum of 6 members, and boys’ participation in a group is mandatory.  
+2. There will be only one round of competition.
+3. Participants have to bring their own materials, except colors, which will be provided by the organizers.
+Participants will be given 2 hours for making rangoli. No extra time will be given in any case.
+Prizes will be awarded to the first, second, and third position holders, along with certificates of achievement. A certificate of participation will be given to all present participants. 
+Participants must strictly adhere to the timings.
+Judgment Criteria:	 Judges’ marks
+"
 
             />
 
