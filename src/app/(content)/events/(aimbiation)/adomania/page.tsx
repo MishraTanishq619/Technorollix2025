@@ -7,12 +7,12 @@ const Page = () => {
   return (
     <div className="Adomania">
       <EventIntro
-        imageUrl=""
+        imageUrl="\aimbiation-events-logo\adomania.jpg"
         title="Adomania"
         registrations={300}
-        pricepool={60000}
-        time='8 am'
-        venue='Opju'
+        pricepool={12000}
+        time='20-03-2025, 11:30 AM'
+        venue='Live Class Room(G-15)'
         description="A creative marketing competition where teams must design and present an advertisement or marketing campaign for a given product or brand.
 "
       /><br/><br/>
