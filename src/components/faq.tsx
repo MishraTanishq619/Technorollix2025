@@ -48,7 +48,7 @@ const FAQAccordion = () => {
         <Accordion key={index} type="single" collapsible>
           <AccordionItem value={`item-${index}`}>
             <div className="">
-              <AccordionTrigger className="flex p-3 items-center justify-between text-[#ABA9B3] text-lg font-medium w-[566px] h-[122px] bg-gradient-to-b from-[#4f0000] rounded-2xl shadow-[0px_11px_12.5px_0px_rgba(7,10,23,0.25)] group-data-[state=open]:bg-slate-500">
+              <AccordionTrigger className="flex p-3 items-center justify-between text-[#ABA9B3] text-lg font-medium w-full md:w-[566px] h-[122px] bg-gradient-to-b from-[#4f0000] rounded-2xl shadow-[0px_11px_12.5px_0px_rgba(7,10,23,0.25)] group-data-[state=open]:bg-slate-500">
                 <span>{faq.question}</span>
                 <span className="transition-transform duration-300">
                   <Plus className="w-5 h-5 group-data-[state=open]:hidden" />

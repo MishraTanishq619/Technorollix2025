@@ -1,24 +1,14 @@
-//import EventConclusion from "@/components/sub-component/event-conclusion";
 import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
-import CardwithImage from "@/components/sub-component/card-with-image";
-import Image from "next/image";
-import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import WhyParticipate from "@/components/sub-component/why-participate";
 import ManagerCard from "@/components/sub-component/manager-card";
 import { FaCode,FaPenNib } from "react-icons/fa6";
 
-const page = () => {
-  const rules = ["Rule 3","Rule 3","Rule 3","Rule 3","Rule 3","Rule 3"];
-  const reasons = ["Reason 1","Reason 2","Reason 3","Reason 4","Reason 5"]
-
+const Page = () => {
   return (
     <div className="flex flex-col space-y-10">
       {/* Event Intro Section */}
-
-
       <section>
         <EventIntro
           imageUrl="/techno-events-logo/codigo.png"
@@ -33,14 +23,15 @@ const page = () => {
 
       {/* Theme section */}
       <section className="flex flex-col items-center justify-center">
-        <h2 className="w-[397px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <h2 className="text-[#ffad3c] text-5xl font-medium tracking-[2.88px] text-center">
           THEME
         </h2>
-        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px]">
+        <div className="text-white text-2xl font-medium text-center tracking-[5.28px]">
           <p>Dream your Fantasy, Code it in your Reality!!!</p>
         </div>
       </section>
 
+      {/* Sub-Events Section */}
       <section>
         {/* Sub-Events section */}
         <section className="flex flex-col items-center justify-center">
@@ -92,6 +83,7 @@ const page = () => {
                 
             </div>
           </section>
+          </div>
 
           <section className="mb-20">
             <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
@@ -112,35 +104,74 @@ const page = () => {
             </div>
           </section>
         </div>
-        
-       
-      </div>
 
-      
-
-      <div className="flex flex-col items-center justify-center">
-          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-            EVENT MANAGERS
-          </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
-            For any queries regarding the event, feel free to reach out to any of
-            the managers listed below. They are here to help and ensure a smooth
-            experience for you!
-          </div>
-
-          <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6260294300}/>
-            <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={ 6371745801}/>
-            <ManagerCard imageUrl="/dallE.png" name="Lorem " contact={7853032508}/>
-          </div>
-          <div className="mb-10">
-            <ButtonLanding label="Register Now" />
-            </div>
+        {/* Sub-Events Cards Section */}
+        <div className="flex justify-around m-20">
+          <SubEventCard
+            imageUrl="./Vector.svg"
+            title="Code Competition"
+            description="Showcase your problem-solving skills, logic, and speed as you tackle challenging coding problems. Compete with the best and prove your mastery!"
+          />
+          <SubEventCard
+            imageUrl="./Rectangle 197.png"
+            title="Design Challenge"
+            description="Unleash your creativity and craft intuitive, user-friendly designs that stand out. Showcase your design thinking and usability skills."
+          />
         </div>
-     </section>
+      </section>
 
+      {/* Why Participate Section */}
+      <section className="flex flex-col items-center justify-center">
+        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+          WHY PARTICIPATE
+        </h2>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <ul className="list-disc pl-5 text-2xl space-y-2 text-white">
+            <li>Exciting prizes worth ₹20,000</li>
+            <li>Funding opportunity for innovative prototypes</li>
+            <li>Recognition certificates for all participating universities</li>
+            <li>Hands-on experience in new-age innovations</li>
+            <li>Reimbursement of one-way Sleeper class fare for outside participants</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Rules & Regulations Section */}
+      <section className="flex flex-col items-center justify-center">
+        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+          RULES & REGULATIONS
+        </h2>
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <ul className="list-disc pl-5 text-2xl space-y-2 text-white">
+            <li>Arrive at the venue one hour before the event for setup.</li>
+            <li>No exhibit should be dismantled before the event ends.</li>
+            <li>First Round: 25 questions, time limit – 30 min.</li>
+            <li>Qualification: Based on total participation.</li>
+            <li>Second & Third Rounds: Time limit announced on the spot.</li>
+            <li>The judging panel's decision is final.</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Event Managers Section */}
+      <section className="flex flex-col items-center justify-center">
+        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+          EVENT MANAGERS
+        </h2>
+        <div className="text-white text-2xl text-center tracking-[5.28px]">
+          For any queries regarding the event, feel free to reach out to any of the managers listed below.
+        </div>
+        <div className="flex justify-center space-x-40 items-center mt-20">
+          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6260294300} />
+          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6371745801} />
+          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
+        </div>
+        <div className="mb-10">
+          <ButtonLanding label="Register Now" link="/events"/>
+        </div>
+      </section>
     </div>
   );
 };
 
-export default page;
+export default Page;

@@ -33,7 +33,7 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center space-x-12 mt-12">
+    <div className="flex items-center justify-center space-x-8 mt-10">
       {Object.entries(timeLeft).map(([label, value]) => (
         <div key={label} className="flex flex-col items-center ">
           <div
