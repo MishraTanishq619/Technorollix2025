@@ -82,10 +82,13 @@ export async function getAllAccommodationsWithUsers(): Promise<
 		const userIds = accommodations.map(
 			(accommodation) => accommodation.userId
 		);
-		const users = await User.find({ _id: { $in: userIds } }).lean();
+		const users = await User.find({ _id: { $in: userIds } }).lean<
+			IUser[]
+		>();
 
 		const accommodationsWithUsers = accommodations.map((accommodation) => {
 			const user = users.find((user) =>
+				// @ts-expect-error: 'user._id' is of type 'unknown'
 				user._id.equals(accommodation.userId)
 			);
 			return { user, accommodation };

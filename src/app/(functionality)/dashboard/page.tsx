@@ -232,10 +232,12 @@ const DashboardPage = () => {
 						accommodationFetchData
 							? {
 									...accommodationFetchData,
-									arrivalTime:
-										accommodationFetchData.arrivalTime,
-									departureTime:
-										accommodationFetchData.departureTime,
+									arrivalTime: new Date(
+										accommodationFetchData.arrivalTime
+									).toISOString(),
+									departureTime: new Date(
+										accommodationFetchData.departureTime
+									).toISOString(),
 									userId: userData?._id,
 							  }
 							: { userId: userData?._id }

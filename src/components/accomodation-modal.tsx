@@ -111,17 +111,16 @@ const extractTime = (date: Date | undefined) => {
 };
 
 // Convert 24-hour time to 12-hour format with AM/PM
-// @typescript-eslint/no-unused-vars
-const formatTimeForDisplay = (time: string) => {
-	if (!time) return "";
+// const formatTimeForDisplay = (time: string) => {
+// 	if (!time) return "";
 
-	const [hourStr, minuteStr] = time.split(":");
-	const hour = parseInt(hourStr, 10);
-	const isPM = hour >= 12;
-	const displayHour = hour % 12 || 12; // Convert 0 to 12 for 12 AM
+// 	const [hourStr, minuteStr] = time.split(":");
+// 	const hour = parseInt(hourStr, 10);
+// 	const isPM = hour >= 12;
+// 	const displayHour = hour % 12 || 12; // Convert 0 to 12 for 12 AM
 
-	return `${displayHour}:${minuteStr} ${isPM ? "PM" : "AM"}`;
-};
+// 	return `${displayHour}:${minuteStr} ${isPM ? "PM" : "AM"}`;
+// };
 
 interface AccommodationModalProps {
 	isOpen: boolean;

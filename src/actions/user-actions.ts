@@ -44,10 +44,7 @@ export const userSignup = async (userData: UserData): Promise<IUser> => {
 		mobileNumber,
 	});
 
-	console.log("y1 newUser : ", newUser);
-
-	const savedUser = await newUser.save();
-	console.log("y1 savedUser : ", savedUser);
+	await newUser.save();
 
 	return JSON.parse(JSON.stringify(newUser));
 };
