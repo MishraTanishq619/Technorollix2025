@@ -6,6 +6,13 @@ import React from 'react'
 const Roadies = () => {
   return (
     <div className="mb-10">
+       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       <EventIntro
       venue={"Bus Parking Area"}
       time={"1:30 PM "}
@@ -110,7 +117,7 @@ const Roadies = () => {
 
           </div>
           <div className="mb-10">
-            <ButtonLanding label="Register Now" />
+            <ButtonLanding label="Register Now" link={''} />
             </div>
         </div>
       </section>

@@ -6,12 +6,19 @@ import React from "react";
 const page = () => {
   return (
     <div className="mb-10">
+       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       <EventIntro
       venue={"Cafeteria, Ground Floor"}
       time={"10:00 AM "}
-        imageUrl="/antaragni.png"
+        imageUrl="/techno-events-logo/masterchef.png"
         title="MasterChef"
-        registrations={346}
+        registrations={0}
         pricepool={13000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste"
      /> <div className="mt-16 mb-16">
@@ -101,11 +108,10 @@ const page = () => {
         </div>
 
         <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Nikhil Patel" contact={8305216569}/>
-            <ManagerCard imageUrl="/dallE.png" name="Nikhil Patel" contact={8305216569}/>
-            <ManagerCard imageUrl="/dallE.png" name="Nikhil Patel" contact={8305216569}/>
+            <ManagerCard imageUrl="/dallE.png" name="NITIN GOYAL " contact={9669464118}/>
+            <ManagerCard imageUrl="/dallE.png" name="Ronit sharma" contact={9893240461}/>
         </div>
-        <ButtonLanding label="Register Now" />
+        <ButtonLanding label="Register Now" link={""} />
         <br />
         <br />
         <br />
