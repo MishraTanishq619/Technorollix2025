@@ -2,11 +2,8 @@ import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
-import CardwithImage from "@/components/sub-component/card-with-image";
-import Image from "next/image";
-import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import WhyParticipate from "@/components/sub-component/why-participate";
 import ManagerCard from "@/components/sub-component/manager-card";
+import { BsAward } from "react-icons/bs";
 
 const page = () => {
   const rules = ["Rule 3","Rule 3","Rule 3","Rule 3","Rule 3","Rule 3"];
@@ -76,18 +73,18 @@ Career Advancement: Achievements in such events can enhance your portfolio, maki
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="/Vector.svg"
+              Icon={BsAward}
               title="Round-1"
               description="Introduction + Outfit Info"
             />
 
             <SubEventCard
-              imageUrl="/Vector.svg"
+              Icon={BsAward}
               title="Round-2:"
               description="Introduction + Outfit Info + Tas. "
             />
             <SubEventCard
-              imageUrl="/Vector.svg"
+              Icon={BsAward}
               title="Round-3:"
               description="Introduction + Q/A Round"
             />
