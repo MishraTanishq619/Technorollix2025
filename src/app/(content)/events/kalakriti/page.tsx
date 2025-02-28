@@ -150,7 +150,7 @@ const page = () => {
              <SubEventCard
               Icon={IoIosCamera} // Ensure this path is correct
                title="Photorollix"
-                description="
+                description={`
                  • Theme: Raigarh, JSP, Opju campus and Nature
                  • About: Photorollix is a recreational event where participants are welcomed to openly participate to show their 'third eye handling skill.' As it is said, 'The picture that you took with your camera is the imagination you want to create with the reality.' It will be the hall of fame showcasing different beautiful moments captured by photographers. It will make you re-live amazing moments again and again.
                 • Venue: Online.

@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import jwt from "jsonwebtoken";
-// import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));

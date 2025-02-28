@@ -3,6 +3,7 @@ import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card';
 import ManagerCard from '@/components/sub-component/manager-card';
 import ButtonLanding from '@/components/sub-component/button-landing';
+import { BsAward } from 'react-icons/bs';
 
 const Page = () => {
   return (
@@ -33,17 +34,17 @@ const Page = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <SubEventCard
-                Icon={}
+                Icon={BsAward}
                 title="Round 1: Idea Submission"
                 description="Participants submit problem statements and proposed solutions."
               />
               <SubEventCard
-                Icon={}
+                Icon={BsAward}
                 title="Round 2: Prototype Development"
                 description="Shortlisted teams develop a working prototype."
               />
               <SubEventCard
-                Icon={}
+                Icon={BsAward}
                 title="Round 3: Functionality and Final Pitch"
                 description="Teams present their solutions to a panel of judges."
               />
