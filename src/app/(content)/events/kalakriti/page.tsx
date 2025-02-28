@@ -23,6 +23,13 @@ const page = () => {
 
   return (
     <div className="flex flex-col space-y-10">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       {/* Event Intro Section */}
       <section>
         <EventIntro
