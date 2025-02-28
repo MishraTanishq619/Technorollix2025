@@ -6,18 +6,18 @@ import ButtonLanding from "@/components/sub-component/button-landing";
 import { IoIosCamera } from "react-icons/io";
 
 
-interface SubEventCardProps {
-  imageUrl: string;
-  title: string;
-  description: string | React.ReactNode; // Updated type
-}
+// interface SubEventCardProps {
+//   imageUrl: string;
+//   title: string;
+//   description: string | React.ReactNode; // Updated type
+// }
 
 const page = () => {
-  const managers = [
-    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
-  ];
+  // const managers = [
+  //   { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
+  //   { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
+  //   { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+  // ];
 
   return (
     <div className="flex flex-col space-y-10">
@@ -101,7 +101,7 @@ const page = () => {
             ROUNDS
           </div>
           <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
-            The following are the details for this event. Read the details carefully and about the rounds this events have. Don't miss your chance to participate and showcase your skills!
+            The following are the details for this event. Read the details carefully and about the rounds this events have. Don&apos;t miss your chance to participate and showcase your skills!
           </div>
         </section>
 

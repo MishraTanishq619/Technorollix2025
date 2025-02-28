@@ -31,7 +31,7 @@ const BullvsBear = () => {
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
           <ul className="list-disc pl-5 text-2xl space-y-6 uppercase font-['Inter'] leading-[32px] tracking-[6.72px] text-white">
             <li>
-              “Bull vs Bears" is an exciting virtual trading competition where participants step into the shoes of real traders and investors. 
+              “Bull vs Bears&quot; is an exciting virtual trading competition where participants step into the shoes of real traders and investors. 
               This event simulates a live stock market environment, allowing players to test their trading skills, risk management, and market analysis in real-time. 
               Participants will compete to build the most valuable portfolio within the given time frame.
             </li>

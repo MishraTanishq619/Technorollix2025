@@ -78,7 +78,7 @@ const Antaragni = () => {
           <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
             The following are the sub-events of this main event. Read the
             details carefully and choose the ones that best match your interests
-            and expertise. Don't miss your chance to participate and showcase
+            and expertise. Don&apos;t miss your chance to participate and showcase
             your skills!
           </div>
         </section>

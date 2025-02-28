@@ -6,8 +6,8 @@ import { BsAward } from "react-icons/bs"
 import ManagerCard from "@/components/sub-component/manager-card";
 
 const page = () => {
-  const rules = ["Rule 3","Rule 3","Rule 3","Rule 3","Rule 3","Rule 3"];
-  const reasons = ["Reason 1","Reason 2","Reason 3","Reason 4","Reason 5"]
+  // const rules = ["Rule 3","Rule 3","Rule 3","Rule 3","Rule 3","Rule 3"];
+  // const reasons = ["Reason 1","Reason 2","Reason 3","Reason 4","Reason 5"]
 
   return (
     <div className="flex flex-col space-y-5">

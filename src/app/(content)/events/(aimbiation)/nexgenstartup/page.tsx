@@ -47,7 +47,7 @@ const page = () => {
             <li>4.	One of the team members should be registered as the team leader. </li>
             <li>5.	The business plan should not exceed 15 pages. Excluding executive summary, cover page & index. </li>
             <li>6.	A maximum of 15 slides of power point presentation is allowed in the final round. </li>
-            <li>7.	The participants must follow the font size of 12 in Times New Roman for the main text and 14 for headings with a line spacing of 1.5".</li>
+            <li>7.	The participants must follow the font size of 12 in Times New Roman for the main text and 14 for headings with a line spacing of 1.5&quot;.</li>
             <li>8.	A maximum of 15 minutes for a team will be allowed to present the business idea. </li>
             <li>9.	Participants must carry their data back up in a laptop or USB drive.</li>
             </ul>

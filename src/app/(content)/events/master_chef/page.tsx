@@ -78,7 +78,7 @@ const page = () => {
               <li>o Presentation 20%</li>
               <li>o Cleanliness & Organization 10%</li>
             </li>
-            <li>12. The judges' decision is final.</li>
+            <li>12. The judges&apos; decision is final.</li>
             <li>13. Winners will be declared on the same day.</li>
           </ul>
         </div>

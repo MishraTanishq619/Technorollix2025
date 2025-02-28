@@ -54,7 +54,7 @@ const Page = () => {
           <ul className="list-none pl-5 text-2xl uppercase tracking-[6.72px] text-white">
             <li>⦁ Don’t mess with other teams, play fair!</li>
             <li>⦁ Damage university stuff? Pay the fine!</li>
-            <li>⦁ Break the instructions, and you're out!</li>
+            <li>⦁ Break the instructions, and you&apos;re out!</li>
             <li>⦁ All teams must arrive on time.</li>
           </ul>
         </div>

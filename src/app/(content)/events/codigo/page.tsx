@@ -45,7 +45,7 @@ const Page = () => {
             sub-events
           </div>
           <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
-          The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don't miss your chance to participate and showcase your skills!
+          The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
           </div>
         </section>
 
@@ -104,7 +104,7 @@ const Page = () => {
                 <li>Second Round: Solve any 3 out of 5 problems (time limit announced on the spot).</li>
                 <li>Third Round:   Solve all 3 questions (time limit announced on the spot).</li>
                 <li>Participants must maintain event decorum.</li>
-                <li>The judging panel's decision is final.</li>
+                <li>The judging panel&apos;s decision is final.</li>
               </ul>
             </div>
           </section>
@@ -153,7 +153,7 @@ const Page = () => {
             <li>First Round: 25 questions, time limit – 30 min.</li>
             <li>Qualification: Based on total participation.</li>
             <li>Second & Third Rounds: Time limit announced on the spot.</li>
-            <li>The judging panel's decision is final.</li>
+            <li>The judging panel&apos;s decision is final.</li>
           </ul>
         </div>
       </section>

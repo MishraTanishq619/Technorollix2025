@@ -45,7 +45,7 @@ const page = () => {
             Step into the intellectual battlefield of Tarkash, where logic meets leadership, and arguments shape innovation. This high-energy debate competition is designed for aspiring managers, entrepreneurs, and business enthusiasts as well as others to challenge conventional wisdom and present groundbreaking perspectives.
             </li>
             <li>
-            Participants will engage in thought-provoking debates on current business trends, corporate ethics, financial strategies, and emerging market dynamics and also current happening. Whether you're defending or opposing, your ability to think critically, articulate persuasively, and counter strategically will determine your victory.
+            Participants will engage in thought-provoking debates on current business trends, corporate ethics, financial strategies, and emerging market dynamics and also current happening. Whether you&apos;re defending or opposing, your ability to think critically, articulate persuasively, and counter strategically will determine your victory.
             </li>
             </ul>
             </div>
@@ -99,7 +99,7 @@ const page = () => {
 
       <li className="text-[#FFAE3D] font-bold">4. REBUTTAL & CROSS-EXAMINATION</li>
       <ul className="list-decimal pl-10 text-xl space-y-2">
-        <li>Teams must respond to opponents' arguments through rebuttals.</li>
+        <li>Teams must respond to opponents&apos; arguments through rebuttals.</li>
         <li>Some formats allow cross-examination where teams ask direct questions to opponents.</li>
         <li>Attacks should focus on arguments, not personal attacks.</li>
       </ul>

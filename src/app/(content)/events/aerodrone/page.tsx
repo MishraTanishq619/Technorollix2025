@@ -16,12 +16,12 @@ const Aerodrone = () => {
     "Participants will be eliminated after each round based on the judges' evaluation.",
     "Participants must respect event coordinators, judges, and fellow contestants at all times. Any misbehavior may lead to disqualification.",
   ];
-  const reasons = [""];
-  const managers = [
-    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
-  ];
+  // const reasons = [""];
+  // const managers = [
+  //   { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
+  //   { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
+  //   { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+  // ];
 
   return (
     <div>

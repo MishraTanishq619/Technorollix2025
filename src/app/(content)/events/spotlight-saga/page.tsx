@@ -4,11 +4,11 @@ import ManagerCard from "@/components/sub-component/manager-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
 
 const page = () => {
-  const managers = [
-    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
-  ];
+  // const managers = [
+  //   { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
+  //   { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
+  //   { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+  // ];
 
   return (
     <div className="Spotlight Saga">
@@ -49,7 +49,7 @@ const page = () => {
                 </li>
                 <li>
                   Winning Criteria: If a participant’s self-score exactly
-                  matches the judges' average score, they instantly win the
+                  matches the judges&apos; average score, they instantly win the
                   event! If no one matches exactly, the highest-scoring
                   participant wins as usual.
                 </li>
@@ -99,7 +99,7 @@ const page = () => {
                 </li>
                 <li>
                   Self-Scoring Must Be Honest – Participants must rate
-                  themselves before knowing the judges' scores.
+                  themselves before knowing the judges&apos; scores.
                 </li>
                 <li>
                   No Offensive Content – Jokes, acts, or performances must be
