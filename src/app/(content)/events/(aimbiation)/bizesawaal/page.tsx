@@ -6,6 +6,7 @@ import SubEventCard from '@/components/sub-component/sub-event-card';
 import WhyParticipate from '@/components/sub-component/why-participate';
 import RulesAndRegulation from '@/components/sub-component/rule-regulation';
 import ManagerCard from '@/components/sub-component/manager-card';
+import { BsAward } from "react-icons/bs";
 
 const Page = () => {
   const rules = [  "1. Teams need to register themselves before or till the registration last date. After which no registrations would be entertained.",
@@ -81,12 +82,12 @@ of the business world, including finance, economics, startups, and corporate tre
           </div>
           <div className="flex justify-around gap-10 m-20 mt-8">
             <SubEventCard
-              imageUrl={null}
+              Icon={BsAward}
               title="Round 1"
               description="Introduction + outfit Intro"
             />
             <SubEventCard
-              imageUrl={null}
+              Icon={BsAward}
               title="Round 2"
               description="Introduction + outfit Intro"
             />
@@ -110,7 +111,7 @@ of the business world, including finance, economics, startups, and corporate tre
             <ManagerCard imageUrl="/dallE.png" name="Om Kumar Singh " contact={7999425422 }/>
             <ManagerCard imageUrl="/dallE.png" name="Satyendra Vishwakarma" contact={7024332255}/>
         </div>
-        <ButtonLanding label="Register Now" />
+        <ButtonLanding label="Register Now" link='/auth/login'/>
         <br />
         <br />
         <br />
