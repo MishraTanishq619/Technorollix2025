@@ -3,6 +3,7 @@ import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card';
 import ManagerCard from '@/components/sub-component/manager-card';
 import ButtonLanding from '@/components/sub-component/button-landing';
+import { BsAward } from "react-icons/bs";
 
 const Page = () => {
   return (
@@ -32,7 +33,7 @@ const Page = () => {
             <div className="flex justify-center w-full">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                 <SubEventCard
-                  imageUrl=""
+                  Icon={BsAward}
                   title="ROUND1: GENUINE COMPANY "
                   description="Name of genuine company will be given to each team on which they have to make an advertisement. The Products name will be given on the spot
 
@@ -52,7 +53,7 @@ These points can be used in the next Round.
 "
                 />
                 <SubEventCard
-                  imageUrl=""
+                  Icon={BsAward}
                   title="ROUND 2 "
                   description="Name of a product will be provided through chit system to each team on which they have to make a full-fledged advertisement which will show all important features of the product. 
 

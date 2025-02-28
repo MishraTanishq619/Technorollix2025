@@ -210,12 +210,10 @@ Judgment Criteria:	 Judges’ marks
             />
           </div>
         </section>
-
-        
       </section>
 
       <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="doremon" contact={8305216569}/>
+            <ManagerCard imageUrl="/dallE.png" name="Ajay Patel" contact={8305637372}/>
         </div>
         <ButtonLanding label="Register Now" link="/auth/login" />
 
