@@ -7,6 +7,13 @@ import ButtonLanding from '@/components/sub-component/button-landing';
 const Page = () => {
   return (
     <div className="Hackathon">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       <EventIntro
         imageUrl="/techno-events-logo/hackathon.png"
         title="hackathon"
@@ -26,17 +33,17 @@ const Page = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <SubEventCard
-                imageUrl=""
+                Icon={}
                 title="Round 1: Idea Submission"
                 description="Participants submit problem statements and proposed solutions."
               />
               <SubEventCard
-                imageUrl=""
+                Icon={}
                 title="Round 2: Prototype Development"
                 description="Shortlisted teams develop a working prototype."
               />
               <SubEventCard
-                imageUrl=""
+                Icon={}
                 title="Round 3: Functionality and Final Pitch"
                 description="Teams present their solutions to a panel of judges."
               />
