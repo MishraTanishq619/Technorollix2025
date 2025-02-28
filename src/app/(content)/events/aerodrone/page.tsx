@@ -27,16 +27,14 @@ const Aerodrone = () => {
 
   return (
     <div>
-      <div
-        className="absolute top-0 left-0 w-full h-auto pointer-events-none -z-10"
-        id="bg-container"
-      >
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
-          className="w-full opacity-100"
+          className="w-full h-auto opacity-150"
           alt="Scrolling Background"
         />
       </div>
+
       <EventIntro
         imageUrl="/techno-events-logo/aerodrone.png"
         title="Aerodrone"

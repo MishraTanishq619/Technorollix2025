@@ -10,7 +10,7 @@ const page = () => {
     { imageUrl: "/dallE.png", name: "Shomya Sinha", contact: 7091799799 },
     { imageUrl: "/dallE.png", name: "Mayank Sharma", contact: 7024189586 },
   ];
-
+  
   return (
     <div className="">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">

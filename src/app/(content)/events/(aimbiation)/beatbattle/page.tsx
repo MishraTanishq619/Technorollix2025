@@ -6,7 +6,17 @@ import ButtonLanding from '@/components/sub-component/button-landing';
 
 const Page = () => {
   return (
+    
+    
     <div className="Beatbattle">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
+
       <EventIntro
         imageUrl="/aimbiation-events-logo/beatbattle.jpg"
         title="Beatbattle"
