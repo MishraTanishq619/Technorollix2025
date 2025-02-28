@@ -3,13 +3,13 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #5D2019;
+  background: #5d2019;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #FBDA7A;
+  background-color: #fbda7a;
   border-radius: 10px;
-  border: 2px solid #5D2019;
+  border: 2px solid #5d2019;
 }
 
 body::-webkit-scrollbar {
@@ -17,11 +17,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #5D2019;
+  background: #5d2019;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #FBDA7A;
+  background-color: #fbda7a;
   border-radius: 10px;
-  border: 3px solid #5D2019;
+  border: 3px solid #5d2019;
 }

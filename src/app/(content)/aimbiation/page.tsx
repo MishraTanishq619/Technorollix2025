@@ -18,10 +18,10 @@ const Ambiation = () => {
     <ButtonLanding label='Register' link='/dashboard' />
     </div>
     <div className='absolute top-[275vh] left-[85vh]'>
-    <ButtonLanding label='Explore' link='/dashboard' />
+    <ButtonLanding label='Explore' link='/events' />
     </div>
     <div className='absolute top-[440vh] left-[80vh]'>
-    <ButtonLanding label='Know More' link='/dashboard' />
+    <ButtonLanding label='Know More' link='/about' />
     </div>
     </div>
     
