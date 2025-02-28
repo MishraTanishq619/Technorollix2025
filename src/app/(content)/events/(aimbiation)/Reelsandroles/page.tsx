@@ -27,7 +27,7 @@ const page = () => {
 
       <section>
         <EventIntro
-          imageUrl="/antaragni.png"
+          imageUrl="/reelandroles.png"
           title="Reels & Roles play"
           registrations={20}
           pricepool={30000}

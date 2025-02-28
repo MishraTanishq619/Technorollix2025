@@ -34,7 +34,7 @@ const Page = () => {
 
       <section>
         <EventIntro
-          imageUrl="/aimbiation-events-logo/bizesawaal.jpg"
+          imageUrl="/aimbiation-events-logo/bizesawaal.png"
           title="Biz E Sawaal"
           registrations={0}
           pricepool={6000}

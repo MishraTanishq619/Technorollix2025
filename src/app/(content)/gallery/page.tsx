@@ -4,7 +4,7 @@ import Image from 'next/image'
 const page = () => {
   return (
     <div className="">
-      <Image src={"/gallery.svg"} width={500} height={500} alt='schedule' className='w-full'/>
+      <Image src={"/gallery.png"} width={500} height={500} alt='gallery' className='w-full'/>
     </div>
   )
 }

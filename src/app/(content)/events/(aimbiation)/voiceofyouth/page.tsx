@@ -15,7 +15,7 @@ const page = () => {
       </div>
 
        <EventIntro
-        imageUrl="/antaragni.png"
+        imageUrl="/aimbiation-events-logo/voiceofyouth.png"
         title="Voice of Youths"
         registrations={20}
         pricepool={12000}
