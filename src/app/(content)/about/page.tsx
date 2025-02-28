@@ -13,7 +13,7 @@ const About = () => {
         />
       </div>
       <div className="text-white flex flex-col mt-36 text-center items-center min-h-screen px-4 md:px-0">
-        <h2 className="text-5xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
+        <h2 className="text-7xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
           ABOUT
         </h2>
         <p className="w-full max-w-[943px] pt-10 text-xl uppercase">
@@ -25,7 +25,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row mt-20 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
             <img
-              src="./Rectangle 243.png"
+              src="./opjucampus.jpg"
               alt=""
               className="w-full max-w-[700px] h-auto"
             />
@@ -40,9 +40,9 @@ const About = () => {
         </div>
 
         {/* Second Event */}
-        <div className="flex flex-col md:flex-row mt-36 items-center">
+        <div className="flex flex-col md:flex-row mt-36 items-center backdrop-blur-sm">
           <div className="text-left order-2 md:order-1">
-            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">TECHNOROLLIX 2025</h5>
+            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium ">TECHNOROLLIX 2025</h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
               Technorollix is Central India's biggest techno-cultural
               extravaganza, bringing together innovation, creativity, and
@@ -50,16 +50,13 @@ const About = () => {
               competitions, cultural performances, and engaging workshops, it’s
               a platform where technology meets artistry. Join us for an
               electrifying experience that pushes boundaries and celebrates the
-              spirit of innovation! Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Quasi dolorem aut harum libero odit? Temporibus,
-              reprehenderit. Delectus tempore pariatur nobis dolorum ipsa ipsum
-              sequi, sed deleniti? Quam perspiciatis itaque sapiente!
+              spirit of innovation!
             </p>
           </div>
 
           <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
             <img
-              src="./Rectangle 243.png"
+              src="./technorollixlogo.png"
               alt=""
               className="w-full max-w-[700px] h-auto"
             />
@@ -70,9 +67,9 @@ const About = () => {
         <div className="flex flex-col md:flex-row mt-36 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
             <img
-              src="./Rectangle 243.png"
+              src="/junoonlogo.png"
               alt=""
-              className="w-full max-w-[700px] h-auto"
+              className="w-full max-w-[600px] h-auto"
             />
           </div>
 
@@ -99,18 +96,15 @@ const About = () => {
               competitions, cultural performances, and engaging workshops, it’s
               a platform where technology meets artistry. Join us for an
               electrifying experience that pushes boundaries and celebrates the
-              spirit of innovation! Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Quasi dolorem aut harum libero odit? Temporibus,
-              reprehenderit. Delectus tempore pariatur nobis dolorum ipsa ipsum
-              sequi, sed deleniti? Quam perspiciatis itaque sapiente!
+              spirit of innovation! 
             </p>
           </div>
 
           <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
             <img
-              src="./Rectangle 243.png"
+              src="/ambiation.svg"
               alt=""
-              className="w-full max-w-[700px] h-auto"
+              className="w-full max-w-[600px] h-auto"
             />
           </div>
         </div>

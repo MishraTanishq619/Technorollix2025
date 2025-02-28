@@ -3,6 +3,7 @@ import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card'; // Ensure the correct path
 import ManagerCard from '@/components/sub-component/manager-card'; // Ensure the correct path
 import ButtonLanding from '@/components/sub-component/button-landing'; // Ensure the correct path
+import { IoMdArrowRoundForward } from "react-icons/io";
 
 const Page = () => {
   return (
@@ -40,7 +41,7 @@ const Page = () => {
             <div className="flex justify-center w-full">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                 <SubEventCard
-                  imageUrl="/user.svg"
+                  Icon={IoMdArrowRoundForward}
                   title="ROUND 1"
                   description="There will be a single round."
                 />
