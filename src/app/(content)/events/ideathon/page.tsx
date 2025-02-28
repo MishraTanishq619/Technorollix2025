@@ -8,6 +8,13 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 const Page = () => {
   return (
     <div className="Ideathon">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       <EventIntro
         imageUrl="/techno-events-logo/ideathon.png"
         title="Ideathon"
@@ -39,13 +46,11 @@ const Page = () => {
           <section className="flex flex-col items-center gap-8">
             <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">ROUNDS</h2>
             <div className="flex justify-center w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                 <SubEventCard
                   Icon={IoMdArrowRoundForward}
                   title="ROUND 1"
                   description="There will be a single round."
                 />
-              </div>
             </div>
           </section>
           
