@@ -117,7 +117,7 @@ const Roadies = () => {
 
           </div>
           <div className="mb-10">
-            <ButtonLanding label="Register Now" link={''} />
+          <ButtonLanding label="Register Now" link="/dashboard" />
             </div>
         </div>
       </section>

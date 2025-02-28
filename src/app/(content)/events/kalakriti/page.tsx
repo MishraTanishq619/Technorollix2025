@@ -2,7 +2,8 @@
 import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
-import EventManagers from "@/components/sub-component/event-managers";
+import ManagerCard from "@/components/sub-component/manager-card";
+import ButtonLanding from "@/components/sub-component/button-landing";
 
 
 interface SubEventCardProps {
@@ -205,11 +206,11 @@ Judgment Criteria:	 Judges’ marks
         
       </section>
 
-      <section>
+      <div className="flex justify-center space-x-40 items-center mt-20">
+            <ManagerCard imageUrl="/dallE.png" name="doremon" contact={8305216569}/>
+        </div>
+        <ButtonLanding label="Register Now" link="/dashboard" />
 
-      <EventManagers managers={managers}/>
-
-      </section>
     </div>
   );
 };
