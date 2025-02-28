@@ -2,10 +2,7 @@ import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
-import CardwithImage from "@/components/sub-component/card-with-image";
-import Image from "next/image";
-import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import WhyParticipate from "@/components/sub-component/why-participate";
+import { BsAward } from "react-icons/bs"
 import ManagerCard from "@/components/sub-component/manager-card";
 
 const page = () => {
@@ -27,7 +24,7 @@ const page = () => {
 
       <section>
         <EventIntro
-          imageUrl="/antaragni.png"
+          imageUrl="/aimbiation-events-logo/reelandroles.png"
           title="Reels & Roles play"
           registrations={20}
           pricepool={30000}
@@ -52,18 +49,18 @@ const page = () => {
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="./Vector.svg"
+              Icon={BsAward}
               title="Round-1: A day at corporates"
               description="Make reels on corporate life from wearing formals to attending meetings formal / informal communication."
             />
 
             <SubEventCard
-              imageUrl="./Vector.svg"
+              Icon={BsAward}
               title="Round-2: cinematic ads shooting –"
               description="Make cinematic adds of the product of your choice "
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={BsAward}
               title="Round-3: cinematic shoot of OPJU"
               description="Bring best out of the campus in a cinematic shoot"
             />
@@ -102,18 +99,18 @@ const page = () => {
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="./Vector.svg"
+              Icon={BsAward}
               title="Round-1"
               description="top 15 reels with highest likes will qualify for round 2."
             />
 
             <SubEventCard
-              imageUrl="./Vector.svg"
+              Icon={BsAward}
               title="Round-2:"
               description="top 10 reels with best cinematography will qualify for round 3. "
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={BsAward}
               title="Round-3:"
               description="top 3 reels as decided by the judges will be the winners"
             />
@@ -139,12 +136,12 @@ const page = () => {
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="./Vector.svg"
+              Icon={BsAward}
               title="Round 1 : Job interview "
               description="Job requirement and other background situations will be provided on the spot"
             />
             <SubEventCard
-              imageUrl="./Rectangle 197.png"
+              Icon={BsAward}
               title="Round 2: Board Meeting / Shareholders meeting "
               description="Agenda will be provided at the spot"
             />
@@ -180,13 +177,13 @@ const page = () => {
         <section className="">
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="./Vector.svg"
+              Icon={BsAward}
               title=""
               description="10 students with the best performance will qualify for round 2."
             />
 
             <SubEventCard
-              imageUrl="./Vector.svg"
+              Icon={BsAward}
               title=""
               description="Winners will be declared by the judges  "
             />
@@ -250,7 +247,7 @@ const page = () => {
           <div className="flex justify-center space-x-40 items-center mt-20">
             <ManagerCard imageUrl="/dallE.png" name="Sanjeet kumar Gourh" contact={6260294300}/>
             <ManagerCard imageUrl="/dallE.png" name="Shubham Narayan Singh" contact={ 6371745801}/>
-            <ManagerCard imageUrl="/dallE.png" name="Nishika Agrawal " contact={7853032508}/>
+            <ManagerCard imageUrl="/dallE.png" name="Nishika Agrawal "  contact={7853032508}/>
           </div>
           <div className="mb-10">
           <ButtonLanding label="Register Now" link="/dashboard" />

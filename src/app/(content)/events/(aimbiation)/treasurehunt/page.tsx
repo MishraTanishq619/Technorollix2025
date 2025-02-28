@@ -3,6 +3,7 @@ import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card';
 import ManagerCard from '@/components/sub-component/manager-card';
 import ButtonLanding from '@/components/sub-component/button-landing';
+import { BsAward } from "react-icons/bs";
 
 const Page = () => {
   return (
@@ -67,17 +68,17 @@ const Page = () => {
         <div className="flex justify-center w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
             <SubEventCard
-              imageUrl="/user.svg"
+              Icon={BsAward}
               title="ROUND 1"
               description="The Unseen Twist"
             />
             <SubEventCard
-              imageUrl="/user.svg"
+              Icon={BsAward}
               title="ROUND 2"
               description="Hold It, Solve It!"
             />
             <SubEventCard
-              imageUrl="/user.svg"
+              Icon={BsAward}
               title="ROUND 3"
               description="Decode or Die!"
             />

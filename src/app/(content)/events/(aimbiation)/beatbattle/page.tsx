@@ -3,6 +3,7 @@ import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card';
 import ManagerCard from '@/components/sub-component/manager-card';
 import ButtonLanding from '@/components/sub-component/button-landing';
+import { BsAward } from "react-icons/bs";
 
 const Page = () => {
   return (
@@ -50,7 +51,7 @@ const Page = () => {
         <div className="flex justify-center w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
             <SubEventCard
-              imageUrl=""
+              Icon={BsAward}
               title="ROUND 1: BOLLYWOOD BEAT CLASH"
               description="Two contestants battle head-to-head, dancing to a Bollywood DJ remix mashup.
               Each participant gets 45 seconds to perform.
@@ -60,7 +61,7 @@ const Page = () => {
               Only one from each battle moves forward to the next round."
             />
             <SubEventCard
-              imageUrl=""
+              Icon={BsAward}
               title="ROUND 2: BOLLYWOOD TADKA MIX"
               description="Themes will be revealed later"
             /><br/><br/>
@@ -107,7 +108,7 @@ const Page = () => {
             <ManagerCard imageUrl="/dallE.png" name="Ramprit Kour" contact={7656887717} />
           </div>
           <div className="mb-10">
-            <ButtonLanding label="Register Now" />
+            <ButtonLanding label="Register Now" link='/auth/login' />
           </div>
         </div>
       </section>
