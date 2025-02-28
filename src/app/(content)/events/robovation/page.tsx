@@ -25,6 +25,8 @@ const page = () => {
 
   return (
     <div>
+
+      
       <EventIntro
         venue=" BAPUJI CHOWK (OPJU)"
         time={"21-03-25 , 10:00 am"}
@@ -34,6 +36,13 @@ const page = () => {
         pricepool={40000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste!."
       />
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       <div className="mt-16 mb-16"></div>
       <h1 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
         SUB EVENTS
@@ -89,6 +98,23 @@ ROUND 1 AND ROUND 2."
 
       <section className="mt-20">
         <RulesAndRegulation rules={rules} />
+      </section>
+
+      <section className="flex flex-col items-center justify-center">
+        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+          EVENT MANAGERS
+        </h2>
+        <div className="text-white text-2xl text-center tracking-[5.28px]">
+          For any queries regarding the event, feel free to reach out to any of the managers listed below.
+        </div>
+        <div className="flex justify-center space-x-40 items-center mt-20">
+          <ManagerCard imageUrl="/dallE.png" name="" contact={6260294300} />
+          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6371745801} />
+          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
+        </div>
+        <div className="mb-10">
+          <ButtonLanding label="Register Now" link="/dashboard"/>
+        </div>
       </section>
     </div>
   );

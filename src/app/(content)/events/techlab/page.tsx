@@ -34,6 +34,14 @@ const Page = () => {
   ];
   return (
     <div className="flex flex-col space-y-10">
+
+<div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       {/* Event Intro Section */}
 
       <section>
@@ -116,11 +124,16 @@ const Page = () => {
             smooth experience for you!
           </div>
 
-          <div className="flex justify-center space-x-40 items-center mt-20">
+          <div className="flex justify-center space-x-20 items-center mt-20">
             <ManagerCard
               imageUrl="/dallE.png"
               name="Shruti Sharma"
               contact={8102012514}
+            />
+            <ManagerCard
+              imageUrl="/dallE.png"
+              name="Pooja Yadav"
+              contact={6371490654}
             />
             <ManagerCard
               imageUrl="/dallE.png"
@@ -129,13 +142,13 @@ const Page = () => {
             />
             <ManagerCard
               imageUrl="/dallE.png"
-              name="Ashish Kumar"
-              contact={9122132979}
+              name="Shivam Kumar Pal"
+              contact={7448115807}
             />
-            <ManagerCard
+                        <ManagerCard
               imageUrl="/dallE.png"
-              name="Priya Kumari"
-              contact={9234531358}
+              name="Anisha Vikhar "
+              contact={9571305506}
             />
           </div>
           <ButtonLanding label="Register Now" link="/dashboard"/>

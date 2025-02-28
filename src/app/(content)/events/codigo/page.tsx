@@ -8,6 +8,13 @@ import { FaCode,FaPenNib } from "react-icons/fa6";
 const Page = () => {
   return (
     <div className="flex flex-col space-y-10">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       {/* Event Intro Section */}
       <section>
         <EventIntro
@@ -160,9 +167,7 @@ const Page = () => {
           For any queries regarding the event, feel free to reach out to any of the managers listed below.
         </div>
         <div className="flex justify-center space-x-40 items-center mt-20">
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6260294300} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6371745801} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
+          <ManagerCard imageUrl="/dallE.png" name="Ritu Singh" contact={8839463899} />
         </div>
         <div className="mb-10">
           <ButtonLanding label="Register Now" link="/dashboard"/>
