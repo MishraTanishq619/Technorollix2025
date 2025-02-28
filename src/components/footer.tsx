@@ -1,5 +1,5 @@
 // components/Footer.tsx
-import { FaFacebookF, FaWhatsapp, FaInstagram, FaPhoneAlt } from "react-icons/fa";
+import { FaFacebookF, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import ButtonLanding from "./sub-component/button-landing";
 
 const Footer = () => {

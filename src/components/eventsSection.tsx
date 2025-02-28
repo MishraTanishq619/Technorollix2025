@@ -11,7 +11,7 @@ const EventSection = () => {
       </h2>
       <p className="mt-10 w-full max-w-[943px] text-center text-white text-xl font-medium font-['Poppins'] uppercase">
         Our fest offers a diverse range of technical and non-technical events,
-        ensuring there's something for everyone. From innovative tech showcases
+        ensuring there&apos;s something for everyone. From innovative tech showcases
         to fun and engaging activities, we bring together creativity, skills,
         and excitement for an unforgettable experience!
       </p>

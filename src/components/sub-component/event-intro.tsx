@@ -1,5 +1,5 @@
 import React from "react";
-import CardwithImage from "./card-with-image";
+// import CardwithImage from "./card-with-image";
 import Image from "next/image";
 import { FaLocationDot } from "react-icons/fa6";
 import { GoClockFill } from "react-icons/go";
@@ -24,7 +24,7 @@ const EventIntro: React.FC<EventIntroProps> = ({
   venue,
 }) => {
   return (
-    <div className="">
+    <div className={title}>
       <div className="relative min-h-screen flex items-center justify-center bg-transparent">
         <div className="absolute left-14 p-4 space-y-4 top-28 z-10 text-white text-2xl text-left mb-6">
           <p className="flex items-center">

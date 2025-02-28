@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonLanding from "./sub-component/button-landing";
-import Image from "next/image";
+// import Image from "next/image";
 
 const  AboutSection = () => {
   return (
@@ -22,7 +22,7 @@ const  AboutSection = () => {
         <div className="text-center md:text-left">
           <h5 className="text-4xl font-medium">TECHNOROLLIX 2025</h5>
           <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-4 w-full max-w-[578px]">
-            Technorollix is Central India's biggest techno-cultural
+            Technorollix is Central India&apos;s biggest techno-cultural
             extravaganza, bringing together innovation, creativity, and
             entertainment on a grand scale. With a diverse mix of technical
             competitions, cultural performances, and engaging workshops, it’s a

@@ -1,6 +1,6 @@
-import AboutSection from "@/components/aboutSection";
+// import AboutSection from "@/components/aboutSection";
 import React from "react";
-import ButtonLanding from "@/components/sub-component/button-landing";
+// import ButtonLanding from "@/components/sub-component/button-landing";
 
 const About = () => {
   return (
@@ -54,7 +54,7 @@ const About = () => {
               TECHNOROLLIX 2025
             </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
-              Technorollix is Central India's biggest techno-cultural
+              Technorollix is Central India&apos;s biggest techno-cultural
               extravaganza, bringing together innovation, creativity, and
               entertainment on a grand scale. With a diverse mix of technical
               competitions, cultural performances, and engaging workshops, it’s
@@ -89,7 +89,7 @@ const About = () => {
             </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
               aiMBiAtion 2025, hosted by OP Jindal University, is more than a
-              management fest—it's a hub of innovation, creativity, and
+              management fest—it&apos;s a hub of innovation, creativity, and
               competition. It brings together dreamers and doers to test their
               skills in business, marketing, and debate while also celebrating
               culture through fashion, music, and drama.<br/> From startup challenges
@@ -109,7 +109,7 @@ const About = () => {
             </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
               aiMBiAtion 2025, hosted by OP Jindal University, is more than a
-              management fest—it's a hub of innovation, creativity, and
+              management fest—it&apos;s a hub of innovation, creativity, and
               competition. It brings together dreamers and doers to test their
               skills in business, marketing, and debate while also celebrating
               culture with fashion, music, and drama. From startup challenges to

@@ -32,7 +32,7 @@ export default function Home() {
         />
         
         <p className="mt-2 text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em] text-center">
-          Central India's Biggest Annual Techno-Cultural Fest
+          Central India&apos;s Biggest Annual Techno-Cultural Fest
         </p>
 
         {/* Countdown Timer */}
