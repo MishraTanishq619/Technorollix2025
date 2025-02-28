@@ -3,7 +3,6 @@ import EventIntro from "@/components/sub-component/event-intro";
 import ManagerCard from "@/components/sub-component/manager-card";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import SubEventCard from "@/components/sub-component/sub-event-card";
-import WhyParticipate from "@/components/sub-component/why-participate";
 import React from "react";
 import { BsRobot } from "react-icons/bs";
 import { FaFlagCheckered } from "react-icons/fa";

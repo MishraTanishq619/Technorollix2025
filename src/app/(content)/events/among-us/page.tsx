@@ -1,7 +1,5 @@
 import React from "react";
-//import EventConclusion from '@/components/sub-component/event-conclusion';
-import EventIntro from "@/components/sub-component/event-intro";
-import ManagerCard from "@/components/sub-component/manager-card"; // Ensure this is the correct path
+import EventIntro from "@/components/sub-component/event-intro";// Ensure this is the correct path
 import EventManagers from "@/components/sub-component/event-managers";
 
 const page = () => {

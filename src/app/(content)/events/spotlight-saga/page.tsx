@@ -1,6 +1,5 @@
 import React from "react";
 import EventIntro from "@/components/sub-component/event-intro";
-import EventManagers from "@/components/sub-component/event-managers";
 import ManagerCard from "@/components/sub-component/manager-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
 
