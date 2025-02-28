@@ -10,9 +10,16 @@ const page = () => {
     { imageUrl: "/dallE.png", name: "Shomya Sinha", contact: 7091799799 },
     { imageUrl: "/dallE.png", name: "Mayank Sharma", contact: 7024189586 },
   ];
-
+  
   return (
     <div className="">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       <EventIntro
         imageUrl="/techno-events-logo/amongus.png"
         title="Among-us" // Updated title

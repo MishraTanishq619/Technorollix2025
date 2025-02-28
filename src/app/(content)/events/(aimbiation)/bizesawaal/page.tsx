@@ -22,6 +22,14 @@ const Page = () => {
     "Encouraging Competitive Learning and Networking: By promoting a spirit of healthy competition, teamwork, and public speaking, the event provides a platform for students, professionals, and business enthusiasts to connect, showcase their talent, and gain recognition",];
   return (
     <div className="flex flex-col space-y-10">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
+
       {/* Event Intro Section */}
 
       <section>

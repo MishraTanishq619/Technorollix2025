@@ -1,6 +1,8 @@
 import React from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
+import ManagerCard from "@/components/sub-component/manager-card";
+import ButtonLanding from "@/components/sub-component/button-landing";
 
 const page = () => {
   const managers = [
@@ -11,14 +13,21 @@ const page = () => {
 
   return (
     <div className="Spotlight Saga">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
       <EventIntro
         imageUrl="/techno-events-logo/spotlightsaga.png"
         title="Spotlight Saga"
-        registrations={300}
-        pricepool={60000}
+        registrations={0}
+        pricepool={12000}
         description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."
-        time="8:00 am"
-        venue="MP Hall"
+        time="10:30 am"
+        venue="EE SEMINAR HALL(FB-14)"
       />
 
       <div className="flex flex-col items-center justify-center">
@@ -109,11 +118,20 @@ const page = () => {
               </ul>
             </div>
           </section>
+          <div className="flex justify-center space-x-100 items-center mt-20">
+            <ManagerCard imageUrl="/dallE.png" name="Gourav jha " contact={9692668567}/>
+            <ManagerCard imageUrl="/dallE.png" name="Kumar Shashwat" contact={7488987171}/>
+            <ManagerCard imageUrl="/dallE.png" name="Arjun Agrawal" contact={7538033333}/>
+            <ManagerCard imageUrl="/dallE.png" name="Aparajita Pandey" contact={9907401010}/>
+            <ManagerCard imageUrl="/dallE.png" name="Ujjwal Singh " contact={7898367965}/>
+        </div>
+        <div className="mb-10">
+            <ButtonLanding label="Register Now" link="" />
+            </div>
         </div>
       </div>
-
-      <EventManagers managers={managers} />
     </div>
+    
   );
 };
 

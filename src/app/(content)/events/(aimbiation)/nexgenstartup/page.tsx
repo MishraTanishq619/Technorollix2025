@@ -6,6 +6,14 @@ import React from 'react'
 const page = () => {
   return (
     <div>
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-150"
+          alt="Scrolling Background"
+        />
+      </div>
+
       <EventIntro 
         imageUrl="/aimbiation-events-logo/nexgenstartup.jpg"
         title="Nexgen Start-up"
@@ -15,6 +23,7 @@ const page = () => {
         time={'2:30 PM'}
         venue={'LIVE CLASSROOM'} 
       />
+      <br/><br/>
       <section className="mt-20 mb-20">
         <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
         ABOUT THE EVENT

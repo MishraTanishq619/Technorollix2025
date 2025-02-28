@@ -5,6 +5,7 @@ import React from 'react'
 
 const BullvsBear = () => {
   return (
+    
     <div className='mb-10'>
       <EventIntro
         imageUrl="/aimbiation-events-logo/bullvsbear.jpg"
