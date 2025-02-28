@@ -4,11 +4,11 @@ import ButtonLanding from "@/components/sub-component/button-landing";
 
 const About = () => {
   return (
-    <div className="h-screen w-full">
+    <div className=" w-full">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
-          src="/homebackground.svg"
-          className="w-full h-auto opacity-100"
+          src="/aboutsectionbg.svg"
+          className="w-full h-auto opacity-150"
           alt="Scrolling Background"
         />
       </div>
