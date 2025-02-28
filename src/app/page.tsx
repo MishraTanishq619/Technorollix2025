@@ -41,7 +41,7 @@ export default function Home() {
         <CountdownTimer />
 
         {/* Register Button */}
-        <ButtonLanding label="Register" link="/register" />
+        <ButtonLanding label="Register" link="/auth/login" />
       </div>
 
       {/* EventsSection */}
