@@ -102,7 +102,7 @@ export default function AdminDashboard() {
 
 	if (loading) {
 		return (
-			<div className="container mx-auto p-6 space-y-6">
+			<div className="container mx-auto p-6 space-y-6 bg-slate-400">
 				<div className="space-y-4">
 					<Skeleton className="h-8 w-[200px] mx-auto" />
 					<Card>
