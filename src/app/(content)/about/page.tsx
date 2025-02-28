@@ -7,7 +7,7 @@ const About = () => {
     <div className=" w-full">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
-          src="/aboutsectionbg.svg"
+          src="/aboutpagebackground.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
         />
