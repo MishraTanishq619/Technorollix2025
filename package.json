@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 80",
+    "start": "next start -p 83",
     "lint": "next lint",
     "build-no-checks": "NEXTJS_IGNORE_ESLINT=1 NEXT_DISABLE_TYPE_CHECKS=1 next build"
   },
