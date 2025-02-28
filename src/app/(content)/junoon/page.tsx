@@ -2,7 +2,7 @@ import React from "react";
 
 function Junoon() {
   return (
-    <div className="h-screen w-full">
+    <div className="h-[4050px] w-full">
       <div className="absolute top-0 left-0 w-full h-auto pointer-events-none -z-10">
         <img
           src="/junoon.jpg"

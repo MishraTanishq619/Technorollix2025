@@ -88,15 +88,11 @@ const About = () => {
               JUNOON
             </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
-              aiMBiAtion 2025, hosted by OP Jindal University, is more than a
-              management fest—it's a hub of innovation, creativity, and
-              competition. It brings together dreamers and doers to test their
-              skills in business, marketing, and debate while also celebrating
-              culture through fashion, music, and drama.<br/> From startup challenges
-              to trading battles and treasure hunts, every event pushes
-              participants to think, act, and innovate. With a perfect blend of
-              strategy and spontaneity, aiMBiAtion promises an unforgettable
-              experience where talents shine and memories are made.
+            OPJU Junoon is an annual cultural extravaganza hosted by the O.P. Jindal
+        University (OPJU) in Chhattisgarh, India. This vibrant event showcases
+        the diverse talents of people across various domains including music and
+        dance. In 2018, We had Shirley Sethia. In 2020, we had Jubin Nautiyal
+        and Sunburn and in the year 2023, we had DJ Perisha.
             </p>
           </div>
         </div>
