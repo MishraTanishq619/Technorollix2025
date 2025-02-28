@@ -32,9 +32,17 @@ const About = () => {
           </div>
 
           <div className="text-left">
-            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">OPJU</h5>
+            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
+              OPJU
+            </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
-            OPJU was founded by the Jindal Education and Welfare Society, OP Jindal University (OPJU) was set up to bring high quality education to its students based on a world class curriculum, the latest teaching methodology and committed faculty members. The multidisciplinary university aims to develop young professionals and future leaders who will not only power growth and development in the state, but also make a mark globally.
+              OPJU was founded by the Jindal Education and Welfare Society, OP
+              Jindal University (OPJU) was set up to bring high quality
+              education to its students based on a world class curriculum, the
+              latest teaching methodology and committed faculty members. The
+              multidisciplinary university aims to develop young professionals
+              and future leaders who will not only power growth and development
+              in the state, but also make a mark globally.
             </p>
           </div>
         </div>
@@ -42,7 +50,9 @@ const About = () => {
         {/* Second Event */}
         <div className="flex flex-col md:flex-row mt-36 items-center backdrop-blur-sm">
           <div className="text-left order-2 md:order-1">
-            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium ">TECHNOROLLIX 2025</h5>
+            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium ">
+              TECHNOROLLIX 2025
+            </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
               Technorollix is Central India's biggest techno-cultural
               extravaganza, bringing together innovation, creativity, and
@@ -74,13 +84,19 @@ const About = () => {
           </div>
 
           <div className="text-left">
-            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">JUNOON</h5>
+            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
+              JUNOON
+            </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
-            OPJU Junoon is an annual cultural extravaganza hosted by the O.P. Jindal
-        University (OPJU) in Chhattisgarh, India. This vibrant event showcases
-        the diverse talents of people across various domains including music and
-        dance. In 2018, We had Shirley Sethia. In 2020, we had Jubin Nautiyal
-        and Sunburn and in the year 2023, we had DJ Perisha.
+              aiMBiAtion 2025, hosted by OP Jindal University, is more than a
+              management fest—it's a hub of innovation, creativity, and
+              competition. It brings together dreamers and doers to test their
+              skills in business, marketing, and debate while also celebrating
+              culture through fashion, music, and drama.<br/> From startup challenges
+              to trading battles and treasure hunts, every event pushes
+              participants to think, act, and innovate. With a perfect blend of
+              strategy and spontaneity, aiMBiAtion promises an unforgettable
+              experience where talents shine and memories are made.
             </p>
           </div>
         </div>
@@ -88,15 +104,20 @@ const About = () => {
         {/* Fourth Event */}
         <div className="flex flex-col md:flex-row mt-36 items-center">
           <div className="text-left order-2 md:order-1">
-            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">aiMBiAtion </h5>
+            <h5 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium">
+              aiMBiAtion{" "}
+            </h5>
             <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-16 w-full max-w-[578px]">
-              Technorollix is Central India's biggest techno-cultural
-              extravaganza, bringing together innovation, creativity, and
-              entertainment on a grand scale. With a diverse mix of technical
-              competitions, cultural performances, and engaging workshops, it’s
-              a platform where technology meets artistry. Join us for an
-              electrifying experience that pushes boundaries and celebrates the
-              spirit of innovation! 
+              aiMBiAtion 2025, hosted by OP Jindal University, is more than a
+              management fest—it's a hub of innovation, creativity, and
+              competition. It brings together dreamers and doers to test their
+              skills in business, marketing, and debate while also celebrating
+              culture with fashion, music, and drama. From startup challenges to
+              trading battles, ad campaigns to treasure hunts, every event
+              pushes participants to think, act, and innovate. With a perfect
+              blend of strategy and spontaneity, aiMBiAtion promises an
+              unforgettable experience where talents shine, stories unfold, and
+              memories are made. Compete. Create. Celebrate.
             </p>
           </div>
 
@@ -108,8 +129,20 @@ const About = () => {
             />
           </div>
         </div>
-        <br/><br/><br/><br/><br/>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </div>
   );

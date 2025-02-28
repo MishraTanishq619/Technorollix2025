@@ -24,7 +24,7 @@ const ManagerCard: React.FC<ManagerCardProps> = ({ imageUrl, name, contact }) =>
 
       {/* Manager Details */}
       <div className="p-2 ">
-        <h2 className="text-xl font-semibold text-center">{name}</h2>
+        <h2 className="text-xl font-semibold text-left">{name}</h2>
         <div className="text-gray-300 text-left">
           <p className="mt-1">CONTACT :</p>
           <p className="text-lg items-center justify-center">+91 {contact}</p>

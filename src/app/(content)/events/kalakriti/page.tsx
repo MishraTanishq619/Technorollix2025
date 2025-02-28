@@ -3,6 +3,7 @@ import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import EventManagers from "@/components/sub-component/event-managers";
+import { IoIosCamera } from "react-icons/io";
 
 
 interface SubEventCardProps {
@@ -49,24 +50,24 @@ const page = () => {
         <section>
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="/subEventLogo.png" // Updated path
+              Icon={} // Updated path
               title="Pradarshini (Exhibition)"
               description="KalaKriti presents Pradarshini, an art exhibition where colors, creativity, and expression come to life. Immerse yourself in a world of art that captivates"
             />
             <SubEventCard
-              imageUrl="/Rectangle 197.png" // Updated path
+              Icon={} // Updated path
               title="Drishyaam (DecoratioN)"
               description="India's rich heritage and vibrant culture come alive in Drishyaam by KalaKriti. Witness the essence of tradition through stunning artistic decor!"
             />
           </div>
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="/Rectangle 197.png" // Updated path
+              Icon={IoIosCamera} // Updated path
               title="Photorollix"
               description="Photorollix is a celebration of captured moments and creative vision. Showcase your ‘third eye’ skills and bring imagination to life through the lens. Relive and cherish timeless memories!"
             />
             <SubEventCard
-              imageUrl="/Rectangle 197.png" // Updated path
+              Icon={} // Updated path
               title="Rangoli"
               description="Rangoli is more than just art—it's a vibrant expression of joy, positivity, and tradition. Let your colors weave stories and welcome prosperity with every design!"
             />
@@ -74,12 +75,12 @@ const page = () => {
 
           <div className="flex justify-around m-20">
             <SubEventCard
-              imageUrl="/subeventcard1.png" // Updated path
+              Icon={} // Updated path
               title="Colour Painting"
               description="Colour Painting/Sketching is the art of bringing imagination to life. Dip into your creative reservoir and let your brush or pencil speak on canvas—express, create, and inspire"
             />
             <SubEventCard
-              imageUrl="/Rectangle 197.png" // Updated path
+              Icon={} // Updated path
               title="Bottle Painting"
               description="Bottle Painting transforms the ordinary into art. Let your creativity flow as you turn simple bottles into vibrant masterpieces, blending colors with imagination!"
             />
