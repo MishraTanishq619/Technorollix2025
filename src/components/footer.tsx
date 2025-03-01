@@ -1,6 +1,7 @@
 // components/Footer.tsx
 import { FaFacebookF, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import ButtonLanding from "./sub-component/button-landing";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -22,7 +23,7 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className="flex space-x-6 mt-4 md:mt-0">
           <a href="/about" className="hover:text-gray-400">About</a>
-          <a href="/gallery" className="hover:text-gray-400">Gallery</a>
+          <Link href="/gallery" className="hover:text-gray-400">Gallery</Link>
           <a href="/team" className="hover:text-gray-400">Team</a>
         </div>
 
