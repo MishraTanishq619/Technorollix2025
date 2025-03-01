@@ -30,7 +30,7 @@ const Page = () => {
 
       {/* Theme section */}
       <section className="flex flex-col items-center justify-center">
-        <h2 className="text-[#ffad3c] text-5xl font-medium tracking-[2.88px] text-center">
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           THEME
         </h2>
         <div className="text-white text-2xl font-medium text-center tracking-[5.28px]">
@@ -41,8 +41,8 @@ const Page = () => {
       <section>
         {/* Sub-Events section */}
         <section className="flex flex-col items-center justify-center">
-          <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-            sub-events
+          <div className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            SUB-EVENTS
           </div>
           <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
           The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don't miss your chance to participate and showcase your skills!
@@ -115,8 +115,7 @@ const Page = () => {
 
       {/* Event Managers Section */}
       <section className="flex flex-col items-center justify-center">
-        
-      <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)] mb-14">
           EVENT MANAGERS
         </h2>
         <div className="text-white text-2xl text-center tracking-[5.28px]">
