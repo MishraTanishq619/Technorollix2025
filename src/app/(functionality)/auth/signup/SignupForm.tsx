@@ -44,8 +44,8 @@ export default function SignupForm() {
             mobileNumber: "",
             password: "",
             confirmPassword: "",
-            branch: "",
-            enrollmentNumber: "",
+            branch: "NA",
+            enrollmentNumber: "NA",
             address: "",
         },
     });
