@@ -23,7 +23,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-// import { sendWelcomeEmail } from "@/actions/mailer";
+import { sendWelcomeEmail } from "@/actions/mailer";
 import useFetch from "@/hooks/use-fetch";
 import { userSignup } from "@/actions/user-actions";
 
@@ -105,7 +105,7 @@ export default function SignupForm() {
 		setIsPasswordSent(true);
 
 		console.log("generatedPassword: ", generatedPassword);
-		// await sendWelcomeEmail(email, generatedPassword);
+		await sendWelcomeEmail(email, generatedPassword);
 
 		toast({
 			title: "Password Sent",
