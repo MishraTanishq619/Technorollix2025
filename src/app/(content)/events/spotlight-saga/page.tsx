@@ -37,7 +37,7 @@ const page = () => {
               HOW IT WORKS
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
+              <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
                 <li>
                   Performance Round: Each participant gets 2 minutes to perform
                   any talent—singing, dancing, mimicry, magic tricks, comedy, or
@@ -63,7 +63,7 @@ const page = () => {
               WHY PARTICIPATE
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
+              <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
                 <li>
                   Showcase Your Talent – Sing, dance, mimic, or perform anything
                   unique!
@@ -93,7 +93,7 @@ const page = () => {
               RULES & REGULATIONS
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
+              <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
                 <li>
                   Time Limit – Each participant gets 2 minutes to perform;
                   exceeding the limit may lead to deductions.
@@ -118,6 +118,13 @@ const page = () => {
               </ul>
             </div>
           </section>
+          <section className="flex flex-col items-center justify-center">
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)] mb-14">
+          EVENT MANAGERS
+        </h2>
+        <div className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
+          For any queries regarding the event, feel free to reach out to any of the managers listed below.
+        </div>
           <div className="flex justify-center space-x-100 items-center mt-20">
             <ManagerCard imageUrl="/dallE.png" name="Gourav jha " contact={9692668567}/>
             <ManagerCard imageUrl="/dallE.png" name="Kumar Shashwat" contact={7488987171}/>
@@ -128,6 +135,7 @@ const page = () => {
         <div className="mb-10">
             <ButtonLanding label="Register Now" link="" />
             </div>
+            </section>
         </div>
       </div>
     </div>
