@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "@/hooks/use-toast";
+import { sendWelcomeEmail } from "@/actions/mailer";
 
 const emailSchema = z.object({
     email: z.string().email({ message: "Please enter a valid email address." }),
@@ -24,7 +25,7 @@ export default function EnterEmail({ onNext }: { onNext: () => void }) {
     const onSubmit = async (values: z.infer<typeof emailSchema>) => {
         setLoading(true);
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
-        console.log(`OTP sent to ${values.email}: ${otp}`);
+        await sendWelcomeEmail(values.email, otp);
 
         const isOutsider = !values.email.endsWith("@opju.ac.in");
         sessionStorage.setItem("signupEmail", values.email);
