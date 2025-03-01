@@ -3,6 +3,9 @@ import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card';
 import ManagerCard from '@/components/sub-component/manager-card';
 import ButtonLanding from '@/components/sub-component/button-landing';
+import { TbBulbFilled } from "react-icons/tb"; 
+import { GiRobotLeg } from "react-icons/gi";
+import { RiRobot2Fill } from "react-icons/ri";
 
 const Page = () => {
   return (
@@ -17,10 +20,10 @@ const Page = () => {
       <EventIntro
         imageUrl="/techno-events-logo/hackathon.png"
         title="hackathon"
-        registrations={300}
-        pricepool={60000}
-        time='8 am'
-        venue='MP Hall'
+        registrations={0}
+        pricepool={35000}
+        time='12:30 am'
+        venue='TB-01'
         description="Join us for University Hackathon, a thrilling coding competition where innovative minds come together to solve real-world challenges. Whether you're a beginner or an expert, this is your chance to showcase your skills, collaborate, and create impactful solutions."
       />
 
@@ -33,17 +36,17 @@ const Page = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <SubEventCard
-                Icon={}
+                Icon={TbBulbFilled}
                 title="Round 1: Idea Submission"
                 description="Participants submit problem statements and proposed solutions."
               />
               <SubEventCard
-                Icon={}
+                Icon={GiRobotLeg}
                 title="Round 2: Prototype Development"
                 description="Shortlisted teams develop a working prototype."
               />
               <SubEventCard
-                Icon={}
+                Icon={ RiRobot2Fill}
                 title="Round 3: Functionality and Final Pitch"
                 description="Teams present their solutions to a panel of judges."
               />

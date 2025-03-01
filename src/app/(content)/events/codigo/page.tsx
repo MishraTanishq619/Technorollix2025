@@ -65,6 +65,7 @@ const Page = () => {
               description="Unleash your creativity and craft intuitive, user-friendly designs that stand out. Whether it’s wireframes or full-fledged prototypes, this is your chance to impress the judges and wow the audience. Showcase your design thinking, usability skills, and aesthetic vision—let the challenge begin!"
             />
           </div>
+          </section>
         
         </section>
         
@@ -110,53 +111,7 @@ const Page = () => {
           </section>
         </div>
 
-        {/* Sub-Events Cards Section */}
-        <div className="flex justify-around m-20">
-          <SubEventCard
-            Icon={FaCode}
-            title="Code Competition"
-            description="Showcase your problem-solving skills, logic, and speed as you tackle challenging coding problems. Compete with the best and prove your mastery!"
-          />
-          <SubEventCard
-            Icon={FaPenNib}
-            title="Design Challenge"
-            description="Unleash your creativity and craft intuitive, user-friendly designs that stand out. Showcase your design thinking and usability skills."
-          />
-        </div>
-      </section>
-
-      {/* Why Participate Section */}
-      <section className="flex flex-col items-center justify-center">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-          WHY PARTICIPATE
-        </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl space-y-2 text-white">
-            <li>Exciting prizes worth ₹20,000</li>
-            <li>Funding opportunity for innovative prototypes</li>
-            <li>Recognition certificates for all participating universities</li>
-            <li>Hands-on experience in new-age innovations</li>
-            <li>Reimbursement of one-way Sleeper class fare for outside participants</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Rules & Regulations Section */}
-      <section className="flex flex-col items-center justify-center">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-          RULES & REGULATIONS
-        </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl space-y-2 text-white">
-            <li>Arrive at the venue one hour before the event for setup.</li>
-            <li>No exhibit should be dismantled before the event ends.</li>
-            <li>First Round: 25 questions, time limit – 30 min.</li>
-            <li>Qualification: Based on total participation.</li>
-            <li>Second & Third Rounds: Time limit announced on the spot.</li>
-            <li>The judging panel's decision is final.</li>
-          </ul>
-        </div>
-      </section>
+        
 
       {/* Event Managers Section */}
       <section className="flex flex-col items-center justify-center">
