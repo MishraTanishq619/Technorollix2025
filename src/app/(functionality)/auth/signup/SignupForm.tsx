@@ -18,26 +18,15 @@ import { toast } from "@/hooks/use-toast";
 import useFetch from "@/hooks/use-fetch";
 import { userSignup } from "@/actions/user-actions";
 
-const commonSchema = {
+const formSchema = z.object({
     fullName: z.string().min(2, { message: "Full name must be at least 2 characters." }),
     email: z.string().email({ message: "Please enter a valid email address." }),
     mobileNumber: z.string().regex(/^\d{10}$/, { message: "Please enter a valid 10-digit mobile number." }),
     password: z.string().min(6, { message: "Password must be at least 6 characters." }),
-    confirmPassword: z.string().min(6, { message: "Password must be at least 6 characters." })
-};
-
-const insiderSchema = z.object({
-    ...commonSchema,
-    branch: z.string().min(1, { message: "Please enter your branch." }),
-    enrollmentNumber: z.string().min(1, { message: "Please enter your enrollment number." }),
-}).refine(data => data.password === data.confirmPassword, {
-    message: "Passwords do not match",
-    path: ["confirmPassword"],
-});
-
-const outsiderSchema = z.object({
-    ...commonSchema,
-    address: z.string().min(1, { message: "Please enter your address." }),
+    confirmPassword: z.string().min(6, { message: "Password must be at least 6 characters." }),
+    branch: z.string().optional(),
+    enrollmentNumber: z.string().optional(),
+    address: z.string().optional(),
 }).refine(data => data.password === data.confirmPassword, {
     message: "Passwords do not match",
     path: ["confirmPassword"],
@@ -46,7 +35,6 @@ const outsiderSchema = z.object({
 export default function SignupForm() {
     const router = useRouter();
     const isOutsider = JSON.parse(sessionStorage.getItem("isOutsider") || "true");
-    const formSchema = isOutsider ? outsiderSchema : insiderSchema;
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -56,7 +44,9 @@ export default function SignupForm() {
             mobileNumber: "",
             password: "",
             confirmPassword: "",
-            ...(isOutsider ? { address: "" } : { branch: "", enrollmentNumber: "" }),
+            branch: "",
+            enrollmentNumber: "",
+            address: "",
         },
     });
 
@@ -71,9 +61,9 @@ export default function SignupForm() {
         const userData = {
             ...values,
             isOutsider,
-            branch: isOutsider ? "NA" : 'branch' in values ? values.branch : "NA",
-            enrollmentNumber: isOutsider ? "NA" : 'enrollmentNumber' in values ? values.enrollmentNumber : "NA",
-            address: isOutsider && 'address' in values ? values.address : "OPJU",
+            branch: isOutsider ? "NA" : values.branch,
+            enrollmentNumber: isOutsider ? "NA" : values.enrollmentNumber,
+            address: isOutsider ? values.address : "OPJU",
         };
         await userSignupFn(userData);
     };
