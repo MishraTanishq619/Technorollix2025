@@ -26,7 +26,6 @@ export default function EnterEmail({ onNext }: { onNext: () => void }) {
         setLoading(true);
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
         await sendWelcomeEmail(values.email, otp);
-        //console.log("OTP: ", otp);
         const isOutsider = !values.email.endsWith("@opju.ac.in");
         sessionStorage.setItem("signupEmail", values.email);
         sessionStorage.setItem("signupOtp", otp);
