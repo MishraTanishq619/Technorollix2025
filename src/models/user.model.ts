@@ -3,11 +3,11 @@ import { Schema, model, Document, Types, models } from "mongoose";
 // Define the interface for the User document
 interface IUser extends Document {
 	fullName: string;
-	course: string;
 	branch: string;
 	enrollmentNumber: string;
 	mobileNumber: string;
 	email: string;
+	address?: string;
 	password: string;
 	isOutsider?: boolean;
 	isAdmin?: boolean;
@@ -26,17 +26,17 @@ const userSchema = new Schema<IUser>(
 			required: true,
 			minlength: 2,
 		},
-		course: {
-			type: String,
-			required: true,
-		},
 		branch: {
 			type: String,
-			required: true,
+			required: false,
 		},
 		enrollmentNumber: {
 			type: String,
-			required: true,
+			required: false,
+		},
+		address: {
+			type: String,
+			required: false,
 		},
 		mobileNumber: {
 			type: String,
