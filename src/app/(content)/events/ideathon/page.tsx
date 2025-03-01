@@ -18,7 +18,7 @@ const Page = () => {
       <EventIntro
         imageUrl="/techno-events-logo/ideathon.png"
         title="Ideathon"
-        registrations={300}
+        registrations={0}
         pricepool={18000}
         description="An Ideathon is an engaging brainstorming event where individuals collaborate to address pressing challenges through innovative solutions. Participants work in teams, utilizing design thinking to develop viable ideas across diverse subjects like marketing, philosophy, and science."
         time='20-03-2025, 11:30 AM'

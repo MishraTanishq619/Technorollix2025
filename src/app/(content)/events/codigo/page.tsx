@@ -30,24 +30,24 @@ const Page = () => {
 
       {/* Theme section */}
       <section className="flex flex-col items-center justify-center">
-        <h2 className="text-[#ffad3c] text-5xl font-medium tracking-[2.88px] text-center">
-          THEME
-        </h2>
-        <div className="text-white text-2xl font-medium text-center tracking-[5.28px]">
-          <p>Dream your Fantasy, Code it in your Reality!!!</p>
-        </div>
-      </section>
+  <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-6 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+    THEME
+  </h2>
+  <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+    <p>Dream your Fantasy, Code it in your Reality!!!</p>
+  </div>
+</section>
       {/* Sub-Events Section */}
       <section>
         {/* Sub-Events section */}
-        <section className="flex flex-col items-center justify-center">
-          <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-            sub-events
-          </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
-          The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don't miss your chance to participate and showcase your skills!
-          </div>
-        </section>
+        <section className="flex flex-col items-center justify-center mt-10">
+  <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-6 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+    SUB-EVENTS
+  </h2>
+  <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+    The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don't miss your chance to participate and showcase your skills!
+  </div>
+</section>
 
         {/* Sub-Events Cards Section */}
         <section className="">
@@ -115,19 +115,19 @@ const Page = () => {
 
       {/* Event Managers Section */}
       <section className="flex flex-col items-center justify-center">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-          EVENT MANAGERS
-        </h2>
-        <div className="text-white text-2xl text-center tracking-[5.28px]">
-          For any queries regarding the event, feel free to reach out to any of the managers listed below.
-        </div>
-        <div className="flex justify-center space-x-40 items-center mt-20">
-          <ManagerCard imageUrl="/dallE.png" name="Ritu Singh" contact={8839463899} />
-        </div>
-        <div className="mb-10">
-          <ButtonLanding label="Register Now" link="/dashboard"/>
-        </div>
-      </section>
+  <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-6 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+    EVENT MANAGERS
+  </h2>
+  <div className="text-white text-2xl text-center tracking-[5.28px]">
+    For any queries regarding the event, feel free to reach out to any of the managers listed below. They are here to help and ensure a smooth experience for you!
+  </div>
+  <div className="flex justify-center space-x-20 items-center mt-10 mb-16">
+    <ManagerCard imageUrl="/dallE.png" name="Ritu Singh" contact={8839463899} />
+  </div>
+  <div className="mb-10">
+    <ButtonLanding label="Register Now" link="/dashboard"/>
+  </div>
+</section>
     </div>
   );
 };
