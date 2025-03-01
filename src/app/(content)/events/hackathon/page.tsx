@@ -31,7 +31,7 @@ const Page = () => {
         <div className="bg-transparent text-white p-6 md:p-12">
           {/* Rounds */}
           <section className="flex flex-col items-center gap-8">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)] mb-14">
               ROUNDS
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -59,7 +59,7 @@ const Page = () => {
               EVALUATION PROCESS
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl uppercase tracking-[6.72px]">
+              <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
                 <li>Innovation – Creativity and uniqueness of the solution</li>
                 <li>Technical Implementation – Quality of code and feasibility</li>
                 <li>Impact – Relevance and potential real-world application</li>
@@ -74,7 +74,7 @@ const Page = () => {
       {/* Event Managers */}
       <section>
         <div className="flex flex-col items-center justify-center">
-          <div className="text-center text-[#ffad3c] text-5xl font-medium uppercase">
+          <div className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             EVENT MANAGERS
           </div><br/><br/>
           <div className="text-center text-white text-2xl font-normal">

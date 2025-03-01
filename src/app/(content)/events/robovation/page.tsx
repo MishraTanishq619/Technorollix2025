@@ -109,7 +109,7 @@ ROUND 1 AND ROUND 2."
         </div>
         <div className="flex justify-center space-x-40 items-center mt-20">
           <ManagerCard imageUrl="/Event-Managers/Harsh tiwari ( robovation)_.jpg" name="Harsh verma" contact={7389245531} />
-          <ManagerCard imageUrl="/Event-Managers/udit vardhan singh( Robovation).heic" name="Udit Vardhan Singh" contact={8298558875} />
+          <ManagerCard imageUrl="/Event-Managers/udit vardhan singh( robovation)_.jpg" name="Udit Vardhan Singh" contact={8298558875} />
           <ManagerCard imageUrl="/dallE.png" name="Amrit Kumar" contact={8235993302} />
           <ManagerCard imageUrl="/dallE.png" name="Kushal Kumar Barsiwal " contact={7987829224} />
         </div>
