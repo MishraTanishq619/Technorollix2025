@@ -5,14 +5,14 @@ const teamSections = [
     title: "Information, Publicity & Invitation",
     members: [
       {
-        name: "Amit Sharma",
-        contact: "+91 9876543210",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Ajay Patel",
+        contact: "+91 8839171099",
+        image: "/teams/information-publicity-invitation/ajay.png",
       },
       {
-        name: "Priya Verma",
-        contact: "+91 8765432109",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Shikhar Pandey",
+        contact: "+91 7765996678",
+        image: "/placeholder-pic.jpeg",
       },
     ],
   },
@@ -20,14 +20,14 @@ const teamSections = [
     title: "Design, Print & Media",
     members: [
       {
-        name: "Rahul Mehta",
-        contact: "+91 9123456789",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Ritul Raj Bhagat",
+        contact: "+91 9432875971",
+        image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Sneha Patel",
-        contact: "+91 9234567890",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Naresh Mourya",
+        contact: "+91 9430160416",
+        image: "/teams/design-print-media/naresh.png",
       },
     ],
   },
@@ -35,14 +35,14 @@ const teamSections = [
     title: "Registration & Reception",
     members: [
       {
-        name: "Vikram Singh",
-        contact: "+91 8345678921",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Vishal Singh",
+        contact: "+91 7488041613",
+        image: "/teams/registration-reception/vishal.png",
       },
       {
-        name: "Anjali Nair",
-        contact: "+91 8456789012",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Megha Sahu",
+        contact: "+91 9348561048",
+        image: "/placeholder-pic.jpeg",
       },
     ],
   },
@@ -50,14 +50,14 @@ const teamSections = [
     title: "Accommodation",
     members: [
       {
-        name: "Rohan Kapoor",
-        contact: "+91 7567890123",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Vishal Pandey",
+        contact: "+91 6207005596",
+        image: "/teams/accommodation/vishal.png",
       },
       {
-        name: "Kavita Iyer",
-        contact: "+91 7678901234",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Anjali Sidar",
+        contact: "+91 7647041265",
+        image: "/teams/accommodation/anjali.png",
       },
     ],
   },
@@ -65,14 +65,14 @@ const teamSections = [
     title: "Stage, Light, Sound & Stall",
     members: [
       {
-        name: "Siddharth Tiwari",
-        contact: "+91 6789012345",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Parth Singh Thakur",
+        contact: "+91 8889055521",
+        image: "/teams/stage-light-sound-stall/parth.png",
       },
       {
-        name: "Meera Choudhary",
-        contact: "+91 6890123456",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Pranjal Sharma",
+        contact: "+91 9343667806",
+        image: "/teams/stage-light-sound-stall/pranjal.png",
       },
     ],
   },
@@ -80,14 +80,14 @@ const teamSections = [
     title: "Catering",
     members: [
       {
-        name: "Harsh Vardhan",
-        contact: "+91 7901234567",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Jayant Shekhar Singh",
+        contact: "+91 9123147552",
+        image: "/teams/catering/jayant.png",
       },
       {
-        name: "Ayesha Khan",
-        contact: "+91 7012345678",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Jagriti Singh",
+        contact: "+91 8603889959",
+        image: "/teams/catering/jagriti.png",
       },
     ],
   },
@@ -95,14 +95,14 @@ const teamSections = [
     title: "Venue Preparation",
     members: [
       {
-        name: "Manish Gupta",
-        contact: "+91 6123456789",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Atul Singh",
+        contact: "+91 9755305060",
+        image: "/teams/venue-preparation/atul.png",
       },
       {
-        name: "Ritika Sharma",
-        contact: "+91 6234567890",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Barkha Singh",
+        contact: "+91 8871694247",
+        image: "/teams/venue-preparation/barkha.png",
       },
     ],
   },
@@ -110,14 +110,14 @@ const teamSections = [
     title: "Transportation",
     members: [
       {
-        name: "Deepak Joshi",
-        contact: "+91 5345678901",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Vaibhav Singh",
+        contact: "+91 9109016426",
+        image: "/teams/transportation/vaibhav.png",
       },
       {
-        name: "Nidhi Agarwal",
-        contact: "+91 5456789012",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Udit Shukla",
+        contact: "+91 7415885039",
+        image: "/teams/transportation/udit.png",
       },
     ],
   },
@@ -125,14 +125,14 @@ const teamSections = [
     title: "Hospitality",
     members: [
       {
-        name: "Abhishek Rao",
-        contact: "+91 4567890123",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Navneet Tripathi",
+        contact: "+91 7489462029",
+        image: "/teams/hospitality/navneet.png",
       },
       {
-        name: "Shruti Menon",
-        contact: "+91 4678901234",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Garima Mishra",
+        contact: "+91 7047039028",
+        image: "/teams/hospitality/garima.png",
       },
     ],
   },
@@ -140,14 +140,14 @@ const teamSections = [
     title: "Website Maintenance",
     members: [
       {
-        name: "Tarun Chatterjee",
-        contact: "+91 3789012345",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Nikhil Patel",
+        contact: "+91 8305216569",
+        image: "/teams/website-maintenance/nikhil.png",
       },
       {
-        name: "Pooja Sinha",
-        contact: "+91 3890123456",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Vanmayie Singh",
+        contact: "+91 9016087977",
+        image: "/teams/website-maintenance/vanmayie.png",
       },
     ],
   },
@@ -155,14 +155,14 @@ const teamSections = [
     title: "Certificate & Prize",
     members: [
       {
-        name: "Rakesh Yadav",
-        contact: "+91 2901234567",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Shivam Sharma",
+        contact: "+91 9179165697",
+        image: "/teams/certificate-prize/shivam.png",
       },
       {
-        name: "Sanya Bansal",
-        contact: "+91 2012345678",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Vishnu Gupta",
+        contact: "+91 7544000243",
+        image: "/teams/certificate-prize/vishnu.png",
       },
     ],
   },
@@ -170,14 +170,14 @@ const teamSections = [
     title: "Discipline",
     members: [
       {
-        name: "Aditya Deshmukh",
-        contact: "+91 1123456789",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Saubhagya Ranjan Panda",
+        contact: "+91 8839171099",
+        image: "/teams/discipline/saubhagya.png",
       },
       {
-        name: "Komal Saxena",
-        contact: "+91 1234567890",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Madhav Jha",
+        contact: "+91 8839171099",
+        image: "/teams/discipline/madhav.png",
       },
     ],
   },
@@ -185,14 +185,14 @@ const teamSections = [
     title: "Stationery & Logistics",
     members: [
       {
-        name: "Sandeep Malhotra",
-        contact: "+91 9345678901",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Ranveer Singh",
+        contact: "+91 6200858567",
+        image: "/teams/stationery-logistics/ranveer.png",
       },
       {
-        name: "Neha Rastogi",
-        contact: "+91 9456789012",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Shubham Thakur",
+        contact: "+91 9304749918",
+        image: "/teams/stationery-logistics/shubham.png",
       },
     ],
   },
@@ -200,14 +200,14 @@ const teamSections = [
     title: "Health & First Aid",
     members: [
       {
-        name: "Varun Bhatia",
-        contact: "+91 8567890123",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Durgesh Kumar",
+        contact: "+91 9201437384",
+        image: "/placeholder-pic.jpeg",
       },
       {
-        name: "Simran Kaur",
-        contact: "+91 8678901234",
-        image: "/teams/website-maintenance/nikhil.jpg",
+        name: "Swasti Behra",
+        contact: "+91 9755275427",
+        image: "/placeholder-pic.jpeg",
       },
     ],
   },
@@ -232,7 +232,7 @@ const TeamPage = () => {
             }`}
           >
             {/* Section Title - Positioned to Align with Cards */}
-            <h2 className="text-4xl md:text-5xl uppercase font-medium text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] md:w-1/2 w-full text-center md:text-left flex items-center justify-center md:justify-start md:pl-8 break-words whitespace-normal">
+            <h2 className="text-4xl mt-6 md:text-5xl uppercase font-medium text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] md:w-1/2 w-full text-center md:text-left flex items-center justify-center md:justify-start md:pl-8 break-words whitespace-normal">
               {section.title}
             </h2>
 
@@ -241,18 +241,18 @@ const TeamPage = () => {
               {section.members.map((member, idx) => (
                 <div
                   key={idx}
-                  className="bg-gray-800 rounded-3xl p-8 shadow-xl border-4 border-yellow-500 w-72 h-96 flex flex-col items-center"
+                  className="bg-gray-800 rounded-3xl shadow-xl border-4 border-yellow-500 w-72 h-96 flex flex-col"
                 >
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={170}
-                    height={170}
-                    className="rounded-2xl mb-4"
+                    width={350}
+                    height={350}
+                    className="rounded-2xl mb-1"
                   />
-                  <h3 className="text-2xl font-semibold">{member.name}</h3>
-                  <p className="text-md text-gray-400 mt-2">
-                    Contact: {member.contact}
+                  <h3 className="text-2xl font-medium text-center">{member.name}</h3>
+                  <p className="text-md text-gray-400 mt-2 pl-4">
+                    Contact: <br/>{member.contact}
                   </p>
                 </div>
               ))}

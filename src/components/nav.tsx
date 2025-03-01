@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-2 left-0 w-full z-20 bg-transparent px-4 md:px-8 lg:px-16 flex justify-between h-16 items-center shadow-black">
+    <nav className="fixed top-2 left-0 w-full z-20 bg-transparent px-6 md:px-8 lg:px-16 flex justify-between h-16 items-center shadow-black">
       {/* Logo */}
       <div className="flex-shrink-0">
         <Link href={"/"}><Image
@@ -46,7 +46,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center space-x-2 lg:space-x-6 bg-gradient-to-b from-[rgba(255,255,255,0.25)] to-[rgba(153,153,153,0)] backdrop-blur-md rounded-full p-1 pl-4 lg:pl-6 shadow-2xl">
+      <div className="hidden md:flex items-center space-x-2 lg:space-x-6 bg-gradient-to-b from-[rgba(255,255,255,0.25)] to-[rgba(153,153,153,0)] backdrop-blur-md rounded-full p-2 pl-4 lg:pl-6 shadow-2xl">
         <div className="text-white text-sm lg:text-lg flex space-x-2 lg:space-x-6">
           <Link href="/" className="hover:text-[#FFCF67]">
             Home
