@@ -22,7 +22,7 @@ const Roadies = () => {
         pricepool={10000}
         description="Welcome to   Roadies  , the ultimate test of skill and endurance! Join us at the University for an adrenaline-packed event filled with sports-inspired challenges. From obstacle courses to team relays, Roadies promises to push your limits and ignite your competitive spirit. Are you ready to conquer the road ahead?"  />
        <div className="mt-16 mb-16">
-        <h1 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+       <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           THEME
         </h1>
         <p className="text-2xl font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white text-center max-w-4xl mx-auto">
@@ -31,7 +31,7 @@ const Roadies = () => {
       </div>
     
       <section className="mb-20">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           WHY PARTICIPATE
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
@@ -55,9 +55,9 @@ const Roadies = () => {
       </section>
 
       <section className="mb-20">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          RULES & REGULATION
-        </h2>
+      <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      RULES AND REGULATION
+      </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
           <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white">
             <li>All participants must arrive  30 minutes before the event starts.</li>
@@ -71,9 +71,7 @@ const Roadies = () => {
         </div>
       </section>
       <section className="mb-20">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          ROUNDS:
-        </h2>
+
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
           <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white">
             <li> There will be 5 rounds </li>
@@ -85,7 +83,7 @@ const Roadies = () => {
       </section>
 
       <section className="mb-20">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           JUDGEMENT CRITERIA:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
