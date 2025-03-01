@@ -93,7 +93,7 @@ export default function SignupForm() {
                 title: "Success",
                 description: "Your account has been created successfully!",
             });
-            router.push("/dashboard");
+            router.push("/auth/login");
         }
     }, [userSignupError, userSignupData, userSignupLoading, router]);
 
