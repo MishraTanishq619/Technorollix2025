@@ -65,6 +65,7 @@ const Page = () => {
               description="Unleash your creativity and craft intuitive, user-friendly designs that stand out. Whether it’s wireframes or full-fledged prototypes, this is your chance to impress the judges and wow the audience. Showcase your design thinking, usability skills, and aesthetic vision—let the challenge begin!"
             />
           </div>
+          </section>
         
         </section>
         
@@ -110,6 +111,7 @@ const Page = () => {
           </section>
         </div>
 
+        
         {/* Sub-Events Cards Section */}
         <div className="flex justify-around m-20">
           <SubEventCard

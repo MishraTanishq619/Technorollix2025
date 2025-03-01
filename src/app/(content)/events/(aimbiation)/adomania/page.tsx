@@ -34,7 +34,7 @@ const Page = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                 <SubEventCard
                   Icon={BsAward}
-                  title="ROUND1: GENUINE COMPANY "
+                  title="ROUND 1"
                   description="Name of genuine company will be given to each team on which they have to make an advertisement. The Products name will be given on the spot
 
 Time to Present: 30-60s
