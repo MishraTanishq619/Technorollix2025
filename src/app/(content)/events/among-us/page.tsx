@@ -33,7 +33,8 @@ const page = () => {
       <div className="flex flex-col items-center justify-center">
         <div className="bg-transparent text-white p-6 md:p-12">
           <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+            
+      <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
               NUMBER OF ROUNDS:-
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
@@ -60,7 +61,8 @@ const page = () => {
             </div>
           </section>
           <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            
+      <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
               EVALUATION PROCESS:-
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">

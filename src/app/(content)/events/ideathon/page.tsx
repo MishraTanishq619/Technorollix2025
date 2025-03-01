@@ -28,7 +28,7 @@ const Page = () => {
       <div className="flex flex-col items-center justify-center">
         <div className="bg-transparent text-white p-6 md:p-12 flex flex-col items-center space-y-32">
           <section className="my-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+          <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
               WHY PARTICIPATE
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
@@ -44,7 +44,7 @@ const Page = () => {
           </section>
           
           <section className="flex flex-col items-center gap-8">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">ROUNDS</h2>
+          <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">ROUNDS</h2>
             <div className="flex justify-center w-full">
                 <SubEventCard
                   Icon={IoMdArrowRoundForward}
@@ -55,7 +55,7 @@ const Page = () => {
           </section>
           
           <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+          <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
               RULES & REGULATIONS
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
@@ -73,7 +73,7 @@ const Page = () => {
           </section>
         
           <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+          <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
               JUDGING CRITERIA
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
@@ -92,12 +92,12 @@ const Page = () => {
         
           <section>
             <div className="flex flex-col items-center justify-center">
-              <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">EVENT MANAGERS</h2>
+            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">EVENT MANAGERS</h2>
               <p className="w-[1023px] text-center text-white text-2xl font-normal tracking-[5.28px]">
                 For any queries regarding the event, feel free to reach out to any of the managers listed below. They are here to help and ensure a smooth experience for you!
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
-                <ManagerCard imageUrl="/dallE.png" name="Aryan Mishra" contact={7205993715} />
+                <ManagerCard imageUrl="" name="Aryan Mishra" contact={7205993715} />
                 <ManagerCard imageUrl="/dallE.png" name="Ashutosh Sahu" contact={9776565942} />
                 <ManagerCard imageUrl="/dallE.png" name="Priyanka Sao" contact={8305725196} />
                 <ManagerCard imageUrl="/dallE.png" name="Gitika Sahu" contact={6268858077} />
