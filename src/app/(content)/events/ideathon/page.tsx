@@ -32,7 +32,7 @@ const Page = () => {
               WHY PARTICIPATE
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 uppercase">
+              <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
                 <li>Win ₹18,000 and gain recognition.</li>
                 <li>Boost skills in problem-solving, design thinking, and presentation.</li>
                 <li>Create real-world impact with innovative solutions.</li>
@@ -59,7 +59,7 @@ const Page = () => {
               RULES & REGULATIONS
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 uppercase">
+              <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
                 <li>Arrive at the venue 15 minutes before the event starts.</li>
                 <li>Submit an abstract (max 400 words) summarizing the idea before the event.</li>
                 <li>The idea must be innovative and address existing problems.</li>
@@ -77,10 +77,10 @@ const Page = () => {
               JUDGING CRITERIA
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <p className="mb-4 text-2xl text-white uppercase">
+              <p className="mb-4 list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
                 Each idea is evaluated on the following criteria, with a maximum of 20 points per category (Total 100 points):
               </p>
-              <ul className="list-disc pl-5 text-2xl text-white space-y-2 uppercase">
+              <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
                 <li>Uniqueness of the idea</li>
                 <li>Feasibility of the proposed solution</li>
                 <li>Presentation style</li>
@@ -97,7 +97,7 @@ const Page = () => {
                 For any queries regarding the event, feel free to reach out to any of the managers listed below. They are here to help and ensure a smooth experience for you!
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
-                <ManagerCard imageUrl="" name="Aryan Mishra" contact={7205993715} />
+                <ManagerCard imageUrl="/dallE.png" name="Aryan Mishra" contact={7205993715} />
                 <ManagerCard imageUrl="/dallE.png" name="Ashutosh Sahu" contact={9776565942} />
                 <ManagerCard imageUrl="/dallE.png" name="Priyanka Sao" contact={8305725196} />
                 <ManagerCard imageUrl="/dallE.png" name="Gitika Sahu" contact={6268858077} />
