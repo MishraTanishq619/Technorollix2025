@@ -112,7 +112,7 @@ const Aerodrone = () => {
           For any queries regarding the event, feel free to reach out to any of the managers listed below.
         </div>
         <div className="flex justify-center space-x-40 items-center mt-20">
-          <ManagerCard imageUrl="/dallE.png" name="Ankit Mandal " contact={9693407573} />
+          <ManagerCard imageUrl="/Event-MAnagers/Ankit Mandal Aerodrone.jpg" name="Ankit Mandal " contact={9693407573} />
         </div>
         <div className="mb-10">
           <ButtonLanding label="Register Now" link="/dashboard"/>

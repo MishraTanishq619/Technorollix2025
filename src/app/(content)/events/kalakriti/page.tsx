@@ -160,7 +160,7 @@ const page = () => {
                 3. Every participant will have to submit a single photo at the end of the day via Google Form, which will be framed at the gallery.
                 4. Last-minute changes in the above rules, if necessary, can be made.
                 • Rounds: 2 Rounds.
-                • Judgement Criteria: Judges`}
+                • Judgement Criteria: Judges`}"
             />
             <SubEventCard
               Icon={IoIosCamera} // Updated path
@@ -207,7 +207,10 @@ const page = () => {
       </section>
 
       <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Ajay Patel" contact={8305637372}/>
+            <ManagerCard imageUrl="/Event-Managers/Aditi kumari- kalakriti.jpg" name="Aditi Kumari" contact={9661778008}/>
+            <ManagerCard imageUrl="/Event-Managers/Ankit Kumar ( Kalakriti) .jpg" name="Ankit Kumar" contact={9798011684}/>
+            <ManagerCard imageUrl="/Event-Managers/Bhavya Agrawal... kalakriti.jpg" name="Bhavya Agrawal" contact={8269155452}/>
+            <ManagerCard imageUrl="/dallE.png" name="Mohini Roy " contact={9098066953}/>
         </div>
         <ButtonLanding label="Register Now" link="/auth/login" />
 

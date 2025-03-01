@@ -108,9 +108,10 @@ ROUND 1 AND ROUND 2."
           For any queries regarding the event, feel free to reach out to any of the managers listed below.
         </div>
         <div className="flex justify-center space-x-40 items-center mt-20">
-          <ManagerCard imageUrl="/dallE.png" name="" contact={6260294300} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6371745801} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
+          <ManagerCard imageUrl="/Event-Managers/Harsh tiwari ( robovation)_.jpg" name="Harsh verma" contact={7389245531} />
+          <ManagerCard imageUrl="/Event-Managers/udit vardhan singh( Robovation).heic" name="Udit Vardhan Singh" contact={8298558875} />
+          <ManagerCard imageUrl="/dallE.png" name="Amrit Kumar" contact={8235993302} />
+          <ManagerCard imageUrl="/dallE.png" name="Kushal Kumar Barsiwal " contact={7987829224} />
         </div>
         <div className="mb-10">
           <ButtonLanding label="Register Now" link="/dashboard"/>

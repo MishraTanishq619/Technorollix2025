@@ -97,11 +97,11 @@ const Page = () => {
                 For any queries regarding the event, feel free to reach out to any of the managers listed below. They are here to help and ensure a smooth experience for you!
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
-                <ManagerCard imageUrl="/dallE.png" name="Aryan Mishra" contact={7205993715} />
-                <ManagerCard imageUrl="/dallE.png" name="Ashutosh Sahu" contact={9776565942} />
-                <ManagerCard imageUrl="/dallE.png" name="Priyanka Sao" contact={8305725196} />
-                <ManagerCard imageUrl="/dallE.png" name="Gitika Sahu" contact={6268858077} />
-                <ManagerCard imageUrl="/dallE.png" name="Kumkum Singh" contact={8889702577} />
+                <ManagerCard imageUrl="/Event-Managers/Aryan mishra(Ideathon).jpg" name="Aryan Mishra" contact={7205993715} />
+                <ManagerCard imageUrl="/Event-Managers/Ashutosh sahu (ideathon).jpg" name="Ashutosh Sahu" contact={9776565942} />
+                <ManagerCard imageUrl="/Event-Managers/Priyanka Sao (Ideathon). jpg" name="Priyanka Sao" contact={8305725196} />
+                <ManagerCard imageUrl="/Event-Managers/Gitika sahu ( ideathon).jpg" name="Gitika Sahu" contact={6268858077} />
+                <ManagerCard imageUrl="/Event-MAnagers/Kumkum singh( ideathon).jpg" name="Kumkum Singh" contact={8889702577} />
               </div>
               <div className="mb-10 mt-10">
               <ButtonLanding label="Register Now" link="/dashboard" />

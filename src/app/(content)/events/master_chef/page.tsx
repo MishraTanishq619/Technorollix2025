@@ -108,7 +108,7 @@ const page = () => {
         </div>
 
         <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="NITIN GOYAL " contact={9669464118}/>
+            <ManagerCard imageUrl="/Event-MAnagers/NITIN GOYAL (MASTER CHIEF).jpg" name="NITIN GOYAL " contact={9669464118}/>
             <ManagerCard imageUrl="/dallE.png" name="Ronit sharma" contact={9893240461}/>
         </div>
         <ButtonLanding label="Register Now" link="/dashboard" />
