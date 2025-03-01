@@ -144,12 +144,12 @@ skills, engage in friendly competition, and celebrate the spirit of gaming."
               contact={6203182795}
             />
             <ManagerCard
-              imageUrl="/dallE.png"
+              imageUrl="/Event-Managers/SARVESH RATHORE (GAME FUSION).jpg"
               name="Sarvesh Rathore"
               contact={8349374721}
             />
             <ManagerCard
-              imageUrl="/dallE.png"
+              imageUrl="/Event-Managers/SHUBHAM SINGH BAGHEL(GAME FUSION).jpg"
               name="Shubham Singh Baghel"
               contact={6296507314}
             />
@@ -157,11 +157,6 @@ skills, engage in friendly competition, and celebrate the spirit of gaming."
               imageUrl="/dallE.png"
               name="Rohan Prasad"
               contact={7903654631}
-            />
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Devwrat"
-              contact={6263757750}
             />
           </div>
           <ButtonLanding label="Register Now" link="/dashboard"/>

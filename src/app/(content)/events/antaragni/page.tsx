@@ -5,6 +5,8 @@ import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
 import { FaMusic, FaFilm, FaMicrophone, FaRunning } from "react-icons/fa";
+import ManagerCard from "@/components/sub-component/manager-card";
+import ButtonLanding from "@/components/sub-component/button-landing";
 
 const Antaragni = () => {
   const rules = [
@@ -26,11 +28,6 @@ const Antaragni = () => {
     "Special category-wise winning prizes",
     "Hands-on experience in creativity, performance, and storytelling",
     "Reimbursement of one-way Sleeper class fare for outside participants",
-  ];
-  const managers = [
-    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
   ];
 
   return (
@@ -150,7 +147,69 @@ const Antaragni = () => {
       <section>
         <WhyParticipate reasons={reasons} />
         <RulesAndRegulation rules={rules} />
-        <EventManagers managers={managers} />
+
+        <section>
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            EVENT MANAGERS
+          </div>
+          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+            For any queries regarding the event, feel free to reach out to any
+            of the managers listed below. They are here to help and ensure a
+            smooth experience for you!
+          </div>
+
+          <div className="flex justify-center space-x-5 items-center mt-20">
+            <ManagerCard
+              imageUrl="/Event-Managers/VanshikaGupta.jpg"
+              name="Vanshika Gupta"
+              contact={9039896991}
+            />
+            <ManagerCard
+              imageUrl="/Event-Managers/Nikhil Singh Jatwar (Antaragni).jpg"
+              name="Nikhil Singh Jatwar"
+              contact={6371490654}
+            />
+            <ManagerCard
+              imageUrl="/dallE.png"
+              name="Preeti Dwivedi"
+              contact={9993923280}
+            />
+            <ManagerCard
+              imageUrl="/dallE.png"
+              name="Ankita Priyadarseeni Sethi"
+              contact={7489800644}
+            />
+            <ManagerCard
+              imageUrl="/dallE.png"
+              name="Pallavi Singh "
+              contact={9201046402}
+            />
+             <ManagerCard
+              imageUrl="/dallE.png"
+              name="Archit Dubey"
+              contact={9770338556}
+            />
+             <ManagerCard
+              imageUrl="/dallE.png"
+              name="Shivani Pandey "
+              contact={7999021948}
+            />
+             <ManagerCard
+              imageUrl="/dallE.png"
+              name="Soumya Patel"
+              contact={9479218521}
+            />
+          </div>
+          <ButtonLanding label="Register Now" link="/dashboard"/>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+      </section>
+
       </section>
     </div>
   );

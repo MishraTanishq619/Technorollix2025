@@ -44,7 +44,7 @@ const page = () => {
         />
       </div>
       <div className="mt-16 mb-16"></div>
-      <h1 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
         SUB EVENTS
       </h1>
       <p className="text-2xl font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white text-center max-w-4xl mx-auto">
@@ -101,16 +101,17 @@ ROUND 1 AND ROUND 2."
       </section>
 
       <section className="flex flex-col items-center justify-center">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+      <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           EVENT MANAGERS
         </h2>
         <div className="text-white text-2xl text-center tracking-[5.28px]">
           For any queries regarding the event, feel free to reach out to any of the managers listed below.
         </div>
         <div className="flex justify-center space-x-40 items-center mt-20">
-          <ManagerCard imageUrl="/dallE.png" name="" contact={6260294300} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6371745801} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
+          <ManagerCard imageUrl="/Event-Managers/Harsh tiwari ( robovation)_.jpg" name="Harsh verma" contact={7389245531} />
+          <ManagerCard imageUrl="/Event-Managers/udit vardhan singh( Robovation).heic" name="Udit Vardhan Singh" contact={8298558875} />
+          <ManagerCard imageUrl="/dallE.png" name="Amrit Kumar" contact={8235993302} />
+          <ManagerCard imageUrl="/dallE.png" name="Kushal Kumar Barsiwal " contact={7987829224} />
         </div>
         <div className="mb-10">
           <ButtonLanding label="Register Now" link="/dashboard"/>
