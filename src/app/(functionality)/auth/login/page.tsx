@@ -63,8 +63,8 @@ export default function LoginForm() {
 		if (userLoginData && userLoginData.token) {
 			Cookies.set("auth-token", userLoginData.token, {
 				expires: 1,
-				secure: true,
-				sameSite: "Strict",
+				// secure: true,
+				// sameSite: "Strict",
 			});
 			toast({
 				title: "Success",
