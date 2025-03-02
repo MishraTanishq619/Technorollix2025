@@ -37,11 +37,11 @@ const Page = () => {
           TREASURE HUNT RULES
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-none pl-5 text-2xl uppercase tracking-[6.72px] text-white">
-            <li>⦁ Every team must have a leader and a cool team name!</li>
-            <li>⦁ Your squad must have exactly 5 members—no more, no less!</li>
-            <li>⦁ Respect the coordinators, no misbehaviour allowed!</li>
-            <li>⦁ No splitting up! The team moves as one.</li>
+          <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
+            <li> Every team must have a leader and a cool team name!</li>
+            <li> Your squad must have exactly 5 members—no more, no less!</li>
+            <li> Respect the coordinators, no misbehaviour allowed!</li>
+            <li> No splitting up! The team moves as one.</li>
           </ul>
         </div>
       </section>
@@ -53,11 +53,11 @@ const Page = () => {
           DISQUALIFICATION RULES
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-none pl-5 text-2xl uppercase tracking-[6.72px] text-white">
-            <li>⦁ Don’t mess with other teams, play fair!</li>
-            <li>⦁ Damage university stuff? Pay the fine!</li>
-            <li>⦁ Break the instructions, and you're out!</li>
-            <li>⦁ All teams must arrive on time.</li>
+          <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
+            <li> Don’t mess with other teams, play fair!</li>
+            <li> Damage university stuff? Pay the fine!</li>
+            <li> Break the instructions, and you're out!</li>
+            <li> All teams must arrive on time.</li>
           </ul>
         </div>
       </section>
@@ -94,10 +94,10 @@ const Page = () => {
       {/* Manager Section */}
       <section>
         <div className="flex flex-col items-center justify-center">
-          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          <div className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             EVENT MANAGERS
           </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal tracking-[5.28px]">
+          <div className="w-[1023px] text-center text-white list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
             For any queries regarding the event, feel free to reach out to any of
             the managers listed below. They are here to help and ensure a smooth
             experience for you!

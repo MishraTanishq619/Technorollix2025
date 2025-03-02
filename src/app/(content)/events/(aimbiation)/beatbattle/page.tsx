@@ -21,8 +21,8 @@ const Page = () => {
       <EventIntro
         imageUrl="/aimbiation-events-logo/beatbattle.jpg"
         title="Beatbattle"
-        registrations={300}
-        pricepool={10500}
+        registrations={0}
+        pricepool={6000}
         time="21-03-2025, 2:30 PM"
         venue="Babuji Chowk"
         description="This is not just any dance competition—it’s a high-energy battle where only the best dancers shine! Get ready for exciting challenges, head-to-head battles, and nonstop fun as you show off your skills, creativity, and confidence.
@@ -35,7 +35,7 @@ const Page = () => {
           RULES OF THE EVENT:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white">
-          <ul className="list-disc pl-5 text-2xl uppercase tracking-[6.72px]">
+          <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
             <li>Solo participation only (no duets or groups).</li>
             <li>Participants must register before the deadline.</li>
             <li>Props are not allowed unless provided by organizers.</li>
@@ -70,18 +70,17 @@ const Page = () => {
       </section>
 
       <section className="mb-20">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           JUDGING CRITERIA
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto text-white">
-          <ul className="list-disc pl-5 text-2xl uppercase tracking-[6.72px]">
+          <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
            Judging Criteria:
-            <li>
-              <li>o Musicality & rythm 25%</li>
-              <li>o Creativity & originality 25%</li>
-              <li>o Energy & stage Presence 20%</li>
-              <li>oOverall Impact 10%</li>
-            </li>
+              <li> Musicality & rythm 25%</li>
+              <li> Creativity & originality 25%</li>
+              <li> Energy & stage Presence 20%</li>
+              <li>Overall Impact 10%</li>
+            
             <li>Musicality & Rhythm: How well the dancer syncs with the beats.</li>
             <li>Creativity & Originality: Unique moves and transitions.</li>
             <li>Energy & Stage Presence: Confidence, engagement, and crowd interaction.</li>
@@ -95,10 +94,10 @@ const Page = () => {
       {/* Manager Section */}
       <section>
         <div className="flex flex-col items-center justify-center">
-          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          <div className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             EVENT MANAGERS
           </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+          <div className="w-[1023px] text-center text-white list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
             For any queries regarding the event, feel free to reach out to any of
             the managers listed below. They are here to help and ensure a smooth
             experience for you!
