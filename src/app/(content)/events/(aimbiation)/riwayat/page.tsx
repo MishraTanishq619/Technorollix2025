@@ -47,7 +47,7 @@ const page = () => {
 
 
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-             <p className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white">
+             <p className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
              Skill Enhancement: Engage in creative challenges that refine your design, modeling, and event coordination abilities.
 Exposure and Recognition: Showcase your talent to a broader audience, gaining visibility and potential accolades.
 Networking Opportunities: Connect with industry professionals, peers, and mentors, fostering valuable relationships.
@@ -64,8 +64,8 @@ Career Advancement: Achievements in such events can enhance your portfolio, maki
         
 
           <section className="flex flex-col items-center justify-center">
-          <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          Rounds:
+          <div className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          ROUNDS:
           </div>
           
         </section>
