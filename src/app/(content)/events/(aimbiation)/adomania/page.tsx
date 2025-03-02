@@ -77,7 +77,7 @@ Total Points: 50
         EVENT MANAGERS
       </div>
       <br/><br/>
-      <div className="text-center text-white text-2xl font-normal">
+      <div className="text-center text-white list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
         For any queries regarding the event, feel free to reach out to any of the managers listed below.
       </div>
 

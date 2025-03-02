@@ -14,7 +14,7 @@ const page = () => {
         />
       </div>
 
-      <EventIntro 
+0      <EventIntro 
         imageUrl="/aimbiation-events-logo/nexgenstartup.png"
         title="Nexgen Start-up"
         registrations={0}
@@ -40,16 +40,16 @@ const page = () => {
         RULES AND REGULATIONS
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl space-y-6 uppercase font-['Inter'] leading-[32px] tracking-[6.72px] text-white">
-            <li>1.	The competition is open for teams comprising graduate & postgraduate students</li>
-            <li>2.	No change of team structure is permitted after the team is registered. </li>
-            <li>3.	One participant cannot be part of more than one team. </li>
-            <li>4.	One of the team members should be registered as the team leader. </li>
-            <li>5.	The business plan should not exceed 15 pages. Excluding executive summary, cover page & index. </li>
-            <li>6.	A maximum of 15 slides of power point presentation is allowed in the final round. </li>
-            <li>7.	The participants must follow the font size of 12 in Times New Roman for the main text and 14 for headings with a line spacing of 1.5".</li>
-            <li>8.	A maximum of 15 minutes for a team will be allowed to present the business idea. </li>
-            <li>9.	Participants must carry their data back up in a laptop or USB drive.</li>
+          <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
+            <li>The competition is open for teams comprising graduate & postgraduate students</li>
+            <li>	No change of team structure is permitted after the team is registered. </li>
+            <li>	One participant cannot be part of more than one team. </li>
+            <li>	One of the team members should be registered as the team leader. </li>
+            <li>	The business plan should not exceed 15 pages. Excluding executive summary, cover page & index. </li>
+            <li>	A maximum of 15 slides of power point presentation is allowed in the final round. </li>
+            <li>	The participants must follow the font size of 12 in Times New Roman for the main text and 14 for headings with a line spacing of 1.5".</li>
+            <li>	A maximum of 15 minutes for a team will be allowed to present the business idea. </li>
+            <li>	Participants must carry their data back up in a laptop or USB drive.</li>
             </ul>
             </div>
             </section>
@@ -59,33 +59,33 @@ const page = () => {
         JUDGEMENT CRITERIA (100%)
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-none pl-5 text-2xl space-y-6 uppercase font-['Inter'] leading-[32px] tracking-[6.72px] text-white">
-            <li>• Business Description: (15%)</li>
+          <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
+            <li>Business Description: (15%)</li>
             <li>Clear, reasonable, and scalable concept explanation. </li>
-            <li>•	Market Analysis: (10%) </li>
+            <li>	Market Analysis: (10%) </li>
             <li>Identifies genuine need; well-defined target market. </li>
             <li>Market size and growth discussed. </li>
             <li>Consumer demand and willingness to pay addressed.</li>
-            <li>•	Product or Service Analysis: (10%)</li>
+            <li>Product or Service Analysis: (10%)</li>
             <li>Clear description, feasibility analyzed. </li>
             <li>Evaluation of potential duplication and substitutes.</li>
-            <li>•	Competition: (10%)</li>
+            <li>	Competition: (10%)</li>
             <li>Identification of competitors, strengths, and weaknesses analyzed effectively.</li>
-            <li>•	Marketing Strategy: (10%)</li>
+            <li>	Marketing Strategy: (10%)</li>
             <li>Well-defined plan covering price, product, place, and promotion.</li>
             <li>Appropriate resource allocation.</li>
-            <li>•	Operations: (10%)</li>
+            <li>Operations: (10%)</li>
             <li>Discussion on securing resources and maintaining competitive operations.</li>
-            <li>•	Investment Proposal: (10%)</li>
+            <li>Investment Proposal: (10%)</li>
             <li>Detailed funding explanation, clear terms and returns.</li>
             <li>Realistic valuation and feasible exit strategy.</li>
-            <li>•	Innovation and Creativity: (10%)</li>
+            <li>Innovation and Creativity: (10%)</li>
             <li>Unique and original idea with a creative approach.</li>
             <li>Potential to disrupt the market.</li>
-            <li>•	Sustainability and Social Impact: (5%)</li>
+            <li>Sustainability and Social Impact: (5%)</li>
             <li>Consideration of environmental and social impact.</li>
             <li>Long-term sustainability of the business model.</li>
-            <li>•	Presentation: (20%)</li>
+            <li>Presentation: (20%)</li>
             <li>Engaging, well-managed time, confident delivery, and impactful conclusion.</li>
             </ul>
             </div>
@@ -96,10 +96,10 @@ const page = () => {
         PRIZE DETAILS:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-none pl-5 text-2xl space-y-6 uppercase font-['Inter'] leading-[32px] tracking-[6.72px] text-white">
-            <li>•	Winner: Cash prize of ₹5000 + Incubation Support + Mentorship from industry experts.</li>
-            <li>•	Runner up: Cash prize of ₹3000 + Mentorship.</li>
-            <li>•	Special Category Awards: Best Social Impact Startup, Most Innovative Idea, and Best Pitch Presentation (prizes and benefits to be announced).</li>
+          <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
+            <li>	Winner: Cash prize of ₹5000 + Incubation Support + Mentorship from industry experts.</li>
+            <li>	Runner up: Cash prize of ₹3000 + Mentorship.</li>
+            <li>	Special Category Awards: Best Social Impact Startup, Most Innovative Idea, and Best Pitch Presentation (prizes and benefits to be announced).</li>
             </ul>
             </div>
             </section>
@@ -109,7 +109,7 @@ const page = () => {
           <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             EVENT MANAGERS
           </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+          <div className="w-[1023px] text-center text-white list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px]">
             For any queries regarding the event, feel free to reach out to any of
             the managers listed below. They are here to help and ensure a smooth
             experience for you!

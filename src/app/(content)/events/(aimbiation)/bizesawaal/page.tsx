@@ -9,16 +9,16 @@ import ManagerCard from '@/components/sub-component/manager-card';
 import { BsAward } from "react-icons/bs";
 
 const Page = () => {
-  const rules = [  "1. Teams need to register themselves before or till the registration last date. After which no registrations would be entertained.",
-    "2. Only the team leader will be able to register his/her team through unstop.",
-    "3. Teams can be formed with minimum 3 members and maximum 4 members.",
-    "4. The online quiz will consist of objective type or short answer type questions.",
-    "5. The questions will revolve around business knowledge.",
-    "6. Only team leaders can register and play the online quiz round on the team's behalf.",
-    "7. All the questions have to be answered within 15 mins. However, there is no negative marking.",
-    "8. The participants are requested to secure a good and reliable internet connection for participating successfully in the online round, any delay in submission due to the same will not be entertained.",
-    "9. If any of the participants is found using unfair means to win the competition or committing any kind of misconduct, his/her team will be disqualified. It is up to the discretion of the Core Team of Biz - E - Sawaal, OPJU and their word will be Final.",
-    "10. All disputes will be resolved by the Core Team of Biz-E-Sawaal, OPJU and their decision will be considered final.",];
+  const rules = [  "Teams need to register themselves before or till the registration last date. After which no registrations would be entertained.",
+    " Only the team leader will be able to register his/her team through unstop.",
+    " Teams can be formed with minimum 3 members and maximum 4 members.",
+    " The online quiz will consist of objective type or short answer type questions.",
+    "The questions will revolve around business knowledge.",
+    "Only team leaders can register and play the online quiz round on the team's behalf.",
+    "All the questions have to be answered within 15 mins. However, there is no negative marking.",
+    "The participants are requested to secure a good and reliable internet connection for participating successfully in the online round, any delay in submission due to the same will not be entertained.",
+    "If any of the participants is found using unfair means to win the competition or committing any kind of misconduct, his/her team will be disqualified. It is up to the discretion of the Core Team of Biz - E - Sawaal, OPJU and their word will be Final.",
+    "All disputes will be resolved by the Core Team of Biz-E-Sawaal, OPJU and their decision will be considered final.",];
   const reasons =    [ "Enhancing Business Acumen and Critical Thinking: The quiz aims to deepen participants' knowledge of business, finance, and corporate affairs while fostering critical thinking, decision-making, and awareness of current economic trends",
     "Encouraging Competitive Learning and Networking: By promoting a spirit of healthy competition, teamwork, and public speaking, the event provides a platform for students, professionals, and business enthusiasts to connect, showcase their talent, and gain recognition",];
   return (
