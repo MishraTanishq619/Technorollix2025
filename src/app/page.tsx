@@ -6,7 +6,7 @@ import EventSection from "@/components/eventsSection";
 import FAQSection from "@/components/faq";
 import Footer from "@/components/footer";
 // import Navbar from "@/components/nav";
-import Sponser from "@/components/sponser";
+import Sponsor from "@/components/sponsor";
 import ButtonLanding from "@/components/sub-component/button-landing";
 // import CardwithImage from "@/components/sub-component/card-with-image";
 import Image from "next/image";
@@ -52,7 +52,7 @@ export default function Home() {
         <AboutSection />
       </section>
       <section>
-        <Sponser />
+        <Sponsor />
       </section>
       <section>
         <FAQSection />

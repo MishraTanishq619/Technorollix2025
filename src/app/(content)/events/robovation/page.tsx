@@ -1,5 +1,6 @@
 import ButtonLanding from "@/components/sub-component/button-landing";
 import EventIntro from "@/components/sub-component/event-intro";
+import EventManagers from "@/components/sub-component/event-managers";
 import ManagerCard from "@/components/sub-component/manager-card";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import SubEventCard from "@/components/sub-component/sub-event-card";
@@ -21,6 +22,13 @@ const page = () => {
     "The robot must not leave behind any of its parts during the run; else it will result in disqualification.",
     "Unethical behavior could lead to disqualification. Faculty coordinators have all the rights to take final decisions for any matter during the event. and Judge's decision will be considered final.",
     "Certificates of Participation will be given to all the teams participating in the event ,but not to the teams that get disqualified due to disobeying any of the competition rules.Coordination committee reserves the right to add or update any rule.",
+  ];
+
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
+    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
+    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
   ];
 
   return (
@@ -100,23 +108,7 @@ ROUND 1 AND ROUND 2."
         <RulesAndRegulation rules={rules} />
       </section>
 
-      <section className="flex flex-col items-center justify-center">
-      <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          EVENT MANAGERS
-        </h2>
-        <div className="text-white text-2xl text-center tracking-[5.28px]">
-          For any queries regarding the event, feel free to reach out to any of the managers listed below.
-        </div>
-        <div className="flex justify-center space-x-40 items-center mt-20">
-          <ManagerCard imageUrl="/Event-Managers/Harsh tiwari ( robovation)_.jpg" name="Harsh verma" contact={7389245531} />
-          <ManagerCard imageUrl="/Event-Managers/udit vardhan singh( robovation)_.jpg" name="Udit Vardhan Singh" contact={8298558875} />
-          <ManagerCard imageUrl="/dallE.png" name="Amrit Kumar" contact={8235993302} />
-          <ManagerCard imageUrl="/dallE.png" name="Kushal Kumar Barsiwal " contact={7987829224} />
-        </div>
-        <div className="mb-10">
-          <ButtonLanding label="Register Now" link="/dashboard"/>
-        </div>
-      </section>
+      <EventManagers managers={managers} />
     </div>
   );
 };

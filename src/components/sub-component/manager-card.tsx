@@ -7,7 +7,11 @@ interface ManagerCardProps {
   contact: number;
 }
 
-const ManagerCard: React.FC<ManagerCardProps> = ({ imageUrl, name, contact }) => {
+const ManagerCard: React.FC<ManagerCardProps> = ({
+  imageUrl,
+  name,
+  contact,
+}) => {
   return (
     <div className="w-48 h-72 bg-gradient-to-b from-[#FBDA7A] to-[#7C5114] text-white rounded-2xl shadow-lg overflow-hidden m-2">
       {/* Manager Image */}
@@ -15,10 +19,8 @@ const ManagerCard: React.FC<ManagerCardProps> = ({ imageUrl, name, contact }) =>
         <Image
           src={imageUrl}
           alt={`${name}'s image`}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top"
-          className="rounded-t-2xl"
+          fill
+          className="rounded-t-2xl object-cover object-top"
         />
       </div>
 

@@ -1,11 +1,17 @@
 import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
-import ButtonLanding from "@/components/sub-component/button-landing";
-import ManagerCard from "@/components/sub-component/manager-card";
 import { FaCode,FaPenNib } from "react-icons/fa6";
+import EventManagers from "@/components/sub-component/event-managers";
 
 const Page = () => {
+
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
+    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
+    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+  ];
+
   return (
     <div className="flex flex-col space-y-10">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
@@ -114,7 +120,7 @@ const Page = () => {
         
 
       {/* Event Managers Section */}
-      <section className="flex flex-col items-center justify-center">
+      {/* <section className="flex flex-col items-center justify-center">
         <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)] mb-14">
           EVENT MANAGERS
         </h2>
@@ -127,7 +133,8 @@ const Page = () => {
         <div className="mb-10">
           <ButtonLanding label="Register Now" link="/dashboard"/>
         </div>
-      </section>
+      </section> */}
+      <EventManagers managers={managers} />
     </div>
   );
 };

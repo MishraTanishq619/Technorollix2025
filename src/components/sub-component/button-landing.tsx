@@ -2,7 +2,7 @@ import React from "react";
 
 const ButtonLanding = ({ label, link }: { label: string; link: string }) => {
   return (
-    <div className="flex justify-center mt-12">
+    <div className="flex justify-center mt-32">
       <a
         href={link}
         className="w-full px-16 max-w-xs sm:max-w-md lg:max-w-lg h-20 rounded-full bg-gradient-to-r from-[#ff2020] via-[#AA0406] to-[#8F0c11] border-4 border-[#ffc362] flex justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 focus:ring-4 focus:ring-[#ffc362]"
