@@ -36,13 +36,13 @@ const page = () => {
           COMPITATION FORMAT
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white">
-            <li>• Total Participants: 100 students</li>
-            <li>• Teams: 25 teams (4 students per team)</li>
-            <li>• Time & Number of Rounds: To be intimated later</li>
-            <li>• Registration Fee: ₹100 per group.</li>
+          <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
+            <li>Total Participants: 100 students</li>
+            <li>Teams: 25 teams (4 students per team)</li>
+            <li>Time & Number of Rounds: To be intimated later</li>
+            <li>Registration Fee: ₹100 per group.</li>
             <li>
-              • Eligibility: UG & PG students (Age: 18 - Below 30) from any
+              Eligibility: UG & PG students (Age: 18 - Below 30) from any
               college/university.
             </li>
           </ul>
@@ -54,32 +54,32 @@ const page = () => {
           RULES & REGULATION
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-          <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white">
-            <li>1. Teams must register in groups of 4 members.</li>
-            <li>2. This is open to other Institutions outside OPJU</li>
-            <li>3. Each team must distribute tasks among members</li>
+          <ul className="list-decimal pl-5 text-2xl space-y-2  font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
+            <li>Teams must register in groups of 4 members.</li>
+            <li>This is open to other Institutions outside OPJU</li>
+            <li>Each team must distribute tasks among members</li>
             <li>
-              4. Abusive, offensive, politically driven, gender-biased, or
+              Abusive, offensive, politically driven, gender-biased, or
               personal remarks will be dealt strictly.{" "}
             </li>
-            <li>5. Costumes should be suitable for the event.</li>
-            <li>6. Registration is mandatory </li>
-            <li>7. No outside ingredients are allowed</li>
-            <li>8. Teams must finish within the given time.</li>
-            <li>9. Points will be deducted for messy stations.</li>
+            <li>Costumes should be suitable for the event.</li>
+            <li>Registration is mandatory </li>
+            <li> No outside ingredients are allowed</li>
+            <li> Teams must finish within the given time.</li>
+            <li> Points will be deducted for messy stations.</li>
             <li>
-              10. Proper handling of knives, stoves, and other kitchen equipment
+              Proper handling of knives, stoves, and other kitchen equipment
               is mandatory.
             </li>
             <li>
-              11. Judging Criteria:
-              <li>o Taste 40%</li>
-              <li>o Creativity 30%</li>
-              <li>o Presentation 20%</li>
-              <li>o Cleanliness & Organization 10%</li>
+            Judging Criteria:
+              <li>Taste 40%</li>
+              <li>Creativity 30%</li>
+              <li>Presentation 20%</li>
+              <li>Cleanliness & Organization 10%</li>
             </li>
-            <li>12. The judges' decision is final.</li>
-            <li>13. Winners will be declared on the same day.</li>
+            <li>The judges' decision is final.</li>
+            <li> Winners will be declared on the same day.</li>
           </ul>
         </div>
       </section>
