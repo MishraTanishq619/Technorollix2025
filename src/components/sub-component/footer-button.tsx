@@ -7,7 +7,7 @@ const FooterButton = ({ label, link }: { label: string; link: string }) => {
       <Link href={link} className="w-full max-w-xs sm:max-w-md">
         <button
           className="relative w-full h-12 sm:h-14 px-6 sm:px-8 rounded-full bg-gradient-to-r from-[#7B1113] to-[#450000] 
-                     border-4 border-[#D4A256] flex justify-center items-center shadow-[0_5px_15px_rgba(0,0,0,0.5)] 
+                     border-[3px] border-[#D4A256] flex justify-center items-center shadow-[0_5px_15px_rgba(0,0,0,0.5)] 
                      transition-transform duration-300 ease-in-out hover:scale-105 focus:ring-4 focus:ring-[#D4A256]"
         >
           <span
