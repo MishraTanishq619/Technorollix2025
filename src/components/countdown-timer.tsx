@@ -45,7 +45,8 @@ const CountdownTimer = () => {
   const textStyle: React.CSSProperties = {
     textAlign: "center",
     color: "#ffad3c",
-    fontSize: "2.5rem",
+    fontSize: "3rem",
+    letterSpacing : "3.75px",
     fontWeight: "bold",
     fontFamily: "'Inria Serif', serif",
     textShadow: "0px 4px 10px rgba(0, 0, 0, 0.78)",

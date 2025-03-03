@@ -25,11 +25,12 @@ export default function Junoon() {
       description:
         "DJ Hemant brings a unique blend of talent and skill to any event, enhancing the atmosphere. He has great music selection, versatility, and creates memorable moments. He brings people together and has also collaborated with Atrangi Band...",
       imageOnRight: true,
+      largerImage: true,
     },
   ];
 
   return (
-    <div className="w-full bg-[linear-gradient(to_right,rgba(11,8,229,0.3),rgba(255,0,191,0.3))] text-white">
+    <div className="w-full min-h-screen bg-gradient-to-r from-blue-600/30 to-pink-600/30 text-white">
       {/* Logo Section */}
       <div className="flex flex-col justify-center items-center min-h-screen px-4">
         <Image
@@ -40,7 +41,7 @@ export default function Junoon() {
           className="max-w-[80%] sm:max-w-[60%] md:max-w-[50%] lg:max-w-[74%] h-auto"
           priority
         />
-        <div className="w-full max-w-[90%] text-center mt-4">
+        <div className="text-center w-full max-w-3xl mt-4">
           <span className="text-[#a97ead] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal font-['Protest Revolution'] tracking-wide">
             One stage, one night, endless vibes.
           </span>
@@ -48,7 +49,7 @@ export default function Junoon() {
       </div>
 
       {/* About Section */}
-      <div className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-10 mb-48">
+      <div className="flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-16">
         <div className="w-full lg:w-1/2">
           <Image
             src="/junoon/aboutjunoon.png"
@@ -59,7 +60,7 @@ export default function Junoon() {
             priority
           />
         </div>
-        <div className="w-full lg:w-1/2 text-white text-center lg:text-left">
+        <div className="w-full lg:w-1/2 text-white text-center lg:text-left max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#E944FF] to-[#FFFFFFFA] shadow-lg mb-6">
             ABOUT JUNOON
           </h2>
@@ -73,32 +74,31 @@ export default function Junoon() {
       {guests.map((guest, index) => (
         <section
           key={index}
-          className={`flex flex-col gap-14 ${guest.imageOnRight ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-center p-10 mb-64`}
+          className={`flex flex-col md:flex-row ${
+            guest.imageOnRight ? "md:flex-row-reverse" : ""
+          } items-center justify-center px-10 py-16`}
         >
-          <Image
-            src={guest.image}
-            alt={guest.name}
-            width={400}
-            height={400}
-            className="w-1/3 rounded-lg shadow-lg"
-            priority
-          />
-          <div className="w-full lg:w-1/2 text-white text-center lg:text-left">
+          <div className="w-full md:w-1/3 flex justify-center">
+            <Image
+              src={guest.image}
+              alt={guest.name}
+              width={guest.largerImage ? 500 : 400} // Increased size for DJ Hemant
+              height={guest.largerImage ? 500 : 400}
+              className="rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
+          <div className="w-full md:w-1/2 text-white text-center md:text-left max-w-3xl px-6">
             <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#E944FF] to-[#FFFFFFFA] shadow-lg mb-6">
               {guest.role}
             </h2>
             <p className="text-xl font-medium font-['Poppins']">{guest.description}</p>
           </div>
         </section>
-        
       ))}
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-    </div>
 
+      {/* Bottom Padding */}
+      <div className="pb-32"></div>
+    </div>
   );
 }

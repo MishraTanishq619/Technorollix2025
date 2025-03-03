@@ -56,6 +56,11 @@ export default function Home() {
         <FAQSection />
       </section>
       <section>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Footer/>
       </section>
     </>

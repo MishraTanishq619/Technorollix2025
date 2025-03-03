@@ -1,8 +1,7 @@
 import EventIntro from "@/components/sub-component/event-intro";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import ManagerCard from "@/components/sub-component/manager-card";
-import ButtonLanding from "@/components/sub-component/button-landing";
 import React from "react";
+import EventManagers from "@/components/sub-component/event-managers";
 
 const Aerodrone = () => {
   const rules = [
@@ -16,15 +15,15 @@ const Aerodrone = () => {
     "Participants will be eliminated after each round based on the judges' evaluation.",
     "Participants must respect event coordinators, judges, and fellow contestants at all times. Any misbehavior may lead to disqualification.",
   ];
-  // const reasons = [""];
-  // const managers = [
-  //   { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-  //   { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-  //   { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
-  // ];
+
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Bhavana Verma", contact: 9407916405 },
+    { imageUrl: "/dallE.png", name: "Manisha Patel", contact: 6268539090 },
+    { imageUrl: "/dallE.png", name: "Ankit Mandal", contact: 9693407573 },
+  ];
 
   return (
-    <div>
+    <div className="space-y-10">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
@@ -81,42 +80,32 @@ const Aerodrone = () => {
             </p>
           </div>
         </div>
-      </div><br/><br/>
+      </div>
+      <br />
+      <br />
 
       <section className="mb-20">
-    <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-    WHY PARTICIPATE IN AERODRONE:
-    </h2>
-
-    <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-        <p className="list-decimal pl-5 text-2xl space-y-4 font-['Inter']  leading-10 tracking-[3.75px] text-white">
-        Skill Enhancement: Engage in creative challenges that refine your design, modeling, and event coordination abilities.
-        Exposure and Recognition: Showcase your talent to a broader audience, gaining visibility and potential accolades.
-        Networking Opportunities: Connect with industry professionals, peers, and mentors, fostering valuable relationships.
-        Personal Growth: Build confidence, resilience, and adaptability by stepping out of your comfort zone.<br/><br/>
-        
-        </p>
-    </div>
-</section>
-
-      <RulesAndRegulation rules={rules} />
-
-            {/* Event Managers Section */}
-            <section className="flex flex-col items-center justify-center">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-          EVENT MANAGERS
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          WHY PARTICIPATE IN AERODRONE:
         </h2>
-        <div className="text-white text-2xl text-center tracking-[5.28px]">
-          For any queries regarding the event, feel free to reach out to any of the managers listed below.
-        </div>
-        <div className="flex justify-center space-x-40 items-center mt-20">
-          <ManagerCard imageUrl="/dallE.png" name="Ankit Mandal " contact={9693407573} />
-        </div>
-        <div className="mb-10">
-          <ButtonLanding label="Register Now" link="/dashboard"/>
+
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+          <p className="list-decimal pl-5 text-2xl space-y-4 font-['Inter']  leading-10 tracking-[3.75px] text-white">
+            Skill Enhancement: Engage in creative challenges that refine your
+            design, modeling, and event coordination abilities. Exposure and
+            Recognition: Showcase your talent to a broader audience, gaining
+            visibility and potential accolades. Networking Opportunities:
+            Connect with industry professionals, peers, and mentors, fostering
+            valuable relationships. Personal Growth: Build confidence,
+            resilience, and adaptability by stepping out of your comfort zone.
+            <br />
+            <br />
+          </p>
         </div>
       </section>
 
+      <RulesAndRegulation rules={rules} />
+      <EventManagers managers={managers} />
     </div>
   );
 };

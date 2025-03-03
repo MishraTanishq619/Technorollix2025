@@ -21,7 +21,7 @@ const SubEventCard: React.FC<SubEventCardProps> = ({
         {title}
       </div>
       <div
-        className="text-justify text-white text-sm p-6 font-medium font-['Poppins'] overflow-hidden overflow-y-auto custom-scrollbar"
+        className="text-justify text-white text-lg p-6 font-medium font-['Poppins'] overflow-hidden overflow-y-auto custom-scrollbar"
         style={{
           maxHeight: "7.5rem",
           display: "-webkit-box",

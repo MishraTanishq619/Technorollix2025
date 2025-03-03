@@ -1,13 +1,16 @@
 import React from 'react';
 import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card';
-import ManagerCard from '@/components/sub-component/manager-card';
-import ButtonLanding from '@/components/sub-component/button-landing';
 import { BsAward } from 'react-icons/bs';
+import EventManagers from '@/components/sub-component/event-managers';
 
 const Page = () => {
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Bhavana Verma", contact: 9407916405 },
+    { imageUrl: "/dallE.png", name: "Manisha Patel", contact: 6268539090 },
+  ];
   return (
-    <div className="Hackathon">
+    <div className="space-y-10">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
@@ -70,25 +73,7 @@ const Page = () => {
       </div>
 
       {/* Event Managers */}
-      <section>
-        <div className="flex flex-col items-center justify-center">
-          <div className="text-center text-[#ffad3c] text-5xl font-medium uppercase">
-            EVENT MANAGERS
-          </div><br/><br/>
-          <div className="text-center text-white text-2xl font-normal">
-            For any queries regarding the event, feel free to reach out to any of the managers listed below.
-          </div>
-
-          <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Bhavana Verma" contact={9407916405}/>
-            <ManagerCard imageUrl="/dallE.png" name="Manisha Patel" contact={6268539090}/>
-          </div>
-          <div className="mb-10">
-          <ButtonLanding label="Register Now" link="/dashboard" />
-
-          </div>
-        </div>
-      </section>
+      <EventManagers managers={managers} />
     </div>
   );
 };
