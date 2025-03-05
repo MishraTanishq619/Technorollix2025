@@ -54,7 +54,7 @@ const UserDropdown = () => {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger>
-				<div className="h-10 w-36 bg-gradient-to-r from-[#ff2020] via-[#AA0406] to-[#8F0c11] flex items-center justify-center border-[3px] border-[#FFC363] rounded-full px-6 text-yellow-400 font-bold shadow-md">
+				<div className="h-10 w-36 bg-gradient-to-r from-[#ff2020] via-[#AA0406] to-[#8F0c11] flex items-center justify-center border-[3px] border-[#FFC363] rounded-full px-6 text-[#f3c786] font-bold shadow-md">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"

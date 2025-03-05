@@ -28,6 +28,7 @@ export default function Home() {
           alt="technorollix"
           width={909}
           height={265}
+          priority
           className="w-full max-w-[850px] md:w-[909px] h-auto p-4 mt-10 md:mt-28 sm:mt-32"
         />
         
@@ -56,11 +57,6 @@ export default function Home() {
         <FAQSection />
       </section>
       <section>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <Footer/>
       </section>
     </>

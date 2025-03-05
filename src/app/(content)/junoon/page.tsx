@@ -7,7 +7,7 @@ export default function Junoon() {
       role: "Celeb - VAIBHAV GUPTA",
       image: "/junoon/vaibhavgupta.svg",
       description:
-        "We are thrilled to announce that Vaibhav Gupta, the illustrious winner of Indian Idol Season 14, will be gracing Junoon 2025 with his presence. Hailing from Kanpur, Vaibhav's musical journey began at a young age, leading him to triumph in the 2024 season of the renowned singing reality show...",
+        "We are thrilled to announce that Vaibhav Gupta , the illustrious winner of Indian Idol Season 14, will be gracing Junoon 2025 with his presence. Hailing from Kanpur, Vaibhav's musical journey began at a young age, leading him to triumph in the 2024 season of the renowned singing reality show. His soulful voice and captivating performances have garnered him accolades from industry stalwarts and a dedicated fanbase nationwide. Beyond his Indian Idol victory, Vaibhav has achieved significant milestones, including winning 'Kanpur Got Talent' in 2017 and 'Radiocity Super Singer' in 2022. His commitment to reviving the essence of '90s music and his aspirations for Bollywood playback singing reflect his passion and dedication to the art. We eagerly anticipate the magic Vaibhav Gupta will bring to the Junoon 2025 stage.",
       imageOnRight: true,
     },
     {
@@ -17,6 +17,7 @@ export default function Junoon() {
       description:
         "Aman Sahu is a Raipur-based award-winning TV and event anchor/presenter. He has an enthusiastic, lively personality filled with a fine mix of confidence, wit, warmth, and talent. He has hosted for brands like Samsung, JSW, Sunburn, etc., and collaborated with Atrangi Band...",
       imageOnRight: false,
+      largerImage: true,
     },
     {
       name: "DJ Hemant Sahu",
@@ -76,7 +77,7 @@ export default function Junoon() {
           key={index}
           className={`flex flex-col md:flex-row ${
             guest.imageOnRight ? "md:flex-row-reverse" : ""
-          } items-center justify-center px-10 py-16`}
+          } items-center justify-center py-16`}
         >
           <div className="w-full md:w-1/3 flex justify-center">
             <Image

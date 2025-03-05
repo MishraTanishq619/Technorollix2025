@@ -172,13 +172,7 @@ export default function EventsSelection() {
 									}
 								>
 									<CardHeader>
-										{/* <Image
-											src={event.image}
-											alt={event.name}
-											className="w-full h-48 object-cover rounded-t-lg mb-4"
-											width={800}
-											height={400}
-										/> */}
+										
 										<CardTitle className="text-lg flex justify-between items-center">
 											{event.name}
 											{status === "registered" && (

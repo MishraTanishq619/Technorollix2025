@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ButtonLanding from "@/components/sub-component/button-landing";
 
 const eventsData = {
   technical: [
@@ -124,6 +125,8 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
         </Link>
       ))}
     </div>
+
+    <ButtonLanding label="Register" link="/auth/signup" />
   </>
 );
 
