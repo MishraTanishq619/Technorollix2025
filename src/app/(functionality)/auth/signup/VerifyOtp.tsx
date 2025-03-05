@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -6,12 +7,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { toast } from "@/hooks/use-toast";
+import { sendWelcomeEmail } from "@/actions/mailer";
 
 const otpSchema = z.object({
     otp: z.string().min(6, { message: "OTP must be 6 digits." }),
 });
 
 export default function VerifyOtp({ onNext }: { onNext: () => void }) {
+    const [isVerifying, setIsVerifying] = useState(false);
+    const [isResending, setIsResending] = useState(false);
     const form = useForm<z.infer<typeof otpSchema>>({
         resolver: zodResolver(otpSchema),
         defaultValues: {
@@ -20,6 +24,7 @@ export default function VerifyOtp({ onNext }: { onNext: () => void }) {
     });
 
     const onSubmit = async (values: z.infer<typeof otpSchema>) => {
+        setIsVerifying(true);
         const storedOtp = sessionStorage.getItem("signupOtp");
         if (values.otp !== storedOtp) {
             toast({
@@ -27,10 +32,44 @@ export default function VerifyOtp({ onNext }: { onNext: () => void }) {
                 description: "The entered OTP is incorrect.",
                 variant: "destructive",
             });
+            setIsVerifying(false);
             return;
         }
 
         onNext();
+        setIsVerifying(false);
+    };
+
+    const handleResendOtp = async () => {
+        setIsResending(true);
+        const recipientEmail = sessionStorage.getItem("signupEmail");
+        const newOtp = Math.floor(100000 + Math.random() * 900000).toString();
+        sessionStorage.setItem("signupOtp", newOtp);
+
+        try {
+            if (recipientEmail) {
+                await sendWelcomeEmail(recipientEmail, newOtp);
+            } else {
+                toast({
+                    title: "Error",
+                    description: "Recipient email is missing.",
+                    variant: "destructive",
+                });
+            }
+            toast({
+                title: "OTP Resent",
+                description: "A new OTP has been sent to your email.",
+                variant: "default",
+            });
+        } catch {
+            toast({
+                title: "Error",
+                description: "Failed to resend OTP. Please try again.",
+                variant: "destructive",
+            });
+        } finally {
+            setIsResending(false);
+        }
     };
 
     return (
@@ -45,9 +84,14 @@ export default function VerifyOtp({ onNext }: { onNext: () => void }) {
                         </FormControl>
                         <FormMessage />
                     </FormItem>
-                    <Button type="submit" className="w-full">Verify OTP</Button>
+                    <Button type="submit" className="w-full" disabled={isVerifying || isResending}>
+                        {isVerifying ? "Verifying" : "Verify OTP"}
+                    </Button>
                 </form>
             </Form>
+            <Button onClick={handleResendOtp} className="w-full mt-4" disabled={isResending || isVerifying}>
+                {isResending ? "Resending" : "Resend OTP"}
+            </Button>
         </div>
     );
 }
