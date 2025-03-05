@@ -1,11 +1,11 @@
 "use client";
-import ButtonLanding from "@/components/sub-component/button-landing";
+// import ButtonLanding from "@/components/sub-component/button-landing";
 import React from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import ManagerCard from "@/components/sub-component/manager-card";
+// import ManagerCard from "@/components/sub-component/manager-card";
 import { SiPubg, SiValorant } from "react-icons/si";
 import { IoGameController } from "react-icons/io5";
 import EventManagers from "@/components/sub-component/event-managers";

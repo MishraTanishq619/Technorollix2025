@@ -107,7 +107,7 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
     </h2>
     <p className="mt-4 md:mt-10 w-full md:w-[943px] text-center text-white text-lg md:text-xl font-medium font-['Poppins'] uppercase mx-auto">
       Our fest offers a diverse range of technical and non-technical events,
-      ensuring there's something for everyone. From innovative tech showcases to
+      ensuring there&apos;s something for everyone. From innovative tech showcases to
       fun and engaging activities, we bring together creativity, skills, and
       excitement for an unforgettable experience!
     </p>
