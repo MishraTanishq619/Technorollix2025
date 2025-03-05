@@ -13,7 +13,7 @@ const Sponsors = () => {
       <div className="flex gap-10 flex-wrap justify-center items-center mt-10">
         <div className="relative w-full max-w-[350px] h-auto">
           <Image
-            src="/jindal-new-logo.png"
+            src="/jindalnewlogo.png"
             alt="Jindal Logo"
             width={350}
             height={200}

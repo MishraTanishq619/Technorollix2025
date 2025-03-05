@@ -132,6 +132,7 @@ export default function SignupForm() {
                   <Input
                     type="email"
                     placeholder="john@example.com"
+                    className="font-semibold disabled:opacity-70"
                     {...field}
                     disabled
                   />
@@ -147,7 +148,7 @@ export default function SignupForm() {
               <FormItem>
                 <FormLabel>Mobile Number</FormLabel>
                 <FormControl>
-                  <Input placeholder="1234567890" {...field} />
+                  <Input placeholder="Enter your number" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -177,7 +178,7 @@ export default function SignupForm() {
                     <FormLabel>Branch</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="e.g. Software Engineering"
+                        placeholder="Enter your Branch"
                         {...field}
                       />
                     </FormControl>
@@ -192,7 +193,7 @@ export default function SignupForm() {
                   <FormItem>
                     <FormLabel>Enrollment Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g. EN12345" {...field} />
+                      <Input placeholder="Enter your Enrolment number" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
