@@ -6,8 +6,9 @@ import SubEventCard from "@/components/sub-component/sub-event-card";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import ManagerCard from "@/components/sub-component/manager-card";
-import { SiPubg,SiValorant } from "react-icons/si";
-import {IoGameController} from "react-icons/io5"
+import { SiPubg, SiValorant } from "react-icons/si";
+import { IoGameController } from "react-icons/io5";
+import EventManagers from "@/components/sub-component/event-managers";
 
 const Page = () => {
   const rules = [
@@ -30,10 +31,21 @@ const Page = () => {
     "Hands-on experience in competitive gaming, strategy, and teamwork",
     "Reimbursement of one-way Sleeper class fare for outside participants",
   ];
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Saket Bhagat", contact: 6203182795 },
+    { imageUrl: "/dallE.png", name: "Sarvesh Rathore", contact: 8349374721 },
+    {
+      imageUrl: "/dallE.png",
+      name: "Shubham Singh Baghel",
+      contact: 6296507314,
+    },
+    { imageUrl: "/dallE.png", name: "Rohan Prasad", contact: 7903654631 },
+    { imageUrl: "/dallE.png", name: "Devwrat", contact: 6263757750 },
+  ];
 
   return (
     <div className="flex flex-col space-y-10">
-       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
           className="w-full h-auto opacity-150"
@@ -58,27 +70,27 @@ skills, engage in friendly competition, and celebrate the spirit of gaming."
       </section>
 
       {/* Theme section */}
-      <section className="flex flex-col items-center justify-center">
-        <h2 className="w-[397px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      <div className="flex flex-col items-center justify-center">
+        <h2 className="w-[397px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] tracking-[3.75px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
           THEME
         </h2>
-        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px]">
+        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[3.75px]">
           Unleash the Gaming Warriors: A Battle for Supremacy in the Virtual
           Realm of Gaming!
         </div>
-      </section>
+      </div>
 
       <section>
         {/* Sub-Events section */}
-        <section className="flex flex-col items-center justify-center">
-          <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <section className="flex flex-col items-center justify-center mt-32">
+          <div className="w-[324.06px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             sub-events
           </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[3.75px]">
             The following are the sub-events of this main event. Read the
             details carefully and choose the ones that best match your interests
-            and expertise. Don&apos;t miss your chance to participate and showcase
-            your skills!
+            and expertise. Don&apos;t miss your chance to participate and
+            showcase your skills!
           </div>
         </section>
 
@@ -106,72 +118,25 @@ skills, engage in friendly competition, and celebrate the spirit of gaming."
         </section>
       </section>
       <section>
-      <div className="flex justify-evenly p-8">
-        {[
-          { title: "ROUND 1", subtitle: "QUALIFICATION ROUND" },
-          { title: "ROUND 2", subtitle: "FINAL ROUND"},
-         
-        ].map((round, index) => (
-          <div
-            key={index}
-            className="border-2 border-yellow-500 p-6 rounded-lg text-center w-96 text-white bg-opacity-20 bg-black"
-          >
-            <h2 className="text-lg font-bold">{round.title}</h2>
-            <p className="text-sm mt-2">{round.subtitle}</p>
-          </div>
-        ))}
-      </div>
-      </section>
-      <section>
-        <WhyParticipate reasons={reasons} />
-        <RulesAndRegulation rules={rules} />
-      </section>
-      <section>
-        <div className="flex flex-col items-center justify-center">
-          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-            EVENT MANAGERS
-          </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
-            For any queries regarding the event, feel free to reach out to any
-            of the managers listed below. They are here to help and ensure a
-            smooth experience for you!
-          </div>
-
-          <div className="flex justify-center space-x-10 items-center mt-20">
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Saket Bhagat"
-              contact={6203182795}
-            />
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Sarvesh Rathore"
-              contact={8349374721}
-            />
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Shubham Singh Baghel"
-              contact={6296507314}
-            />
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Rohan Prasad"
-              contact={7903654631}
-            />
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Devwrat"
-              contact={6263757750}
-            />
-          </div>
-          <ButtonLanding label="Register Now" link="/dashboard"/>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+        <div className="flex justify-evenly p-8">
+          {[
+            { title: "ROUND 1", subtitle: "QUALIFICATION ROUND" },
+            { title: "ROUND 2", subtitle: "FINAL ROUND" },
+          ].map((round, index) => (
+            <div
+              key={index}
+              className="border-2 border-yellow-500 p-6 rounded-lg text-center w-96 text-white bg-opacity-20 bg-black"
+            >
+              <h2 className="text-lg font-bold">{round.title}</h2>
+              <p className="text-sm mt-2">{round.subtitle}</p>
+            </div>
+          ))}
         </div>
       </section>
+
+      <WhyParticipate reasons={reasons} />
+      <RulesAndRegulation rules={rules} />
+      <EventManagers managers={managers} />
     </div>
   );
 };

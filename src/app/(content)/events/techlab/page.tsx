@@ -1,14 +1,13 @@
 "use client";
-import ButtonLanding from "@/components/sub-component/button-landing";
 import React from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
-import ManagerCard from "@/components/sub-component/manager-card";
 import { GiTargetPoster, GiRobotLeg } from "react-icons/gi";
 import { PiPathBold } from "react-icons/pi";
 import { FaAppStore } from "react-icons/fa";
+import EventManagers from "@/components/sub-component/event-managers";
 
 const Page = () => {
   const rules = [
@@ -32,13 +31,21 @@ const Page = () => {
     "Reimbursement of a one-way Sleeper class fair for all the outside participants of Tech Lab.",
     "Subjected to terms and conditions of OPJU Innovation Centre.",
   ];
+
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Shruti Kumari", contact: 9165245727 },
+    { imageUrl: "/dallE.png", name: "Ashish Kumar", contact: 9122132979 },
+    { imageUrl: "/dallE.png", name: "Priya Kumari", contact: 9234531358 },
+    { imageUrl: "/dallE.png", name: "Ankit Kumar Sah", contact: 8825365939 },
+    { imageUrl: "/dallE.png", name: "Shruti Kumari Pal", contact: 7448115807 },
+  ];
+
   return (
     <div className="flex flex-col space-y-10">
-
-<div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
-          className="w-full h-auto opacity-150"
+          className="w-full h-auto opacity-100"
           alt="Scrolling Background"
         />
       </div>
@@ -48,7 +55,7 @@ const Page = () => {
         <EventIntro
           imageUrl="/techno-events-logo/techlab.png"
           title="TECH LAB"
-          registrations={20}
+          registrations={0}
           pricepool={45000}
           description="Tech lab is the flagship event of the biggest tech festival in central India, TECHNOROLLIX. It’s a vibrant showcase of innovation and ingenuity, where the brightest minds from various universities unleash their creative potential through their self-developed models. Creating a technical model presentation involves effectively communicating the details, functionality, and significance of a technical model to a diverse audience, which may include technical and non-technical stakeholders. This platform also opens doors to better funding opportunities for these innovative minds, paving the way to a future breakthrough."
           time="10:00 am"
@@ -56,27 +63,19 @@ const Page = () => {
         />
       </section>
 
-      {/* Theme section
-      <section className="flex flex-col items-center justify-center">
-        <h2 className="w-[397px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          THEME
-        </h2>
-        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px]">
-          BOLLYWOOD
-        </div>
-      </section> */}
+    
 
       <section>
         {/* Sub-Events section */}
-        <section className="flex flex-col items-center justify-center">
-          <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <section className="flex flex-col mt-20 items-center justify-center">
+          <div className="w-[324.06px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
             sub-events
           </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[3.75px]">
             The following are the sub-events of this main event. Read the
             details carefully and choose the ones that best match your interests
-            and expertise. Don&apos;t miss your chance to participate and showcase
-            your skills!
+            and expertise. Don&apos;t miss your chance to participate and
+            showcase your skills!
           </div>
         </section>
 
@@ -112,52 +111,7 @@ const Page = () => {
       <section>
         <WhyParticipate reasons={reasons} />
         <RulesAndRegulation rules={rules} />
-      </section>
-      <section>
-        <div className="flex flex-col items-center justify-center">
-          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-            EVENT MANAGERS
-          </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
-            For any queries regarding the event, feel free to reach out to any
-            of the managers listed below. They are here to help and ensure a
-            smooth experience for you!
-          </div>
-
-          <div className="flex justify-center space-x-20 items-center mt-20">
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Shruti Sharma"
-              contact={8102012514}
-            />
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Pooja Yadav"
-              contact={6371490654}
-            />
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Shruti Kumari"
-              contact={9165245727}
-            />
-            <ManagerCard
-              imageUrl="/dallE.png"
-              name="Shivam Kumar Pal"
-              contact={7448115807}
-            />
-                        <ManagerCard
-              imageUrl="/dallE.png"
-              name="Anisha Vikhar "
-              contact={9571305506}
-            />
-          </div>
-          <ButtonLanding label="Register Now" link="/dashboard"/>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
+        <EventManagers managers={managers} />
       </section>
     </div>
   );

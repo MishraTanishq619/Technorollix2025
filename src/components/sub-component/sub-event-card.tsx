@@ -17,11 +17,11 @@ const SubEventCard: React.FC<SubEventCardProps> = ({
       <div className="self-center pb-4">
         <Icon className="h-20 w-20 text-[#ffad3c]" />
       </div>
-      <div className="text-center text-wrap px-5 text-[#ffad3c] text-3xl font-medium font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:_0px_7px_10px_rgb(0_0_0_/_0.78)]">
+      <div className="text-center text-wrap px-5 text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-3xl font-medium font-['Poppins'] uppercase tracking-[3.75px] [text-shadow:_0px_7px_10px_rgb(0_0_0_/_0.78)]">
         {title}
       </div>
       <div
-        className="text-justify text-white text-sm p-6 font-medium font-['Poppins'] overflow-hidden overflow-y-auto custom-scrollbar"
+        className="text-justify text-white text-lg p-6 font-medium font-['Poppins'] overflow-hidden overflow-y-auto custom-scrollbar"
         style={{
           maxHeight: "7.5rem",
           display: "-webkit-box",

@@ -1,52 +1,73 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 
 const CountdownTimer = () => {
   const eventDate = new Date(2025, 2, 20, 0, 0, 0).getTime();
 
-  const [timeLeft, setTimeLeft] = useState({
-    Days: 0,
-    Hours: 0,
-    Minutes: 0,
-    Seconds: 0,
-  });
+  const calculateTimeLeft = () => {
+    const now = new Date().getTime();
+    const difference = eventDate - now;
+
+    if (difference > 0) {
+      return {
+        Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        Hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        Minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+        Seconds: Math.floor((difference % (1000 * 60)) / 1000),
+      };
+    }
+    return { Days: 0, Hours: 0, Minutes: 0, Seconds: 0 };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const difference = eventDate - now;
-
-      if (difference > 0) {
-        setTimeLeft({
-          Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          Hours: Math.floor(
-            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-          ),
-          Minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          Seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        });
-      } else {
-        clearInterval(timer);
-        setTimeLeft({ Days: 0, Hours: 0, Minutes: 0, Seconds: 0 });
-      }
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
+
     return () => clearInterval(timer);
   }, []);
 
+  // Memoized styles with TypeScript-safe values
+  const boxStyle: React.CSSProperties = useMemo(() => ({
+    height: "128px",
+    width: "110px",
+    display: "flex",
+    flexDirection: "column" as const, // TypeScript fix
+    alignItems: "center" as const, // TypeScript fix
+    justifyContent: "center" as const, // TypeScript fix
+    backgroundImage: "url('/card.png')",
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }), []);
+
+  const textStyle: React.CSSProperties = {
+    textAlign: "center",
+    color: "#ffad3c",
+    fontSize: "3rem",
+    letterSpacing : "3.75px",
+    fontWeight: "bold",
+    fontFamily: "'Inria Serif', serif",
+    textShadow: "0px 4px 10px rgba(0, 0, 0, 0.78)",
+  };
+
+  const labelStyle: React.CSSProperties = {
+    textAlign: "center",
+    color: "#aea8a8",
+    fontSize: "1.5rem",
+    fontFamily: "'Poppins', sans-serif",
+    letterSpacing: "3.75px",
+  };
+
   return (
-    <div className="flex items-center justify-center space-x-8 mt-10">
+    <div style={{ display: "flex", justifyContent: "center", gap: "32px", marginTop: "40px" }}>
       {Object.entries(timeLeft).map(([label, value]) => (
-        <div key={label} className="flex flex-col items-center ">
-          <div
-            className="h-32 w-[110px] flex flex-col items-center justify-center "
-            style={{ background: "url(./card.png)", backgroundSize: "cover" }}
-          >
-            <p className="text-center text-[#ffad3c] text-5xl font-bold font-['Inria Serif'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-              {value < 10 ? `0${value}` : value}
-            </p>
+        <div key={label} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div style={boxStyle}>
+            <p style={textStyle}>{value < 10 ? `0${value}` : value}</p>
           </div>
-          <p className="text-center text-[#aea8a8] text-2xl font-normal font-['Poppins'] tracking-[2.64px] ">
-            {label}
-          </p>
+          <p style={labelStyle}>{label}</p>
         </div>
       ))}
     </div>

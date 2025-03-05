@@ -1,16 +1,23 @@
 import React from "react";
+import Link from "next/link";
 
 const ButtonLanding = ({ label, link }: { label: string; link: string }) => {
   return (
     <div className="flex justify-center mt-12">
-      <a
-        href={link}
-        className="w-full px-16 max-w-xs sm:max-w-md lg:max-w-lg h-20 rounded-full bg-gradient-to-r from-[#ff2020] via-[#AA0406] to-[#8F0c11] border-4 border-[#ffc362] flex justify-center items-center transition-all duration-300 ease-in-out hover:scale-105 focus:ring-4 focus:ring-[#ffc362]"
-      >
-        <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl sm:text-3xl md:text-4xl font-medium font-['Poppins'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          {label}
-        </span>
-      </a>
+      <Link href={link} className="w-full max-w-xs sm:max-w-md lg:max-w-lg">
+        <button
+          className="relative w-full h-16 sm:h-20 px-8 sm:px-12 rounded-full bg-gradient-to-r from-[#7B1113] to-[#450000] 
+                     border-[3px] border-[#f3c786] flex justify-center items-center shadow-[0_5px_15px_rgba(0,0,0,0.5)] 
+                     transition-transform duration-300 ease-in-out hover:scale-105 "
+        >
+          <span className="text-[#f3c786] text-2xl sm:text-3xl md:text-4xl font-medium font-['Poppins'] text-center ">
+            {label}
+          </span>
+
+          {/* Outer Glow Effect */}
+          <div className="absolute inset-0 rounded-full border-[1px] border-[#FFC85A] opacity-100"></div>
+        </button>
+      </Link>
     </div>
   );
 };

@@ -1,6 +1,5 @@
-import ButtonLanding from "@/components/sub-component/button-landing";
 import EventIntro from "@/components/sub-component/event-intro";
-import ManagerCard from "@/components/sub-component/manager-card";
+import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import React from "react";
@@ -9,6 +8,11 @@ import { FaFlagCheckered } from "react-icons/fa";
 import { IoFootballOutline } from "react-icons/io5";
 
 const page = () => {
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Dukka Venkatesh", contact: 8305216569 },
+    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
+    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+  ];
   const rules = [
     " This is a racing event so the fastest and most balanced robot will win. ",
     "Robot should be as per the given specifications.",
@@ -23,9 +27,14 @@ const page = () => {
   ];
 
   return (
-    <div>
-
-      
+    <div className="flex flex-col space-y-10">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <img
+          src="/background.svg"
+          className="w-full h-auto opacity-100"
+          alt="Scrolling Background"
+        />
+      </div>
       <EventIntro
         venue=" BAPUJI CHOWK (OPJU)"
         time={"21-03-25 , 10:00 am"}
@@ -35,18 +44,11 @@ const page = () => {
         pricepool={40000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste!."
       />
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <img
-          src="/background.svg"
-          className="w-full h-auto opacity-150"
-          alt="Scrolling Background"
-        />
-      </div>
       <div className="mt-16 mb-16"></div>
-      <h1 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
         SUB EVENTS
       </h1>
-      <p className="text-2xl font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white text-center max-w-4xl mx-auto">
+      <p className="text-2xl font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white text-center max-w-4xl mx-auto">
         Robovation features three exciting sub-events. Robo Race tests speed and
         precision as robots navigate an obstacle-filled track. Robo Soccer
         challenges teams to score goals using their self-built bots. Robo War is
@@ -91,29 +93,10 @@ testing the flipping, kicking maneuvering skills and control of the robot. The e
 ROUND 1 AND ROUND 2."
         />
       </div>
-      {/* <section className="mb-20">
-        <WhyParticipate reasons={reasons} />
-      </section> */}
 
       <section className="mt-20">
         <RulesAndRegulation rules={rules} />
-      </section>
-
-      <section className="flex flex-col items-center justify-center">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-          EVENT MANAGERS
-        </h2>
-        <div className="text-white text-2xl text-center tracking-[5.28px]">
-          For any queries regarding the event, feel free to reach out to any of the managers listed below.
-        </div>
-        <div className="flex justify-center space-x-40 items-center mt-20">
-          <ManagerCard imageUrl="/dallE.png" name="" contact={6260294300} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6371745801} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
-        </div>
-        <div className="mb-10">
-          <ButtonLanding label="Register Now" link="/dashboard"/>
-        </div>
+        <EventManagers managers={managers} />
       </section>
     </div>
   );
