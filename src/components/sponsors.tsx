@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import SponsorMarquee from "./sponser-marquee";
 
 const Sponsors = () => {
   return (
@@ -10,17 +11,7 @@ const Sponsors = () => {
       </h2>
 
       {/* Sponsor Logo */}
-      <div className="flex gap-10 flex-wrap justify-center items-center mt-10">
-        <div className="relative w-full max-w-[350px] h-auto">
-          <Image
-            src="/jindal-new-logo.png"
-            alt="Jindal Logo"
-            width={350}
-            height={200}
-            className="object-contain"
-          />
-        </div>
-      </div>
+      <SponsorMarquee />
     </div>
   );
 };

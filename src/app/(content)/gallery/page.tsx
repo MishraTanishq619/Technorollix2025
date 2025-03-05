@@ -99,7 +99,7 @@ export default function GalleryPage() {
                         src={src}
                         alt={`${event} image`}
                         fill
-                        className=" shadow-xl border-4 border-transparent bg-clip-padding object-cover"
+                        className="shadow-xl border-4 border-transparent bg-clip-padding object-cover"
                         style={{
                           borderImage:
                             "linear-gradient(to bottom right, #FBDA7A, #7C5114) 1",

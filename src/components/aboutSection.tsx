@@ -46,13 +46,17 @@ const AboutSection = () => {
 
       {/* Second Event: About OPJU */}
       <div className="flex flex-col md:flex-row mt-14 mb-8 mx-8 items-center justify-center text-center md:text-left">
-        <div className="order-1 border-4 border-[#FF9D00] rounded-2xl md:order-2 ml-0 md:ml-20 mb-10 md:mb-0 w-full max-w-[600px]">
+        <div className="order-1 md:order-2 ml-0 md:ml-20 mb-10 md:mb-0 w-full max-w-[600px]">
           <Image
             src="/opjucampus.jpg"
-            alt="OPJU Campus"
+            alt="OPJU Campus "
             width={600}
             height={400}
-            className="rounded-2xl object-cover"
+            className="border-[6px] border-transparent bg-clip-padding object-cover"
+            style={{
+              borderImage:
+                "linear-gradient(to bottom right, #FBDA7A, #7C5114) 1",
+            }}
           />
         </div>
 

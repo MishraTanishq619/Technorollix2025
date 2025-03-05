@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const BackgroundVideo = () => {
   return (
@@ -15,9 +15,9 @@ const BackgroundVideo = () => {
       </video>
 
       {/* Overlay Content */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle,rgba(255,255,255,0.1)_0%,rgba(0,0,0,0.8)_100%)]"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle,rgba(255,255,255,0.2)_0%,rgba(0,0,0,0.8)_100%)]"></div>
     </div>
   );
-}
+};
 
-export default BackgroundVideo
+export default BackgroundVideo;

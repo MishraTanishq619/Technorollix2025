@@ -1,41 +1,39 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState,useEffect,useMemo } from "react";
 
 const CountdownTimer = () => {
-  const eventDate = new Date(2025, 2, 20, 0, 0, 0).getTime();
-
-  const calculateTimeLeft = () => {
-    const now = new Date().getTime();
-    const difference = eventDate - now;
-
-    if (difference > 0) {
-      return {
-        Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        Hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        Minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-        Seconds: Math.floor((difference % (1000 * 60)) / 1000),
-      };
-    }
-    return { Days: 0, Hours: 0, Minutes: 0, Seconds: 0 };
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
-
+  const [timeLeft, setTimeLeft] = useState({ Days: 0, Hours: 0, Minutes: 0, Seconds: 0 });
+  
   useEffect(() => {
+    const eventDate = new Date(2025, 2, 20, 0, 0, 0).getTime();
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const difference = eventDate - now;
+
+      if (difference > 0) {
+        return {
+          Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          Hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          Minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          Seconds: Math.floor((difference % (1000 * 60)) / 1000),
+        };
+      }
+      return { Days: 0, Hours: 0, Minutes: 0, Seconds: 0 };
+    };
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, []);  // empty dependency array ensures this runs only once on the client
 
-  // Memoized styles with TypeScript-safe values
   const boxStyle: React.CSSProperties = useMemo(() => ({
     height: "128px",
     width: "110px",
     display: "flex",
-    flexDirection: "column" as const, // TypeScript fix
-    alignItems: "center" as const, // TypeScript fix
-    justifyContent: "center" as const, // TypeScript fix
+    flexDirection: "column" as const, 
+    alignItems: "center" as const, 
+    justifyContent: "center" as const, 
     backgroundImage: "url('/card.png')",
     backgroundSize: "contain",
     backgroundPosition: "center",

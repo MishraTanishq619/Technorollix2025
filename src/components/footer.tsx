@@ -5,17 +5,17 @@ import FooterButton from "./sub-component/footer-button";
 const Footer = () => {
   return (
     <footer className="bg-transparent text-white py-10 w-full">
-      <div className="container mx-auto px-6 flex flex-wrap items-center justify-center md:justify-between text-center md:text-left">
+      <div className="container mx-auto px-6 flex flex-wrap items-center justify-center md:justify-around text-center ">
         
         {/* Social Media Icons */}
         <div className="flex space-x-4 justify-center md:justify-start w-full md:w-auto mb-4 md:mb-0">
-          <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 text-xl">
+          <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className=" hover:text-red-400 text-xl">
             <FaFacebookF />
           </Link>
-          <Link href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 text-xl">
+          <Link href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" className=" hover:text-red-400 text-xl">
             <FaWhatsapp />
           </Link>
-          <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-red-500 hover:text-red-400 text-xl">
+          <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className=" hover:text-red-400 text-xl">
             <FaInstagram />
           </Link>
         </div>

@@ -55,7 +55,7 @@ const FAQAccordion = () => {
                   <Minus className="w-5 h-5 hidden group-data-[state=open]:block" />
                 </span>
               </AccordionTrigger>
-              <AccordionContent className="p-3 w-full text-[#595959] text-lg font-normal font-['DM Sans'] leading-[30px] bg-gradient-to-t from-[#4f0000]">
+              <AccordionContent className="p-3 w-full text-white text-lg font-normal font-['DM Sans'] leading-[30px] bg-gradient-to-t from-[#4f0000]">
                 {faq.answer}
               </AccordionContent>
             </div>

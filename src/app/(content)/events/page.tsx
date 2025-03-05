@@ -113,7 +113,7 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
     </p>
     <div className="mt-10 md:mt-28 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4 md:px-8 lg:px-16">
       {events.map((event, index) => (
-        <Link key={index} href={event.link} className="block w-full">
+        <Link key={index} href={event.link}  className={`block w-full ${event.link === '/events/game-fusion' ? 'col-start-2' : ''}`}>
           <Image
             src={event.imageUrl}
             width={200}
