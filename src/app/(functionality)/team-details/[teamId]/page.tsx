@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import {
 	Dialog,
 	DialogContent,
+	DialogFooter,
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
@@ -22,6 +23,7 @@ import {
 	cancelInviteAction,
 	sendTeamInviteAction,
 } from "@/actions/invite-actions";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 export default function TeamDetails() {
 	const params = useParams();
@@ -29,6 +31,16 @@ export default function TeamDetails() {
 	const [inviteeEmail, setInviteeEmail] = useState("");
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [canSendMoreInvites, setCanSendMoreInvites] = useState(false);
+
+	const [isDialogOpen, setIsDialogOpen] = useState(false);
+	const [isConfirmationDialogOpen, setIsConfirmationDialogOpen] = useState(false);
+	
+	const [paymentDetails, setPaymentDetails] = useState({
+		numberOfOutsiders: 0,
+		amountToBePaid: 0,
+		eligible: true,
+		transactionId:""
+	});
 
 	// Fetch team details
 	const {
@@ -91,7 +103,7 @@ export default function TeamDetails() {
 			}
 		}
 	}, [userData, teamData]);
-
+	
 	const handleSendInvite = async () => {
 		if (!inviteeEmail) {
 			toast({
@@ -123,6 +135,64 @@ export default function TeamDetails() {
 		});
 		fetchTeamDetailsFn(params.teamId);
 	};
+
+
+
+	const handleOpenDialog = () => {
+		setIsDialogOpen(true);
+	};
+
+	const handleCloseDialog = () => {
+		setIsDialogOpen(false);
+	};
+
+	const handlePayment = () => {
+		handleOpenDialog();
+	};
+
+	const handleOpenConfirmationDialog = () => {
+		setIsConfirmationDialogOpen(true);
+	};
+
+	const handleCloseConfirmationDialog = () => {
+		setIsConfirmationDialogOpen(false);
+	};
+
+
+
+	const handleAddTransactionId = () => {
+		// Handle adding transaction ID logic here
+		toast({
+			title: "Transaction ID",
+			description: "Transaction ID added successfully!",
+		});
+	};
+
+	useEffect(() => {
+		if (teamData) {
+			// count members emails without @opju.ac.in
+			// if count is 1 then amount to be paid is 99
+			// if count is 2 or 3 then amount to be paid is 199
+			// if count is 4 to 7 then amount to be paid is 499
+			const outsidersCount = teamData.members.filter(
+				(member) => member.isOutsider
+			).length;
+			let amountToBePaid = 0;
+			if (outsidersCount === 1) {
+				amountToBePaid = 99;
+			} else if (outsidersCount >= 2 && outsidersCount <= 3) {
+				amountToBePaid = 199;
+			} else if (outsidersCount >= 4 && outsidersCount <= 7) {
+				amountToBePaid = 499;
+			}
+			setPaymentDetails((prev) => ({
+				...prev,
+				numberOfOutsiders: outsidersCount,
+				amountToBePaid,
+			}));
+		}
+	}, [teamData]);
+
 
 	if (teamLoading) {
 		return <div className="text-center p-6">Loading team details...</div>;
@@ -308,7 +378,7 @@ export default function TeamDetails() {
 				</Card>
 
 				{/* Invites Section */}
-				<Card>
+				<Card className="mb-4">
 					<CardHeader>
 						<CardTitle className="text-md">Invites</CardTitle>
 					</CardHeader>
@@ -362,7 +432,147 @@ export default function TeamDetails() {
 						)}
 					</CardContent>
 				</Card>
+
+				<Card className="mb-6">
+					<CardHeader>
+						<CardTitle className="flex w-full justify-between">
+							<h1>Payment Details</h1>
+
+							<HoverCard>
+								<HoverCardTrigger className="border px-1.5">
+									<p className="text-sm text-muted-foreground">
+										i
+									</p>
+								</HoverCardTrigger>
+								<HoverCardContent>
+									<p className="text-nowrap">
+										Finalise the team members,
+										<br /> with no pending invitations.
+										<br /> Then only do the payments
+									</p>
+									<br />
+									<p className="text-nowrap">
+										1 outsider participant = Rs.99
+									</p>
+									<p className="text-nowrap">
+										2-3 outsider participant = Rs.199
+									</p>
+									<p className="text-nowrap">
+										4-7 outsider participant = Rs.499
+									</p>
+								</HoverCardContent>
+							</HoverCard>
+						</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div className="space-y-4">
+							<div>
+								<p className="text-sm text-muted-foreground">
+									Number of Outsider Participants
+								</p>
+								<p className="font-medium">
+									{paymentDetails.numberOfOutsiders}
+								</p>
+							</div>
+							<div>
+								<p className="text-sm text-muted-foreground">
+									Amount to be Paid
+								</p>
+								<p className="font-medium">
+									{paymentDetails.amountToBePaid}
+								</p>
+							</div>
+							{/* <div>
+								<p className="text-sm text-muted-foreground">
+									Payment Status
+								</p>
+								<p className="font-medium">
+									{paymentDetails.paymentStatus}
+								</p>
+							</div>
+							<div>
+								<p className="text-sm text-muted-foreground">
+									Payment Confirmation Status
+								</p>
+								<p className="font-medium">
+									{paymentDetails.paymentConfirmationStatus}
+								</p>
+							</div> */}
+							<div className="flex gap-4">
+								<Button
+									onClick={handlePayment}
+									disabled={
+										true ||
+										paymentDetails.numberOfOutsiders === 0
+									}
+								>
+									Pay
+								</Button>
+
+								<Button
+									disabled={true}
+									onClick={handleOpenConfirmationDialog}
+								>
+									Add Transaction ID
+								</Button>
+								<p>Note: This functionality will be added soon.</p>
+							</div>
+						</div>
+					</CardContent>
+				</Card>
 			</div>
+
+			<Dialog open={isDialogOpen} onOpenChange={handleCloseDialog}>
+				<DialogContent>
+					<DialogHeader>
+						<DialogTitle>Payment Confirmation</DialogTitle>
+					</DialogHeader>
+					<p>
+						Click the link or scan the QR for payment. After
+						completing the payment, you will receive the transaction
+						ID in your email. You need to come back and fill it
+						here.
+					</p>
+					<DialogFooter>
+						<Button onClick={handleCloseDialog}>OK</Button>
+					</DialogFooter>
+				</DialogContent>
+			</Dialog>
+
+			<Dialog
+				open={isConfirmationDialogOpen}
+				onOpenChange={handleCloseConfirmationDialog}
+			>
+				<DialogContent>
+					<DialogHeader>
+						<DialogTitle>Payment Confirmation</DialogTitle>
+					</DialogHeader>
+
+					<div className="space-y-4">
+						<p>
+							First you need to do the payment. Then you will
+							recieve the payment TransactionId in throught your
+							email. Copy that transactionId and put that here.
+						</p>
+						<Input
+							type="text"
+							placeholder="Enter Transaction ID"
+							value={paymentDetails.transactionId}
+							onChange={(e) =>
+								setPaymentDetails((d) => ({
+									...d,
+									transactionId: e.target.value,
+								}))
+							}
+						/>
+					</div>
+					<DialogFooter>
+						<Button onClick={handleAddTransactionId}>
+							Confirm
+						</Button>
+					</DialogFooter>
+				</DialogContent>
+			</Dialog>
 		</div>
 	);
 }

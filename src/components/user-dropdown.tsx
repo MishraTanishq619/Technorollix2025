@@ -7,7 +7,7 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { logout } from "@/lib/utils"; // Assuming you have a logout utility function
 import useFetch from "@/hooks/use-fetch";
 import { getUser } from "@/actions/user-actions";
@@ -16,6 +16,7 @@ import { toast } from "@/hooks/use-toast";
 const UserDropdown = () => {
 	const router = useRouter();
 
+	const pathname = usePathname();
 	// Example state to track user authentication
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -28,7 +29,7 @@ const UserDropdown = () => {
 	} = useFetch(getUser);
 	useEffect(() => {
 		fetchUserFn();
-	}, []);
+	}, [pathname]);
 
 	useEffect(() => {
 		if (userFetchError) {
