@@ -196,59 +196,61 @@ const DashboardPage = () => {
 				</Card>
 			)}
 
-			<Card className="mb-6">
-				<CardHeader>
-					<CardTitle>Accommodation Details</CardTitle>
-				</CardHeader>
-				<CardContent>
-					{!accommodationFetchLoading ? (
-						accommodationFetchData ? (
-							<div>
-								<p>
-									Arrival Time:{" "}
-									{new Date(
-										accommodationFetchData.arrivalTime
-									).toLocaleString()}
-								</p>
-								<p>
-									Departure Time:{" "}
-									{new Date(
-										accommodationFetchData.departureTime
-									).toLocaleString()}
-								</p>
-								<p>
-									Additional Details:{" "}
-									{accommodationFetchData.additionalDetails}
-								</p>
-								<Button
-									className="mt-4"
-									disabled={!userData?.isOutsider}
-									onClick={handleOpenModal}
-								>
-									Edit Accommodation
-								</Button>
-							</div>
-						) : (
-							<div>
-								<p>Accommodation not availed.</p>
-								<p>
-									Note: Avail if you are an outsider
-									participant.
-								</p>
-								<Button
-									className="mt-4"
-									disabled={!userData?.isOutsider}
-									onClick={handleOpenModal}
-								>
-									Add Accommodation
-								</Button>
-							</div>
-						)
-					) : (
-						<div>Loading Accommodation details...</div>
-					)}
-				</CardContent>
-			</Card>
+{userData?.isOutsider && (
+    <Card className="mb-6">
+        <CardHeader>
+            <CardTitle>Accommodation Details</CardTitle>
+        </CardHeader>
+        <CardContent>
+            {!accommodationFetchLoading ? (
+                accommodationFetchData ? (
+                    <div>
+                        <p>
+                            Arrival Time:{" "}
+                            {new Date(
+                                accommodationFetchData.arrivalTime
+                            ).toLocaleString()}
+                        </p>
+                        <p>
+                            Departure Time:{" "}
+                            {new Date(
+                                accommodationFetchData.departureTime
+                            ).toLocaleString()}
+                        </p>
+                        <p>
+                            Additional Details:{" "}
+                            {accommodationFetchData.additionalDetails}
+                        </p>
+                        <Button
+                            className="mt-4"
+                            disabled={!userData?.isOutsider}
+                            onClick={handleOpenModal}
+                        >
+                            Edit Accommodation
+                        </Button>
+                    </div>
+                ) : (
+                    <div>
+                        <p>Accommodation not availed.</p>
+                        <p>
+                            Note: Avail if you are an outsider
+                            participant.
+                        </p>
+                        <Button
+                            className="mt-4"
+                            disabled={!userData?.isOutsider}
+                            onClick={handleOpenModal}
+                        >
+                            Add Accommodation
+                        </Button>
+                    </div>
+                )
+            ) : (
+                <div>Loading Accommodation details...</div>
+            )}
+        </CardContent>
+    </Card>
+)}
 			{userData && (
 				<AccommodationModal
 					isOpen={isModalOpen}
@@ -269,6 +271,13 @@ const DashboardPage = () => {
 					}
 				/>
 			)}
+
+			{/* Register on More Events */}
+			<div className="text-center mt-8">
+				<Button onClick={() => router.push("/events-selection")}>
+					Register for Events as leader
+				</Button>
+			</div>
 
 			<div className="grid md:grid-cols-2 gap-6">
 				{/* Participating Teams Section */}
@@ -402,13 +411,6 @@ const DashboardPage = () => {
 						</ScrollArea>
 					</CardContent>
 				</Card>
-			</div>
-
-			{/* Register on More Events */}
-			<div className="text-center mt-8">
-				<Button onClick={() => router.push("/events-selection")}>
-					Register for More Events
-				</Button>
 			</div>
 
 			{/* Invitation Modal */}

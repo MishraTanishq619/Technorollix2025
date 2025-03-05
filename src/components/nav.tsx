@@ -13,6 +13,7 @@ const Navbar = () => {
       {/* Logo */}
       <div className="flex-shrink-0">
         <Link href={"/"}><Image
+          priority={true}
           src="/opjulogo.png"
           alt="opju"
           width={90}
