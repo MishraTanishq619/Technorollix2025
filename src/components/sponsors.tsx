@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const Sponser = () => {
+const Sponsors = () => {
   return (
     <div className="text-white flex flex-col text-center items-center my-32 h-auto px-4 md:px-0">
       {/* Title */}
@@ -25,4 +25,4 @@ const Sponser = () => {
   );
 };
 
-export default Sponser;
+export default Sponsors;

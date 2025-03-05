@@ -8,10 +8,11 @@ interface UserData {
 	email: string;
 	password: string;
 	fullName: string;
-	course: string;
-	branch: string;
-	enrollmentNumber: string;
+	branch?: string;
+	enrollmentNumber?: string;
 	mobileNumber: string;
+	address?: string;
+	isOutsider: boolean;
 }
 
 export const userSignup = async (userData: UserData): Promise<IUser> => {
@@ -21,10 +22,11 @@ export const userSignup = async (userData: UserData): Promise<IUser> => {
 		email,
 		password,
 		fullName,
-		course,
 		branch,
 		enrollmentNumber,
 		mobileNumber,
+		address,
+		isOutsider
 	} = userData;
 
 	// Check if user already exists with email
@@ -38,10 +40,11 @@ export const userSignup = async (userData: UserData): Promise<IUser> => {
 		email,
 		password,
 		fullName,
-		course,
 		branch,
 		enrollmentNumber,
 		mobileNumber,
+		address,
+		isOutsider
 	});
 
 	await newUser.save();

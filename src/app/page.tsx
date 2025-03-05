@@ -5,7 +5,7 @@ import CountdownTimer from "@/components/countdown-timer";
 import EventSection from "@/components/eventsSection";
 import FAQSection from "@/components/faq";
 import Footer from "@/components/footer";
-import Sponser from "@/components/sponser";
+import Sponsors from "@/components/sponsors";
 import ButtonLanding from "@/components/sub-component/button-landing";
 import Image from "next/image";
 
@@ -51,7 +51,7 @@ export default function Home() {
         <AboutSection />
       </section>
       <section>
-        <Sponser />
+        <Sponsors />
       </section>
       <section>
         <FAQSection />
