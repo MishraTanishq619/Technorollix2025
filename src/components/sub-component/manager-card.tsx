@@ -9,16 +9,16 @@ interface ManagerCardProps {
 
 const ManagerCard: React.FC<ManagerCardProps> = ({ imageUrl, name, contact }) => {
   return (
-    <div className="w-48 sm:w-56 md:w-64 lg:w-72 h-72 md:h-80 bg-gradient-to-b from-[#FBDA7A] to-[#7C5114] 
+    <div className="w-48 sm:w-56 md:w-64 lg:w-72 h-72 md:h-96 bg-gradient-to-b from-[#FBDA7A] to-[#7C5114] 
                     text-white rounded-2xl shadow-lg overflow-hidden m-2 
                     transition-transform duration-300 hover:scale-105">
       
       {/* Manager Image */}
-      <div className="relative w-full h-40 md:h-44 border-[3px] border-yellow-200 rounded-t-2xl">
+      <div className="relative w-full h-40 md:h-64 border-[3px] border-yellow-200 rounded-t-2xl">
         <Image
           src={imageUrl}
           alt={`${name}'s image`}
-          layout="fill"
+          fill
           objectFit="cover"
           objectPosition="top"
           className="rounded-t-2xl"

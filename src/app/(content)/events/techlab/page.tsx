@@ -33,11 +33,21 @@ const Page = () => {
   ];
 
   const managers = [
-    { imageUrl: "/dallE.png", name: "Shruti Kumari", contact: 9165245727 },
-    { imageUrl: "/dallE.png", name: "Ashish Kumar", contact: 9122132979 },
-    { imageUrl: "/dallE.png", name: "Priya Kumari", contact: 9234531358 },
-    { imageUrl: "/dallE.png", name: "Ankit Kumar Sah", contact: 8825365939 },
-    { imageUrl: "/dallE.png", name: "Shruti Kumari Pal", contact: 7448115807 },
+    {
+      imageUrl: "/managers/techlab/ankit.JPG",
+      name: "Ankit Kumar Sah",
+      contact: 8825365939,
+    },
+    {
+      imageUrl: "/managers/techlab/shrutiS.jpg",
+      name: "Shruti Kumari",
+      contact: 9165245727,
+    },
+    {
+      imageUrl: "/managers/techlab/shrutiK.jpg",
+      name: "Shruti Sharma",
+      contact: 8102012514,
+    },
   ];
 
   return (
@@ -62,8 +72,6 @@ const Page = () => {
           venue="BABUJI CHOWK"
         />
       </section>
-
-    
 
       <section>
         {/* Sub-Events section */}
