@@ -11,9 +11,6 @@ const Sponsors = () => {
       </h2>
 
       {/* Sponsor Logo */}
-<<<<<<< HEAD
-      <SponsorMarquee />
-=======
       <div className="flex gap-10 flex-wrap justify-center items-center mt-10">
         <div className="relative w-full max-w-[350px] h-auto">
           <Image
@@ -25,7 +22,6 @@ const Sponsors = () => {
           />
         </div>
       </div>
->>>>>>> 6b69a57a0c1f3aec087c233a089c0553ce9f5b1b
     </div>
   );
 };
