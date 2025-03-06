@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Schedule = () => (
   <Image 
-    src="/finalschedule.svg" 
+    src="/backgrounds/schedule.svg" 
     width={500} 
     height={500} 
     alt="schedule" 
