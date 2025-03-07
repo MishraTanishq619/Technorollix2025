@@ -110,9 +110,7 @@ export async function acceptInviteAction(inviteId: string) {
 		if (team.members.includes(invite.inviteeEmail)) {
 			throw new Error("Invitee is already a member of the team");
 		}
-		team.members.push(invite.inviteeEmail);
-		await team.save();
-
+		
 		// Find the invitee user and append the teamId to the user.teams array
 		const inviteeUser = await User.findOne({ email: invite.inviteeEmail });
 		if (!inviteeUser) {
@@ -120,6 +118,14 @@ export async function acceptInviteAction(inviteId: string) {
 				`Invitee with email ${invite.inviteeEmail} not found`
 			);
 		}
+		
+		if (inviteeUser.teams.length >= 7) {
+			throw new Error("You are not allowed to register for more than 7 events.");
+        }
+		
+		team.members.push(invite.inviteeEmail);
+		await team.save();
+
 		inviteeUser.teams = [...inviteeUser.teams, team._id];
 		await inviteeUser.save();
 
