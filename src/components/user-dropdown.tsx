@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -26,12 +26,15 @@ const UserDropdown = () => {
 		fn: fetchUserFn,
 	} = useFetch(getUser);
 
+	// Re-fetch user data when the pathname changes
 	useEffect(() => {
 		fetchUserFn();
-	}, [pathname]);
+	}, [pathname, fetchUserFn]);
 
+	// Debug: log fetched user data (remove or disable in production)
 	console.log(userFetchedData);
 
+	// Handle errors by showing a toast and redirecting to the homepage
 	useEffect(() => {
 		if (userFetchError) {
 			toast({
@@ -39,20 +42,21 @@ const UserDropdown = () => {
 				description: "Failed to fetch user data or Token Expired",
 				variant: "destructive",
 			});
-			router.push("/"); // Redirect after logout or token expiry
+			router.push("/");
 		}
-	}, [userFetchError]);
+	}, [userFetchError, router]);
 
+	// Update authentication status based on user data
 	useEffect(() => {
 		setIsAuthenticated(!!userFetchedData);
 	}, [userFetchedData]);
 
-	// Handle logout
-	const handleLogout = () => {
+	// Logout handler (memoized to prevent unnecessary re-renders)
+	const handleLogout = useCallback(() => {
 		logout(); // Execute your logout functionality here
 		setIsAuthenticated(false);
 		router.push("/");
-	};
+	}, [router]);
 
 	return (
 		<DropdownMenu>
