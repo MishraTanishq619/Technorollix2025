@@ -1,12 +1,17 @@
 import ButtonLanding from '@/components/sub-component/button-landing'
 import EventIntro from '@/components/sub-component/event-intro'
-import ManagerCard from '@/components/sub-component/manager-card'
+import EventManagers from '@/components/sub-component/event-managers'
 import React from 'react'
 
 const BullvsBear = () => {
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Badugu Karthik Kumar", contact: 6261741894 },
+    { imageUrl: "/dallE.png", name: "Snehlata", contact: 8102210327 },
+ 
+  ];
   return (
     
-    <div className='mb-10'>
+    <div className='space-y-10'>
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
@@ -99,10 +104,7 @@ const BullvsBear = () => {
             experience for you!
           </div>
 
-          <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Badugu Karthik Kumar" contact={6261741894}/>
-            <ManagerCard imageUrl="/dallE.png" name="Snehlata" contact={8102210327}/>
-          </div>
+          <EventManagers managers={managers} />
           <ButtonLanding label="Register Now" link="/dashboard" />
 
         </div>
