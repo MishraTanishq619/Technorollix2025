@@ -29,7 +29,7 @@ const Page = () => {
   ];
 
   const managers = [
-    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
+    { imageUrl: "/dallE.png", name: "Ritu Singh ", contact: 8839463899 },
     { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
     { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
   ];

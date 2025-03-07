@@ -28,9 +28,9 @@ const Antaragni = () => {
     "Reimbursement of one-way Sleeper class fare for outside participants",
   ];
   const managers = [
-    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+    { imageUrl: "/managers/Antaragini/Nikhil Singh.jpg", name: "Nikhil Patel", contact: 8305216569 },
+    { imageUrl: "/managers/Antaragini/Pallavi.jpg", name: "Pallavi Singh", contact: 9201046402 },
+    { imageUrl: "/managers/Antaragini/Vanshika.jpg", name: "Sangana Sahu", contact: 9876543210 },
   ];
 
   return (

@@ -23,9 +23,9 @@ const page = () => {
     "Perform, predict, and prove your skills in this one-of-a-kind talent challenge!"
   ];
   const managers = [
-    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+    { imageUrl: "/managers/OPJU Spotlight Saga/Aparajita.jpg", name: "Aparajita Pandey", contact: 9907401010 },
+    { imageUrl: "/managers/OPJU Spotlight Saga/Shashwat.jpg", name: "Kumar Shashwat", contact: 7488987171 },
+    { imageUrl: "/managers/OPJU Spotlight Saga/Arjun.jpg", name: "Arjun Agrawal ", contact: 7538033333 },
   ];
 
   return (

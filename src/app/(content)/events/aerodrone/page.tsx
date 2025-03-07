@@ -19,7 +19,7 @@ const Aerodrone = () => {
   const managers = [
     { imageUrl: "/dallE.png", name: "Bhavana Verma", contact: 9407916405 },
     { imageUrl: "/dallE.png", name: "Manisha Patel", contact: 6268539090 },
-    { imageUrl: "/dallE.png", name: "Ankit Mandal", contact: 9693407573 },
+    { imageUrl: "/managers/Aerodrone/AnkitMandal.jpg", name: "Ankit Mandal", contact: 9693407573 },
   ];
 
   return (

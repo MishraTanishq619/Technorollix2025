@@ -20,11 +20,9 @@ const Page = () => {
     "A 2-minute query round follows each presentation.",
   ];
   const managers = [
-    { imageUrl: "/dallE.png", name: "Aryan Mishra", contact: 7205993715 },
-    { imageUrl: "/dallE.png", name: "Ashutosh Sahu", contact: 9776565942 },
-    { imageUrl: "/dallE.png", name: "Priyanka Sao", contact: 8305725196 },
-    { imageUrl: "/dallE.png", name: "Gitika Sahu", contact: 6268858077 },
-    { imageUrl: "/dallE.png", name: "Kumkum Singh", contact: 8889702577 },
+    { imageUrl: "/managers/Ideathon/Aryan.jpg", name: "Aryan Mishra", contact: 7205993715 },
+    { imageUrl: "/managers/Ideathon/Ashutosh.jpg", name: "Ashutosh Sahu", contact: 9776565942 },
+    { imageUrl: "/managers/Ideathon/Kumkum.jpg", name: "KumKum Singh", contact: 8889702577 }
   ];
   const reasons = [
     "Win ₹18,000 and gain recognition.",
