@@ -27,7 +27,7 @@ const page = () => {
   ];
 
   return (
-    <div className="flex flex-col space-y-10">
+    <div className="flex flex-col space-y-8">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
