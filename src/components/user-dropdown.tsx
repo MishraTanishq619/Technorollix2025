@@ -15,22 +15,22 @@ import { toast } from "@/hooks/use-toast";
 
 const UserDropdown = () => {
 	const router = useRouter();
-
 	const pathname = usePathname();
 
-	// Example state to track user authentication
+	// Track if the user is authenticated
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-	// Check if the user is authenticated (you can replace this with your actual auth logic)
 
 	const {
 		data: userFetchedData,
 		error: userFetchError,
 		fn: fetchUserFn,
 	} = useFetch(getUser);
+
 	useEffect(() => {
 		fetchUserFn();
 	}, [pathname]);
+
+	console.log(userFetchedData);
 
 	useEffect(() => {
 		if (userFetchError) {
@@ -39,18 +39,19 @@ const UserDropdown = () => {
 				description: "Failed to fetch user data or Token Expired",
 				variant: "destructive",
 			});
-			router.push("/"); // Redirect after logout
+			router.push("/"); // Redirect after logout or token expiry
 		}
 	}, [userFetchError]);
+
 	useEffect(() => {
-		setIsAuthenticated(!!userFetchedData); // Set true if user exists
+		setIsAuthenticated(!!userFetchedData);
 	}, [userFetchedData]);
 
 	// Handle logout
 	const handleLogout = () => {
-		logout(); // Add your logout functionality here
-		setIsAuthenticated(false); // Update the state after logout
-		router.push("/"); // Redirect after logout
+		logout(); // Execute your logout functionality here
+		setIsAuthenticated(false);
+		router.push("/");
 	};
 
 	return (
@@ -66,7 +67,11 @@ const UserDropdown = () => {
 						<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
 					</svg>
 					<p className="bg-clip-text text-transparent bg-gradient-to-b from-[#FFCD7C] to-[#D4881C]">
-						{isAuthenticated ? "Dashboard" : "Login"}
+						{isAuthenticated
+							? userFetchedData?.isAdmin
+								? "Admin"
+								: "Dashboard"
+							: "Login"}
 					</p>
 				</div>
 			</DropdownMenuTrigger>
@@ -76,16 +81,16 @@ const UserDropdown = () => {
 					<>
 						<DropdownMenuItem
 							onClick={() => {
-								router.push("/dashboard");
+								if (userFetchedData?.isAdmin) {
+									router.push("/admin/dashboard");
+								} else {
+									router.push("/dashboard");
+								}
 							}}
 						>
-							Dashboard
+							{userFetchedData?.isAdmin ? "Admin dashboard" : "Dashboard"}
 						</DropdownMenuItem>
-						<DropdownMenuItem
-							onClick={() => {
-								handleLogout();
-							}}
-						>
+						<DropdownMenuItem onClick={handleLogout}>
 							Logout
 						</DropdownMenuItem>
 					</>
