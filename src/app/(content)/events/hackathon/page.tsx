@@ -21,10 +21,10 @@ const Page = () => {
       <EventIntro
         imageUrl="/techno-events-logo/hackathon.png"
         title="hackathon"
-        registrations={300}
-        pricepool={60000}
-        time='8 am'
-        venue='MP Hall'
+        registrations={0}
+        pricepool={50000}
+        time='21-03-25, 2:00 - 6:00 pm'
+        venue=''
         description="Join us for University Hackathon, a thrilling coding competition where innovative minds come together to solve real-world challenges. Whether you're a beginner or an expert, this is your chance to showcase your skills, collaborate, and create impactful solutions."
       />
 
@@ -32,7 +32,7 @@ const Page = () => {
         <div className="bg-transparent text-white p-6 md:p-12">
           {/* Rounds */}
           <section className="flex flex-col items-center gap-8">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14">
               ROUNDS
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -55,12 +55,12 @@ const Page = () => {
           </section><br/><br/>
 
           {/* Evaluation Process */}
-          <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+          <section className="my-20">
+            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14">
               EVALUATION PROCESS
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl uppercase tracking-[6.72px]">
+              <ul className="list-disc pl-5 text-2xl  tracking-[3.75px]">
                 <li>Innovation – Creativity and uniqueness of the solution</li>
                 <li>Technical Implementation – Quality of code and feasibility</li>
                 <li>Impact – Relevance and potential real-world application</li>

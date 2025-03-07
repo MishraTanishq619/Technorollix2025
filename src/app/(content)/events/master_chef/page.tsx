@@ -39,11 +39,11 @@ const page = () => {
       </div>
       <EventIntro
         venue={"Cafeteria, Ground Floor"}
-        time={"10:00 AM "}
+        time={"21-03-25, 10:00 am "}
         imageUrl="/techno-events-logo/masterchef.png"
         title="MasterChef"
         registrations={0}
-        pricepool={13000}
+        pricepool={9000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste"
       />
       <div className="my-32">

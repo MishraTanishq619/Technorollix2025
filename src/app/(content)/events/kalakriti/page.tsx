@@ -1,23 +1,19 @@
 import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
-import ManagerCard from "@/components/sub-component/manager-card";
-import ButtonLanding from "@/components/sub-component/button-landing";
 import { IoIosCamera } from "react-icons/io";
+import EventManagers from "@/components/sub-component/event-managers";
 
 
-// interface SubEventCardProps {
-//   imageUrl: string;
-//   title: string;
-//   description: string | React.ReactNode; // Updated type
-// }
 
 const page = () => {
-  // const managers = [
-  //   { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-  //   { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-  //   { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
-  // ];
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Aryan Mishra", contact: 7205993715 },
+    { imageUrl: "/dallE.png", name: "Ashutosh Sahu", contact: 9776565942 },
+    { imageUrl: "/dallE.png", name: "Priyanka Sao", contact: 8305725196 },
+    { imageUrl: "/dallE.png", name: "Gitika Sahu", contact: 6268858077 },
+    { imageUrl: "/dallE.png", name: "Kumkum Singh", contact: 8889702577 },
+  ];
 
   return (
     <div className="flex flex-col space-y-10">
@@ -43,11 +39,11 @@ const page = () => {
 
       <section>
         {/* Sub-Events section */}
-        <section className="flex flex-col items-center justify-center">
-          <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <section className="flex flex-col items-center justify-center my-32">
+          <div className="w-[324.06px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px] ">
             Sub-events
           </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[3.75px]">
             KalaKriti brings you a vibrant celebration of art and creativity! Explore the exciting sub-events—Pradarshini (Exhibition), Drishyaam (Decoration), Photorollix, Rangoli, Colour Painting, and Bottle Painting. Unleash your imagination, showcase your artistic skills, and be part of this colorful extravaganza!
           </div>
         </section>
@@ -56,7 +52,7 @@ const page = () => {
         <section>
           <div className="flex justify-around m-20">
             <SubEventCard
-              Icon={IoIosCamera} // Updated path
+              Icon={IoIosCamera} 
               title="Pradarshini (Exhibition)"
               description="KalaKriti presents Pradarshini, an art exhibition where colors, creativity, and expression come to life. Immerse yourself in a world of art that captivates"
             />
@@ -97,10 +93,10 @@ const page = () => {
       <section>
         {/* Sub-Events details */}
         <section className="flex flex-col items-center justify-center">
-          <div className="w-[324.06px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          <div className="w-[324.06px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
             ROUNDS
           </div>
-          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[5.28px]">
+          <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[3.75px]">
             The following are the details for this event. Read the details carefully and about the rounds this events have. Don&apos;t miss your chance to participate and showcase your skills!
           </div>
         </section>
@@ -206,10 +202,7 @@ const page = () => {
         </section>
       </section>
 
-      <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Ajay Patel" contact={8305637372}/>
-        </div>
-        <ButtonLanding label="Register Now" link="/auth/login" />
+      <EventManagers managers={managers} />
 
     </div>
   );
