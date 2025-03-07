@@ -110,26 +110,12 @@ const DashboardPage = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	useEffect(() => {
-		if (invitedTeamsData) {
-			console.log("invitedTeamsData :", invitedTeamsData);
-		}
-		if (participatingTeamsData) {
-			console.log("Participating Teams:", participatingTeamsData);
-		}
-
-		if (accommodationFetchData) {
-			console.log("accommodationFetchData :", accommodationFetchData);
-		}
-	}, [participatingTeamsData, invitedTeamsData, accommodationFetchData]);
-
 	const handleTeamClick = (teamId: string) => {
 		router.push(`/team-details/${teamId}`);
 	};
 
 	const handleInviteAccept = async (inviteId: string) => {
 		// Implement accept logic here
-		console.log("Accepting invite:", inviteId);
 		acceptInvitationFn(inviteId);
 		setSelectedInvite(null);
 		participatingTeamsFn();
@@ -138,7 +124,6 @@ const DashboardPage = () => {
 
 	const handleInviteReject = async (inviteId: string) => {
 		// Implement reject logic here
-		console.log("Rejecting invite:", inviteId);
 		rejectInvitationFn(inviteId);
 		setSelectedInvite(null);
 		invitedTeamsFn();

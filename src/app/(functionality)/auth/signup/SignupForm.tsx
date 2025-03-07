@@ -89,7 +89,6 @@ export default function SignupForm() {
 
   useEffect(() => {
     if (userSignupError) {
-      console.log(userSignupError);
       toast({
         title: "Error",
         description: userSignupError.message,
@@ -97,7 +96,6 @@ export default function SignupForm() {
       });
     }
     if (userSignupData) {
-      console.log(userSignupData);
       toast({
         title: "Success",
         description: "Your account has been created successfully!",

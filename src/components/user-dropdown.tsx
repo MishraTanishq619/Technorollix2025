@@ -30,8 +30,6 @@ const UserDropdown = () => {
 		fetchUserFn();
 	}, [pathname]);
 
-	console.log(userFetchedData);
-
 	useEffect(() => {
 		if (userFetchError) {
 			toast({
