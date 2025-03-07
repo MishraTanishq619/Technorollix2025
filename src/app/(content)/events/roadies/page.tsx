@@ -110,10 +110,7 @@ const Roadies = () => {
           </div>
 
           <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Praveen Raj Pandey" contact={8839448700}/>
-            <ManagerCard imageUrl="/dallE.png" name="Naman prabhakar " contact={7011221036}/>
-            <ManagerCard imageUrl="/dallE.png" name=" Naitik sao" contact={7880215792}/>
-            <ManagerCard imageUrl="/dallE.png" name="Somya patel" contact={9755593747}/>
+            <ManagerCard imageUrl="/managers/Roadies/Pranjal.jpg" name="Pranjal Shrivastava" contact={9039020967}/>
 
           </div>
           <div className="mb-10">

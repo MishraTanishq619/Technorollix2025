@@ -4,9 +4,9 @@ import EventManagers from "@/components/sub-component/event-managers";
 
 const page = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "Priyanshu Dash", contact: 9078942095 },
+    { imageUrl: "/managers/Among Us/Priyanshu.jpeg", name: "Priyanshu Dash", contact: 9078942095 },
     { imageUrl: "/dallE.png", name: "Shomya Sinha", contact: 7091799799 },
-    { imageUrl: "/dallE.png", name: "Mayank Sharma", contact: 7024189586 },
+    { imageUrl: "/managers/Among Us/Mayank Sharma.jpg", name: "Mayank Sharma", contact: 7024189586 },
   ];
   
   return (

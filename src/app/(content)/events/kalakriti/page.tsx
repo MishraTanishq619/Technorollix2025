@@ -13,11 +13,11 @@ import { IoIosCamera } from "react-icons/io";
 // }
 
 const page = () => {
-  // const managers = [
-  //   { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-  //   { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-  //   { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
-  // ];
+   const managers = [
+    { imageUrl: "/managers/Kalakriti/Aditi.jpg", name: "Nikhil Patel", contact: 8305216569 },
+    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },   
+    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 }
+  ];
 
   return (
     <div className="flex flex-col space-y-10">
@@ -207,7 +207,9 @@ const page = () => {
       </section>
 
       <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Ajay Patel" contact={8305637372}/>
+            <ManagerCard imageUrl="/managers/Kalakriti/Aditi.jpg" name="Aditi Kumari" contact={9661778008}/>
+            <ManagerCard imageUrl="/managers/Kalakriti/AnkitK.jpeg" name="Ankit Kumar" contact={9798011684}/>
+            <ManagerCard imageUrl="/managers/Kalakriti/Mohini.jpg" name="Mohini Roy" contact={9098066953}/>
         </div>
         <ButtonLanding label="Register Now" link="/auth/login" />
 

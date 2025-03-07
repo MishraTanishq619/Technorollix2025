@@ -4,7 +4,7 @@ import ManagerCard from "@/components/sub-component/manager-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
-
+import EventManagers from "@/components/sub-component/event-managers";
 const page = () => {
 
   const rules = [
@@ -22,9 +22,9 @@ const page = () => {
     "Perform, predict, and prove your skills in this one-of-a-kind talent challenge!"
   ];
   const managers = [
-    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+    { imageUrl: "/managers/OPJU Spotlight Saga/Aparajita.jpg", name: "Aparajita Pandey", contact: 9907401010 },
+    { imageUrl: "/managers/OPJU Spotlight Saga/Shashwat.jpg", name: "Kumar Shashwat", contact: 7488987171 },
+    { imageUrl: "/managers/OPJU Spotlight Saga/Arjun.jpg", name: "Arjun Agrawal ", contact: 7538033333 },
   ];
 
   return (
@@ -77,13 +77,7 @@ const page = () => {
           <WhyParticipate reasons={reasons} />
 
           <RulesAndRegulation rules={rules} />
-          <div className="flex justify-center space-x-100 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Gourav jha " contact={9692668567}/>
-            <ManagerCard imageUrl="/dallE.png" name="Kumar Shashwat" contact={7488987171}/>
-            <ManagerCard imageUrl="/dallE.png" name="Arjun Agrawal" contact={7538033333}/>
-            <ManagerCard imageUrl="/dallE.png" name="Aparajita Pandey" contact={9907401010}/>
-            <ManagerCard imageUrl="/dallE.png" name="Ujjwal Singh " contact={7898367965}/>
-        </div>
+          <EventManagers managers={managers} />
         <div className="mb-10">
             <ButtonLanding label="Register Now" link="" />
             </div>

@@ -9,9 +9,9 @@ import { IoFootballOutline } from "react-icons/io5";
 
 const page = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "Dukka Venkatesh", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+    { imageUrl: "/managers/Robovation/Kushal Kumar.jpg", name: "KushalKumarBarsiwal ", contact: 7987829224 },
+    { imageUrl: "/managers/Robovation/Harsh tiwari.jpg", name: "Harsh Verma", contact: 7389245531 },
+    { imageUrl: "/dallE.png", name: "Udit vardhan singh ", contact: 8298558875 },
   ];
   const rules = [
     " This is a racing event so the fastest and most balanced robot will win. ",

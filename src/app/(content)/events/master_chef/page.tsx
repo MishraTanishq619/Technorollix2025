@@ -5,9 +5,10 @@ import React from "react";
 
 const page = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "NITIN GOYAL", contact: 9669464118 },
-    { imageUrl: "/dallE.png", name: "Ronit Sharma", contact: 9893240461 },
+    { imageUrl: "/managers/MasterChef/NITIN.jpg", name: "Nitin Goyal", contact: 9669464118 }
   ];
+
+  
   const rules = [
     "Teams must register in groups of 4 members.",
     "This is open to other Institutions outside OPJU.",

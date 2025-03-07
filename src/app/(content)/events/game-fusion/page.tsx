@@ -32,15 +32,9 @@ const Page = () => {
     "Reimbursement of one-way Sleeper class fare for outside participants",
   ];
   const managers = [
-    { imageUrl: "/dallE.png", name: "Saket Bhagat", contact: 6203182795 },
-    { imageUrl: "/dallE.png", name: "Sarvesh Rathore", contact: 8349374721 },
-    {
-      imageUrl: "/dallE.png",
-      name: "Shubham Singh Baghel",
-      contact: 6296507314,
-    },
-    { imageUrl: "/dallE.png", name: "Rohan Prasad", contact: 7903654631 },
-    { imageUrl: "/dallE.png", name: "Devwrat", contact: 6263757750 },
+    { imageUrl: "/managers/Game Fusion/Saket.jpg", name: "Saket Bhagat", contact: 6203182795 },
+    { imageUrl: "/managers/Game Fusion/SARVESH.jpg", name: "Sarvesh Rathore", contact: 8349374721 },
+    { imageUrl: "/managers/Game Fusion/SHUBHAM.jpg", name: "Shubham Singh Baghel", contact: 6296507314}
   ];
 
   return (
