@@ -7,7 +7,7 @@ import EventManagers from '@/components/sub-component/event-managers';
 const Page = () => {
   const managers = [
 
-    { imageUrl: "/managers/Hackathon/satendra.jpeg", name: "Satendra Kumar ", contact: 9301196473 }
+    { imageUrl: "/managers/Hackathon/Satendra.jpeg", name: "Satendra Kumar", contact: 9301196473 }
 
   ];
   return (
