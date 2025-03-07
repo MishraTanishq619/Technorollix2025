@@ -118,6 +118,19 @@ export async function acceptInviteAction(inviteId: string) {
 				`Invitee with email ${invite.inviteeEmail} not found`
 			);
 		}
+
+		// Get all the events that the user has registered for
+        const userEvents = await Promise.all(
+            inviteeUser.teams.map(async (teamId:string) => {
+                const team = await Team.findById(teamId).populate('event');
+                return team.event;
+            })
+        );
+
+		// Check if the user has already registered for the event if yes, then throw an error
+		if (userEvents.some(event => event.equals(team.event))) {
+			throw new Error("You have already registered for this event.");
+		}
 		
 		if (inviteeUser.teams.length >= 7) {
 			throw new Error("You are not allowed to register for more than 7 events.");

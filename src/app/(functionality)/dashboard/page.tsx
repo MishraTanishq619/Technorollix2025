@@ -57,13 +57,11 @@ const DashboardPage = () => {
 	const {
 		data: participatingTeamsData,
 		loading: participatingTeamsLoading,
-		error: participatingTeamsError,
 		fn: participatingTeamsFn,
 	} = useFetch(getParticipatingTeams);
 	const {
 		data: invitedTeamsData,
 		loading: invitedTeamsLoading,
-		error: invitedTeamsError,
 		fn: invitedTeamsFn,
 	} = useFetch(getInvitedTeams);
 
@@ -75,7 +73,6 @@ const DashboardPage = () => {
 	const {
 		data: accommodationFetchData,
 		loading: accommodationFetchLoading,
-		// error: accommodationFetchError,
 		fn: accommodationFetchFn,
 	} = useFetch(getAccommodationDetailsAction);
 
