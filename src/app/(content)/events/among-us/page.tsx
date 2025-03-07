@@ -4,13 +4,13 @@ import EventManagers from "@/components/sub-component/event-managers";
 
 const page = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "Priyanshu Dash", contact: 9078942095 },
+    { imageUrl: "/managers/Among Us/Priyanshu.jpeg", name: "Priyanshu Dash", contact: 9078942095 },
     { imageUrl: "/dallE.png", name: "Shomya Sinha", contact: 7091799799 },
-    { imageUrl: "/dallE.png", name: "Mayank Sharma", contact: 7024189586 },
+    { imageUrl: "/managers/Among Us/Mayank Sharma.jpg", name: "Mayank Sharma", contact: 7024189586 },
   ];
   
   return (
-    <div className="">
+    <div className="space-y-10">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
@@ -22,8 +22,8 @@ const page = () => {
         imageUrl="/techno-events-logo/amongus.png"
         title="Among-us" // Updated title
         registrations={0}
-        pricepool={12000}
-        time="21-03-25 , 3:00 pm"
+        pricepool={11000}
+        time="21-03-25 , 2:00 pm"
         venue="Open Theatre"
         description="Among Us – Real Life Edition is a thrilling strategy-based event where teams of 5 players compete in real-world gameplay. Each round features two teams (10 players total), with Crewmates completing tasks while Impostors secretly eliminate them. Players hold emergency meetings to discuss suspicions and vote out potential Impostors. The winning team is determined based on task completion, eliminations, or a points-based system. The best teams will advance to the next rounds, leading to a final showdown to crown the champion."
       />
@@ -31,39 +31,39 @@ const page = () => {
       <div className="flex flex-col items-center justify-center">
         <div className="bg-transparent text-white p-6 md:p-12">
           <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14">
               NUMBER OF ROUNDS:-
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <p className="text-2xl uppercase tracking-[6.72px]">
-                Group Stage + Knockout (Fast & Fair)
+              <p className="text-2xl tracking-[3.75px]">
+                <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Group Stage + Knockout (Fast & Fair)</b>
                 <br />
                 <br />
                 🕒Duration: 3 Rounds
                 <br />
                 <br />
-                ✅Round 1: Group Stage Teams are divided into groups of 4. Each
+                <b  className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Round 1:</b> Group Stage Teams are divided into groups of 4. Each
                 group plays one match (10 players: 2 teams in each match). Top 2
                 teams from each group (highest wins/points) advance.
                 <br />
                 <br />
-                ✅Round 2: Semi-Finals Winning teams from Round 1 face off in 2
+                <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Round 2:</b> Semi-Finals Winning teams from Round 1 face off in 2
                 semi-final matches. Top 2 teams (winners of each match) advance
                 to the finals.
                 <br />
                 <br />
-                ✅Round 3: Grand Finale The final 2 teams play the last match to
+                <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Round 3:</b> Grand Finale The final 2 teams play the last match to
                 determine the champion.
               </p>
             </div>
           </section>
           <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 ">
               EVALUATION PROCESS:-
             </h2>
             <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <p className="text-2xl  tracking-[6.72px]">
-                <strong className="text-yellow-400 uppercase">
+              <p className="text-2xl  tracking-[3.75px]">
+                <strong className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] uppercase">
                   Impostor Team Points:{" "}
                 </strong>
                 <br />
@@ -81,7 +81,7 @@ const page = () => {
                 meeting): +5 points
                 <br />
                 <br />
-                <strong className="text-yellow-400 uppercase">
+                <strong className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] uppercase">
                   Crewmate Team Points:
                 </strong>
                 <br />
@@ -109,7 +109,7 @@ const page = () => {
             PRIZE MONEY:-
           </div>
           <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-            <p className="text-2xl uppercase tracking-[6.72px] text-white">
+            <p className="text-2xl  tracking-[3.75px] text-white">
               🥇Winner (1st Place Team): ₹5,000
               <br />
               <br />
@@ -122,16 +122,15 @@ const page = () => {
               <div>
                 
               </div>
-              🏅Special Awards: ₹1000 (Best Impostor, Best Crewmate, or Survivor
-              Award)
+              🏅Special Awards: ₹1000 (Best Impostor, Best Crewmate, or Survivor Award)
             </p>
           </div>
         </div>
         <br />
         <br />
 
-        <div className="flex flex-col items-center justify-center">
-          <div className="w-[577.70px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <div className="flex flex-col items-center justify-center my-32">
+          <div className=" text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
             VENUE: Open Theatre
           </div>
           <br />

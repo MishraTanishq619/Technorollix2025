@@ -2,12 +2,24 @@ import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
-import ManagerCard from "@/components/sub-component/manager-card";
+import EventManagers from "@/components/sub-component/event-managers";
 import { BsAward } from "react-icons/bs";
 
 const page = () => {
   // const rules = ["Rule 3","Rule 3","Rule 3","Rule 3","Rule 3","Rule 3"];
   // const reasons = ["Reason 1","Reason 2","Reason 3","Reason 4","Reason 5"]
+  const managers = [
+    {
+      imageUrl: "/managers/riwayat/soumyayadavriwayat.jpg",
+      name: "Soumya Yadav",
+      contact: 7389067920,
+    },
+    {
+      imageUrl: "/managers/riwayat/priyasinghriwayat.jpg",
+      name: "Priya Singh",
+      contact: 9893723614,
+    },
+  ];
 
   return (
     <div className="flex flex-col space-y-5">
@@ -25,7 +37,7 @@ const page = () => {
       <section>
         <EventIntro
           imageUrl="/aimbiation-events-logo/riwayat.png"
-          title="Riwayat"
+          title="Riwayat: The Fashion Show"
           registrations={0}
           pricepool={18000}
           description="The fashion show is a fashion show that celebrates the perfect blend of style and intellect. It displays fashion as a symbol of confidence, creativity, and empowerment. A platform to display your talent and creativity and present yourself as a perfect example of beauty with brain."
@@ -81,12 +93,12 @@ Career Advancement: Achievements in such events can enhance your portfolio, maki
             <SubEventCard
               Icon={BsAward}
               title="Round-2:"
-              description="Introduction + Outfit Info + Tas. "
+              description="Introduction + Outfit Info + Task "
             />
             <SubEventCard
               Icon={BsAward}
               title="Round-3:"
-              description="Introduction + Q/A Round"
+              description="Ramp walk"
             />
           </div>
         
@@ -104,12 +116,13 @@ Career Advancement: Achievements in such events can enhance your portfolio, maki
             experience for you!
           </div>
 
-          <div className="flex justify-center space-x-40 items-center mt-20">
+          {/* <div className="flex justify-center space-x-40 items-center mt-20">
             <ManagerCard imageUrl="/dallE.png" name="Priya Singh" contact={7389067920}/>
             <ManagerCard imageUrl="/dallE.png" name="Somya Yadav" contact={9893723614}/>
-          </div>
+          </div> */}
+          <EventManagers managers={managers} />
           <div className="mb-10">
-            <ButtonLanding label="Register Now" link="" />
+            <ButtonLanding label="Register Now" link="/signup" />
             </div>
         </div>
       </div>

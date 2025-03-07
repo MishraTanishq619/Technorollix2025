@@ -19,7 +19,7 @@ const Aerodrone = () => {
   const managers = [
     { imageUrl: "/dallE.png", name: "Bhavana Verma", contact: 9407916405 },
     { imageUrl: "/dallE.png", name: "Manisha Patel", contact: 6268539090 },
-    { imageUrl: "/dallE.png", name: "Ankit Mandal", contact: 9693407573 },
+    { imageUrl: "/managers/Aerodrone/AnkitMandal.jpg", name: "Ankit Mandal", contact: 9693407573 },
   ];
 
   return (
@@ -42,10 +42,10 @@ const Aerodrone = () => {
         venue="Volley Ball Court"
       />
       <section className="flex flex-col items-center justify-center m-40">
-        <h2 className="w-[397px] h-[85px] text-center text-[#ffad3c] text-5xl font-medium font-['Poppins'] tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+        <h2 className="w-[397px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] tracking-[3.75px] ">
           THEME
         </h2>
-        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[5.28px] uppercase">
+        <div className="w-[1023px] text-center text-white text-2xl font-medium font-['Inter'] tracking-[3.75px] ">
           “Innovation, transformation, and vitalizing equipment, knowledge, and
           skill”
         </div>
@@ -85,8 +85,8 @@ const Aerodrone = () => {
       <br />
 
       <section className="mb-20">
-        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[2.88px] text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-          WHY PARTICIPATE IN AERODRONE:
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[3.75px] text-center mb-14 ">
+          WHY PARTICIPATE
         </h2>
 
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">

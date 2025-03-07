@@ -3,10 +3,16 @@ import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card';
 import ButtonLanding from '@/components/sub-component/button-landing';
 import { BsAward } from "react-icons/bs";
+import EventManagers from '@/components/sub-component/event-managers';
 
 const Page = () => {
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Nawal parmar", contact: 7024603976 },
+    { imageUrl: "/dallE.png", name: "Naman Kumar", contact: 7440877921 },
+ 
+  ];
   return (
-    <div className="Adomania">
+    <div className="space-y-10">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
@@ -71,6 +77,22 @@ Total Points: 50
             </div>
           </section>
           <br/><br/>
+          <section>
+            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
+              JUDGING CRITERIA
+            </h2>
+            <div className="bg-[#33010140] p-6 text-white rounded-lg shadow-lg max-w-5xl mx-auto">
+              <ul className="list-disc pl-5 text-2xl space-y-2 ">
+                <li>Creativity</li>
+                <li>
+                  Originality</li>
+                  <li>Presentation</li>
+                  <li>Tag line and brand name</li>
+
+              </ul>
+            </div>
+          </section>
+
       {/* Event Managers */}
       <div className="text-center text-[#ffad3c] text-5xl font-medium uppercase">
         EVENT MANAGERS
@@ -81,12 +103,7 @@ Total Points: 50
       </div>
 
       {/* Manager Images */}
-      <div className="flex justify-center space-x-4 mt-6">
-        <img src="/Group 37147.png" alt="profile" />
-        <img src="/Group 37147.png" alt="profile" />
-        <img src="/Group 37147.png" alt="profile" />
-      </div>
-
+      <EventManagers managers={managers} />
       <div className='mb-10'><ButtonLanding label='Register Now' link='/dashboard'/></div>
 
       

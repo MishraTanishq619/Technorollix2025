@@ -9,9 +9,9 @@ import { IoFootballOutline } from "react-icons/io5";
 
 const page = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "Dukka Venkatesh", contact: 8305216569 },
-    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+    { imageUrl: "/managers/Robovation/Kushal Kumar.jpg", name: "KushalKumarBarsiwal ", contact: 7987829224 },
+    { imageUrl: "/managers/Robovation/Harsh tiwari.jpg", name: "Harsh Verma", contact: 7389245531 },
+    { imageUrl: "/dallE.png", name: "Udit vardhan singh ", contact: 8298558875 },
   ];
   const rules = [
     " This is a racing event so the fastest and most balanced robot will win. ",
@@ -27,7 +27,7 @@ const page = () => {
   ];
 
   return (
-    <div className="flex flex-col space-y-10">
+    <div className="flex flex-col space-y-8">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
@@ -45,7 +45,7 @@ const page = () => {
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste!."
       />
       <div className="mt-16 mb-16"></div>
-      <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14">
         SUB EVENTS
       </h1>
       <p className="text-2xl font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white text-center max-w-4xl mx-auto">

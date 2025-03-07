@@ -46,7 +46,7 @@ const EventIntro: React.FC<EventIntroProps> = ({
           <Image src={imageUrl} width={200} height={250} alt={"gamefusion"} className="w-full h-auto rounded-xl" />
           <div className="flex mt-10 justify-center text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl font-normal font-['Inder']">
             Registrations
-            <div className="text-center px-4 text-white text-4xl font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            <div className="text-center px-4 text-white text-4xl font-normal font-['Inder'] ">
               {registrations}
             </div>
           </div>
@@ -55,7 +55,7 @@ const EventIntro: React.FC<EventIntroProps> = ({
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl mx-2 font-normal font-['Inder']">
               Prize Pool{" "}
             </span>
-            <span className="text-white text-4xl font-normal font-['Inder'] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+            <span className="text-white text-4xl font-normal font-['Inder'] ">
               Rs.{pricepool}
             </span>
           </div>

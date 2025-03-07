@@ -5,9 +5,10 @@ import React from "react";
 
 const page = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "NITIN GOYAL", contact: 9669464118 },
-    { imageUrl: "/dallE.png", name: "Ronit Sharma", contact: 9893240461 },
+    { imageUrl: "/managers/MasterChef/NITIN.jpg", name: "Nitin Goyal", contact: 9669464118 }
   ];
+
+  
   const rules = [
     "Teams must register in groups of 4 members.",
     "This is open to other Institutions outside OPJU.",
@@ -39,11 +40,11 @@ const page = () => {
       </div>
       <EventIntro
         venue={"Cafeteria, Ground Floor"}
-        time={"10:00 AM "}
+        time={"21-03-25, 10:00 am "}
         imageUrl="/techno-events-logo/masterchef.png"
         title="MasterChef"
         registrations={0}
-        pricepool={13000}
+        pricepool={9000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste"
       />
       <div className="my-32">
