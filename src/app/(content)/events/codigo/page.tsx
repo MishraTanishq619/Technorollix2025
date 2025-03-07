@@ -34,7 +34,7 @@ const Page = () => {
     { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
   ];
   return (
-    <div className="flex flex-col space-y-10">
+    <div className="flex flex-col space-y-8">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
@@ -70,7 +70,7 @@ const Page = () => {
       <section>
         {/* Sub-Events section */}
         <section className="flex flex-col items-center justify-center mt-10">
-          <div className="w-[324.06px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[2.88px] [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+          <div className="w-[324.06px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px] ">
             sub-events
           </div>
           <div className="w-[1023px] text-center text-white text-2xl font-normal font-['Inter'] tracking-[3.75px]">
