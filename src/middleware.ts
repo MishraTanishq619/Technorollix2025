@@ -4,8 +4,6 @@ import type { NextRequest } from "next/server";
 // Define the middleware function
 export function middleware(request: NextRequest) {
 	const token = request.cookies.get("auth-token");
-
-	console.log("Middleware running");
 	// Check if the token exists
 	if (!token) {
 		// Redirect to the login page if the token is not found
