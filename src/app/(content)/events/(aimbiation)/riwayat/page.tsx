@@ -1,7 +1,6 @@
 import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
-import ButtonLanding from "@/components/sub-component/button-landing";
 import EventManagers from "@/components/sub-component/event-managers";
 import { BsAward } from "react-icons/bs";
 
@@ -121,9 +120,6 @@ Career Advancement: Achievements in such events can enhance your portfolio, maki
             <ManagerCard imageUrl="/dallE.png" name="Somya Yadav" contact={9893723614}/>
           </div> */}
           <EventManagers managers={managers} />
-          <div className="mb-10">
-            <ButtonLanding label="Register Now" link="/signup" />
-            </div>
         </div>
       </div>
 
