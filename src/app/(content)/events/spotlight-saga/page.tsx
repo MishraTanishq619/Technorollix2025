@@ -2,13 +2,30 @@ import React from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import ManagerCard from "@/components/sub-component/manager-card";
 import ButtonLanding from "@/components/sub-component/button-landing";
+import RulesAndRegulation from "@/components/sub-component/rule-regulation";
+import WhyParticipate from "@/components/sub-component/why-participate";
 
 const page = () => {
-  // const managers = [
-  //   { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
-  //   { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
-  //   { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
-  // ];
+
+  const rules = [
+    "Time Limit – Each participant gets 2 minutes to perform; exceeding the limit may lead to deductions.",
+    "Self-Scoring Must Be Honest – Participants must rate themselves before knowing the judges' scores.",
+    "No Offensive Content – Jokes, acts, or performances must be respectful and appropriate for all audiences.",
+    "Judges’ Decision is Final – Scores and results cannot be disputed.",
+    "Winning Criteria Applies Strictly – An exact self-score match wins instantly; otherwise, the highest-scoring participant wins."
+  ];
+  const reasons = [
+    "Showcase Your Talent – Sing, dance, mimic, or perform anything unique!",
+    "Fun & Engaging Twist – Predict your own score for a chance to win instantly!",
+    "Boost Confidence – Test your self-awareness and stage presence.",
+    "Entertain & Enjoy – A lighthearted event filled with creativity and surprises.",
+    "Perform, predict, and prove your skills in this one-of-a-kind talent challenge!"
+  ];
+  const managers = [
+    { imageUrl: "/dallE.png", name: "Nikhil Patel", contact: 8305216569 },
+    { imageUrl: "/dallE.png", name: "Rahul Dubey", contact: 1234567891 },
+    { imageUrl: "/dallE.png", name: "Sangana Sahu", contact: 9876543210 },
+  ];
 
   return (
     <div className="Spotlight Saga">
@@ -57,66 +74,9 @@ const page = () => {
             </div>
           </section>
 
-          <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-              WHY PARTICIPATE
-            </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
-                <li>
-                  Showcase Your Talent – Sing, dance, mimic, or perform anything
-                  unique!
-                </li>
-                <li>
-                  Fun & Engaging Twist – Predict your own score for a chance to
-                  win instantly!
-                </li>
-                <li>
-                  Boost Confidence – Test your self-awareness and stage
-                  presence.
-                </li>
-                <li>
-                  Entertain & Enjoy – A lighthearted event filled with
-                  creativity and surprises.
-                </li>
-                <li>
-                  Perform, predict, and prove your skills in this one-of-a-kind
-                  talent challenge!
-                </li>
-              </ul>
-            </div>
-          </section>
+          <WhyParticipate reasons={reasons} />
 
-          <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
-              RULES & REGULATIONS
-            </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 uppercase font-['Inter'] leading-[29.08px] tracking-[6.72px]">
-                <li>
-                  Time Limit – Each participant gets 2 minutes to perform;
-                  exceeding the limit may lead to deductions.
-                </li>
-                <li>
-                  Self-Scoring Must Be Honest – Participants must rate
-                  themselves before knowing the judges&apos; scores.
-                </li>
-                <li>
-                  No Offensive Content – Jokes, acts, or performances must be
-                  respectful and appropriate for all audiences.
-                </li>
-                <li>
-                  Judges’ Decision is Final – Scores and results cannot be
-                  disputed.
-                </li>
-                <li>
-                  Winning Criteria Applies Strictly – An exact self-score match
-                  wins instantly; otherwise, the highest-scoring participant
-                  wins.
-                </li>
-              </ul>
-            </div>
-          </section>
+          <RulesAndRegulation rules={rules} />
           <div className="flex justify-center space-x-100 items-center mt-20">
             <ManagerCard imageUrl="/dallE.png" name="Gourav jha " contact={9692668567}/>
             <ManagerCard imageUrl="/dallE.png" name="Kumar Shashwat" contact={7488987171}/>
