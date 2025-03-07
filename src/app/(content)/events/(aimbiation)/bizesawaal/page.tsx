@@ -111,7 +111,7 @@ of the business world, including finance, economics, startups, and corporate tre
             <ManagerCard imageUrl="/dallE.png" name="Om Kumar Singh " contact={7999425422 }/>
             <ManagerCard imageUrl="/dallE.png" name="Satyendra Vishwakarma" contact={7024332255}/>
         </div>
-        <ButtonLanding label="Register Now" link='/auth/login'/>
+        <ButtonLanding label="Register Now" link='/dashboard'/>
         <br />
         <br />
         <br />

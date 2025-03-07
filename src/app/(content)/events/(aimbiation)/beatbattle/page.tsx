@@ -108,7 +108,7 @@ const Page = () => {
             <ManagerCard imageUrl="/dallE.png" name="Ramprit Kour" contact={7656887717} />
           </div>
           <div className="mb-10">
-            <ButtonLanding label="Register Now" link='/auth/login' />
+            <ButtonLanding label="Register Now" link='/dashboard' />
           </div>
         </div>
       </section>
