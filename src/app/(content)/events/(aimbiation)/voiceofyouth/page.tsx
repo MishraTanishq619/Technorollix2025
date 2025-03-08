@@ -165,7 +165,7 @@ const page = () => {
             </li>
             <ul className="list-decimal pl-10 text-xl space-y-2">
               <li>
-                Teams must respond to opponents' arguments through rebuttals.
+                Teams must respond to opponents&apos; arguments through rebuttals.
               </li>
               <li>
                 Some formats allow cross-examination where teams ask direct
