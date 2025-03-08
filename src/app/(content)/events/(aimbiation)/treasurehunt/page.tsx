@@ -70,11 +70,8 @@ const Page = () => {
       <RulesAndRegulation rules={rules} />
 
 
-        </div>
-      </section>
-
-      {/* Manager Section */}
       <EventManagers managers={managers} />
+      
     </div>
   );
 };

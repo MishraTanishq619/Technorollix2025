@@ -26,7 +26,7 @@ export default function EventDetailsPage() {
         };
 
         fetchData();
-    }, []);
+    }, );
 
     useEffect(() => {
         if (eventDetailsData) {
