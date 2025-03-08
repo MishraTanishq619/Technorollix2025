@@ -87,6 +87,7 @@ export default function EventsSelection() {
 		if (submitError) {
 			toast({
 				title: "Error",
+				description: "Failed to register for events : " + submitError.message,
 				variant: "destructive",
 			});
 		}

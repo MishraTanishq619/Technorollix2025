@@ -63,7 +63,7 @@ const EventIntro: React.FC<EventIntroProps> = ({
       </div>
 
       <section className="flex flex-col items-center">
-        <div className="w-2/3 text-center text-[#EDE0E0] text-2xl font-medium font-['Inter'] tracking-[3.75px]">
+        <div className="w-2/3 text-center text-white text-2xl font-medium font-['Inter'] tracking-[3.75px]">
           {description}
           <br />
         </div>
