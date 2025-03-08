@@ -213,3 +213,45 @@ export async function getTeamsByEventId(
 		}
 	}
 }
+
+
+export async function getEventDetailsWithCounts(): Promise<
+    { eventName: string; teamCount: number; userCount: number }[]
+> {
+    try {
+        await connectToDatabase();
+
+        // Fetch all events
+        const events = await Event.find().lean<IEvent[]>();
+
+        // Initialize an array to hold the event details with counts
+        const eventDetailsWithCounts = [];
+
+        // Loop through each event to get the counts
+        for (const event of events) {
+            // Fetch teams for the current event
+            const teams = await Team.find({ event: event._id }).lean<ITeam[]>();
+
+            // Calculate the team count
+            const teamCount = teams.length;
+
+            // Calculate the user count by aggregating the members from each team
+            const userCount = teams.reduce((acc, team) => acc + team.members.length, 0);
+
+            // Add the event details with counts to the array
+            eventDetailsWithCounts.push({
+                eventName: event.name,
+                teamCount,
+                userCount,
+            });
+        }
+
+        return JSON.parse(JSON.stringify(eventDetailsWithCounts));
+    } catch (error) {
+        if (error instanceof Error) {
+            throw new Error(`Failed to fetch event details with counts: ${error.message}`);
+        } else {
+            throw new Error("Failed to fetch event details with counts");
+        }
+    }
+}

@@ -298,6 +298,23 @@ export default function AdminDashboard() {
 											<ChevronRight className="w-5 h-5 text-muted-foreground" />
 										</CardContent>
 									</Card>
+									<Card
+										className="cursor-pointer hover:bg-accent transition-colors"
+										onClick={() =>
+											handleOthersNavigation(
+												"/admin/count-data"
+											)
+										}
+									>
+										<CardContent className="p-4 flex items-center justify-between">
+											<div className="space-y-1">
+												<p className="font-medium">
+													Counts Data of every Event
+												</p>
+											</div>
+											<ChevronRight className="w-5 h-5 text-muted-foreground" />
+										</CardContent>
+									</Card>
 								</div>
 							</ScrollArea>
 						</CardContent>
