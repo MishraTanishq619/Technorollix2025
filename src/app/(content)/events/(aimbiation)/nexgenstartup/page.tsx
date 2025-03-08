@@ -19,8 +19,8 @@ const Page: React.FC = () => {
   ];
 
   const managers = [
-    { imageUrl: "/dallE.png", name: "KIRAN VERMA", contact: 7999509911 },
-    { imageUrl: "/dallE.png", name: "RIYA SHARMA", contact: 7987064912 },
+    { imageUrl: "/managers/aimbiation/kiranverma.jpg", name: "Kiran Verma", contact: 7999509911 },
+    { imageUrl: "/managers/aimbiation/riyasharma.jpg", name: "Riya Sharma", contact: 7987064912 },
   ];
 
   const judgementCriteria = [

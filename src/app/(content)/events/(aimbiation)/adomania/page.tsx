@@ -8,8 +8,8 @@ import RoundSection from "@/components/sub-component/RoundSection";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "Nawal Parmar", contact: 7024603976 },
-    { imageUrl: "/dallE.png", name: "Naman Kumar", contact: 7440877921 },
+    { imageUrl: "/managers/aimbiation/nawalparmar.jpg", name: "Nawal Parmar", contact: 7024603976 },
+    { imageUrl: "/managers/aimbiation/namankumarroy.jpg", name: "Naman Kumar Roy", contact: 7440877921 },
   ];
 
   const reasons = [

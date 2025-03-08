@@ -21,11 +21,11 @@ const ContentContainer = ({ children }: { children: React.ReactNode }) => (
 const BullvsBear = () => {
   const managers = [
     {
-      imageUrl: "/dallE.png",
+      imageUrl: "/user.png",
       name: "Badugu Karthik",
       contact: 6261741894,
     },
-    { imageUrl: "/dallE.png", name: "Snehlata", contact: 8102210327 },
+    { imageUrl: "/user.png", name: "Sneh Lata", contact: 8102210327 },
   ];
 
   const rules = [

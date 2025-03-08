@@ -6,19 +6,19 @@ import React from "react";
 const page = () => {
   const managers = [
     {
-      imageUrl: "/dallE.png",
+      imageUrl: "/managers/aimbiation/NishikaAgrawal.jpg",
+      name: "Nishika Agrawal",
+      contact: 7853032508,
+    },
+    {
+      imageUrl: "/managers/aimbiation/SanjeetKumarGourh.jpg",
       name: "Sanjeet kumar Gourh",
       contact: 6260294300,
     },
     {
-      imageUrl: "/dallE.png",
+      imageUrl: "/managers/aimbiation/ShubhamNarayan.jpg",
       name: "Shubham Narayan",
       contact: 6371745801,
-    },
-    {
-      imageUrl: "/dallE.png",
-      name: "Nishika Agrawal",
-      contact: 7853032508,
     },
   ];
 

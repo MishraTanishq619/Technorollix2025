@@ -43,9 +43,9 @@ const EventIntro: React.FC<EventIntroProps> = ({
         <div className="relative z-10 bg-transparent flex flex-col items-center p-4 pt-24 sm:pt-36 rounded-lg shadow-lg text-white">
           <Image
             src={imageUrl}
-            width={200}
-            height={250}
-            alt="gamefusion"
+            width={400}
+            height={500}
+            alt="event logo"
             className="w-full h-auto rounded-xl mt-12"
           />
           <div className="flex flex-col sm:flex-row items-center mt-8 justify-center text-center">

@@ -16,11 +16,11 @@ import RoundSection from "@/components/sub-component/RoundSection";
 
 const KalaKriti = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "Aryan Mishra", contact: 7205993715 },
-    { imageUrl: "/dallE.png", name: "Ashutosh Sahu", contact: 9776565942 },
-    { imageUrl: "/dallE.png", name: "Priyanka Sao", contact: 8305725196 },
-    { imageUrl: "/dallE.png", name: "Gitika Sahu", contact: 6268858077 },
-    { imageUrl: "/dallE.png", name: "Kumkum Singh", contact: 8889702577 },
+    { imageUrl: "/managers/Kalakriti/Aditi.jpg", name: "Aditi", contact: 8839171099 },
+    { imageUrl: "/managers/Kalakriti/AnkitK.jpeg", name: "Ankit", contact: 8839171099 },
+    { imageUrl: "/managers/Kalakriti/Bhavya.jpg", name: "Bhavya", contact: 8839171099 },
+    { imageUrl: "/managers/Kalakriti/Mohini.jpg", name: "Mohini", contact: 8839171099 },
+    { imageUrl: "/managers/Kalakriti/pranav.webp", name: "Pranav", contact: 8839171099 },
   ];
   const rounds=[
     {

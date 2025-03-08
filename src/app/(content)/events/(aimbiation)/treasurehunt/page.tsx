@@ -7,8 +7,8 @@ import RoundSection from "@/components/sub-component/RoundSection";
 
 const Page = () => {
   const managers = [
-    { imageUrl: "/dallE.png", name: "Bhavana Verma", contact: 9407916405 },
-    { imageUrl: "/dallE.png", name: "Manisha Patel", contact: 6268539090 },
+    { imageUrl: "/managers/aimbiation/BhavanaVerma.jpg", name: "Bhavana Verma", contact: 9407916405 },
+    { imageUrl: "/managers/aimbiation/ManishaPatel.jpg", name: "Manisha Patel", contact: 6268539090 },
   ];
   const rules = [
     "Every team must have a leader and a cool team name!",

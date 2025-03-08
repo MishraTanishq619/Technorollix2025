@@ -6,19 +6,9 @@ import Image from "next/image";
 const Roadies = () => {
   const managers = [
     {
-      imageUrl: "/managers/Among Us/Priyanshu.jpeg",
-      name: "Priyanshu Dash",
+      imageUrl: "/managers/Roadies/Pranjal.jpg",
+      name: "Pranjal Shrivastav",
       contact: 9078942095,
-    },
-    {
-      imageUrl: "/dallE.png",
-      name: "Shomya Sinha",
-      contact: 7091799799,
-    },
-    {
-      imageUrl: "/managers/Among Us/Mayank Sharma.jpg",
-      name: "Mayank Sharma",
-      contact: 7024189586,
     },
   ];
 

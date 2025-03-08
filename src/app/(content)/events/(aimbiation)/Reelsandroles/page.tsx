@@ -19,19 +19,9 @@ interface EventDetail {
 
 const managers: Manager[] = [
   {
-    imageUrl: "/dallE.png",
-    name: "Sanjeet Kumar Gourh",
-    contact: 6260294300,
-  },
-  {
-    imageUrl: "/dallE.png",
-    name: "Shubham Narayan",
-    contact: 6371745801,
-  },
-  {
-    imageUrl: "/dallE.png",
-    name: "Nishika Agrawal",
-    contact: 7853032508,
+    imageUrl: "/managers/aimbiation/garimavastrakar.jpg",
+    name: "Garima Vastrakar",
+    contact: 8839171099,
   },
 ];
 

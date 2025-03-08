@@ -10,13 +10,13 @@ import Image from "next/image";
 const Page = () => {
   const managers = [
     {
-      imageUrl: "/dallE.png",
+      imageUrl: "/managers/aimbiation/omkumarsingh.jpg",
       name: "Om Kumar Singh",
       contact: 7999425422,
     },
     {
-      imageUrl: "/dallE.png",
-      name: "Satyendra Vishwakar",
+      imageUrl: "/managers/aimbiation/satyendravishwakarma.jpg",
+      name: "Satyendra Vishwakar..",
       contact: 7024332255,
     },
   ];
@@ -66,7 +66,7 @@ const Page = () => {
           registrations={0}
           pricepool={6000}
           description="Biz E Sawaal is an engaging and competitive quiz event designed to test participants' knowledge of the business world, including finance, economics, startups, and corporate trends."
-          time="1:00 PM."
+          time="22/3/2025 1:30 PM."
           venue="MP Hall"
         />
       </section>

@@ -35,19 +35,19 @@ const Page = () => {
 
   const managers = [
     {
-      imageUrl: "/managers/techlab/ankit.JPG",
-      name: "Ankit Kumar Sah",
-      contact: 8825365939,
+      imageUrl: "/managers/Techlab/Priya Kumari (Tech Lab).jpg",
+      name: "Priya kumari",
+      contact: 9234531358,
     },
     {
-      imageUrl: "/managers/techlab/shrutiS.jpg",
-      name: "Shruti Kumari",
+      imageUrl: "/managers/Techlab/Shruti Kumari (Tech lab).jpg",
+      name: "Shruti kumari",
       contact: 9165245727,
     },
     {
-      imageUrl: "/managers/techlab/shrutiK.jpg",
-      name: "Shruti Sharma",
-      contact: 8102012514,
+      imageUrl: "/managers/Techlab/Ankit Kumar Sah (TechLab).JPG",
+      name: "Ankit kumar sah ",
+      contact: 8825365939,
     },
   ];
 
@@ -77,7 +77,7 @@ const Page = () => {
       </section>
 
       {/* Sub-Events Section */}
-      <section className="px-4">
+      <section className="px-4 mx-auto">
         <div className="flex flex-col items-center justify-center mt-20">
           <div className="w-full max-w-md h-16 sm:h-20 text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl sm:text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
             sub-events
@@ -88,7 +88,7 @@ const Page = () => {
         </div>
 
         {/* Sub-Events Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 py-8">
+        <div className="grid grid-cols-1  md:grid-cols-2 gap-8 px-4 py-8">
           <SubEventCard
             Icon={GiTargetPoster}
             title="POSTER PRESENTATION"
@@ -106,7 +106,7 @@ const Page = () => {
           />
           <SubEventCard
             Icon={FaAppStore}
-            title="APP PRESENTATION"
+            title="Codex (App and Web development)"
             description="Showcase your innovative ideas and research in TechVision, the ultimate technical poster presentation event. Present your findings, prototypes, and groundbreaking concepts in a visually compelling format. Impress judges and peers with your creativity, clarity, and technical expertise."
           />
         </div>

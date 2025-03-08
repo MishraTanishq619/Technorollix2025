@@ -7,6 +7,8 @@ import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import { SiPubg, SiValorant } from "react-icons/si";
 import { IoGameController } from "react-icons/io5";
+import { SiFifa } from "react-icons/si";
+
 import Image from "next/image";
 
 const Page = () => {
@@ -20,6 +22,7 @@ const Page = () => {
     "Match results will be shared on the WhatsApp group after each match.",
     "Overall Points Table will be shared after all matches.",
     "For Valorant, every participant must bring their own laptop.",
+    "For FIFA MOBILE only android and IOS devices are allowed."
   ];
 
   const reasons = [
@@ -33,9 +36,10 @@ const Page = () => {
   ];
 
   const managers = [
+    { imageUrl: "/managers/Game Fusion/Rohan.jpg", name: "Rohan Prasad", contact: 7903654631 },
     { imageUrl: "/managers/Game Fusion/Saket.jpg", name: "Saket Bhagat", contact: 6203182795 },
     { imageUrl: "/managers/Game Fusion/SARVESH.jpg", name: "Sarvesh Rathore", contact: 8349374721 },
-    { imageUrl: "/managers/Game Fusion/SHUBHAM.jpg", name: "Shubham Singh Baghel", contact: 6296507314 },
+    { imageUrl: "/managers/Game Fusion/SHUBHAM.jpg", name: "Shubham Baghel", contact: 6296507314 },
   ];
 
   return (
@@ -98,6 +102,11 @@ const Page = () => {
             Icon={SiValorant}
             title="VALORANT"
             description="Show off your shooting skills, tactical gameplay, and survival instincts in an intense battle royale. Whether you're a lone wolf or part of a squad, impress the judges and thrill the crowd. Loot, strategize, and outlast your opponents—let the battle begin!"
+          />
+          <SubEventCard
+            Icon={SiFifa}
+            title="FIFA MOBILE"
+            description="Get Ready for the Ultimate FIFA Mobile LAN Showdown! Join us for an electrifying FIFA Mobile LAN event where skill, strategy, and passion collide! Compete against top players, showcase your talent, and experience the thrill of real-time matches in an intense, action-packed atmosphere. Whether you’re aiming for victory or just here for the love of the game, this is your chance to prove yourself on the big stage. Grab your device, bring you’re a-game, and let’s kick off an unforgettable tournament!"
           />
         </div>
       </section>
