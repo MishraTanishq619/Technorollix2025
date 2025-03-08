@@ -14,17 +14,21 @@ interface EventManagersProps {
 
 const EventManagers: React.FC<EventManagersProps> = ({ managers }) => {
   return (
-    <div className="flex flex-col items-center justify-center mb-20">
-      <div className="w-[577.70px] h-[85px] text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
+    <div className="flex flex-col items-center justify-center mb-20 px-4">
+      {/* Header */}
+      <div className="w-full max-w-xl h-20 flex items-center justify-center text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl sm:text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
         EVENT MANAGERS
       </div>
-      <div className="w-[1023px] max-w-full px-4 text-center text-white text-2xl font-normal font-['Inter'] tracking-[3.75px]">
+
+      {/* Description */}
+      <div className="w-full max-w-4xl px-4 text-center text-white text-lg sm:text-2xl font-normal font-['Inter'] tracking-[3.75px] mt-4">
         For any queries regarding the event, feel free to reach out to any of
         the managers listed below. They are here to help and ensure a smooth
         experience for you!
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center my-20">
+      {/* Manager Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center my-10">
         {managers.map((manager, index) => (
           <ManagerCard
             key={index}
@@ -35,6 +39,7 @@ const EventManagers: React.FC<EventManagersProps> = ({ managers }) => {
         ))}
       </div>
 
+      {/* Register Button */}
       <ButtonLanding label="Register Now" link="/dashboard" />
     </div>
   );

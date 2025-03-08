@@ -96,7 +96,9 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
       className="absolute top-0 left-0 w-full pointer-events-none -z-10"
       id="bg-container"
     >
-      <img
+      <Image
+      width={500}
+      height={500}
         src="/eventsbg.svg"
         className="w-full opacity-100"
         alt="Scrolling Background"
