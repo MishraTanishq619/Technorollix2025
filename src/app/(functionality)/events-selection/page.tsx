@@ -87,7 +87,7 @@ export default function EventsSelection() {
 		if (submitError) {
 			toast({
 				title: "Error",
-				description: "Failed to register for events",
+				description: "Failed to register for events : " + submitError.message,
 				variant: "destructive",
 			});
 		}
@@ -209,11 +209,13 @@ export default function EventsSelection() {
 						})}
 					</div>
 
+					<p className="my-2 text-gray-300 text-center">Note: One participant can participate in atmost 7 SubEvents.</p>
+
 					<div className="flex justify-center">
 						<Button
 							onClick={handleSubmit}
 							disabled={
-								submitLoading || selectedEvents.length === 0
+								submitLoading || selectedEvents.length === 0 || selectedEvents?.length + registeredEvents?.length > 7
 							}
 							className="w-full max-w-md"
 						>

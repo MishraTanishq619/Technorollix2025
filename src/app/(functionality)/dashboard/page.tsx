@@ -57,49 +57,34 @@ const DashboardPage = () => {
 	const {
 		data: participatingTeamsData,
 		loading: participatingTeamsLoading,
-		error: participatingTeamsError,
 		fn: participatingTeamsFn,
 	} = useFetch(getParticipatingTeams);
 	const {
 		data: invitedTeamsData,
 		loading: invitedTeamsLoading,
-		error: invitedTeamsError,
 		fn: invitedTeamsFn,
 	} = useFetch(getInvitedTeams);
 
-	const { fn: acceptInvitationFn } = useFetch(acceptInviteAction);
+	const { error: acceptInvitationError, fn: acceptInvitationFn } =
+		useFetch(acceptInviteAction);
 
 	const { fn: rejectInvitationFn } = useFetch(rejectInviteAction);
 
 	const {
 		data: accommodationFetchData,
 		loading: accommodationFetchLoading,
-		// error: accommodationFetchError,
 		fn: accommodationFetchFn,
 	} = useFetch(getAccommodationDetailsAction);
 
 	useEffect(() => {
-			if (participatingTeamsError?.message == "Failed to fetch participating teams: User not found") {
-				toast({
-					title: "Error",
-					description: "Failed to fetch data : User not found or Token expired",
-					variant: "destructive",
-				});
-				router.push("/auth/login");
-			}
-
-			
-			if (invitedTeamsError?.message =="Failed to fetch invited teams: User not found") {
-				toast({
-					title: "Error",
-					description: "Failed to fetch data : User not found or Token expired",
-					variant: "destructive",
-				});
-				router.push("/auth/login");
-			}
-			
-
-	}, [participatingTeamsError])
+		if(acceptInvitationError) {
+			toast({
+				title: "Error",
+				description: acceptInvitationError.message,
+				variant: "destructive",
+			});
+		}
+	}, [acceptInvitationError])
 	
 
 	useEffect(() => {
