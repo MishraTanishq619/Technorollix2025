@@ -1,18 +1,16 @@
-import React from 'react';
-import EventIntro from '@/components/sub-component/event-intro';
-import SubEventCard from '@/components/sub-component/sub-event-card';
-import ButtonLanding from '@/components/sub-component/button-landing';
+import React from "react";
+import EventIntro from "@/components/sub-component/event-intro";
+import SubEventCard from "@/components/sub-component/sub-event-card";
 import { BsAward } from "react-icons/bs";
-import EventManagers from '@/components/sub-component/event-managers';
+import EventManagers from "@/components/sub-component/event-managers";
 
 const Page = () => {
   const managers = [
     { imageUrl: "/dallE.png", name: "Nawal parmar", contact: 7024603976 },
     { imageUrl: "/dallE.png", name: "Naman Kumar", contact: 7440877921 },
- 
   ];
   return (
-    <div className="space-y-10">
+    <div className="mt-8">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <img
           src="/background.svg"
@@ -22,25 +20,25 @@ const Page = () => {
       </div>
 
       <EventIntro
-        imageUrl="/aimbiation-events-logo/adomania.jpg"
+        imageUrl="/aimbiation-events-logo/adomania.png"
         title="Adomania"
         registrations={300}
         pricepool={12000}
-        time='20-03-2025, 11:30 AM'
-        venue='Live Class Room(G-15)'
+        time="20-03-2025, 11:30 AM"
+        venue="Live Class Room(G-15)"
         description="A creative marketing competition where teams must design and present an advertisement or marketing campaign for a given product or brand.
 "
-      /><br/><br/>
-      <section className="flex flex-col items-center gap-8">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-              SUB EVENT
-            </h2>
-            <div className="flex justify-center w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-                <SubEventCard
-                  Icon={BsAward}
-                  title="ROUND1: GENUINE COMPANY "
-                  description="Name of genuine company will be given to each team on which they have to make an advertisement. The Products name will be given on the spot
+      />
+      <section className="flex flex-col items-center gap-8 my-32">
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14">
+          SUB EVENT
+        </h2>
+        <div className="flex justify-center w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <SubEventCard
+              Icon={BsAward}
+              title="ROUND1: GENUINE COMPANY "
+              description="Name of genuine company will be given to each team on which they have to make an advertisement. The Products name will be given on the spot
 
 Time to Present: 30-60s
 Time for Preparation: 15 minutes
@@ -56,11 +54,11 @@ These points can be used in the next Round.
 (ONY 6-8 Teams will be selected for Next Round Based on Points)
 
 "
-                />
-                <SubEventCard
-                  Icon={BsAward}
-                  title="ROUND 2 "
-                  description="Name of a product will be provided through chit system to each team on which they have to make a full-fledged advertisement which will show all important features of the product. 
+            />
+            <SubEventCard
+              Icon={BsAward}
+              title="ROUND 2 "
+              description="Name of a product will be provided through chit system to each team on which they have to make a full-fledged advertisement which will show all important features of the product. 
 
 Time to Present: 60 sec
 Time for Preparation: One Day
@@ -72,43 +70,27 @@ Sunglasses; Protein shake; Matrimonial site; Cosmetic and Beauty Product; Travel
 Judgment Criteria: On the basis of (10) Creativity, (10) Originality, (10) Presentation, (10) Tag line, (10) Brand name
 Total Points: 50
 "
-                />
-              </div>
-            </div>
-          </section>
-          <br/><br/>
-          <section>
-            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
-              JUDGING CRITERIA
-            </h2>
-            <div className="bg-[#33010140] p-6 text-white rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl space-y-2 ">
-                <li>Creativity</li>
-                <li>
-                  Originality</li>
-                  <li>Presentation</li>
-                  <li>Tag line and brand name</li>
-
-              </ul>
-            </div>
-          </section>
+            />
+          </div>
+        </div>
+      </section>
+  
+      <section className="my-32">
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-12">
+          JUDGING CRITERIA
+        </h2>
+        <div className="bg-[#33010140] p-6 text-white rounded-lg shadow-lg max-w-5xl mx-auto">
+          <ul className="list-disc pl-5 text-2xl space-y-2 ">
+            <li>Creativity</li>
+            <li>Originality</li>
+            <li>Presentation</li>
+            <li>Tag line and brand name</li>
+          </ul>
+        </div>
+      </section>
 
       {/* Event Managers */}
-      <div className="text-center text-[#ffad3c] text-5xl font-medium uppercase">
-        EVENT MANAGERS
-      </div>
-      <br/><br/>
-      <div className="text-center text-white text-2xl font-normal">
-        For any queries regarding the event, feel free to reach out to any of the managers listed below.
-      </div>
-
-      {/* Manager Images */}
       <EventManagers managers={managers} />
-      <div className='mb-10'><ButtonLanding label='Register Now' link='/dashboard'/></div>
-
-      
-
-
     </div>
   );
 };
