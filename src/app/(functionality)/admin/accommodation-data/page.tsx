@@ -32,7 +32,7 @@ export default function AccommodationDataPage() {
 		};
 
 		fetchData();
-	}, []);
+	}, );
 
 	useEffect(() => {
 		if (accommodationsFetchError) {
