@@ -145,7 +145,7 @@ export async function getUsersByEmails(
 	try {
 		await connectToDatabase();
 		const users = await User.find({ email: { $in: emails } })
-			.select("email fullName branch year enrollmentNumber createdAt")
+			// .select("email fullName branch year enrollmentNumber address mobile createdAt")
 			.lean();
 		return JSON.parse(JSON.stringify(users));
 	} catch (error) {
