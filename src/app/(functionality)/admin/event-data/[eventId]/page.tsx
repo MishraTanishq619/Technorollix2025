@@ -70,6 +70,10 @@ export default function EventDataPage() {
 	}, [eventFetchData]);
 
 	useEffect(() => {
+		console.log("usersFetchData : ", usersFetchData);
+	}, [usersFetchData]);
+
+	useEffect(() => {
 		if (eventFetchError || teamsFetchError || usersFetchError) {
 			toast({
 				title: "Error",
@@ -93,6 +97,9 @@ export default function EventDataPage() {
 					Email: member?.email,
 					Branch: member?.branch,
 					EnrollmentNumber: member?.enrollmentNumber,
+					isOutsider: member?.isOutsider ? "Yes" : "No",
+					Mobile: member?.mobileNumber,
+					Address: member?.address,
 					TeamLeaderName: leader?.fullName,
 					TeamLeaderEmail: leader?.email,
 					UserCreatedAt: member?.createdAt,
@@ -127,10 +134,17 @@ export default function EventDataPage() {
 					<CardHeader>
 						<CardTitle>Event Details</CardTitle>
 					</CardHeader>
-					<CardContent>
-						<p>Name: {eventFetchData.name}</p>
-						<p>PrizeMoney: {eventFetchData.prizeMoney}</p>
-						<p>TeamSize: {eventFetchData.teamSize}</p>
+					<CardContent className="flex justify-between">
+						<div>
+							<p>Name: {eventFetchData.name}</p>
+							<p>PrizeMoney: {eventFetchData.prizeMoney}</p>
+							<p>TeamSize: {eventFetchData.teamSize}</p>
+						</div>
+						<div>
+							<p>Users Registered: {usersFetchData?.length}</p>
+							<p>Outsiders Registered: {usersFetchData?.filter(user => user.isOutsider).length}</p>
+							<p>Insiders Registered: {usersFetchData?.filter(user => !user.isOutsider).length}</p>
+						</div>
 					</CardContent>
 				</Card>
 			)}
@@ -144,6 +158,7 @@ export default function EventDataPage() {
 						<TableHeader>
 							<TableRow>
 								<TableHead>User Details</TableHead>
+								<TableHead>Additional Details</TableHead>
 								<TableHead>Team Leader Name</TableHead>
 								<TableHead>Team Leader Email</TableHead>
 							</TableRow>
@@ -175,6 +190,22 @@ export default function EventDataPage() {
 														{
 															member?.enrollmentNumber
 														}
+													</p>
+												</TableCell>
+												<TableCell>
+													<p>
+														isOutsider:{" "}
+														{member?.isOutsider
+															? "Yes"
+															: "No"}
+													</p>
+													<p>
+														Mobile:{" "}
+														{member?.mobileNumber}
+													</p>
+													<p>
+														Address:{" "}
+														{member?.address}
 													</p>
 												</TableCell>
 												<TableCell>

@@ -9,13 +9,13 @@ const Footer = () => {
         
         {/* Social Media Icons */}
         <div className="flex space-x-4 justify-center md:justify-start w-full md:w-auto mb-4 md:mb-0">
-          <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className=" hover:text-red-400 text-xl">
+          <Link href="https://www.facebook.com/share/15rh7M4fp4/" target="_blank" rel="noopener noreferrer" className=" hover:text-red-400 text-xl">
             <FaFacebookF />
           </Link>
-          <Link href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" className=" hover:text-red-400 text-xl">
+          <Link href="https://wa.me/+918839171099" target="_blank" rel="noopener noreferrer" className=" hover:text-red-400 text-xl">
             <FaWhatsapp />
           </Link>
-          <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className=" hover:text-red-400 text-xl">
+          <Link href="https://www.instagram.com/technorollix?igsh=NTFybXp2bmVuOWFo" target="_blank" rel="noopener noreferrer" className=" hover:text-red-400 text-xl">
             <FaInstagram />
           </Link>
         </div>
@@ -29,7 +29,7 @@ const Footer = () => {
 
         {/* Contact Button */}
         <div className="w-full md:w-auto text-center">
-          <FooterButton label="Contact Us" link="/contact" />
+          <FooterButton label="Contact Us" link="https://wa.me/+918839171099" />
         </div>
       </div>
 

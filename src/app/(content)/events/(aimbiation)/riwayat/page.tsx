@@ -10,7 +10,7 @@ const page = () => {
   const managers = [
     {
       imageUrl: "/managers/riwayat/soumyayadavriwayat.jpg",
-      name: "Soumya Yadav",
+      name: "Somya Yadav",
       contact: 7389067920,
     },
     {
@@ -120,6 +120,7 @@ const page = () => {
             />
           </div>
         </section>
+
 
         <EventManagers managers={managers} />
       </section>

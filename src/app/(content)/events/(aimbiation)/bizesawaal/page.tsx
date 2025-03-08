@@ -99,6 +99,7 @@ of the business world, including finance, economics, startups, and corporate tre
             </li>
           </ul>
         </div>
+
       </section>
 
       <WhyParticipate reasons={reasons} />

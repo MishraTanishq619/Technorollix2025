@@ -89,6 +89,7 @@ const Page = () => {
 
       {/* Manager Section */}
       <EventManagers managers={managers} />
+
     </div>
   );
 };

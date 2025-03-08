@@ -126,7 +126,7 @@ const EventSection: React.FC<EventSectionProps> = ({ title, events }) => (
       ))}
     </div>
 
-    <ButtonLanding label="Register" link="/auth/signup" />
+    <ButtonLanding label="Register" link="/dashboard" />
   </>
 );
 
