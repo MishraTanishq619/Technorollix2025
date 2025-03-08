@@ -1,8 +1,6 @@
 import React from 'react';
 import EventIntro from '@/components/sub-component/event-intro';
 import SubEventCard from '@/components/sub-component/sub-event-card';
-import ManagerCard from '@/components/sub-component/manager-card';
-import ButtonLanding from '@/components/sub-component/button-landing';
 import { BsAward } from "react-icons/bs";
 import EventManagers from '@/components/sub-component/event-managers';
 

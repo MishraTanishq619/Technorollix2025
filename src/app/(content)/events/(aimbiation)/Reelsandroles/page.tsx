@@ -22,14 +22,6 @@ const managers = [
   },
 ];
 
-const rules = [
-  "Each participant will receive virtual capital to start trading.",
-  "Only the designated trading platform should be used.",
-  "No external assistance (real-money trades) is allowed.",
-  "Trading should be within market hours as specified by event organizers.",
-  "Risk management is key – reckless trading may lead to disqualification.",
-  "Top traders will qualify for the final round based on portfolio value and strategy.",
-];
 
 const subEvents = [
   {

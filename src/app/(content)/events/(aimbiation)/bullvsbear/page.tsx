@@ -1,4 +1,3 @@
-import ButtonLanding from "@/components/sub-component/button-landing";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";

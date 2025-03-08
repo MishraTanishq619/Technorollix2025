@@ -1,7 +1,5 @@
 import React from "react";
 import EventIntro from "@/components/sub-component/event-intro";
-import ManagerCard from "@/components/sub-component/manager-card";
-import ButtonLanding from "@/components/sub-component/button-landing";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
