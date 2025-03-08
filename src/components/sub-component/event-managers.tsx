@@ -24,7 +24,7 @@ const EventManagers: React.FC<EventManagersProps> = ({ managers }) => {
         experience for you!
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center my-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center mt-20">
         {managers.map((manager, index) => (
           <ManagerCard
             key={index}
