@@ -1,10 +1,23 @@
-import EventIntro from "@/components/sub-component/event-intro";
 import React from "react";
+import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import { BsAward } from "react-icons/bs";
 import EventManagers from "@/components/sub-component/event-managers";
+import Image from "next/image";
+import RoundSection from "@/components/sub-component/RoundSection";
 
-const managers = [
+interface Manager {
+  imageUrl: string;
+  name: string;
+  contact: number;
+}
+
+interface EventDetail {
+  title: string;
+  description: string;
+}
+
+const managers: Manager[] = [
   {
     imageUrl: "/dallE.png",
     name: "Sanjeet Kumar Gourh",
@@ -22,8 +35,7 @@ const managers = [
   },
 ];
 
-
-const subEvents = [
+const subEvents: EventDetail[] = [
   {
     title: "Round-1: A day at corporates",
     description:
@@ -31,11 +43,11 @@ const subEvents = [
   },
   {
     title: "Round-2: cinematic ads shooting –",
-    description: "Make cinematic adds of the product of your choice.",
+    description: "Make cinematic ads of the product of your choice.",
   },
   {
     title: "Round-3: cinematic shoot of OPJU",
-    description: "Bring best out of the campus in a cinematic shoot.",
+    description: "Bring the best out of the campus in a cinematic shoot.",
   },
 ];
 
@@ -55,7 +67,7 @@ const timings = [
   },
 ];
 
-const judgement = [
+const rounds = [
   {
     title: "Round-1",
     description: "Top 15 reels with highest likes will qualify for round 2.",
@@ -73,9 +85,12 @@ const judgement = [
 
 const EventPage = () => {
   return (
-    <div className="mt-8">
+    <div className="relative container mx-auto px-4">
+      {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <img
+        <Image
+        width={500}
+        height={500}
           src="/background.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
@@ -85,7 +100,6 @@ const EventPage = () => {
       {/* Event Intro Section */}
       <EventIntro
         imageUrl="/aimbiation-events-logo/reelandroles.png"
-        title="Reels & Roles play"
         registrations={20}
         pricepool={30000}
         description="The School of Management is thrilled to present Reels and Role Plays, an exciting event that combines creativity, photography, cinematography, and management skills. Reels and Role Plays is a unique event where participants will have the opportunity to showcase their photography and cinematography skills by creating short reels on various management-related themes. Additionally, participants will engage in role-plays that simulate real-world management scenarios, such as job interviews, board meetings, and shareholder meetings."
@@ -93,13 +107,13 @@ const EventPage = () => {
         venue="Open Theatre"
       />
 
-      <section className="my-48">
+      <section className="my-16 sm:my-20 md:my-32">
         <SectionTitle text="Reels - Rounds" />
 
         {/* Sub-Events Cards Section */}
         <EventCards eventDetails={subEvents} />
 
-        {/* Time duration section */}
+        {/* Time Duration Sections */}
         {timings.map((timing, index) => (
           <TimeDurationSection
             key={index}
@@ -108,32 +122,37 @@ const EventPage = () => {
           />
         ))}
 
-        {/* Judgement section */}
+        {/* Judgement Section */}
         <SectionTitle text="Judgement" />
-        <EventCards eventDetails={judgement} />
+        <RoundSection rounds={rounds} />
 
+        {/* Prize Detail Section */}
         <SectionTitle text="Prize Detail:" />
         <PrizeDetail />
 
+        {/* Event Managers Section */}
         <EventManagers managers={managers} />
       </section>
     </div>
   );
 };
 
-const SectionTitle = ({ text }: { text: string }) => (
-  <div className="text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
+interface SectionTitleProps {
+  text: string;
+}
+
+const SectionTitle = ({ text }: SectionTitleProps) => (
+  <div className="mb-8 text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-3xl sm:text-4xl md:text-5xl font-medium uppercase tracking-wide">
     {text}
   </div>
 );
 
-interface EventDetail {
-  title: string;
-  description: string;
+interface EventCardsProps {
+  eventDetails: EventDetail[];
 }
 
-const EventCards = ({ eventDetails }: { eventDetails: EventDetail[] }) => (
-  <div className="flex justify-around m-20">
+const EventCards = ({ eventDetails }: EventCardsProps) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-8">
     {eventDetails.map((event, index) => (
       <SubEventCard
         key={index}
@@ -145,19 +164,18 @@ const EventCards = ({ eventDetails }: { eventDetails: EventDetail[] }) => (
   </div>
 );
 
-const TimeDurationSection = ({
-  title,
-  items,
-}: {
+interface TimeDurationSectionProps {
   title: string;
   items: string[];
-}) => (
-  <section className="mb-20">
-    <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14">
+}
+
+const TimeDurationSection = ({ title, items }: TimeDurationSectionProps) => (
+  <section className="mb-16">
+    <h2 className="mb-6 text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-3xl sm:text-4xl md:text-5xl font-medium uppercase">
       {title}
     </h2>
-    <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-      <ul className="list-disc text-2xl space-y-4 font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
+    <div className="bg-[#33010140] p-4 sm:p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+      <ul className="list-disc text-base sm:text-xl md:text-2xl space-y-3 font-['Inter'] leading-relaxed tracking-wide text-white">
         {items.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
@@ -167,8 +185,8 @@ const TimeDurationSection = ({
 );
 
 const PrizeDetail = () => (
-  <div className="bg-[#33010140] p-6 mb-20 rounded-lg shadow-lg max-w-5xl mx-auto">
-    <ul className="list-disc text-2xl space-y-4 font-['Inter'] leading-[29.08px] tracking-[3.75px] text-white">
+  <div className="bg-[#33010140] p-4 sm:p-6 mb-16 rounded-lg shadow-lg max-w-5xl mx-auto">
+    <ul className="list-disc text-base sm:text-xl md:text-2xl space-y-3 font-['Inter'] leading-relaxed tracking-wide text-white">
       <li>First prize: 6000</li>
       <li>Second prize: 4000</li>
       <li>Third prize: 2000</li>

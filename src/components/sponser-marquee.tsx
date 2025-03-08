@@ -23,7 +23,7 @@ const SponsorMarquee: React.FC = () => {
             alt="Sponsor 1"
             width={200}
             height={66}
-            objectFit="contain"
+            className="object-contain"
           />
         </div>
         <div className="h-40 md:h-64 flex-shrink-0">
@@ -32,7 +32,7 @@ const SponsorMarquee: React.FC = () => {
             alt="Sponsor 2"
             width={200}
             height={66}
-            objectFit="contain"
+            className="object-contain"
           />
         </div>
         <div className="h-40 md:h-64 flex-shrink-0">
@@ -41,7 +41,7 @@ const SponsorMarquee: React.FC = () => {
             alt="Sponsor 3"
             width={200}
             height={66}
-            objectFit="contain"
+            className="object-contain"
           />
         </div>
       </motion.div>

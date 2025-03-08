@@ -1,9 +1,9 @@
 import React from "react";
 import EventIntro from "@/components/sub-component/event-intro";
-import SubEventCard from "@/components/sub-component/sub-event-card";
-import { BsAward } from "react-icons/bs";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
+import Image from "next/image";
+import RoundSection from "@/components/sub-component/RoundSection";
 
 const Page = () => {
   const managers = [
@@ -17,10 +17,22 @@ const Page = () => {
     "No outside help—use your own brains! ",
     "No splitting up! The team moves as one.",
   ];
+  const rounds=[
+    {title:"ROUND 1",
+      description:"The Unseen Twist"},
+            
+              {title:"ROUND 2",
+                description:"Hold It, Solve It!"},
+            
+              {title:"ROUND 3",
+                description:"Decode or Die!"}
+  ]
   return (
     <div className="flex flex-col space-y-8">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <img
+        <Image
+        width={500}
+        height={500}
           src="/background.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
@@ -29,7 +41,6 @@ const Page = () => {
 
       <EventIntro
         imageUrl="/aimbiation-events-logo/treasurehunt.png"
-        title="Treasure Hunt"
         registrations={0}
         pricepool={6000}
         time="2:30 PM"
@@ -41,35 +52,8 @@ const Page = () => {
       <br />
       <br />
 
-      {/* Sub Events Section */}
-      <section className="flex flex-col items-center gap-8 py-20">
-        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-14">
-          SUB EVENTS
-        </h2>
-        <div className="flex justify-center w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-            <SubEventCard
-              Icon={BsAward}
-              title="ROUND 1"
-              description="The Unseen Twist"
-            />
-            <SubEventCard
-              Icon={BsAward}
-              title="ROUND 2"
-              description="Hold It, Solve It!"
-            />
-            <SubEventCard
-              Icon={BsAward}
-              title="ROUND 3"
-              description="Decode or Die!"
-            />
-          </div>
-        </div>
-      </section>
-      {/* Rules Section */}
+      <RoundSection rounds={rounds}/>
       <RulesAndRegulation rules={rules} />
-
-
       <EventManagers managers={managers} />
       
     </div>
