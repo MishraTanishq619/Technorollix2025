@@ -13,14 +13,22 @@ const Page: React.FC = () => {
     "One of the team members should be registered as the team leader.",
     "The business plan should not exceed 15 pages (excluding executive summary, cover page & index).",
     "A maximum of 15 slides of PowerPoint presentation is allowed in the final round.",
-    'The participants must follow font size 12 (Times New Roman) for main text and 14 for headings with a line spacing of 1.5.',
+    "The participants must follow font size 12 (Times New Roman) for main text and 14 for headings with a line spacing of 1.5.",
     "A maximum of 15 minutes will be allowed for a team to present their business idea.",
     "Participants must carry their data backup in a laptop or USB drive.",
   ];
 
   const managers = [
-    { imageUrl: "/managers/aimbiation/kiranverma.jpg", name: "Kiran Verma", contact: 7999509911 },
-    { imageUrl: "/managers/aimbiation/riyasharma.jpg", name: "Riya Sharma", contact: 7987064912 },
+    {
+      imageUrl: "/managers/aimbiation/kiranverma.jpg",
+      name: "Kiran Verma",
+      contact: 7999509911,
+    },
+    {
+      imageUrl: "/managers/aimbiation/riyasharma.jpg",
+      name: "Riya Sharma",
+      contact: 7987064912,
+    },
   ];
 
   const judgementCriteria = [
@@ -90,8 +98,8 @@ const Page: React.FC = () => {
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-        width={500}
-        height={500}
+          width={500}
+          height={500}
           src="/background.svg"
           alt="Scrolling Background"
           className="w-full h-auto opacity-150"
@@ -103,9 +111,9 @@ const Page: React.FC = () => {
         <EventIntro
           imageUrl="/aimbiation-events-logo/nexgenstartup.png"
           registrations={0}
-          pricepool={8000}
+          pricepool={15000}
           description="Empowering Startups: Your Gateway to Success. Dive into our event tailored for entrepreneurs like you. Discover insider tips, forge valuable connections, and kickstart your business journey. From startup dreams to tangible results, this event is your ultimate resource. Seize this opportunity to fuel your passion and unlock the potential of your startup."
-          time="2:30 PM"
+          time="21-03-25, 2:30 PM"
           venue="LIVE CLASSROOM"
         />
       </section>
@@ -117,7 +125,11 @@ const Page: React.FC = () => {
         </h2>
         <div className="mx-auto max-w-5xl px-4">
           <p className="text-white text-2xl sm:text-3xl font-medium font-['Inter'] tracking-[3.75px] text-center">
-            We invite you to participate in an exclusive event tailored for aspiring entrepreneurs. This event provides a platform to gain expert insights, establish valuable connections, and translate innovative business ideas into reality. Seize this opportunity to refine your vision and advance your startup to new heights.
+            We invite you to participate in an exclusive event tailored for
+            aspiring entrepreneurs. This event provides a platform to gain
+            expert insights, establish valuable connections, and translate
+            innovative business ideas into reality. Seize this opportunity to
+            refine your vision and advance your startup to new heights.
           </p>
         </div>
       </section>
@@ -150,11 +162,14 @@ const Page: React.FC = () => {
           <ul className="list-decimal pl-5 text-2xl sm:text-3xl space-y-6 font-['Inter'] leading-[32px] tracking-[3.75px] text-white">
             <li className="text-3xl font-bold list-none">Prize Details:</li>
             <li>
-              Winner: Cash prize of ₹5000 + Incubation Support + Mentorship from industry experts.
+              Winner: Cash prize of ₹5000 + Incubation Support + Mentorship from
+              industry experts.
             </li>
             <li>Runner up: Cash prize of ₹3000 + Mentorship.</li>
             <li>
-              Special Category Awards: Best Social Impact Startup, Most Innovative Idea, and Best Pitch Presentation (prizes and benefits to be announced).
+              Special Category Awards: Best Social Impact Startup, Most
+              Innovative Idea, and Best Pitch Presentation (prizes and benefits
+              to be announced).
             </li>
           </ul>
         </div>

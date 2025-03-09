@@ -47,7 +47,7 @@ const Page = () => {
 }]
 
   return (
-    <div className="relative space-y-10 px-4 py-8">
+    <div className="mt-8">
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -66,7 +66,7 @@ const Page = () => {
           registrations={0}
           pricepool={6000}
           description="Biz E Sawaal is an engaging and competitive quiz event designed to test participants' knowledge of the business world, including finance, economics, startups, and corporate trends."
-          time="22/3/2025 1:30 PM."
+          time="22-03-25, 1:30 PM."
           venue="MP Hall"
         />
       </section>

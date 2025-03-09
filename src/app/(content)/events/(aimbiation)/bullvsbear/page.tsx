@@ -54,9 +54,9 @@ const BullvsBear = () => {
       <EventIntro
         imageUrl="/aimbiation-events-logo/bullvsbear.png"
         registrations={0}
-        pricepool={12000}
+        pricepool={5000}
         description="Virtual trading is a simulation where you can practice buying and selling stocks without using real money. It helps you learn how the stock market works, test strategies, and gain confidence before investing real funds."
-        time="4:00 PM"
+        time="20-03-25, 4:00 PM"
         venue="LIVE CLASSROOM"
       />
 

@@ -44,7 +44,7 @@ const CountdownTimer = () => {
             style={{ backgroundImage: "url('/card.png')" }}
           >
             <p
-              className="text-center text-[#ffad3c] font-bold text-2xl md:text-3xl lg:text-4xl"
+              className="text-center text-[#ffad3c] font-bold text-2xl md:text-3xl lg:text-5xl"
               style={{
                 textShadow: "0px 4px 10px rgba(0, 0, 0, 0.78)",
                 letterSpacing: "3.75px",

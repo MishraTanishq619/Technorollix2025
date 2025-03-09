@@ -67,8 +67,8 @@ Total Points: 50.`,
       <section className="mx-auto max-w-5xl">
         <EventIntro
           imageUrl="/aimbiation-events-logo/adomania.png"
-          registrations={300}
-          pricepool={12000}
+          registrations={0}
+          pricepool={8000}
           time="20-03-2025, 11:30 AM"
           venue="Live Class Room (G-15)"
           description="A creative marketing competition where teams must design and present an advertisement or marketing campaign for a given product or brand."
@@ -96,12 +96,12 @@ Total Points: 50.`,
 
       {/* Event Managers Section */}
       <section className="mx-auto max-w-5xl px-4">
-        <EventManagers managers={managers} />
+        <WhyParticipate reasons={reasons} />
       </section>
 
       {/* Bottom Section: Why Participate */}
       <section className="mx-auto max-w-5xl px-4 my-10">
-        <WhyParticipate reasons={reasons} />
+        <EventManagers managers={managers} />
       </section>
     </div>
   );

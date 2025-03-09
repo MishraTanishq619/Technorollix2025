@@ -90,8 +90,8 @@ const EventPage = () => {
       {/* Event Intro Section */}
       <EventIntro
         imageUrl="/aimbiation-events-logo/reelandroles.png"
-        registrations={20}
-        pricepool={30000}
+        registrations={0}
+        pricepool={8000}
         description="The School of Management is thrilled to present Reels and Role Plays, an exciting event that combines creativity, photography, cinematography, and management skills. Reels and Role Plays is a unique event where participants will have the opportunity to showcase their photography and cinematography skills by creating short reels on various management-related themes. Additionally, participants will engage in role-plays that simulate real-world management scenarios, such as job interviews, board meetings, and shareholder meetings."
         time="8:00 Am"
         venue="Open Theatre"
