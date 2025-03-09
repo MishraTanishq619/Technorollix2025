@@ -68,15 +68,21 @@ export async function getParticipatingTeams() {
 				const leader = await User.findOne({
 					email: team.leader,
 				})
-					.select("fullName email")
-					.lean<{ fullName: string; email: string }>();
+					.select("fullName email isOutsider")
+					.lean<{ fullName: string; email: string; isOutsider: boolean }>();
 				const event = await Event.findById(team.event)
 					.select("name")
 					.lean<{ name: string }>();
+				const members = await User.find({
+					email: { $in: team.members },
+				}).select("fullName email isOutsider").lean<{ fullName: string; email: string; isOutsider: boolean }[]>();
+				const individualSchema = team.size == 1 && leader?.isOutsider;
 				return {
 					...team,
+					members,
 					leader,
 					event,
+					individualSchema
 				};
 			})
 		);

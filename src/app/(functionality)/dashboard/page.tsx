@@ -25,6 +25,59 @@ import {
 import AccommodationModal from "@/components/accomodation-modal";
 import { getAccommodationDetailsAction } from "@/actions/accomodation-actions";
 import { toast } from "@/hooks/use-toast";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+
+const isSingleMemberOutsiderTeam = (team: any) => {
+	return team.size === 1 && team.members[0]?.isOutsider;
+};
+const participatingTeamsDataDummy = [
+	{
+		_id: "team1",
+		event: { name: "Event 1" },
+		size: 5,
+		members: [
+			{ isOutsider: true },
+			{ isOutsider: false },
+			{ isOutsider: true },
+			{ isOutsider: false },
+			{ isOutsider: true },
+		],
+		individualSchema: false,
+	},
+	{
+		_id: "team2",
+		event: { name: "Event 2" },
+		size: 1,
+		members: [
+			{ isOutsider: true },
+		],
+		individualSchema: true,
+	},
+	{
+		_id: "team3",
+		event: { name: "Event 3" },
+		size: 4,
+		members: [
+			{ isOutsider: true },
+			{ isOutsider: true },
+			{ isOutsider: false },
+			{ isOutsider: false },
+		],
+		individualSchema: false,
+	},
+	{
+		_id: "team4",
+		event: { name: "Event 4" },
+		size: 4,
+		members: [
+			{ isOutsider: true },
+			{ isOutsider: true },
+			{ isOutsider: false },
+			{ isOutsider: false },
+		],
+		individualSchema: false,
+	},
+];
 
 const DashboardPage = () => {
 	const router = useRouter();
@@ -76,16 +129,66 @@ const DashboardPage = () => {
 		fn: accommodationFetchFn,
 	} = useFetch(getAccommodationDetailsAction);
 
+	// const [payAmount, setPayAmount] = useState(0)
+
+	// Create a function to calculate the payAmount. 
+	// This will input number of teams with individualSchema and number of teamSchema
+	// if sum of both teams >= 4 : 499
+	// for individualSchema :
+		// if number of individualSchema teams == 1 : 99
+		// if number of individualSchema teams == (2 or 3) : 199
+	// for teamSchema :
+		// if number of teamSchema teams == 1 : 299
+		// if number of teamSchema teams == 2 : 299 * 2
+		// if number of teamSchema teams == 3 : 299 * 3
+	
+		function calculatePayAmount(individualSchemaCount: number, teamSchemaCount: number): number {
+			const totalTeams = individualSchemaCount + teamSchemaCount;
+		
+			// If the sum of both teams is >= 4, return 499
+			if (totalTeams >= 4) {
+				return 499;
+			}
+		
+			let payAmount = 0;
+		
+			// Calculate pay amount for individualSchema teams
+			if (individualSchemaCount === 1) {
+				payAmount += 99;
+			} else if (individualSchemaCount === 2 || individualSchemaCount === 3) {
+				payAmount += 199;
+			}
+		
+			// Calculate pay amount for teamSchema teams
+			if (teamSchemaCount === 1) {
+				payAmount += 299;
+			} else if (teamSchemaCount === 2) {
+				payAmount += 299 * 2;
+			} else if (teamSchemaCount === 3) {
+				payAmount += 299 * 3;
+			}
+		
+			return payAmount;
+		}
+
+
 	useEffect(() => {
-		if(acceptInvitationError) {
+		if (participatingTeamsData) {
+			console.log(participatingTeamsData);
+			
+		}
+	
+	}, [participatingTeamsData])
+	
+	useEffect(() => {
+		if (acceptInvitationError) {
 			toast({
 				title: "Error",
 				description: acceptInvitationError.message,
 				variant: "destructive",
 			});
 		}
-	}, [acceptInvitationError])
-	
+	}, [acceptInvitationError]);
 
 	useEffect(() => {
 		userFn();
@@ -166,61 +269,63 @@ const DashboardPage = () => {
 				</Card>
 			)}
 
-{userData?.isOutsider && (
-    <Card className="mb-6">
-        <CardHeader>
-            <CardTitle>Accommodation Details</CardTitle>
-        </CardHeader>
-        <CardContent>
-            {!accommodationFetchLoading ? (
-                accommodationFetchData ? (
-                    <div>
-                        <p>
-                            Arrival Time:{" "}
-                            {new Date(
-                                accommodationFetchData.arrivalTime
-                            ).toLocaleString()}
-                        </p>
-                        <p>
-                            Departure Time:{" "}
-                            {new Date(
-                                accommodationFetchData.departureTime
-                            ).toLocaleString()}
-                        </p>
-                        <p>
-                            Additional Details:{" "}
-                            {accommodationFetchData.additionalDetails}
-                        </p>
-                        <Button
-                            className="mt-4"
-                            disabled={!userData?.isOutsider}
-                            onClick={handleOpenModal}
-                        >
-                            Edit Accommodation
-                        </Button>
-                    </div>
-                ) : (
-                    <div>
-                        <p>Accommodation not availed.</p>
-                        <p>
-                            Note: Avail if you are an outsider
-                            participant.
-                        </p>
-                        <Button
-                            className="mt-4"
-                            disabled={!userData?.isOutsider}
-                            onClick={handleOpenModal}
-                        >
-                            Add Accommodation
-                        </Button>
-                    </div>
-                )
-            ) : (
-                <div>Loading Accommodation details...</div>
-            )}
-        </CardContent>
-    </Card>
-)}
+			{userData?.isOutsider && (
+				<Card className="mb-6">
+					<CardHeader>
+						<CardTitle>Accommodation Details</CardTitle>
+					</CardHeader>
+					<CardContent>
+						{!accommodationFetchLoading ? (
+							accommodationFetchData ? (
+								<div>
+									<p>
+										Arrival Time:{" "}
+										{new Date(
+											accommodationFetchData.arrivalTime
+										).toLocaleString()}
+									</p>
+									<p>
+										Departure Time:{" "}
+										{new Date(
+											accommodationFetchData.departureTime
+										).toLocaleString()}
+									</p>
+									<p>
+										Additional Details:{" "}
+										{
+											accommodationFetchData.additionalDetails
+										}
+									</p>
+									<Button
+										className="mt-4"
+										disabled={!userData?.isOutsider}
+										onClick={handleOpenModal}
+									>
+										Edit Accommodation
+									</Button>
+								</div>
+							) : (
+								<div>
+									<p>Accommodation not availed.</p>
+									<p>
+										Note: Avail if you are an outsider
+										participant.
+									</p>
+									<Button
+										className="mt-4"
+										disabled={!userData?.isOutsider}
+										onClick={handleOpenModal}
+									>
+										Add Accommodation
+									</Button>
+								</div>
+							)
+						) : (
+							<div>Loading Accommodation details...</div>
+						)}
+					</CardContent>
+				</Card>
+			)}
 			{userData && (
 				<AccommodationModal
 					isOpen={isModalOpen}
@@ -383,6 +488,57 @@ const DashboardPage = () => {
 				</Card>
 			</div>
 
+			{/* Payments section */}
+
+			<Card className="mb-6">
+				<CardHeader>
+					<CardTitle>Payments Section</CardTitle>
+				</CardHeader>
+				<CardContent>
+				<Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead>Event Name</TableHead>
+                                <TableHead>Team Size</TableHead>
+                                <TableHead>Number of Outsiders</TableHead>
+                                <TableHead>Type of scheme</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {participatingTeamsDataDummy &&
+                                participatingTeamsDataDummy.map((team) => {
+                                    const outsiderCount = team.members.filter(
+                                        (member) => member.isOutsider
+									).length;
+                                    return (
+                                        <TableRow key={team._id}>
+                                            <TableCell>{team.event?.name}</TableCell>
+                                            <TableCell>{team.size}</TableCell>
+                                            <TableCell>{outsiderCount}</TableCell>
+                                            {/* <TableCell>{team.individualSchema ? "Individual" : "Team"}</TableCell> */}
+                                            <TableCell>{isSingleMemberOutsiderTeam(team) ? "Individual" : "Team"}</TableCell>
+                                        </TableRow>
+                                    );
+                                })}
+                        </TableBody>
+					</Table>
+					<br />
+					<div>
+						{/* <p>Total Individual schema : {participatingTeamsDataDummy?.filter(team => team.individualSchema).length}</p>
+						<p>Total Team schema : {participatingTeamsDataDummy?.filter(team => !team.individualSchema).length}</p> */}
+
+						<p>Total Individual schema : {participatingTeamsDataDummy?.filter(team => isSingleMemberOutsiderTeam(team)).length}</p>
+						<p>Total Team schema : {participatingTeamsDataDummy?.filter(team => !isSingleMemberOutsiderTeam(team)).length}</p>
+					
+					</div>
+					<div>
+						{/* <p>Amount to be paid : { payAmount}</p> */}
+						<p>Amount to be paid : { calculatePayAmount(participatingTeamsDataDummy?.filter(team => isSingleMemberOutsiderTeam(team)).length,
+participatingTeamsDataDummy?.filter(team => !isSingleMemberOutsiderTeam(team)).length)}</p>
+					</div>
+				</CardContent>
+			</Card>
+
 			{/* Invitation Modal */}
 			<Dialog
 				open={selectedInvite !== null}
@@ -460,3 +616,4 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
+
