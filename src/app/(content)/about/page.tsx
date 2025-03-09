@@ -28,7 +28,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row mt-20 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
             <Image
-              src="./opjucampus.jpg"
+              src="/opjucampus.jpg"
               alt="opju campus"
               width={500}
               height={500}
@@ -71,7 +71,7 @@ const About = () => {
 
           <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
             <Image
-              src="./technorollixlogo.png"
+              src="/technorollixlogo.png"
               alt="techno logo"
               width={500}
               height={500}
