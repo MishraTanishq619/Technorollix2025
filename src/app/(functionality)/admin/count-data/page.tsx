@@ -8,6 +8,7 @@ import { toast } from "@/hooks/use-toast";
 import useFetch from "@/hooks/use-fetch";
 import { getEventDetailsWithCounts } from "@/actions/event-actions";
 import * as XLSX from "xlsx";
+import { eventOrder } from "@/data/eventOrder";
 
 export default function EventDetailsPage() {
     const [fileName, setFileName] = useState("event-count-details");
@@ -30,8 +31,15 @@ export default function EventDetailsPage() {
 
     useEffect(() => {
         if (eventDetailsData) {
-            setEventDetails(eventDetailsData);
-        }
+			// Sort the eventDetailsData based on the specified order
+			const sortedEventDetails = eventDetailsData.sort((a, b) => {
+				return (
+					eventOrder.indexOf(a.eventName) -
+					eventOrder.indexOf(b.eventName)
+				);
+			});
+			setEventDetails(sortedEventDetails);
+		}
     }, [eventDetailsData]);
 
     useEffect(() => {
