@@ -47,7 +47,7 @@ export default function AdminDashboard() {
 		};
 
 		fetchData();
-	}, );
+	}, []);
 
 	useEffect(() => {
 		if (userFetchData) {
