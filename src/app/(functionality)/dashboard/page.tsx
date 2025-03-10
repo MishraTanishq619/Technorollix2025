@@ -26,11 +26,12 @@ import AccommodationModal from "@/components/accomodation-modal";
 import { getAccommodationDetailsAction } from "@/actions/accomodation-actions";
 import { toast } from "@/hooks/use-toast";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import Payments from "@/components/payments";
 
 const isSingleMemberOutsiderTeam = (team: any) => {
 	return team.size === 1 && team.members[0]?.isOutsider;
 };
-const participatingTeamsDataDummy = [
+const leadingTeamsDummy = [
 	{
 		_id: "team1",
 		event: { name: "Event 1" },
@@ -171,10 +172,25 @@ const DashboardPage = () => {
 			return payAmount;
 		}
 
-
+	
+	const [leadingTeams, setLeadingTeams] = useState<typeof participatingTeamsData>([])
+	const [payAmount, setPayAmount] = useState(0)
 	useEffect(() => {
 		if (participatingTeamsData) {
 			console.log(participatingTeamsData);
+			const leadingTeams = participatingTeamsData.filter(
+				(team: any) => team.leader.email === userData?.email
+			);
+			console.log(leadingTeams);
+			setPayAmount(
+				calculatePayAmount(
+					leadingTeams?.filter((team:any) => team.individualSchema)
+						.length,
+					leadingTeams?.filter((team:any) => !team.individualSchema)
+						.length
+				)
+			);
+			setLeadingTeams(leadingTeams);
 			
 		}
 	
@@ -501,12 +517,12 @@ const DashboardPage = () => {
                                 <TableHead>Event Name</TableHead>
                                 <TableHead>Team Size</TableHead>
                                 <TableHead>Number of Outsiders</TableHead>
-                                <TableHead>Type of scheme</TableHead>
+                                <TableHead>Type of pay scheme</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {participatingTeamsDataDummy &&
-                                participatingTeamsDataDummy.map((team) => {
+                            {leadingTeams &&
+                                leadingTeams.map((team) => {
                                     const outsiderCount = team.members.filter(
                                         (member) => member.isOutsider
 									).length;
@@ -515,27 +531,38 @@ const DashboardPage = () => {
                                             <TableCell>{team.event?.name}</TableCell>
                                             <TableCell>{team.size}</TableCell>
                                             <TableCell>{outsiderCount}</TableCell>
-                                            {/* <TableCell>{team.individualSchema ? "Individual" : "Team"}</TableCell> */}
-                                            <TableCell>{isSingleMemberOutsiderTeam(team) ? "Individual" : "Team"}</TableCell>
+                                            <TableCell>{team.individualSchema ? "Individual" : "Team"}</TableCell>
+                                            {/* <TableCell>{isSingleMemberOutsiderTeam(team) ? "Individual" : "Team"}</TableCell> */}
                                         </TableRow>
                                     );
                                 })}
                         </TableBody>
 					</Table>
 					<br />
-					<div>
-						{/* <p>Total Individual schema : {participatingTeamsDataDummy?.filter(team => team.individualSchema).length}</p>
-						<p>Total Team schema : {participatingTeamsDataDummy?.filter(team => !team.individualSchema).length}</p> */}
+					<div className=" flex justify-between">
+						<div>
+							<p>Total Individual schema : {leadingTeams?.filter(team => team.individualSchema).length}</p>
+							<p>Total Team schema : {leadingTeams?.filter(team => !team.individualSchema).length}</p>
 
-						<p>Total Individual schema : {participatingTeamsDataDummy?.filter(team => isSingleMemberOutsiderTeam(team)).length}</p>
-						<p>Total Team schema : {participatingTeamsDataDummy?.filter(team => !isSingleMemberOutsiderTeam(team)).length}</p>
-					
+							{/* <p>Total Individual schema : {leadingTeamsDummy?.filter(team => isSingleMemberOutsiderTeam(team)).length}</p>
+							<p>Total Team schema : {leadingTeamsDummy?.filter(team => !isSingleMemberOutsiderTeam(team)).length}</p> */}
+						
+							<p>Amount to be paid : { payAmount }</p>
+							{/* <p>Amount to be paid : { calculatePayAmount(leadingTeams?.filter(team => isSingleMemberOutsiderTeam(team)).length,
+	leadingTeams?.filter(team => !isSingleMemberOutsiderTeam(team)).length)}</p> */}
+						</div>
+						<div>
+							{/* Here, give a "Pay" button. This will open a modal.
+								the modal should show a Scan QR or Click the link, provide space for that.
+								At the top of modal, give a note saying that After the payment is done, transactionId will be sent to your mail via eassbuzz.
+								You need to fill that in the input given in user dashboard.
+
+								So, give a button of "Add TransactionId" here. This will open its modal, should have an input box and confirm button.
+								This will call "addTransactionIdAction".
+							*/}
+						</div>
 					</div>
-					<div>
-						{/* <p>Amount to be paid : { payAmount}</p> */}
-						<p>Amount to be paid : { calculatePayAmount(participatingTeamsDataDummy?.filter(team => isSingleMemberOutsiderTeam(team)).length,
-participatingTeamsDataDummy?.filter(team => !isSingleMemberOutsiderTeam(team)).length)}</p>
-					</div>
+					<Payments payAmount={payAmount} userEmail={userData?.email} />
 				</CardContent>
 			</Card>
 
