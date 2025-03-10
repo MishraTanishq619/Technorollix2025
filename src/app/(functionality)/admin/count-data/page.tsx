@@ -12,7 +12,7 @@ import { eventOrder } from "@/data/eventOrder";
 
 export default function EventDetailsPage() {
     const [fileName, setFileName] = useState("event-count-details");
-    const [eventDetails, setEventDetails] = useState<{ eventName: string; teamCount: number; userCount: number; }[]>([]);
+    const [eventDetails, setEventDetails] = useState<{ eventName: string; teamCount: number; userCount: number; insiderCount: number; outsiderCount: number; }[]>([]);
 
     const {
         data: eventDetailsData,
@@ -31,22 +31,22 @@ export default function EventDetailsPage() {
 
     useEffect(() => {
         if (eventDetailsData) {
-			// Sort the eventDetailsData based on the specified order
-			const sortedEventDetails = eventDetailsData.sort((a, b) => {
-				return (
-					eventOrder.indexOf(a.eventName) -
-					eventOrder.indexOf(b.eventName)
-				);
-			});
-			setEventDetails(sortedEventDetails);
-		}
+            // Sort the eventDetailsData based on the specified order
+            const sortedEventDetails = eventDetailsData.sort((a, b) => {
+                return (
+                    eventOrder.indexOf(a.eventName) -
+                    eventOrder.indexOf(b.eventName)
+                );
+            });
+            setEventDetails(sortedEventDetails);
+        }
     }, [eventDetailsData]);
 
     useEffect(() => {
         if (eventDetailsError) {
             toast({
                 title: "Error",
-                description: "Failed to fetch event-Count details",
+                description: "Failed to fetch event details",
                 variant: "destructive",
             });
         }
@@ -55,8 +55,10 @@ export default function EventDetailsPage() {
     const handleDownloadExcel = () => {
         const data = eventDetails.map((event) => ({
             EventName: event.eventName,
-            TeamCount: event.teamCount,
+            // TeamCount: event.teamCount,
             UserCount: event.userCount,
+            Insiders: event.insiderCount,
+            Outsiders: event.outsiderCount,
         }));
 
         const worksheet = XLSX.utils.json_to_sheet(data);
@@ -81,16 +83,20 @@ export default function EventDetailsPage() {
                         <TableHeader>
                             <TableRow>
                                 <TableHead>Event Name</TableHead>
-                                <TableHead>Team Count</TableHead>
+                                {/* <TableHead>Team Count</TableHead> */}
                                 <TableHead>User Count</TableHead>
+                                <TableHead>Insiders</TableHead>
+                                <TableHead>Outsiders</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {eventDetails.map((event) => (
                                 <TableRow key={event.eventName}>
                                     <TableCell>{event.eventName}</TableCell>
-                                    <TableCell>{event.teamCount}</TableCell>
+                                    {/* <TableCell>{event.teamCount}</TableCell> */}
                                     <TableCell>{event.userCount}</TableCell>
+                                    <TableCell>{event.insiderCount}</TableCell>
+                                    <TableCell>{event.outsiderCount}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

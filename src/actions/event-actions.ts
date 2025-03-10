@@ -5,7 +5,7 @@ import { Event, IEvent } from "@/models/event.model";
 import { getUser } from "./user-actions";
 import { ITeam, Team } from "@/models/team.model";
 import { Invitation } from "@/models/invitation.model";
-import { User } from "@/models/user.model";
+import { IUser, User } from "@/models/user.model";
 
 // Fetch all events
 export async function getAllEventsAction() {
@@ -216,13 +216,20 @@ export async function getTeamsByEventId(
 
 
 export async function getEventDetailsWithCounts(): Promise<
-    { eventName: string; teamCount: number; userCount: number }[]
+	{ eventName: string; teamCount: number; userCount: number; insiderCount: number; outsiderCount: number }[]
+
 > {
     try {
         await connectToDatabase();
 
         // Fetch all events
         const events = await Event.find().lean<IEvent[]>();
+
+        // Fetch all users
+        const users = await User.find().lean<IUser[]>();
+
+        // Create a map of user emails to user objects for quick lookup
+        const userMap = new Map(users.map(user => [user.email, user]));
 
         // Initialize an array to hold the event details with counts
         const eventDetailsWithCounts = [];
@@ -235,14 +242,34 @@ export async function getEventDetailsWithCounts(): Promise<
             // Calculate the team count
             const teamCount = teams.length;
 
-            // Calculate the user count by aggregating the members from each team
-            const userCount = teams.reduce((acc, team) => acc + team.members.length, 0);
+            // Initialize counters for insiders and outsiders
+            let insiderCount = 0;
+            let outsiderCount = 0;
+
+            // Loop through each team to get the user counts
+            for (const team of teams) {
+                for (const memberEmail of team.members) {
+                    const user = userMap.get(memberEmail);
+                    if (user) {
+                        if (user.isOutsider) {
+                            outsiderCount++;
+                        } else {
+                            insiderCount++;
+                        }
+                    }
+                }
+            }
+
+            // Calculate the user count
+            const userCount = insiderCount + outsiderCount;
 
             // Add the event details with counts to the array
             eventDetailsWithCounts.push({
                 eventName: event.name,
                 teamCount,
                 userCount,
+                insiderCount,
+                outsiderCount,
             });
         }
 
