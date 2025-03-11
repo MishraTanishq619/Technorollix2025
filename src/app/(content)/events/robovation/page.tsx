@@ -20,7 +20,7 @@ const Page = () => {
   const pdfPath = "/rulebookrobovation.pdf";
 
   return (
-    <div className="relative flex flex-col space-y-8">
+    <div className="relative flex flex-col">
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -45,10 +45,10 @@ const Page = () => {
       <div className="my-8 sm:my-16" />
 
       {/* Sub Events Header */}
-      <h1 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8 sm:mb-14">
+      <h1 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-6 sm:mb-14">
         SUB EVENTS
       </h1>
-      <p className="text-lg sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white text-center max-w-4xl mx-auto px-4">
+      <p className="text-lg sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white text-center max-w-5xl mx-auto px-4 mb-20">
         Robovation features three exciting sub-events. Robo Race tests speed and precision as robots navigate an obstacle-filled track. Robo Soccer challenges teams to score goals using their self-built bots. Robo War is a fierce battle where combat robots fight to dominate the arena.
       </p>
       

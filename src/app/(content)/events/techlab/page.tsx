@@ -52,7 +52,7 @@ const Page = () => {
   ];
 
   return (
-    <div className="relative flex flex-col space-y-8">
+    <div className="relative flex flex-col">
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -77,7 +77,7 @@ const Page = () => {
       </section>
 
       {/* Sub-Events Section */}
-      <section className="px-4 mx-auto">
+      <section className="px-4 mx-auto mb-32">
         <div className="flex flex-col items-center justify-center mt-20">
           <div className="w-full max-w-md h-16 sm:h-20 text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl sm:text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
             sub-events
