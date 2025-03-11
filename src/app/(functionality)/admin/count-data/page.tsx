@@ -61,6 +61,14 @@ export default function EventDetailsPage() {
             Outsiders: event.outsiderCount,
         }));
 
+        data.push({
+            EventName: "Total Count",
+            // TeamCount: event.teamCount,
+            UserCount: totalUserCount,
+            Insiders: totalInsiderCount,
+            Outsiders: totalOutsiderCount,
+        });
+
         const worksheet = XLSX.utils.json_to_sheet(data);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, "EventDetails");
@@ -70,6 +78,12 @@ export default function EventDetailsPage() {
     if (eventDetailsLoading) {
         return <div>Loading...</div>;
     }
+
+    // Calculate total counts for the table
+    const totalUserCount = eventDetails.reduce((acc, event) => acc + event.userCount, 0);
+    // const totalTeamCount = eventDetails.reduce((acc, event) => acc + event.teamCount, 0);
+    const totalInsiderCount = eventDetails.reduce((acc, event) => acc + event.insiderCount, 0);
+    const totalOutsiderCount = eventDetails.reduce((acc, event) => acc + event.outsiderCount, 0);
 
     return (
         <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
@@ -99,6 +113,12 @@ export default function EventDetailsPage() {
                                     <TableCell>{event.outsiderCount}</TableCell>
                                 </TableRow>
                             ))}
+                            <TableRow className="font-bold">
+                                <TableCell>Total Count</TableCell>
+                                <TableCell>{totalUserCount}</TableCell>
+                                <TableCell>{totalInsiderCount}</TableCell>
+                                <TableCell>{totalOutsiderCount}</TableCell>
+                            </TableRow>
                         </TableBody>
                     </Table>
                 </CardContent>
