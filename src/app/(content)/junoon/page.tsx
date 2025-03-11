@@ -1,6 +1,26 @@
 import Image from "next/image";
+import EventManagers from "@/components/sub-component/event-managers";
 
 export default function Junoon() {
+
+  const managers = [
+    {
+      imageUrl: "/managers/Junoon/atulsingh.jpg",
+      name: "Atul Singh",
+      contact: 9755305060,
+    },
+    {
+      imageUrl: "/managers/Junoon/harshdubey.jpg",
+      name: "Harsh Dubey",
+      contact: 9340427142,
+    },
+    {
+      imageUrl: "/managers/Junoon/sumitsingh.jpg",
+      name: "Sumit Singh",
+      contact: 7974944091,
+    },
+  ];
+
   const guests = [
     {
       name: "Vaibhav Gupta",
@@ -99,7 +119,9 @@ export default function Junoon() {
       ))}
 
       {/* Bottom Padding */}
-      <div className="pb-32"></div>
+      <div className="pb-32">
+      <EventManagers managers={managers} />
+      </div>
     </div>
   );
 }
