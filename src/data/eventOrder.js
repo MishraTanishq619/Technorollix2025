@@ -22,6 +22,7 @@ export const eventOrder = [
     "Game Fusion FreeFire",
     "Game Fusion Valorant",
     "Game Fusion BGMI",
+    "Game Fusion FIFA Mobile",
     "Codigo Event 1",
     "Codigo Event 2",
     "Reels and Role Play : Roles",
