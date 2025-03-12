@@ -461,6 +461,24 @@ const DashboardPage = () => {
 					<CardTitle>Payments Section</CardTitle>
 				</CardHeader>
 				<CardContent>
+				<div className="mb-4 text-sm text-gray-500">
+  <p className="mb-2">Registration Fee structure for outsider participant:</p>
+  
+  <p className="font-semibold">For Individual Registration:</p>
+  <ul className="list-disc list-inside pl-4 mb-4">
+    <li>1 event - ₹99</li>
+    <li>3 events - ₹199</li>
+    <li>4-7 events - ₹499</li>
+  </ul>
+  
+  <p className="font-semibold">For Team Registration:</p>
+  <ul className="list-disc list-inside pl-4">
+    <li>₹299 per Event</li>
+    <li>4-7 events - ₹499</li>
+  </ul>
+</div>
+
+				{MergedleadingEvents.length > 0 && 
 				<Table>
                         <TableHeader>
                             <TableRow>
@@ -470,8 +488,7 @@ const DashboardPage = () => {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {MergedleadingEvents &&
-                                MergedleadingEvents.map((event, k) => {
+							{MergedleadingEvents.map((event, k) => {
                                     return (
                                         <TableRow key={k}>
                                             <TableCell>{event.eventName}</TableCell>
@@ -482,7 +499,10 @@ const DashboardPage = () => {
                                 })}
                         </TableBody>
 					</Table>
+				}
 					<br />
+					{payAmount > 0 && 
+					<>
 					<div className=" flex justify-between">
 						<div>
 							<p>Total Individual schema : {MergedleadingEvents?.filter(event => event.individualSchema).length}</p>
@@ -507,6 +527,7 @@ const DashboardPage = () => {
 						</div>
 					</div>
 					<Payments payAmount={payAmount} userEmail={userData?.email} />
+					</>}
 				</CardContent>
 			</Card>
 
