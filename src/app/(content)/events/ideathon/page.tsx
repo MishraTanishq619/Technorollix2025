@@ -1,12 +1,14 @@
 import React from "react";
 import EventIntro from "@/components/sub-component/event-intro";
-import SubEventCard from "@/components/sub-component/sub-event-card";
+// import SubEventCard from "@/components/sub-component/sub-event-card";
 // import ManagerCard from "@/components/sub-component/manager-card";
 // import ButtonLanding from "@/components/sub-component/button-landing";
-import { IoMdArrowRoundForward } from "react-icons/io";
+// import { IoMdArrowRoundForward } from "react-icons/io";
+import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
+import Image from "next/image";
 
 const Page = () => {
   const rules = [
@@ -32,12 +34,19 @@ const Page = () => {
     "Enhance your resume with a standout achievement.",
     "Challenge yourself to think creatively under pressure.",
   ];
+  const rounds = [
+    {
+      title: "ROUND 1",
+      description: "There will be a single round."
+    }]
 
   return (
     <div className="space-y-10">
       {/* Background Image Optimized */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <img
+        <Image
+        width={500}
+        height={500}
           src="/background.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
@@ -47,7 +56,6 @@ const Page = () => {
       {/* Event Introduction */}
       <EventIntro
         imageUrl="/techno-events-logo/ideathon.png"
-        title="Ideathon"
         registrations={0}
         pricepool={18000}
         description="An Ideathon is an engaging brainstorming event where individuals collaborate to address pressing challenges through innovative solutions. Participants work in teams, utilizing design thinking to develop viable ideas across diverse subjects like marketing, philosophy, and science."
@@ -58,16 +66,9 @@ const Page = () => {
       <div className="flex flex-col items-center">
         <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
           {/* Rounds Section */}
-          <section className="text-center flex flex-col items-center justify-center">
-            <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium mb-12">
-              ROUNDS
-            </h2>
-            <SubEventCard
-              Icon={IoMdArrowRoundForward}
-              title="ROUND 1"
-              description="There will be a single round."
-            />
-          </section>
+          <section className="px-4">
+        <RoundSection rounds={rounds} />
+      </section>
 
           {/* Judging Criteria Section */}
           <section>
