@@ -120,6 +120,13 @@ export default function LoginForm() {
 									</div>
 								</FormControl>
 								<FormMessage />
+								<div className="mt-2 text-right">
+									<Link href="/auth/forgot-password">
+										<span className="text-sm text-blue-500 hover:underline">
+											Forgot Password?
+										</span>
+									</Link>
+								</div>
 							</FormItem>
 						)}
 					/>
