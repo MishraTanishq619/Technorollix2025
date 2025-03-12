@@ -462,7 +462,29 @@ const DashboardPage = () => {
 					<CardTitle>Payments Section</CardTitle>
 				</CardHeader>
 				<CardContent>
-				<FeeStructureHoverCard />
+				<HoverCard>
+		<HoverCardTrigger>
+		  <button className="text-gray-600 underline font-thin text-sm">View Fee Structure</button>
+		</HoverCardTrigger>
+		<HoverCardContent className="w-72 p-4 bg-white shadow-lg rounded-lg">
+		  <div className="text-sm text-gray-700">
+			<p className="mb-2 font-semibold">Registration Fee structure for outsider participant:</p>
+			
+			<p className="font-semibold">For Individual Registration:</p>
+			<ul className="list-disc list-inside pl-4 mb-4">
+			  <li>1 event - ₹99</li>
+			  <li>3 events - ₹199</li>
+			  <li>4-7 events - ₹499</li>
+			</ul>
+			
+			<p className="font-semibold">For Team Registration:</p>
+			<ul className="list-disc list-inside pl-4">
+			  <li>₹299 per Event</li>
+			  <li>4-7 events - ₹499</li>
+			</ul>
+		  </div>
+		</HoverCardContent>
+	  </HoverCard>
 				{MergedleadingEvents.length > 0 && 
 				<Table>
                         <TableHeader>
@@ -591,33 +613,6 @@ const DashboardPage = () => {
 		</div>
 	);
 };
-export function FeeStructureHoverCard() {
-	return (
-	  <HoverCard>
-		<HoverCardTrigger>
-		  <button className="text-gray-600 underline font-thin text-sm">View Fee Structure</button>
-		</HoverCardTrigger>
-		<HoverCardContent className="w-72 p-4 bg-white shadow-lg rounded-lg">
-		  <div className="text-sm text-gray-700">
-			<p className="mb-2 font-semibold">Registration Fee structure for outsider participant:</p>
-			
-			<p className="font-semibold">For Individual Registration:</p>
-			<ul className="list-disc list-inside pl-4 mb-4">
-			  <li>1 event - ₹99</li>
-			  <li>3 events - ₹199</li>
-			  <li>4-7 events - ₹499</li>
-			</ul>
-			
-			<p className="font-semibold">For Team Registration:</p>
-			<ul className="list-disc list-inside pl-4">
-			  <li>₹299 per Event</li>
-			  <li>4-7 events - ₹499</li>
-			</ul>
-		  </div>
-		</HoverCardContent>
-	  </HoverCard>
-	);
-  }
 
 export default DashboardPage;
 
