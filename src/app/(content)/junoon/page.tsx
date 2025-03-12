@@ -2,7 +2,6 @@ import Image from "next/image";
 import EventManagers from "@/components/sub-component/event-managers";
 
 export default function Junoon() {
-
   const managers = [
     {
       imageUrl: "/managers/Junoon/atulsingh.jpg",
@@ -18,6 +17,11 @@ export default function Junoon() {
       imageUrl: "/managers/Junoon/sumitsingh.jpg",
       name: "Sumit Singh",
       contact: 7974944091,
+    },
+    {
+      imageUrl: "/managers/Junoon/soubhagyaranjanpanda.jpg",
+      name: "Soubhagya Panda",
+      contact: 9827177970,
     },
   ];
 
@@ -86,7 +90,11 @@ export default function Junoon() {
             ABOUT JUNOON
           </h2>
           <p className="text-xl font-medium font-['Poppins']">
-            OPJU Junoon is an annual cultural extravaganza hosted by the O.P. Jindal University in Chhattisgarh, India. This vibrant event showcases the diverse talents of people across various domains including music and dance. In 2018, we had Shirley Sethia. In 2020, we had Jubin Nautiyal and Sunburn, and in 2023, we had DJ Perisha.
+            OPJU Junoon is an annual cultural extravaganza hosted by the O.P.
+            Jindal University in Chhattisgarh, India. This vibrant event
+            showcases the diverse talents of people across various domains
+            including music and dance. In 2018, we had Shirley Sethia. In 2020,
+            we had Jubin Nautiyal and Sunburn, and in 2023, we had DJ Perisha.
           </p>
         </div>
       </div>
@@ -113,14 +121,16 @@ export default function Junoon() {
             <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#E944FF] to-[#FFFFFFFA] shadow-lg mb-6">
               {guest.role}
             </h2>
-            <p className="text-xl font-medium font-['Poppins']">{guest.description}</p>
+            <p className="text-xl font-medium font-['Poppins']">
+              {guest.description}
+            </p>
           </div>
         </section>
       ))}
 
       {/* Bottom Padding */}
       <div className="pb-32">
-      <EventManagers managers={managers} />
+        <EventManagers managers={managers} />
       </div>
     </div>
   );

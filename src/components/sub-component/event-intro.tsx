@@ -70,7 +70,7 @@ const EventIntro: React.FC<EventIntroProps> = ({
 
       {/* Description Section */}
       <section className="flex flex-col items-center px-4">
-        <div className="w-full max-w-3xl text-center text-[#EDE0E0] text-xl sm:text-2xl font-medium font-['Inter'] tracking-[3.75px]">
+        <div className="w-full max-w-4xl text-center text-[#EDE0E0] text-xl sm:text-2xl font-medium font-['Inter'] tracking-[3.75px]">
           {description}
           <br />
         </div>
