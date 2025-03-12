@@ -25,6 +25,11 @@ import {
 import AccommodationModal from "@/components/accomodation-modal";
 import { getAccommodationDetailsAction } from "@/actions/accomodation-actions";
 import { toast } from "@/hooks/use-toast";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import Payments from "@/components/payments";
+import { getMergedEvents } from "@/lib/utils";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
+
 
 const DashboardPage = () => {
 	const router = useRouter();
@@ -76,16 +81,81 @@ const DashboardPage = () => {
 		fn: accommodationFetchFn,
 	} = useFetch(getAccommodationDetailsAction);
 
+	// const [payAmount, setPayAmount] = useState(0)
+
+	// Create a function to calculate the payAmount. 
+	// This will input number of teams with individualSchema and number of teamSchema
+	// if sum of both teams >= 4 : 499
+	// for individualSchema :
+		// if number of individualSchema teams == 1 : 99
+		// if number of individualSchema teams == (2 or 3) : 199
+	// for teamSchema :
+		// if number of teamSchema teams == 1 : 299
+		// if number of teamSchema teams == 2 : 299 * 2
+		// if number of teamSchema teams == 3 : 299 * 3
+	
+		function calculatePayAmount(individualSchemaCount: number, teamSchemaCount: number): number {
+			const totalTeams = individualSchemaCount + teamSchemaCount;
+		
+			// If the sum of both teams is >= 4, return 499
+			if (totalTeams >= 4) {
+				return 499;
+			}
+		
+			let payAmount = 0;
+		
+			// Calculate pay amount for individualSchema teams
+			if (individualSchemaCount === 1) {
+				payAmount += 99;
+			} else if (individualSchemaCount === 2 || individualSchemaCount === 3) {
+				payAmount += 199;
+			}
+		
+			// Calculate pay amount for teamSchema teams
+			if (teamSchemaCount === 1) {
+				payAmount += 299;
+			} else if (teamSchemaCount === 2) {
+				payAmount += 299 * 2;
+			} else if (teamSchemaCount === 3) {
+				payAmount += 299 * 3;
+			}
+		
+			return payAmount;
+		}
+
+			
+	const [MergedleadingEvents, setMergedLeadingEvents] = useState<any[]>([])
+	const [payAmount, setPayAmount] = useState(0)
+
 	useEffect(() => {
-		if(acceptInvitationError) {
+		if (participatingTeamsData) {
+			console.log(participatingTeamsData);
+
+			const mergedTeamsArray = getMergedEvents(participatingTeamsData, userData.email);
+
+			setPayAmount(
+				calculatePayAmount(
+					mergedTeamsArray?.filter((event:any) => event.individualSchema)
+						.length,
+					mergedTeamsArray?.filter((event:any) => !event.individualSchema)
+						.length
+				)
+			);
+			setMergedLeadingEvents(mergedTeamsArray);
+			
+		}
+	
+	}, [participatingTeamsData])
+	
+	useEffect(() => {
+		if (acceptInvitationError) {
 			toast({
 				title: "Error",
 				description: acceptInvitationError.message,
 				variant: "destructive",
 			});
 		}
-	}, [acceptInvitationError])
-	
+	}, [acceptInvitationError]);
 
 	useEffect(() => {
 		userFn();
@@ -166,61 +236,63 @@ const DashboardPage = () => {
 				</Card>
 			)}
 
-{userData?.isOutsider && (
-    <Card className="mb-6">
-        <CardHeader>
-            <CardTitle>Accommodation Details</CardTitle>
-        </CardHeader>
-        <CardContent>
-            {!accommodationFetchLoading ? (
-                accommodationFetchData ? (
-                    <div>
-                        <p>
-                            Arrival Time:{" "}
-                            {new Date(
-                                accommodationFetchData.arrivalTime
-                            ).toLocaleString()}
-                        </p>
-                        <p>
-                            Departure Time:{" "}
-                            {new Date(
-                                accommodationFetchData.departureTime
-                            ).toLocaleString()}
-                        </p>
-                        <p>
-                            Additional Details:{" "}
-                            {accommodationFetchData.additionalDetails}
-                        </p>
-                        <Button
-                            className="mt-4"
-                            disabled={!userData?.isOutsider}
-                            onClick={handleOpenModal}
-                        >
-                            Edit Accommodation
-                        </Button>
-                    </div>
-                ) : (
-                    <div>
-                        <p>Accommodation not availed.</p>
-                        <p>
-                            Note: Avail if you are an outsider
-                            participant.
-                        </p>
-                        <Button
-                            className="mt-4"
-                            disabled={!userData?.isOutsider}
-                            onClick={handleOpenModal}
-                        >
-                            Add Accommodation
-                        </Button>
-                    </div>
-                )
-            ) : (
-                <div>Loading Accommodation details...</div>
-            )}
-        </CardContent>
-    </Card>
-)}
+			{userData?.isOutsider && (
+				<Card className="mb-6">
+					<CardHeader>
+						<CardTitle>Accommodation Details</CardTitle>
+					</CardHeader>
+					<CardContent>
+						{!accommodationFetchLoading ? (
+							accommodationFetchData ? (
+								<div>
+									<p>
+										Arrival Time:{" "}
+										{new Date(
+											accommodationFetchData.arrivalTime
+										).toLocaleString()}
+									</p>
+									<p>
+										Departure Time:{" "}
+										{new Date(
+											accommodationFetchData.departureTime
+										).toLocaleString()}
+									</p>
+									<p>
+										Additional Details:{" "}
+										{
+											accommodationFetchData.additionalDetails
+										}
+									</p>
+									<Button
+										className="mt-4"
+										disabled={!userData?.isOutsider}
+										onClick={handleOpenModal}
+									>
+										Edit Accommodation
+									</Button>
+								</div>
+							) : (
+								<div>
+									<p>Accommodation not availed.</p>
+									<p>
+										Note: Avail if you are an outsider
+										participant.
+									</p>
+									<Button
+										className="mt-4"
+										disabled={!userData?.isOutsider}
+										onClick={handleOpenModal}
+									>
+										Add Accommodation
+									</Button>
+								</div>
+							)
+						) : (
+							<div>Loading Accommodation details...</div>
+						)}
+					</CardContent>
+				</Card>
+			)}
 			{userData && (
 				<AccommodationModal
 					isOpen={isModalOpen}
@@ -383,6 +455,132 @@ const DashboardPage = () => {
 				</Card>
 			</div>
 
+			{/* Payments section */}
+
+			<Card className="mb-6">
+				<CardHeader>
+					<CardTitle className="flex justify-between">
+						Payments Section
+						<HoverCard>
+							<HoverCardTrigger>
+								<button className="text-gray-600 underline font-thin text-sm">
+									View Fee Structure
+								</button>
+							</HoverCardTrigger>
+							<HoverCardContent className="w-72 p-4 bg-white shadow-lg rounded-lg">
+								<div className="text-sm text-gray-700">
+									<p>Payment Structure:</p>
+									<ul className="list-disc pl-4">
+										<li>
+											Sum of both teams &gt;= 4: Rs. 499
+										</li>
+										<li>Individual Schema:</li>
+										<ul className="list-disc pl-8">
+											<li>1 team: Rs. 99</li>
+											<li>2 or 3 teams: Rs. 199</li>
+										</ul>
+										<li>Team Schema:</li>
+										<ul className="list-disc pl-8">
+											<li>1 team: Rs. 299</li>
+											<li>2 teams: Rs. 299 * 2</li>
+											<li>3 teams: Rs. 299 * 3</li>
+										</ul>
+									</ul>
+									<p>
+										If your team have any outsiders, then payment is required.
+									</p>
+									<p>
+										If the event&apos;s team size is 1, then it
+										is considered an individual event.
+										Otherwise, it is considered a team
+										event.
+									</p>
+									<br />
+									<p>Note: Only leaders are needed to pay the fee.</p>
+								</div>
+							</HoverCardContent>
+						</HoverCard>
+					</CardTitle>
+				</CardHeader>
+				<CardContent>
+					{participatingTeamsLoading ?
+						<p className="text-center text-muted-foreground">
+							Loading Participating Events...
+						</p>
+						:
+						(MergedleadingEvents.length > 0 ? (
+							<Table>
+								<TableHeader>
+									<TableRow>
+										<TableHead>Event Name</TableHead>
+										<TableHead>
+											Participating subevents
+										</TableHead>
+										<TableHead>Type of pay scheme</TableHead>
+									</TableRow>
+								</TableHeader>
+								<TableBody>
+									{MergedleadingEvents.map((event, k) => {
+										return (
+											<TableRow key={k}>
+												<TableCell>
+													{event.eventName}
+												</TableCell>
+												<TableCell>
+													{event.teams.length}
+												</TableCell>
+												<TableCell>
+													{event.individualSchema
+														? "Individual"
+														: "Team"}
+												</TableCell>
+											</TableRow>
+										);
+									})}
+								</TableBody>
+							</Table>
+						) : (
+							<p>No payment is required</p>
+						))}
+					<br />
+					{payAmount > 0 && (
+						<>
+							<div className=" flex justify-between">
+								<div>
+									<p>
+										Total Individual schema :{" "}
+										{
+											MergedleadingEvents?.filter(
+												(event) =>
+													event.individualSchema
+											).length
+										}
+									</p>
+									<p>
+										Total Team schema :{" "}
+										{
+											MergedleadingEvents?.filter(
+												(event) =>
+													!event.individualSchema
+											).length
+										}
+									</p>
+
+									<p>Amount to be paid : {payAmount}</p>
+								</div>
+								<div>
+
+								</div>
+							</div>
+							<Payments
+								payAmount={payAmount}
+								userEmail={userData?.email}
+							/>
+						</>
+					)}
+				</CardContent>
+			</Card>
+
 			{/* Invitation Modal */}
 			<Dialog
 				open={selectedInvite !== null}
@@ -460,3 +658,4 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
+
