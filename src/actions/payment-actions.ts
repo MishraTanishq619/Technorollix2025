@@ -13,6 +13,9 @@ export async function addTransactionIdAction(transactionId: string, userEmail: s
             transactionId,
             userEmail,
             currentPayAmount,
+            amountAtAdmin: 0,
+            acknowledgementByAdmin: false,
+            clearanceApproval: false,
         });
 
         console.log("X1 newTransaction : ", newTransaction);

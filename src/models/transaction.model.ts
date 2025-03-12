@@ -4,6 +4,9 @@ interface ITransaction extends Document {
     transactionId: string;
     userEmail: string;
     currentPayAmount: number;
+    amountAtAdmin: number;
+    acknowledgementByAdmin: boolean;
+    clearanceApproval: boolean;
 }
 
 const transactionSchema = new Schema<ITransaction>(
@@ -20,6 +23,18 @@ const transactionSchema = new Schema<ITransaction>(
         currentPayAmount: {
             type: Number,
             required: true,
+        },
+        amountAtAdmin: {
+            type: Number,
+            default: 0,
+        },
+        acknowledgementByAdmin: {
+            type: Boolean,
+            default: false,
+        },
+        clearanceApproval: {
+            type: Boolean,
+            default: false,
         },
     },
     {

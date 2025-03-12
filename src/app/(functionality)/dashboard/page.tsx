@@ -27,58 +27,8 @@ import { getAccommodationDetailsAction } from "@/actions/accomodation-actions";
 import { toast } from "@/hooks/use-toast";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Payments from "@/components/payments";
+import { getMergedEvents } from "@/lib/utils";
 
-const isSingleMemberOutsiderTeam = (team: any) => {
-	return team.size === 1 && team.members[0]?.isOutsider;
-};
-const leadingTeamsDummy = [
-	{
-		_id: "team1",
-		event: { name: "Event 1" },
-		size: 5,
-		members: [
-			{ isOutsider: true },
-			{ isOutsider: false },
-			{ isOutsider: true },
-			{ isOutsider: false },
-			{ isOutsider: true },
-		],
-		individualSchema: false,
-	},
-	{
-		_id: "team2",
-		event: { name: "Event 2" },
-		size: 1,
-		members: [
-			{ isOutsider: true },
-		],
-		individualSchema: true,
-	},
-	{
-		_id: "team3",
-		event: { name: "Event 3" },
-		size: 4,
-		members: [
-			{ isOutsider: true },
-			{ isOutsider: true },
-			{ isOutsider: false },
-			{ isOutsider: false },
-		],
-		individualSchema: false,
-	},
-	{
-		_id: "team4",
-		event: { name: "Event 4" },
-		size: 4,
-		members: [
-			{ isOutsider: true },
-			{ isOutsider: true },
-			{ isOutsider: false },
-			{ isOutsider: false },
-		],
-		individualSchema: false,
-	},
-];
 
 const DashboardPage = () => {
 	const router = useRouter();
@@ -172,25 +122,25 @@ const DashboardPage = () => {
 			return payAmount;
 		}
 
-	
-	const [leadingTeams, setLeadingTeams] = useState<typeof participatingTeamsData>([])
+			
+	const [MergedleadingEvents, setMergedLeadingEvents] = useState<any[]>([])
 	const [payAmount, setPayAmount] = useState(0)
+
 	useEffect(() => {
 		if (participatingTeamsData) {
 			console.log(participatingTeamsData);
-			const leadingTeams = participatingTeamsData.filter(
-				(team: any) => team.leader.email === userData?.email
-			);
-			console.log(leadingTeams);
+
+			const mergedTeamsArray = getMergedEvents(participatingTeamsData, userData.email);
+
 			setPayAmount(
 				calculatePayAmount(
-					leadingTeams?.filter((team:any) => team.individualSchema)
+					mergedTeamsArray?.filter((event:any) => event.individualSchema)
 						.length,
-					leadingTeams?.filter((team:any) => !team.individualSchema)
+					mergedTeamsArray?.filter((event:any) => !event.individualSchema)
 						.length
 				)
 			);
-			setLeadingTeams(leadingTeams);
+			setMergedLeadingEvents(mergedTeamsArray);
 			
 		}
 	
@@ -515,24 +465,18 @@ const DashboardPage = () => {
                         <TableHeader>
                             <TableRow>
                                 <TableHead>Event Name</TableHead>
-                                <TableHead>Team Size</TableHead>
-                                <TableHead>Number of Outsiders</TableHead>
+                                <TableHead>Participating subevents</TableHead>
                                 <TableHead>Type of pay scheme</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {leadingTeams &&
-                                leadingTeams.map((team) => {
-                                    const outsiderCount = team.members.filter(
-                                        (member) => member.isOutsider
-									).length;
+                            {MergedleadingEvents &&
+                                MergedleadingEvents.map((event, k) => {
                                     return (
-                                        <TableRow key={team._id}>
-                                            <TableCell>{team.event?.name}</TableCell>
-                                            <TableCell>{team.size}</TableCell>
-                                            <TableCell>{outsiderCount}</TableCell>
-                                            <TableCell>{team.individualSchema ? "Individual" : "Team"}</TableCell>
-                                            {/* <TableCell>{isSingleMemberOutsiderTeam(team) ? "Individual" : "Team"}</TableCell> */}
+                                        <TableRow key={k}>
+                                            <TableCell>{event.eventName}</TableCell>
+                                            <TableCell>{event.teams.length}</TableCell>
+                                            <TableCell>{event.individualSchema ? "Individual" : "Team"}</TableCell>
                                         </TableRow>
                                     );
                                 })}
@@ -541,12 +485,12 @@ const DashboardPage = () => {
 					<br />
 					<div className=" flex justify-between">
 						<div>
-							<p>Total Individual schema : {leadingTeams?.filter(team => team.individualSchema).length}</p>
-							<p>Total Team schema : {leadingTeams?.filter(team => !team.individualSchema).length}</p>
+							<p>Total Individual schema : {MergedleadingEvents?.filter(event => event.individualSchema).length}</p>
+							<p>Total Team schema : {MergedleadingEvents?.filter(event => !event.individualSchema).length}</p>
 
 							{/* <p>Total Individual schema : {leadingTeamsDummy?.filter(team => isSingleMemberOutsiderTeam(team)).length}</p>
 							<p>Total Team schema : {leadingTeamsDummy?.filter(team => !isSingleMemberOutsiderTeam(team)).length}</p> */}
-						
+							
 							<p>Amount to be paid : { payAmount }</p>
 							{/* <p>Amount to be paid : { calculatePayAmount(leadingTeams?.filter(team => isSingleMemberOutsiderTeam(team)).length,
 	leadingTeams?.filter(team => !isSingleMemberOutsiderTeam(team)).length)}</p> */}
