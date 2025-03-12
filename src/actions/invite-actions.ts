@@ -9,170 +9,168 @@ import { User } from "@/models/user.model";
 
 // Send team invite
 export async function sendTeamInviteAction({
-	teamId,
-	inviteeEmail,
+  teamId,
+  inviteeEmail,
 }: {
-	teamId: string;
-	inviteeEmail: string;
+  teamId: string;
+  inviteeEmail: string;
 }) {
-	try {
-		await connectToDatabase();
+  try {
+    await connectToDatabase();
 
-		const user = await getUser();
-		if (!user) {
-			throw new Error("User not found");
-		}
+    const user = await getUser();
+    if (!user) {
+      throw new Error("User not found");
+    }
 
-		// 1. Verify current user is team leader
-		const team = await Team.findById(teamId);
-		if (!team) {
-			throw new Error(`Team with ID ${teamId} not found`);
-		}
-		if (team.leader !== user.email) {
-			throw new Error("Only the team leader can send invites");
-		}
+    // 1. Verify current user is team leader
+    const team = await Team.findById(teamId);
+    if (!team) {
+      throw new Error(`Team with ID ${teamId} not found`);
+    }
+    if (team.leader !== user.email) {
+      throw new Error("Only the team leader can send invites");
+    }
 
-		// 2. Verify team has space for more members
-		if (team.members.length >= team.size) {
-			throw new Error("Team is already full");
-		}
+    // 2. Verify team has space for more members
+    if (team.members.length >= team.size) {
+      throw new Error("Team is already full");
+    }
 
-		// 3. Create invite record in database
-		const newInvite = new Invitation({
-			teamId: team._id,
-			inviterEmail: user.email,
-			inviteeEmail: inviteeEmail,
-			status: "PENDING",
-		});
-		const savedInvite = await newInvite.save();
+    // 3. Create invite record in database
+    const newInvite = new Invitation({
+      teamId: team._id,
+      inviterEmail: user.email,
+      inviteeEmail: inviteeEmail,
+      status: "PENDING",
+    });
+    const savedInvite = await newInvite.save();
 
-		// 4. Append inviteId to team's invites
-		team.invites.push(savedInvite._id);
-		await team.save();
+    // 4. Append inviteId to team's invites
+    team.invites.push(savedInvite._id);
+    await team.save();
 
-		return JSON.parse(
-			JSON.stringify({ success: true, invite: savedInvite })
-		);
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(`Failed to send invite: ${error.message}`);
-		} else {
-			throw new Error("Failed to send invite due to an unknown error");
-		}
-	}
+    return JSON.parse(JSON.stringify({ success: true, invite: savedInvite }));
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Failed to send invite: ${error.message}`);
+    } else {
+      throw new Error("Failed to send invite due to an unknown error");
+    }
+  }
 }
 
 export async function cancelInviteAction(inviteId: string) {
-	try {
-		await connectToDatabase();
+  try {
+    await connectToDatabase();
 
-		// Find the invite
-		const invite = await Invitation.findById(inviteId);
-		if (!invite) {
-			throw new Error(`Invite with ID ${inviteId} not found`);
-		}
+    // Find the invite
+    const invite = await Invitation.findById(inviteId);
+    if (!invite) {
+      throw new Error(`Invite with ID ${inviteId} not found`);
+    }
 
-		// Verify the current user is the team leader
-		const team = await Team.findById(invite.teamId);
-		if (!team) {
-			throw new Error(`Team with ID ${invite.teamId} not found`);
-		}
+    // Verify the current user is the team leader
+    const team = await Team.findById(invite.teamId);
+    if (!team) {
+      throw new Error(`Team with ID ${invite.teamId} not found`);
+    }
 
-		// Update the invite status to "CANCELED"
-		invite.status = "CANCELED";
-		await invite.save();
+    // Update the invite status to "CANCELED"
+    invite.status = "CANCELED";
+    await invite.save();
 
-		return { success: true };
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(`Failed to cancel invite: ${error.message}`);
-		} else {
-			throw new Error("Failed to cancel invite due to an unknown error");
-		}
-	}
+    return { success: true };
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Failed to cancel invite: ${error.message}`);
+    } else {
+      throw new Error("Failed to cancel invite due to an unknown error");
+    }
+  }
 }
 
 export async function acceptInviteAction(inviteId: string) {
-	try {
-		await connectToDatabase();
+  try {
+    await connectToDatabase();
 
-		const invite = await Invitation.findById(inviteId);
-		if (!invite) {
-			throw new Error(`Invite with ID ${inviteId} not found`);
-		}
+    const invite = await Invitation.findById(inviteId);
+    if (!invite) {
+      throw new Error(`Invite with ID ${inviteId} not found`);
+    }
 
-		const team = await Team.findById(invite.teamId);
-		if (!team) {
-			throw new Error(`Team with ID ${invite.teamId} not found`);
-		}
+    const team = await Team.findById(invite.teamId).populate("event");
+    if (!team) {
+      throw new Error(`Team with ID ${invite.teamId} not found`);
+    }
 
-		// Add inviteeEmail to members array of Team
-		if (team.members.includes(invite.inviteeEmail)) {
-			throw new Error("Invitee is already a member of the team");
-		}
-		
-		// Find the invitee user and append the teamId to the user.teams array
-		const inviteeUser = await User.findOne({ email: invite.inviteeEmail });
-		if (!inviteeUser) {
-			throw new Error(
-				`Invitee with email ${invite.inviteeEmail} not found`
-			);
-		}
+    // Add inviteeEmail to members array of Team
+    if (team.members.includes(invite.inviteeEmail)) {
+      throw new Error("Invitee is already a member of the team");
+    }
 
-		// Get all the events that the user has registered for
-        const userEvents = await Promise.all(
-            inviteeUser.teams.map(async (teamId:string) => {
-                const team = await Team.findById(teamId).populate('event');
-                return team.event;
-            })
-        );
+    // Find the invitee user and append the teamId to the user.teams array
+    const inviteeUser = await User.findOne({ email: invite.inviteeEmail });
+    if (!inviteeUser) {
+      throw new Error(`Invitee with email ${invite.inviteeEmail} not found`);
+    }
 
-		// Check if the user has already registered for the event if yes, then throw an error
-		if (userEvents.some(event => event.equals(team.event))) {
-			throw new Error("You have already registered for this event.");
-		}
-		
-		if (inviteeUser.teams.length >= 7) {
-			throw new Error("You are not allowed to register for more than 7 events.");
-        }
-		
-		team.members.push(invite.inviteeEmail);
-		await team.save();
+    // Get all the events that the user has registered for
+    const userEvents = await Promise.all(
+      inviteeUser.teams.map(async (teamId: string) => {
+        const userTeam = await Team.findById(teamId).populate("event");
+        return userTeam.event;
+      })
+    );
 
-		inviteeUser.teams = [...inviteeUser.teams, team._id];
-		await inviteeUser.save();
+    // Check if the user has already registered for the event if yes, then throw an error
+    if (userEvents.some((event) => event.equals(team.event))) {
+      throw new Error("You have already registered for this event.");
+    }
 
-		invite.status = "ACCEPTED";
-		await invite.save();
+    if (inviteeUser.teams.length >= 7) {
+      throw new Error(
+        "You are not allowed to register for more than 7 events."
+      );
+    }
 
-		return { success: true };
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(`Failed to accept invite: ${error.message}`);
-		} else {
-			throw new Error("Failed to accept invite due to an unknown error");
-		}
-	}
+    team.members.push(invite.inviteeEmail);
+    await team.save();
+
+    inviteeUser.teams = [...inviteeUser.teams, team._id];
+    await inviteeUser.save();
+
+    invite.status = "ACCEPTED";
+    await invite.save();
+
+    return { success: true };
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Failed to accept invite: ${error.message}`);
+    } else {
+      throw new Error("Failed to accept invite due to an unknown error");
+    }
+  }
 }
 
 export async function rejectInviteAction(inviteId: string) {
-	try {
-		await connectToDatabase();
+  try {
+    await connectToDatabase();
 
-		const invite = await Invitation.findById(inviteId);
-		if (!invite) {
-			throw new Error(`Invite with ID ${inviteId} not found`);
-		}
+    const invite = await Invitation.findById(inviteId);
+    if (!invite) {
+      throw new Error(`Invite with ID ${inviteId} not found`);
+    }
 
-		invite.status = "REJECTED";
-		await invite.save();
+    invite.status = "REJECTED";
+    await invite.save();
 
-		return { success: true };
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(`Failed to reject invite: ${error.message}`);
-		} else {
-			throw new Error("Failed to reject invite due to an unknown error");
-		}
-	}
+    return { success: true };
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Failed to reject invite: ${error.message}`);
+    } else {
+      throw new Error("Failed to reject invite due to an unknown error");
+    }
+  }
 }
