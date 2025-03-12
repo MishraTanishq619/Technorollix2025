@@ -113,64 +113,69 @@ const Payments = ({
 								<CardTitle>Transactions</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<Table>
-									<TableHeader>
-										<TableRow>
-											<TableHead>
-												Transaction ID
-											</TableHead>
-											<TableHead>
-												Specified Amount
-											</TableHead>
-											<TableHead>TimeStamp</TableHead>
-											<TableHead>
-												Amount Recieved at Admin
-											</TableHead>
-											<TableHead>
-												Acknowledgement by Admin
-											</TableHead>
-										</TableRow>
-									</TableHeader>
-									<TableBody>
-										{transactionFetchData?.map(
-											(transaction) => (
-												<TableRow
-													key={
-														transaction.transactionId
-													}
-												>
-													<TableCell>
-														{
+								{transactionFetchData &&
+								transactionFetchData?.length > 0 ? (
+									<Table>
+										<TableHeader>
+											<TableRow>
+												<TableHead>
+													Transaction ID
+												</TableHead>
+												<TableHead>
+													Specified Amount
+												</TableHead>
+												<TableHead>TimeStamp</TableHead>
+												<TableHead>
+													Amount Recieved at Admin
+												</TableHead>
+												<TableHead>
+													Acknowledgement by Admin
+												</TableHead>
+											</TableRow>
+										</TableHeader>
+										<TableBody>
+											{transactionFetchData?.map(
+												(transaction) => (
+													<TableRow
+														key={
 															transaction.transactionId
 														}
-													</TableCell>
-													<TableCell>
-														Rs.{" "}
-														{
-															transaction.currentPayAmount
-														}
-													</TableCell>
-													<TableCell>
-														{new Date(
-															transaction.createdAt
-														).toLocaleString()}
-													</TableCell>
-													<TableCell>
-														Rs.{" "}
-														{
-															transaction.amountAtAdmin
-														}
-													</TableCell>
-													<TableCell>
-														{transaction.acknowledgementByAdmin
-															? "Acknowledged"
-															: "Pending"}
-													</TableCell>
-												</TableRow>
-											)
-										)}
-									</TableBody>
-								</Table>
+													>
+														<TableCell>
+															{
+																transaction.transactionId
+															}
+														</TableCell>
+														<TableCell>
+															Rs.{" "}
+															{
+																transaction.currentPayAmount
+															}
+														</TableCell>
+														<TableCell>
+															{new Date(
+																transaction.createdAt
+															).toLocaleString()}
+														</TableCell>
+														<TableCell>
+															Rs.{" "}
+															{
+																transaction.amountAtAdmin
+															}
+														</TableCell>
+														<TableCell>
+															{transaction.acknowledgementByAdmin
+																? "Acknowledged"
+																: "Pending"}
+														</TableCell>
+													</TableRow>
+												)
+											)}
+										</TableBody>
+									</Table>
+								) : (
+									<p>No transactions found</p>
+								)}
 							</CardContent>
 						</Card>
 					</CardContent>
@@ -198,6 +203,9 @@ const Payments = ({
 							Click Here
 						</a>{" "}
 						to make the payment:
+					</p>
+					<p>
+					Note: Please fill the same email id as you have used for signup.
 					</p>
 					<div className="flex justify-center my-4">
 						{/* Replace with actual QR code or payment link */}

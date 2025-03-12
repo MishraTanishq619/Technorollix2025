@@ -459,82 +459,125 @@ const DashboardPage = () => {
 
 			<Card className="mb-6">
 				<CardHeader>
-					<CardTitle>Payments Section</CardTitle>
+					<CardTitle className="flex justify-between">
+						Payments Section
+						<HoverCard>
+							<HoverCardTrigger>
+								<button className="text-gray-600 underline font-thin text-sm">
+									View Fee Structure
+								</button>
+							</HoverCardTrigger>
+							<HoverCardContent className="w-72 p-4 bg-white shadow-lg rounded-lg">
+								<div className="text-sm text-gray-700">
+									<p>Payment Structure:</p>
+									<ul className="list-disc pl-4">
+										<li>
+											Sum of both teams &gt;= 4: Rs. 499
+										</li>
+										<li>Individual Schema:</li>
+										<ul className="list-disc pl-8">
+											<li>1 team: Rs. 99</li>
+											<li>2 or 3 teams: Rs. 199</li>
+										</ul>
+										<li>Team Schema:</li>
+										<ul className="list-disc pl-8">
+											<li>1 team: Rs. 299</li>
+											<li>2 teams: Rs. 299 * 2</li>
+											<li>3 teams: Rs. 299 * 3</li>
+										</ul>
+									</ul>
+									<p>
+										If your team have any outsiders, then payment is required.
+									</p>
+									<p>
+										If the event&apos;s team size is 1, then it
+										is considered an individual event.
+										Otherwise, it is considered a team
+										event.
+									</p>
+									<br />
+									<p>Note: Only leaders are needed to pay the fee.</p>
+								</div>
+							</HoverCardContent>
+						</HoverCard>
+					</CardTitle>
 				</CardHeader>
 				<CardContent>
-				<HoverCard>
-		<HoverCardTrigger>
-		  <button className="text-gray-600 underline font-thin text-sm">View Fee Structure</button>
-		</HoverCardTrigger>
-		<HoverCardContent className="w-72 p-4 bg-white shadow-lg rounded-lg">
-		  <div className="text-sm text-gray-700">
-			<p className="mb-2 font-semibold">Registration Fee structure for outsider participant:</p>
-			
-			<p className="font-semibold">For Individual Registration:</p>
-			<ul className="list-disc list-inside pl-4 mb-4">
-			  <li>1 event - ₹99</li>
-			  <li>3 events - ₹199</li>
-			  <li>4-7 events - ₹499</li>
-			</ul>
-			
-			<p className="font-semibold">For Team Registration:</p>
-			<ul className="list-disc list-inside pl-4">
-			  <li>₹299 per Event</li>
-			  <li>4-7 events - ₹499</li>
-			</ul>
-		  </div>
-		</HoverCardContent>
-	  </HoverCard>
-				{MergedleadingEvents.length > 0 && 
-				<Table>
-                        <TableHeader>
-                            <TableRow>
-                                <TableHead>Event Name</TableHead>
-                                <TableHead>Participating subevents</TableHead>
-                                <TableHead>Type of pay scheme</TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-							{MergedleadingEvents.map((event, k) => {
-                                    return (
-                                        <TableRow key={k}>
-                                            <TableCell>{event.eventName}</TableCell>
-                                            <TableCell>{event.teams.length}</TableCell>
-                                            <TableCell>{event.individualSchema ? "Individual" : "Team"}</TableCell>
-                                        </TableRow>
-                                    );
-                                })}
-                        </TableBody>
-					</Table>
-				}
+					{participatingTeamsLoading ?
+						<p className="text-center text-muted-foreground">
+							Loading Participating Events...
+						</p>
+						:
+						(MergedleadingEvents.length > 0 ? (
+							<Table>
+								<TableHeader>
+									<TableRow>
+										<TableHead>Event Name</TableHead>
+										<TableHead>
+											Participating subevents
+										</TableHead>
+										<TableHead>Type of pay scheme</TableHead>
+									</TableRow>
+								</TableHeader>
+								<TableBody>
+									{MergedleadingEvents.map((event, k) => {
+										return (
+											<TableRow key={k}>
+												<TableCell>
+													{event.eventName}
+												</TableCell>
+												<TableCell>
+													{event.teams.length}
+												</TableCell>
+												<TableCell>
+													{event.individualSchema
+														? "Individual"
+														: "Team"}
+												</TableCell>
+											</TableRow>
+										);
+									})}
+								</TableBody>
+							</Table>
+						) : (
+							<p>No payment is required</p>
+						))}
 					<br />
-					{payAmount > 0 && 
-					<>
-					<div className=" flex justify-between">
-						<div>
-							<p>Total Individual schema : {MergedleadingEvents?.filter(event => event.individualSchema).length}</p>
-							<p>Total Team schema : {MergedleadingEvents?.filter(event => !event.individualSchema).length}</p>
+					{payAmount > 0 && (
+						<>
+							<div className=" flex justify-between">
+								<div>
+									<p>
+										Total Individual schema :{" "}
+										{
+											MergedleadingEvents?.filter(
+												(event) =>
+													event.individualSchema
+											).length
+										}
+									</p>
+									<p>
+										Total Team schema :{" "}
+										{
+											MergedleadingEvents?.filter(
+												(event) =>
+													!event.individualSchema
+											).length
+										}
+									</p>
 
-							{/* <p>Total Individual schema : {leadingTeamsDummy?.filter(team => isSingleMemberOutsiderTeam(team)).length}</p>
-							<p>Total Team schema : {leadingTeamsDummy?.filter(team => !isSingleMemberOutsiderTeam(team)).length}</p> */}
-							
-							<p>Amount to be paid : { payAmount }</p>
-							{/* <p>Amount to be paid : { calculatePayAmount(leadingTeams?.filter(team => isSingleMemberOutsiderTeam(team)).length,
-	leadingTeams?.filter(team => !isSingleMemberOutsiderTeam(team)).length)}</p> */}
-						</div>
-						<div>
-							{/* Here, give a "Pay" button. This will open a modal.
-								the modal should show a Scan QR or Click the link, provide space for that.
-								At the top of modal, give a note saying that After the payment is done, transactionId will be sent to your mail via eassbuzz.
-								You need to fill that in the input given in user dashboard.
+									<p>Amount to be paid : {payAmount}</p>
+								</div>
+								<div>
 
-								So, give a button of "Add TransactionId" here. This will open its modal, should have an input box and confirm button.
-								This will call "addTransactionIdAction".
-							*/}
-						</div>
-					</div>
-					<Payments payAmount={payAmount} userEmail={userData?.email} />
-					</>}
+								</div>
+							</div>
+							<Payments
+								payAmount={payAmount}
+								userEmail={userData?.email}
+							/>
+						</>
+					)}
 				</CardContent>
 			</Card>
 
