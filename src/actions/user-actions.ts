@@ -90,6 +90,30 @@ export const userLogin = async (
 	);
 };
 
+export const resetPassword = async (email: string, newPassword: string) => {
+	try {
+		await connectToDatabase();
+
+		// Find user by email
+		const user = await User.findOne({ email });
+
+		if (!user) {
+			throw new Error("User not found");
+		}
+
+		user.password = newPassword;
+		await user.save();
+
+		return JSON.parse(JSON.stringify({ success: true }));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to reset password: ${error.message}`);
+		} else {
+			throw new Error("Failed to reset password");
+		}
+	}
+};
+
 export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
 	await connectToDatabase();
 
