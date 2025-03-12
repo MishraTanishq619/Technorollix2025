@@ -42,12 +42,14 @@ export const logout = async (): Promise<void> => {
 
 
 export const getMergedEvents = (participatingTeamsData: any[], userEmail: string) => {
-	const leadingTeams = participatingTeamsData.filter(
-		(team: any) => team.leader.email === userEmail
+	const leadingTeamsWithOutsiders = participatingTeamsData.filter(
+		(team: any) => team.leader.email === userEmail && team.members.some((member: any) => member.isOutsider)
 	);
-	console.log(leadingTeams);
+	console.log("y1 leadingTeamsWithOutsiders :",leadingTeamsWithOutsiders);
 
-	const eventIds = leadingTeams.map((team) => team.event._id);
+
+
+	const eventIds = leadingTeamsWithOutsiders.map((team) => team.event._id);
 	const eventNames: any = [];
 
 	eventSubEventData.events.forEach((event) => {
@@ -66,7 +68,7 @@ export const getMergedEvents = (participatingTeamsData: any[], userEmail: string
 	const mergedTeamsArray: any[] = [];
 	const mergedTeams: any = {};
 
-	leadingTeams.forEach((team) => {
+	leadingTeamsWithOutsiders.forEach((team) => {
 		const eventId = team.event._id;
 		const eventName = eventNames.find((name: any) =>
 			eventSubEventData.events.some(
