@@ -469,21 +469,18 @@ const DashboardPage = () => {
 							</HoverCardTrigger>
 							<HoverCardContent className="w-72 p-4 bg-white shadow-lg rounded-lg">
 								<div className="text-sm text-gray-700">
-									<p>Payment Structure:</p>
+									<p>Registration Fee structure:</p>
 									<ul className="list-disc pl-4">
-										<li>
-											Sum of both teams &gt;= 4: Rs. 499
-										</li>
-										<li>Individual Schema:</li>
+										<li>For Individual Registration:</li>
 										<ul className="list-disc pl-8">
-											<li>1 team: Rs. 99</li>
-											<li>2 or 3 teams: Rs. 199</li>
+											<li>1 event: Rs. 99</li>
+											<li>2 or 3 events: Rs. 199</li>
+											<li>4 to 7 events: Rs. 499</li>
 										</ul>
-										<li>Team Schema:</li>
+										<li>For Team Registration:</li>
 										<ul className="list-disc pl-8">
-											<li>1 team: Rs. 299</li>
-											<li>2 teams: Rs. 299 * 2</li>
-											<li>3 teams: Rs. 299 * 3</li>
+											<li>per event: Rs. 299</li>
+											<li>4 to 7 events: Rs. 499</li>
 										</ul>
 									</ul>
 									<p>
