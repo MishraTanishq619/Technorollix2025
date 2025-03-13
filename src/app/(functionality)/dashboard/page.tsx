@@ -575,6 +575,10 @@ const DashboardPage = () => {
 							/>
 						</>
 					)}
+					<p className="text-sm text-center text-muted-foreground mt-4">
+						Note: Payments are non-refundable. Try to do payment after completing all the team buildings. <br />
+						For any doubts or queries related to payments, please contact this number : +91 79-70834551
+					</p>
 				</CardContent>
 			</Card>
 
