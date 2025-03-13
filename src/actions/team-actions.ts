@@ -76,7 +76,7 @@ export async function getParticipatingTeams() {
 				const members = await User.find({
 					email: { $in: team.members },
 				}).select("fullName email isOutsider").lean<{ fullName: string; email: string; isOutsider: boolean }[]>();
-				const individualSchema = team.size == 1 && leader?.isOutsider;
+				const individualSchema = team.members.length == 1 && leader?.isOutsider;
 				return {
 					...team,
 					members,

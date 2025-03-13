@@ -575,6 +575,9 @@ const DashboardPage = () => {
 							/>
 						</>
 					)}
+					<p className="text-sm text-center text-muted-foreground mt-4">
+						Note: Payments are non-refundable. Try to do payment after completing all the team buildings.
+					</p>
 				</CardContent>
 			</Card>
 
