@@ -14,6 +14,7 @@ import {
 } from "@/actions/event-actions";
 import { IEvent } from "@/models/event.model";
 import { useRouter } from "next/navigation";
+import { getUser } from "@/actions/user-actions";
 // import Image from "next/image";
 
 export default function EventsSelection() {
@@ -21,6 +22,7 @@ export default function EventsSelection() {
 	const [registeredEvents, setRegisteredEvents] = useState<string[]>([]);
 	const [pendingInvites, setPendingInvites] = useState<string[]>([]);
 	const [allEvents, setAllEvents] = useState<IEvent[]>([]);
+	const [isOutsider, setIsOutsider] = useState<boolean>(true); // Default to true for outsiders
 
 	const router = useRouter();
 
@@ -61,7 +63,18 @@ export default function EventsSelection() {
 		fetchAllEventsFn();
 		fetchRegisteredEventsFn();
 		fetchPendingInvitesFn();
+		fetchUserStatus();
 	}, []);
+
+	// Fetch user status (Insider/Outsider)
+	const fetchUserStatus = async () => {
+		try {
+			const user = await getUser();
+			setIsOutsider(user?.isOutsider ?? true); // Default to true if not available
+		} catch (error) {
+			console.error("Failed to fetch user status", error);
+		}
+	};
 
 	useEffect(() => {
 		if (allEventsData) {
@@ -208,13 +221,13 @@ export default function EventsSelection() {
 						})}
 					</div>
 
-					<p className="my-2 text-gray-300 text-center">Note: One participant can participate in atmost 7 SubEvents.</p>
+					{isOutsider && <p className="my-2 text-gray-300 text-center">Note: One participant can participate in atmost 7 SubEvents.</p>}
 
 					<div className="flex justify-center">
 						<Button
 							onClick={handleSubmit}
 							disabled={
-								submitLoading || selectedEvents.length === 0 || selectedEvents?.length + registeredEvents?.length > 7
+								submitLoading || selectedEvents.length === 0 || (isOutsider && selectedEvents?.length + registeredEvents?.length > 7)
 							}
 							className="w-full max-w-md"
 						>

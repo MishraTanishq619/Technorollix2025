@@ -121,9 +121,10 @@ export async function submitEventsAction(data: { eventIds: string[] }) {
 			throw new Error("User not found");
 		}
 
-		if (existingUser.teams.length + data.eventIds.length > 7) {
-            throw new Error("You are not allowed to register for more than 7 events.");
-        }
+		if (existingUser.isOutsider && (existingUser.teams.length + data.eventIds.length > 7)) {
+			throw new Error("You are not allowed to register for more than 7 events.");
+		}
+		
 
 		// Loop over the eventIds
 		for (const eventId of data.eventIds) {
