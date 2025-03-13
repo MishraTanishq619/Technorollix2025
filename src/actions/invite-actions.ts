@@ -132,8 +132,8 @@ export async function acceptInviteAction(inviteId: string) {
 			throw new Error("You have already registered for this event.");
 		}
 		
-		if (inviteeUser.teams.length >= 7) {
-			throw new Error("You are not allowed to register for more than 7 events.");
+		if (inviteeUser.isOutsider && inviteeUser.teams.length >= 7) {
+			throw new Error("Outsider Participants are not allowed to register for more than 7 events.");
         }
 		
 		team.members.push(invite.inviteeEmail);
