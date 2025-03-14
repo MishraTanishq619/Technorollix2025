@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import WhyParticipate from "@/components/sub-component/why-participate";
@@ -9,6 +9,7 @@ import { PiPathBold } from "react-icons/pi";
 import { FaAppStore } from "react-icons/fa";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const rules = [
@@ -51,6 +52,14 @@ const Page = () => {
     },
   ];
 
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("TECHLAB").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+  
+
   return (
     <div className="relative flex flex-col">
       {/* Background Image */}
@@ -68,7 +77,7 @@ const Page = () => {
       <section>
         <EventIntro
           imageUrl="/techno-events-logo/techlab.png"
-          registrations={0}
+          registrations={registrationCount}
           pricepool={45000}
           description="Tech lab is the flagship event of the biggest tech festival in central India, TECHNOROLLIX. It’s a vibrant showcase of innovation and ingenuity, where the brightest minds from various universities unleash their creative potential through their self-developed models. Creating a technical model presentation involves effectively communicating the details, functionality, and significance of a technical model to a diverse audience, which may include technical and non-technical stakeholders. This platform also opens doors to better funding opportunities for these innovative minds, paving the way to a future breakthrough."
           time="20-03-25 ,10:00 am"

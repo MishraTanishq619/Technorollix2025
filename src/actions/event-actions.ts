@@ -6,6 +6,7 @@ import { getUser } from "./user-actions";
 import { ITeam, Team } from "@/models/team.model";
 import { Invitation } from "@/models/invitation.model";
 import { IUser, User } from "@/models/user.model";
+import { eventSubEventData } from "@/data/event-subeventData";
 
 // Fetch all events
 export async function getAllEventsAction() {
@@ -280,6 +281,42 @@ export async function getEventDetailsWithCounts(): Promise<
             throw new Error(`Failed to fetch event details with counts: ${error.message}`);
         } else {
             throw new Error("Failed to fetch event details with counts");
+        }
+    }
+}
+
+
+export async function getRegistrationCount(eventName: string): Promise<number> {
+    try {
+        await connectToDatabase();
+
+        // Find the event in eventSubEventData
+        const event = eventSubEventData.events.find(event => event.eventName === eventName);
+
+        if (!event) {
+            throw new Error(`Event with name ${eventName} not found`);
+        }
+
+        let totalTeams = 0;
+
+        if (event.subEvents.length === 0) {
+            // If the event does not have sub-events, find the number of teams participating in this event
+            const teams = await Team.find({ event: event.event }).lean<ITeam[]>();
+            totalTeams = teams.length;
+        } else {
+            // If the event has sub-events, get the sum of total teams registered in each sub-event
+            for (const subEvent of event.subEvents) {
+                const teams = await Team.find({ event: subEvent.subEvent }).lean<ITeam[]>();
+                totalTeams += teams.length;
+            }
+        }
+
+        return totalTeams;
+    } catch (error) {
+        if (error instanceof Error) {
+            throw new Error(`Failed to fetch registration count for event ${eventName}: ${error.message}`);
+        } else {
+            throw new Error("Failed to fetch registration count for event");
         }
     }
 }
