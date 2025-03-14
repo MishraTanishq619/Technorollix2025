@@ -66,12 +66,12 @@ const Page = () => {
         <div className="flex flex-col md:flex-row justify-evenly gap-8 mx-4 my-32">
           <SubEventCard
             Icon={FaCode}
-            title="Code-Quest"
+            title="Code Challenge"
             description="Showcase your problem-solving skills, logic, and speed as you tackle challenging coding problems. Whether you're a beginner or a pro, this is your chance to impress the judges and compete with the best. Write efficient code, optimize solutions, and prove your mastery—let the challenge begin!"
           />
           <SubEventCard
             Icon={FaPenNib}
-            title="Code Craft"
+            title="Design Master"
             description="Unleash your creativity and craft intuitive, user-friendly designs that stand out. Whether it’s wireframes or full-fledged prototypes, this is your chance to impress the judges and wow the audience. Showcase your design thinking, usability skills, and aesthetic vision—let the challenge begin!"
           />
         </div>
