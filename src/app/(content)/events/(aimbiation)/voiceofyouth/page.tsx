@@ -1,9 +1,11 @@
+"use client";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
-import React from "react";
+import React,{useState,useEffect} from "react";
+import { getRegistrationCount } from "@/actions/event-actions";
 
-const page = () => {
+const Page = () => {
   const managers = [
     {
       imageUrl: "/managers/aimbiation/NishikaAgrawal.jpg",
@@ -22,6 +24,13 @@ const page = () => {
     },
   ];
 
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("VOICE-OF-YOUTH").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="relative container mx-auto px-4">
       {/* Background Image */}
@@ -38,7 +47,7 @@ const page = () => {
       {/* Event Intro */}
       <EventIntro
         imageUrl="/aimbiation-events-logo/voiceofyouth.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={9000}
         description="Step into the intellectual battlefield of Tarkash, where logic meets leadership, and arguments shape innovation. This high-energy debate competition is designed for aspiring managers, entrepreneurs, and business enthusiasts as well as others to challenge conventional wisdom and present groundbreaking perspectives.
        Participants will engage in thought-provoking debates on current business trends, corporate ethics, financial strategies, and emerging market dynamics and also current happening. Whether you're defending or opposing, your ability to think critically, articulate persuasively, and counter strategically will determine your victory."
@@ -267,4 +276,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

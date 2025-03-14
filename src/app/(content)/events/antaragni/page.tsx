@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React,{useEffect,useState} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
@@ -7,6 +8,7 @@ import EventManagers from "@/components/sub-component/event-managers";
 import { FaMusic, FaFilm, FaMicrophone, FaRunning } from "react-icons/fa";
 import Image from "next/image";
 import RoundSection from "@/components/sub-component/RoundSection";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Antaragni = () => {
   const rules = [
@@ -50,6 +52,13 @@ const Antaragni = () => {
     { title: "ROUND 4", description: "FINAL DEMO" },
   ];
 
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("ANTARAGNI").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background Image */}
@@ -67,7 +76,7 @@ const Antaragni = () => {
       <section>
         <EventIntro
           imageUrl="/techno-events-logo/antaragni.png"
-          registrations={20}
+          registrations={registrationCount}
           pricepool={20000}
           description="This event is a vibrant platform for students to showcase their creative talents in a meaningful way. From dancing, singing, and rapping to short film-making and fusion performances, it brings together a variety of art forms on one stage. It is a celebration of passion, creativity, and cultural diversity, allowing students to express themselves through music, movement, and storytelling. Whether performing solo or in groups, participants get a chance to shine, entertain, and inspire."
           time="21-03-25 , 6:00 pm"

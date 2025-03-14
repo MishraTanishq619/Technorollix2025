@@ -1,10 +1,12 @@
+"use client";
 import EventIntro from "@/components/sub-component/event-intro";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import { FaCode, FaPenNib } from "react-icons/fa6";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
 import Link from "next/link";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
@@ -12,6 +14,13 @@ const Page = () => {
     { imageUrl: "/managers/codigo/ritu.jpg", name: "Ritu Singh", contact: 8839463899 },
     { imageUrl: "/managers/codigo/akash.jpg", name: "Akash Kumar ", contact: 7985757151 },
   ];
+
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("CODIGO").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
 
   return (
     <div className="container mx-auto px-4 flex flex-col relative">
@@ -30,7 +39,7 @@ const Page = () => {
       <section className="w-full">
         <EventIntro
           imageUrl="/techno-events-logo/codigo.png"
-          registrations={0}
+          registrations={registrationCount}
           pricepool={20000}
           description="Unlock your coding potential at our University's premier Coding Event!! Participate in challenges, network with peers, and enhance your skills. Whether you are a beginner or a pro, join us for an unforgettable experience of innovation and collaboration."
           time="20-03-25 , 11:00 am"

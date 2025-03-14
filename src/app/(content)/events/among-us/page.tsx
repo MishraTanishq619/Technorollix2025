@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
@@ -9,6 +11,13 @@ const Page = () => {
     { imageUrl: "/dallE.png", name: "Shomya Sinha", contact: 7091799799 },
     { imageUrl: "/managers/Among Us/Mayank Sharma.jpg", name: "Mayank Sharma", contact: 7024189586 },
   ];
+
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("AMONG-US").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
 
   return (
     <div className="relative space-y-10 px-4 py-8">
@@ -26,7 +35,7 @@ const Page = () => {
       {/* Event Intro Section */}
       <EventIntro
         imageUrl="/techno-events-logo/amongus.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={11000}
         time="21-03-25 , 2:00 pm"
         venue="Open Theatre"

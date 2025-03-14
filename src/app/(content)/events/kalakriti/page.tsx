@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import { IoIosCamera } from "react-icons/io";
@@ -10,6 +11,7 @@ import { PiFlowerBold } from "react-icons/pi";
 import { FaFlipboard } from "react-icons/fa6";
 import { TbBottleFilled } from "react-icons/tb";
 import KalakritiSubEvent from "./kalakritisubevent";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const KalaKriti = () => {
   const eventsData = [
@@ -149,6 +151,12 @@ const KalaKriti = () => {
     },
   ];
 
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("KALAKRITI").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
 
   return (
     <div className="relative">
@@ -167,7 +175,7 @@ const KalaKriti = () => {
       <section>
         <EventIntro
           imageUrl="/techno-events-logo/kalakriti.png"
-          registrations={0}
+          registrations={registrationCount}
           pricepool={23000}
           description="Craft is the vehicle for expressing your vision. Craft is the visible edge of Art. Here we are with 'Kalakriti,' which is a unique event driven by our artists' ideas, the context of space, season, and the vibes of the region. You will perceive 'Fiction turning into Reality.' You are going to witness a different field of abstract painting, fine arts photography, sculpture, and many more."
           time="21-03-25 , 11:00 am"

@@ -1,10 +1,12 @@
-import React from "react";
+"use client";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import { BsAward } from "react-icons/bs";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
 import RoundSection from "@/components/sub-component/RoundSection";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 interface Manager {
   imageUrl: string;
@@ -74,6 +76,14 @@ const rounds = [
 ];
 
 const EventPage = () => {
+
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("REELS-AND-ROLES").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="relative container mx-auto px-4">
       {/* Background Image */}
@@ -90,7 +100,7 @@ const EventPage = () => {
       {/* Event Intro Section */}
       <EventIntro
         imageUrl="/aimbiation-events-logo/reelandroles.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={8000}
         description="The School of Management is thrilled to present Reels and Role Plays, an exciting event that combines creativity, photography, cinematography, and management skills. Reels and Role Plays is a unique event where participants will have the opportunity to showcase their photography and cinematography skills by creating short reels on various management-related themes. Additionally, participants will engage in role-plays that simulate real-world management scenarios, such as job interviews, board meetings, and shareholder meetings."
         time="8:00 Am"

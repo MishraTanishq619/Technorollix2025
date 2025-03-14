@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page: React.FC = () => {
   const rules = [
@@ -92,6 +93,12 @@ const Page: React.FC = () => {
         "Engaging, well-managed time, confident delivery, and impactful conclusion.",
     },
   ];
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("NEXGEN-STARTUP").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
 
   return (
     <div className="relative  px-4 py-8 space-y-10">
@@ -110,7 +117,7 @@ const Page: React.FC = () => {
       <section className="mx-auto max-w-5xl">
         <EventIntro
           imageUrl="/aimbiation-events-logo/nexgenstartup.png"
-          registrations={0}
+          registrations={registrationCount}
           pricepool={15000}
           description="Empowering Startups: Your Gateway to Success. Dive into our event tailored for entrepreneurs like you. Discover insider tips, forge valuable connections, and kickstart your business journey. From startup dreams to tangible results, this event is your ultimate resource. Seize this opportunity to fuel your passion and unlock the potential of your startup."
           time="21-03-25, 2:30 PM"

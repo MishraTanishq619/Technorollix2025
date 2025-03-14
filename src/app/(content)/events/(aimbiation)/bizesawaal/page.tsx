@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import RoundSection from "@/components/sub-component/RoundSection";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
@@ -45,6 +46,12 @@ const Page = () => {
     title:"Round 2",
     description:"Offline Round"
 }]
+const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("BIZ-E-SAWAAL").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
 
   return (
     <div className="mt-8">
@@ -63,7 +70,7 @@ const Page = () => {
       <section className="mx-auto max-w-5xl">
         <EventIntro
           imageUrl="/aimbiation-events-logo/bizesawaal.png"
-          registrations={0}
+          registrations={registrationCount}
           pricepool={6000}
           description="Biz E Sawaal is an engaging and competitive quiz event designed to test participants' knowledge of the business world, including finance, economics, startups, and corporate trends."
           time="22-03-25, 1:30 PM."

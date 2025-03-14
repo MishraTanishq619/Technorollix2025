@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import { BsAward } from "react-icons/bs";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
@@ -23,6 +25,14 @@ const Page = () => {
       contact: 9692002521,
     },
   ];
+
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("HACKATHON").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="relative">
       {/* Background */}
@@ -38,7 +48,7 @@ const Page = () => {
       
       <EventIntro
         imageUrl="/techno-events-logo/hackathon.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={50000}
         time="21-03-25, 2:00 - 6:00 pm"
         venue="TB-01"
