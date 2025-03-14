@@ -33,7 +33,7 @@ const Page = () => {
       </div>
       
       <EventIntro
-        venue="BAPUJI CHOWK (OPJU)"
+        venue="BABUJI CHOWK (OPJU)"
         time="21-03-25 , 10:00 am"
         imageUrl="/techno-events-logo/robovation.png"
         registrations={0}
@@ -57,7 +57,7 @@ const Page = () => {
         <SubEventCard
           Icon={BsRobot}
           title="ROBO WAR"
-          description="Robo war is the most exciting challenge of this event. It celebrates the sport of robotic combat through battling machines. This challenge gives youngsters the opportunity to design, build, and control combat robots to demonstrate their creativity, engineering skills, and driving ability. The most rewarding part of designing bots is that students have fun and work together as a team."
+          description="Robo war is the most exciting challenge of this event. It celebrates the sport of robotic combat through battling machines. This challenge gives youngsters the opportunity to design, build, and control combat robots to demonstrate their creativity, engineering skills, and driving ability.The most rewarding part of designing bots is that students have fun and work together as a team."
         />
         <SubEventCard
           Icon={FaFlagCheckered}
