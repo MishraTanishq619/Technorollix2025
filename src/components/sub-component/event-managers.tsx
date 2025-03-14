@@ -16,7 +16,7 @@ const EventManagers: React.FC<EventManagersProps> = ({ managers }) => {
   return (
     <div className="flex flex-col items-center justify-center mb-20 px-4">
       {/* Header */}
-      <div className="w-full max-w-xl h-20 flex items-center justify-center text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl sm:text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
+      <div className="w-full max-w-xl h-20 flex items-center justify-center text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-3xl sm:text-4xl lg:text-5xl font-medium font-['Poppins'] uppercase tracking-[3.75px]">
         EVENT MANAGERS
       </div>
 
