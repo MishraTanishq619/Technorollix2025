@@ -1,10 +1,12 @@
-import React from "react";
+"use client";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import Image from "next/image";
 import RoundSection from "@/components/sub-component/RoundSection";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Aerodrone = () => {
   const rounds = [
@@ -47,6 +49,13 @@ const Aerodrone = () => {
     "Personal Growth: Build confidence and adaptability by stepping out of your comfort zone.",
   ];
 
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("AERODRONE").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background Image */}
@@ -63,7 +72,7 @@ const Aerodrone = () => {
       {/* Event Intro Section */}
       <EventIntro
         imageUrl="/techno-events-logo/aerodrone.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={20000}
         description="A drone racing event that tests Mechanical, Electrical, and CS skills. Participants' drones will undergo rigorous testing in multiple rounds to showcase their UAVs' full potential."
         time="22-03-25 , 4:00 pm"

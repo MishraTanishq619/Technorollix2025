@@ -1,12 +1,14 @@
+"use client";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 // import RulesAndRegulation from "@/components/sub-component/rule-regulation"; // no longer needed here
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import Image from "next/image";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { BsRobot } from "react-icons/bs";
 import { FaFlagCheckered } from "react-icons/fa";
 import { IoFootballOutline } from "react-icons/io5";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [    
@@ -18,6 +20,13 @@ const Page = () => {
 
   // Define the PDF file path (ensure the file is available in your public folder)
   const pdfPath = "/rulebookrobovation.pdf";
+
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("ROBOVATION").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
 
   return (
     <div className="relative flex flex-col">
@@ -36,7 +45,7 @@ const Page = () => {
         venue="BAPUJI CHOWK (OPJU)"
         time="21-03-25 , 10:00 am"
         imageUrl="/techno-events-logo/robovation.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={36000}
         description="OPJU invites you to an electrifying robotics showdown, where innovation meets precision and strategy turns into dominance. Step into Robovation and let your bots conquer the arena!"
       />

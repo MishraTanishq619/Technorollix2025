@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React,{ useState, useEffect } from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
 import RoundSection from "@/components/sub-component/RoundSection";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
@@ -50,6 +51,13 @@ Total Points: 50.`,
     },
   ];
 
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("AD-O-MANIA").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="relative px-4 py-8 space-y-10">
       {/* Background Image */}
@@ -67,7 +75,7 @@ Total Points: 50.`,
       <section className="mx-auto max-w-5xl">
         <EventIntro
           imageUrl="/aimbiation-events-logo/adomania.png"
-          registrations={0}
+          registrations={registrationCount}
           pricepool={8000}
           time="20-03-2025, 11:30 AM"
           venue="Live Class Room (G-15)"

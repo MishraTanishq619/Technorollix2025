@@ -1,8 +1,10 @@
-import React from "react";
+"use client";
+import React,{useEffect,useState} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 // Reusable SectionTitle component
 const SectionTitle = ({ text }: { text: string }) => (
@@ -36,6 +38,13 @@ const BullvsBear = () => {
     "Risk management is key – reckless trading may lead to disqualification.",
     "Top traders will qualify for the final round based on portfolio value and strategy.",
   ];
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("BULLS-VS-BEAR").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
 
   return (
     <div className="relative container mx-auto px-4">
@@ -53,7 +62,7 @@ const BullvsBear = () => {
       {/* Event Intro Section */}
       <EventIntro
         imageUrl="/aimbiation-events-logo/bullvsbear.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={5000}
         description="Virtual trading is a simulation where you can practice buying and selling stocks without using real money. It helps you learn how the stock market works, test strategies, and gain confidence before investing real funds."
         time="20-03-25, 4:00 PM"

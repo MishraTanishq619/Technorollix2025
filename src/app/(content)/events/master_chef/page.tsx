@@ -1,8 +1,10 @@
-import React from "react";
+"use client";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
@@ -30,6 +32,12 @@ const Page = () => {
     "The judges' decision is final.",
     "Winners will be declared on the same day.",
   ];
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("MASTERCHEF").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
 
   return (
     <div className="relative space-y-10 px-4 py-8">
@@ -49,7 +57,7 @@ const Page = () => {
         venue="Cafeteria, Ground Floor"
         time="21-03-25, 10:00 am"
         imageUrl="/techno-events-logo/masterchef.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={9000}
         description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste."
       />

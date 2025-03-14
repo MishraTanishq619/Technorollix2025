@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const rules = [
@@ -28,6 +30,13 @@ const Page = () => {
     { imageUrl: "/managers/OPJU Spotlight Saga/Arjun.jpg", name: "Arjun Agrawal", contact: 7538033333 }
   ];
 
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("OPJU-SPOTLIGHT-SAGA").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background Image */}
@@ -44,7 +53,7 @@ const Page = () => {
       {/* Event Intro Section */}
       <EventIntro
         imageUrl="/techno-events-logo/spotlightsaga.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={6000}
         description="A fun flagship event where participants showcase talents like singing, dancing, comedy, or magic while also predicting their own score. An exact match with the judges' score wins instantly, making it a unique test of skill, confidence, and self-awareness. Entertain, guess, and win."
         time="22-03-25 , 10:30 am"

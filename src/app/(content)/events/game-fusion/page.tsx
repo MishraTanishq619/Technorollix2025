@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import SubEventCard from "@/components/sub-component/sub-event-card";
 import WhyParticipate from "@/components/sub-component/why-participate";
@@ -8,6 +8,7 @@ import EventManagers from "@/components/sub-component/event-managers";
 import { SiPubg, SiValorant } from "react-icons/si";
 import { IoGameController } from "react-icons/io5";
 import { SiFifa } from "react-icons/si";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 import Image from "next/image";
 
@@ -42,6 +43,13 @@ const Page = () => {
     { imageUrl: "/managers/Game Fusion/SHUBHAM.jpg", name: "Shubham Baghel", contact: 6296507314 },
   ];
 
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("GAMEFUSION").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="relative space-y-10 px-4 py-8">
       {/* Background */}
@@ -59,7 +67,7 @@ const Page = () => {
       <section>
         <EventIntro
           imageUrl="/techno-events-logo/gamefusion.png"
-          registrations={0}
+          registrations={registrationCount}
           pricepool={20000}
           description="The LAN event is a high-energy gaming extravaganza designed to bring together the gaming community within our college. It's an immersive experience that transcends traditional gaming, creating a platform for participants to showcase their skills, engage in friendly competition, and celebrate the spirit of gaming."
           time="21-03-25 , 12:00 pm"

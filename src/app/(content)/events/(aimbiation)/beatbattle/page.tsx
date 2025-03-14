@@ -1,8 +1,10 @@
-import React from 'react';
+"use client";
+import React,{useState, useEffect} from 'react';
 import EventIntro from '@/components/sub-component/event-intro';
 import EventManagers from '@/components/sub-component/event-managers';
 import Image from 'next/image';
 import RoundSection from '@/components/sub-component/RoundSection';
+import { getRegistrationCount } from '@/actions/event-actions';
 
 const Page = () => {
   const managers = [
@@ -20,6 +22,12 @@ const Page = () => {
       description: "This will be revealed later"
     },
   ];
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("BEAT-BATTLE").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
 
   return (
     <div className="relative flex flex-col space-y-8 container mx-auto px-4">
@@ -37,7 +45,7 @@ const Page = () => {
       {/* Event Introduction */}
       <EventIntro
         imageUrl="/aimbiation-events-logo/beatbattle.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={7000}
         time="21-03-2025, 2:30 PM"
         venue="Bapuji Chawk"

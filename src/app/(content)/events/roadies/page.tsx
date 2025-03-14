@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
+import React,{useEffect,useState} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Roadies = () => {
   const managers = [
@@ -11,6 +13,13 @@ const Roadies = () => {
       contact: 9078942095,
     },
   ];
+
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("ROADIES").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
 
   return (
     <div className="relative space-y-10 px-4 py-8">
@@ -30,7 +39,7 @@ const Roadies = () => {
         venue="Bus Parking Area"
         time="20-03-25, 1:30 am"
         imageUrl="/techno-events-logo/roadies.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={10000}
         description="Welcome to Roadies, the ultimate test of skill and endurance! Join us at the University for an adrenaline-packed event filled with sports-inspired challenges. From obstacle courses to team relays, Roadies promises to push your limits and ignite your competitive spirit. Are you ready to conquer the road ahead?"
       />

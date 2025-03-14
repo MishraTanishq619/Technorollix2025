@@ -1,10 +1,12 @@
-import React from "react";
+"use client";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import RoundSection from "@/components/sub-component/RoundSection";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import EventManagers from "@/components/sub-component/event-managers";
 import WhyParticipate from "@/components/sub-component/why-participate";
 import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const rules = [
@@ -36,6 +38,13 @@ const Page = () => {
       description: "There will be a single round."
     }]
 
+    const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("IDEATHON").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="space-y-10">
       {/* Background Image Optimized */}
@@ -52,7 +61,7 @@ const Page = () => {
       {/* Event Introduction */}
       <EventIntro
         imageUrl="/techno-events-logo/ideathon.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={18000}
         description="An Ideathon is an engaging brainstorming event where individuals collaborate to address pressing challenges through innovative solutions. Participants work in teams, utilizing design thinking to develop viable ideas across diverse subjects like marketing, philosophy, and science."
         time="20-03-2025, 11:30 AM"

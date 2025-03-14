@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React,{useState,useEffect} from "react";
 import EventIntro from "@/components/sub-component/event-intro";
 import EventManagers from "@/components/sub-component/event-managers";
 import RulesAndRegulation from "@/components/sub-component/rule-regulation";
 import Image from "next/image";
 import RoundSection from "@/components/sub-component/RoundSection";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
   const managers = [
@@ -27,6 +29,14 @@ const Page = () => {
               {title:"ROUND 3",
                 description:"Decode or Die!"}
   ]
+
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("TREASURE-HUNT").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
     <div className="flex flex-col space-y-8">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
@@ -41,7 +51,7 @@ const Page = () => {
 
       <EventIntro
         imageUrl="/aimbiation-events-logo/treasurehunt.png"
-        registrations={0}
+        registrations={registrationCount}
         pricepool={6000}
         time="20-03-25, 2:30 PM"
         venue="Opposite the CDC office gardern"
