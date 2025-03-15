@@ -140,7 +140,7 @@ export default function AccommodationModal({
 			departureDate: undefined,
 			departureTime: "",
 			additionalDetails: "",
-			universityName: "",
+			universityName: "NA",
 			gender: "Male",
 		},
 	});
@@ -374,26 +374,6 @@ export default function AccommodationModal({
 								/>
 							</div>
 
-							{/* Additional Details */}
-							<FormField
-								control={form.control}
-								name="additionalDetails"
-								render={({ field }) => (
-									<FormItem>
-										<FormLabel className="font-medium">
-											Additional Details
-										</FormLabel>
-										<FormControl>
-											<Textarea
-												{...field}
-												placeholder="Any special requirements or notes"
-												className="min-h-24 resize-none"
-											/>
-										</FormControl>
-										<FormMessage />
-									</FormItem>
-								)}
-							/>
 
 							{/* University Name */}
 							<FormField
@@ -435,6 +415,29 @@ export default function AccommodationModal({
 									</FormItem>
 								)}
 							/>
+
+
+							{/* Additional Details */}
+							<FormField
+								control={form.control}
+								name="additionalDetails"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel className="font-medium">
+											Additional Details
+										</FormLabel>
+										<FormControl>
+											<Textarea
+												{...field}
+												placeholder="Any special requirements or notes"
+												className="min-h-24 resize-none"
+											/>
+										</FormControl>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+
 						</div>
 
 						<DialogFooter className="gap-2 sm:gap-0">
