@@ -92,11 +92,11 @@ export default function AccommodationDataPage() {
 								<TableHead className="w-1/6">User Full Name</TableHead>
 								<TableHead className="w-1/6">User Email</TableHead>
 								<TableHead className="w-1/6">User Mobile Number</TableHead>
+								<TableHead className="w-1/6">University Name</TableHead>
+								<TableHead className="w-1/6">Gender</TableHead>
 								<TableHead className="w-1/6">Arrival Time</TableHead>
 								<TableHead className="w-1/6">Departure Time</TableHead>
 								<TableHead className="w-1/6">Additional Details</TableHead>
-								<TableHead className="w-1/6">University Name</TableHead>
-								<TableHead className="w-1/6">Gender</TableHead>
 							</TableRow>
 						</TableHeader>
 						<TableBody>
@@ -112,6 +112,12 @@ export default function AccommodationDataPage() {
 										{user.mobileNumber}
 									</TableCell>
 									<TableCell className="w-1/6">
+										{accommodation.universityName}
+									</TableCell>
+									<TableCell className="w-1/6">
+										{accommodation.gender}
+									</TableCell>
+									<TableCell className="w-1/6">
 										{new Date(accommodation.arrivalTime).toLocaleString()}
 									</TableCell>
 									<TableCell className="w-1/6">
@@ -119,12 +125,6 @@ export default function AccommodationDataPage() {
 									</TableCell>
 									<TableCell className="w-1/6">
 										{accommodation.additionalDetails}
-									</TableCell>
-									<TableCell className="w-1/6">
-										{accommodation.universityName}
-									</TableCell>
-									<TableCell className="w-1/6">
-										{accommodation.gender}
 									</TableCell>
 								</TableRow>
 							))}
