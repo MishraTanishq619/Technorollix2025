@@ -30,7 +30,6 @@ import Payments from "@/components/payments";
 import { getMergedEvents } from "@/lib/utils";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 
-
 const DashboardPage = () => {
 	const router = useRouter();
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -81,8 +80,6 @@ const DashboardPage = () => {
 		fn: accommodationFetchFn,
 	} = useFetch(getAccommodationDetailsAction);
 
-	// const [payAmount, setPayAmount] = useState(0)
-
 	// Create a function to calculate the payAmount. 
 	// This will input number of teams with individualSchema and number of teamSchema
 	// if sum of both teams >= 4 : 499
@@ -94,38 +91,37 @@ const DashboardPage = () => {
 		// if number of teamSchema teams == 2 : 299 * 2
 		// if number of teamSchema teams == 3 : 299 * 3
 	
-		function calculatePayAmount(individualSchemaCount: number, teamSchemaCount: number): number {
-			const totalTeams = individualSchemaCount + teamSchemaCount;
-		
-			// If the sum of both teams is >= 4, return 499
-			if (totalTeams >= 4) {
-				return 499;
-			}
-		
-			let payAmount = 0;
-		
-			// Calculate pay amount for individualSchema teams
-			if (individualSchemaCount === 1) {
-				payAmount += 99;
-			} else if (individualSchemaCount === 2 || individualSchemaCount === 3) {
-				payAmount += 199;
-			}
-		
-			// Calculate pay amount for teamSchema teams
-			if (teamSchemaCount === 1) {
-				payAmount += 299;
-			} else if (teamSchemaCount === 2) {
-				payAmount += 299 * 2;
-			} else if (teamSchemaCount === 3) {
-				payAmount += 299 * 3;
-			}
-		
-			return payAmount;
+	function calculatePayAmount(individualSchemaCount: number, teamSchemaCount: number): number {
+		const totalTeams = individualSchemaCount + teamSchemaCount;
+	
+		// If the sum of both teams is >= 4, return 499
+		if (totalTeams >= 4) {
+			return 499;
 		}
+	
+		let payAmount = 0;
+	
+		// Calculate pay amount for individualSchema teams
+		if (individualSchemaCount === 1) {
+			payAmount += 99;
+		} else if (individualSchemaCount === 2 || individualSchemaCount === 3) {
+			payAmount += 199;
+		}
+	
+		// Calculate pay amount for teamSchema teams
+		if (teamSchemaCount === 1) {
+			payAmount += 299;
+		} else if (teamSchemaCount === 2) {
+			payAmount += 299 * 2;
+		} else if (teamSchemaCount === 3) {
+			payAmount += 299 * 3;
+		}
+	
+		return payAmount;
+	}
 
-			
-	const [MergedleadingEvents, setMergedLeadingEvents] = useState<any[]>([])
-	const [payAmount, setPayAmount] = useState(0)
+	const [MergedleadingEvents, setMergedLeadingEvents] = useState<any[]>([]);
+	const [payAmount, setPayAmount] = useState(0);
 
 	useEffect(() => {
 		if (participatingTeamsData) {
@@ -135,17 +131,13 @@ const DashboardPage = () => {
 
 			setPayAmount(
 				calculatePayAmount(
-					mergedTeamsArray?.filter((event:any) => event.individualSchema)
-						.length,
-					mergedTeamsArray?.filter((event:any) => !event.individualSchema)
-						.length
+					mergedTeamsArray?.filter((event: any) => event.individualSchema).length,
+					mergedTeamsArray?.filter((event: any) => !event.individualSchema).length
 				)
 			);
 			setMergedLeadingEvents(mergedTeamsArray);
-			
 		}
-	
-	}, [participatingTeamsData])
+	}, [participatingTeamsData]);
 	
 	useEffect(() => {
 		if (acceptInvitationError) {
@@ -259,9 +251,16 @@ const DashboardPage = () => {
 									</p>
 									<p>
 										Additional Details:{" "}
-										{
-											accommodationFetchData.additionalDetails
-										}
+										{accommodationFetchData.additionalDetails}
+									</p>
+									{/* New Fields */}
+									<p>
+										University Name:{" "}
+										{accommodationFetchData.universityName}
+									</p>
+									<p>
+										Gender:{" "}
+										{accommodationFetchData.gender}
 									</p>
 									<Button
 										className="mt-4"
@@ -275,8 +274,7 @@ const DashboardPage = () => {
 								<div>
 									<p>Accommodation not availed.</p>
 									<p>
-										Note: Avail if you are an outsider
-										participant.
+										Note: Avail if you are an outsider participant.
 									</p>
 									<Button
 										className="mt-4"
@@ -456,7 +454,6 @@ const DashboardPage = () => {
 			</div>
 
 			{/* Payments section */}
-
 			<Card className="mb-6">
 				<CardHeader>
 					<CardTitle className="flex justify-between">
@@ -489,8 +486,7 @@ const DashboardPage = () => {
 									<p>
 										If the event&apos;s team size is 1, then it
 										is considered an individual event.
-										Otherwise, it is considered a team
-										event.
+										Otherwise, it is considered a team event.
 									</p>
 									<br />
 									<p>Note: Only leaders are needed to pay the fee.</p>
@@ -500,52 +496,49 @@ const DashboardPage = () => {
 					</CardTitle>
 				</CardHeader>
 				<CardContent>
-					{participatingTeamsLoading ?
+					{participatingTeamsLoading ? (
 						<p className="text-center text-muted-foreground">
 							Loading Participating Events...
 						</p>
-						:
-						(MergedleadingEvents.length > 0 ? (
-							<Table>
-								<TableHeader>
-									<TableRow>
-										<TableHead>Event Name</TableHead>
-										<TableHead>
-											Participating subevents
-										</TableHead>
-										<TableHead>Type of pay scheme</TableHead>
-									</TableRow>
-								</TableHeader>
-								<TableBody>
-									{MergedleadingEvents.map((event, k) => {
-										return (
-											<TableRow key={k}>
-												<TableCell>
-													{event.eventName}
-												</TableCell>
-												<TableCell>
-													{event.teams.length}
-												</TableCell>
-												<TableCell>
-													{event.individualSchema
-														? "Individual"
-														: "Team"}
-												</TableCell>
-											</TableRow>
-										);
-									})}
-								</TableBody>
-							</Table>
-						) : (
-							<p>No payment is required</p>
-						))}
+					) : MergedleadingEvents.length > 0 ? (
+						<Table>
+							<TableHeader>
+								<TableRow>
+									<TableHead>Event Name</TableHead>
+									<TableHead>Participating subevents</TableHead>
+									<TableHead>Type of pay scheme</TableHead>
+								</TableRow>
+							</TableHeader>
+							<TableBody>
+								{MergedleadingEvents.map((event, k) => {
+									return (
+										<TableRow key={k}>
+											<TableCell>
+												{event.eventName}
+											</TableCell>
+											<TableCell>
+												{event.teams.length}
+											</TableCell>
+											<TableCell>
+												{event.individualSchema
+													? "Individual"
+													: "Team"}
+											</TableCell>
+										</TableRow>
+									);
+								})}
+							</TableBody>
+						</Table>
+					) : (
+						<p>No payment is required</p>
+					)}
 					<br />
 					{payAmount > 0 && (
 						<>
 							<div className=" flex justify-between">
 								<div>
 									<p>
-										Total Individual schema :{" "}
+										Total Individual schema:{" "}
 										{
 											MergedleadingEvents?.filter(
 												(event) =>
@@ -554,7 +547,7 @@ const DashboardPage = () => {
 										}
 									</p>
 									<p>
-										Total Team schema :{" "}
+										Total Team schema:{" "}
 										{
 											MergedleadingEvents?.filter(
 												(event) =>
@@ -562,12 +555,9 @@ const DashboardPage = () => {
 											).length
 										}
 									</p>
-
-									<p>Amount to be paid : {payAmount}</p>
+									<p>Amount to be paid: {payAmount}</p>
 								</div>
-								<div>
-
-								</div>
+								<div></div>
 							</div>
 							<Payments
 								payAmount={payAmount}
@@ -577,7 +567,7 @@ const DashboardPage = () => {
 					)}
 					<p className="text-sm text-center text-muted-foreground mt-4">
 						Note: Payments are non-refundable. Try to do payment after completing all the team buildings. <br />
-						For any doubts or queries related to payments, please contact this number : +91 79-70834551
+						For any doubts or queries related to payments, please contact this number: +91 79-70834551
 					</p>
 				</CardContent>
 			</Card>
@@ -659,4 +649,3 @@ const DashboardPage = () => {
 };
 
 export default DashboardPage;
-

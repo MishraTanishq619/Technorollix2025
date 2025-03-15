@@ -5,6 +5,8 @@ interface IAccommodation extends Document {
 	departureTime: Date;
 	additionalDetails: string;
 	userId: Types.ObjectId;
+	universityName: string; // Add universityName field
+	gender: "Male" | "Female" | "Other"; // Add gender field with specific values
 }
 
 const accommodationSchema = new Schema<IAccommodation>(
@@ -25,6 +27,15 @@ const accommodationSchema = new Schema<IAccommodation>(
 			type: Schema.Types.ObjectId,
 			ref: "User",
 			required: true,
+		},
+		universityName: {
+			type: String,
+			required: true, // Adjust based on whether this field is mandatory
+		},
+		gender: {
+			type: String,
+			enum: ["Male", "Female", "Other"], // Restrict to specific values
+			required: true, // Adjust based on your requirement
 		},
 	},
 	{

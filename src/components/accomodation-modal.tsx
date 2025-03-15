@@ -38,6 +38,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
 
 const accommodationFormSchema = z.object({
 	arrivalDate: z.date({
@@ -53,6 +54,12 @@ const accommodationFormSchema = z.object({
 		required_error: "Departure time is required",
 	}),
 	additionalDetails: z.string().optional(),
+	universityName: z.string({
+		required_error: "University name is required",
+	}),
+	gender: z.enum(["Male", "Female", "Other"], {
+		required_error: "Gender is required",
+	}),
 });
 
 // Generate time options in 30-minute intervals with AM/PM format
@@ -98,29 +105,14 @@ const formatDate = (date: Date | undefined) => {
 	return date.toLocaleDateString("en-US", options);
 };
 
-// Extract time from date object and convert to AM/PM format
+// Extract time from date object and convert to 24-hour format string
 const extractTime = (date: Date | undefined) => {
 	if (!date) return "";
 
-	// Get hours and minutes in 24-hour format
 	const hours = date.getHours();
 	const minutes = date.getMinutes().toString().padStart(2, "0");
-
-	// Convert to 24-hour format string (for form value)
 	return `${hours.toString().padStart(2, "0")}:${minutes}`;
 };
-
-// Convert 24-hour time to 12-hour format with AM/PM
-// const formatTimeForDisplay = (time: string) => {
-// 	if (!time) return "";
-
-// 	const [hourStr, minuteStr] = time.split(":");
-// 	const hour = parseInt(hourStr, 10);
-// 	const isPM = hour >= 12;
-// 	const displayHour = hour % 12 || 12; // Convert 0 to 12 for 12 AM
-
-// 	return `${displayHour}:${minuteStr} ${isPM ? "PM" : "AM"}`;
-// };
 
 interface AccommodationModalProps {
 	isOpen: boolean;
@@ -129,6 +121,8 @@ interface AccommodationModalProps {
 		arrivalTime?: string;
 		departureTime?: string;
 		additionalDetails?: string;
+		universityName?: string;
+		gender?: "Male" | "Female" | "Other";
 		userId?: string;
 	} | null;
 }
@@ -146,6 +140,8 @@ export default function AccommodationModal({
 			departureDate: undefined,
 			departureTime: "",
 			additionalDetails: "",
+			universityName: "NA",
+			gender: "Male",
 		},
 	});
 
@@ -160,14 +156,12 @@ export default function AccommodationModal({
 
 			form.reset({
 				arrivalDate: arrivalDateTime,
-				arrivalTime: arrivalDateTime
-					? extractTime(arrivalDateTime)
-					: "",
+				arrivalTime: arrivalDateTime ? extractTime(arrivalDateTime) : "",
 				departureDate: departureDateTime,
-				departureTime: departureDateTime
-					? extractTime(departureDateTime)
-					: "",
+				departureTime: departureDateTime ? extractTime(departureDateTime) : "",
 				additionalDetails: initialData.additionalDetails || "",
+				universityName: initialData.universityName || "",
+				gender: initialData.gender || "Male",
 			});
 		}
 	}, [initialData, form]);
@@ -178,19 +172,17 @@ export default function AccommodationModal({
 		departureDate: Date;
 		departureTime: string;
 		additionalDetails?: string;
+		universityName: string;
+		gender: "Male" | "Female" | "Other";
 	}) => {
 		try {
 			// Combine date and time values
 			const arrivalDateTime = new Date(values.arrivalDate);
-			const [arrivalHours, arrivalMinutes] = values.arrivalTime
-				.split(":")
-				.map(Number);
+			const [arrivalHours, arrivalMinutes] = values.arrivalTime.split(":").map(Number);
 			arrivalDateTime.setHours(arrivalHours, arrivalMinutes);
 
 			const departureDateTime = new Date(values.departureDate);
-			const [departureHours, departureMinutes] = values.departureTime
-				.split(":")
-				.map(Number);
+			const [departureHours, departureMinutes] = values.departureTime.split(":").map(Number);
 			departureDateTime.setHours(departureHours, departureMinutes);
 
 			await setAccommodationDetailsAction({
@@ -198,6 +190,8 @@ export default function AccommodationModal({
 				arrivalTime: arrivalDateTime,
 				departureTime: departureDateTime,
 				additionalDetails: values.additionalDetails,
+				universityName: values.universityName,
+				gender: values.gender,
 			});
 
 			toast({
@@ -209,9 +203,7 @@ export default function AccommodationModal({
 			toast({
 				title: "Error",
 				description:
-					error instanceof Error
-						? error.message
-						: "An unknown error occurred",
+					error instanceof Error ? error.message : "An unknown error occurred",
 				variant: "destructive",
 			});
 		}
@@ -236,10 +228,7 @@ export default function AccommodationModal({
 				</DialogHeader>
 
 				<Form {...form}>
-					<form
-						onSubmit={form.handleSubmit(onSubmit)}
-						className="space-y-6"
-					>
+					<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
 						<div className="space-y-4">
 							{/* Arrival Date and Time */}
 							<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -258,29 +247,21 @@ export default function AccommodationModal({
 															variant="outline"
 															className={cn(
 																"pl-3 text-left font-normal",
-																!field.value &&
-																	"text-gray-400"
+																!field.value && "text-gray-400"
 															)}
 														>
 															{field.value
-																? formatDate(
-																		field.value
-																  )
+																? formatDate(field.value)
 																: "Select date"}
 															<CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
 														</Button>
 													</FormControl>
 												</PopoverTrigger>
-												<PopoverContent
-													className="w-auto p-0"
-													align="start"
-												>
+												<PopoverContent className="w-auto p-0" align="start">
 													<Calendar
 														mode="single"
 														selected={field.value}
-														onSelect={
-															field.onChange
-														}
+														onSelect={field.onChange}
 														initialFocus
 													/>
 												</PopoverContent>
@@ -298,35 +279,21 @@ export default function AccommodationModal({
 											<FormLabel className="font-medium">
 												Arrival Time
 											</FormLabel>
-											<Select
-												onValueChange={field.onChange}
-												value={field.value}
-											>
+											<Select onValueChange={field.onChange} value={field.value}>
 												<FormControl>
 													<SelectTrigger>
 														<SelectValue placeholder="Select time">
-															{field.value
-																? getDisplayTime(
-																		field.value
-																  )
-																: "Select time"}
+															{field.value ? getDisplayTime(field.value) : "Select time"}
 														</SelectValue>
 														<Clock className="ml-auto h-4 w-4 opacity-50" />
 													</SelectTrigger>
 												</FormControl>
 												<SelectContent className="max-h-56 overflow-y-auto">
-													{timeOptions.map(
-														(option) => (
-															<SelectItem
-																key={`arrival-${option.value}`}
-																value={
-																	option.value
-																}
-															>
-																{option.display}
-															</SelectItem>
-														)
-													)}
+													{timeOptions.map((option) => (
+														<SelectItem key={`arrival-${option.value}`} value={option.value}>
+															{option.display}
+														</SelectItem>
+													))}
 												</SelectContent>
 											</Select>
 											<FormMessage />
@@ -352,29 +319,21 @@ export default function AccommodationModal({
 															variant="outline"
 															className={cn(
 																"pl-3 text-left font-normal",
-																!field.value &&
-																	"text-gray-400"
+																!field.value && "text-gray-400"
 															)}
 														>
 															{field.value
-																? formatDate(
-																		field.value
-																  )
+																? formatDate(field.value)
 																: "Select date"}
 															<CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
 														</Button>
 													</FormControl>
 												</PopoverTrigger>
-												<PopoverContent
-													className="w-auto p-0"
-													align="start"
-												>
+												<PopoverContent className="w-auto p-0" align="start">
 													<Calendar
 														mode="single"
 														selected={field.value}
-														onSelect={
-															field.onChange
-														}
+														onSelect={field.onChange}
 														initialFocus
 													/>
 												</PopoverContent>
@@ -392,35 +351,21 @@ export default function AccommodationModal({
 											<FormLabel className="font-medium">
 												Departure Time
 											</FormLabel>
-											<Select
-												onValueChange={field.onChange}
-												value={field.value}
-											>
+											<Select onValueChange={field.onChange} value={field.value}>
 												<FormControl>
 													<SelectTrigger>
 														<SelectValue placeholder="Select time">
-															{field.value
-																? getDisplayTime(
-																		field.value
-																  )
-																: "Select time"}
+															{field.value ? getDisplayTime(field.value) : "Select time"}
 														</SelectValue>
 														<Clock className="ml-auto h-4 w-4 opacity-50" />
 													</SelectTrigger>
 												</FormControl>
 												<SelectContent className="max-h-56 overflow-y-auto">
-													{timeOptions.map(
-														(option) => (
-															<SelectItem
-																key={`departure-${option.value}`}
-																value={
-																	option.value
-																}
-															>
-																{option.display}
-															</SelectItem>
-														)
-													)}
+													{timeOptions.map((option) => (
+														<SelectItem key={`departure-${option.value}`} value={option.value}>
+															{option.display}
+														</SelectItem>
+													))}
 												</SelectContent>
 											</Select>
 											<FormMessage />
@@ -428,6 +373,49 @@ export default function AccommodationModal({
 									)}
 								/>
 							</div>
+
+
+							{/* University Name */}
+							<FormField
+								control={form.control}
+								name="universityName"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel className="font-medium">
+											University Name
+										</FormLabel>
+										<FormControl>
+											<Input {...field} placeholder="Enter your university name" />
+										</FormControl>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+
+							{/* Gender Dropdown */}
+							<FormField
+								control={form.control}
+								name="gender"
+								render={({ field }) => (
+									<FormItem>
+										<FormLabel className="font-medium">Gender</FormLabel>
+										<Select onValueChange={field.onChange} value={field.value}>
+											<FormControl>
+												<SelectTrigger>
+													<SelectValue placeholder="Select gender" />
+												</SelectTrigger>
+											</FormControl>
+											<SelectContent>
+												<SelectItem value="Male">Male</SelectItem>
+												<SelectItem value="Female">Female</SelectItem>
+												<SelectItem value="Other">Other</SelectItem>
+											</SelectContent>
+										</Select>
+										<FormMessage />
+									</FormItem>
+								)}
+							/>
+
 
 							{/* Additional Details */}
 							<FormField
@@ -449,14 +437,11 @@ export default function AccommodationModal({
 									</FormItem>
 								)}
 							/>
+
 						</div>
 
 						<DialogFooter className="gap-2 sm:gap-0">
-							<Button
-								type="button"
-								variant="outline"
-								onClick={onClose}
-							>
+							<Button type="button" variant="outline" onClick={onClose}>
 								Cancel
 							</Button>
 							<Button type="submit">Save Details</Button>

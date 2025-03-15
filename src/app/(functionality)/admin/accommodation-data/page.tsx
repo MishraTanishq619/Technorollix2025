@@ -50,13 +50,11 @@ export default function AccommodationDataPage() {
 				"User Full Name": user.fullName,
 				"User Email": user.email,
 				"User Mobile Number": user.mobileNumber,
-				"Arrival Time": new Date(
-					accommodation.arrivalTime
-				).toLocaleString(),
-				"Departure Time": new Date(
-					accommodation.departureTime
-				).toLocaleString(),
+				"Arrival Time": new Date(accommodation.arrivalTime).toLocaleString(),
+				"Departure Time": new Date(accommodation.departureTime).toLocaleString(),
 				"Additional Details": accommodation.additionalDetails,
+				"University Name": accommodation.universityName,
+				"Gender": accommodation.gender,
 			})
 		);
 
@@ -91,55 +89,45 @@ export default function AccommodationDataPage() {
 					<Table>
 						<TableHeader>
 							<TableRow>
-								<TableHead className="w-1/6">
-									User Full Name
-								</TableHead>
-								<TableHead className="w-1/6">
-									User Email
-								</TableHead>
-								<TableHead className="w-1/6">
-									User Mobile Number
-								</TableHead>
-								<TableHead className="w-1/6">
-									Arrival Time
-								</TableHead>
-								<TableHead className="w-1/6">
-									Departure Time
-								</TableHead>
-								<TableHead className="w-1/6">
-									Additional Details
-								</TableHead>
+								<TableHead className="w-1/6">User Full Name</TableHead>
+								<TableHead className="w-1/6">User Email</TableHead>
+								<TableHead className="w-1/6">User Mobile Number</TableHead>
+								<TableHead className="w-1/6">University Name</TableHead>
+								<TableHead className="w-1/6">Gender</TableHead>
+								<TableHead className="w-1/6">Arrival Time</TableHead>
+								<TableHead className="w-1/6">Departure Time</TableHead>
+								<TableHead className="w-1/6">Additional Details</TableHead>
 							</TableRow>
 						</TableHeader>
 						<TableBody>
-							{accommodationsFetchData?.map(
-								({ user, accommodation }) => (
-									<TableRow key={accommodation._id as string}>
-										<TableCell className="w-1/6">
-											{user.fullName}
-										</TableCell>
-										<TableCell className="w-1/6">
-											{user.email}
-										</TableCell>
-										<TableCell className="w-1/6">
-											{user.mobileNumber}
-										</TableCell>
-										<TableCell className="w-1/6">
-											{new Date(
-												accommodation.arrivalTime
-											).toLocaleString()}
-										</TableCell>
-										<TableCell className="w-1/6">
-											{new Date(
-												accommodation.departureTime
-											).toLocaleString()}
-										</TableCell>
-										<TableCell className="w-1/6">
-											{accommodation.additionalDetails}
-										</TableCell>
-									</TableRow>
-								)
-							)}
+							{accommodationsFetchData?.map(({ user, accommodation }) => (
+								<TableRow key={accommodation._id as string}>
+									<TableCell className="w-1/6">
+										{user.fullName}
+									</TableCell>
+									<TableCell className="w-1/6">
+										{user.email}
+									</TableCell>
+									<TableCell className="w-1/6">
+										{user.mobileNumber}
+									</TableCell>
+									<TableCell className="w-1/6">
+										{accommodation.universityName}
+									</TableCell>
+									<TableCell className="w-1/6">
+										{accommodation.gender}
+									</TableCell>
+									<TableCell className="w-1/6">
+										{new Date(accommodation.arrivalTime).toLocaleString()}
+									</TableCell>
+									<TableCell className="w-1/6">
+										{new Date(accommodation.departureTime).toLocaleString()}
+									</TableCell>
+									<TableCell className="w-1/6">
+										{accommodation.additionalDetails}
+									</TableCell>
+								</TableRow>
+							))}
 						</TableBody>
 					</Table>
 				</CardContent>
