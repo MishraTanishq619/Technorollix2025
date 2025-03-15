@@ -33,7 +33,10 @@ interface AccommodationDetails {
 	arrivalTime: Date;
 	departureTime: Date;
 	additionalDetails?: string;
+	universityName: string; // New required field
+	gender: "Male" | "Female" | "Other"; // New required field with restricted values
 }
+
 export async function setAccommodationDetailsAction(
 	details: AccommodationDetails
 ): Promise<IAccommodation> {
@@ -49,9 +52,11 @@ export async function setAccommodationDetailsAction(
 			accommodation.departureTime = details.departureTime;
 			accommodation.additionalDetails =
 				details.additionalDetails || accommodation.additionalDetails;
+			accommodation.universityName = details.universityName;
+			accommodation.gender = details.gender;
 			await accommodation.save();
 		} else {
-			// Create new accommodation
+			// Create new accommodation with all required fields
 			accommodation = new Accommodation(details);
 			await accommodation.save();
 		}
@@ -73,18 +78,14 @@ interface AccommodationWithUser {
 	accommodation: IAccommodation;
 }
 
-export async function getAllAccommodationsWithUsers(): Promise<
-	AccommodationWithUser[]
-> {
+export async function getAllAccommodationsWithUsers(): Promise<AccommodationWithUser[]> {
 	try {
 		await connectToDatabase();
 		const accommodations = await Accommodation.find().lean();
 		const userIds = accommodations.map(
 			(accommodation) => accommodation.userId
 		);
-		const users = await User.find({ _id: { $in: userIds } }).lean<
-			IUser[]
-		>();
+		const users = await User.find({ _id: { $in: userIds } }).lean<IUser[]>();
 
 		const accommodationsWithUsers = accommodations.map((accommodation) => {
 			const user = users.find((user) =>
