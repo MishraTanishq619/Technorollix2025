@@ -221,7 +221,7 @@ export default function EventsSelection() {
 						})}
 					</div>
 
-					{isOutsider && <p className="my-2 text-gray-300 text-center">Note: One participant can participate in atmost 7 SubEvents.</p>}
+					{isOutsider && <p className="my-2 text-gray-300 text-center">Note: One participant can participate in atmost 7 Events.</p>}
 
 					<div className="flex justify-center">
 						<Button
