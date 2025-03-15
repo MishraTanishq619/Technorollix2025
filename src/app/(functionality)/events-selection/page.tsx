@@ -90,20 +90,26 @@ export default function EventsSelection() {
 
 	useEffect(() => {
 		if (submitData) {
-			toast({
-				title: "Success",
-				description: "Successfully registered for events",
-				variant: "default",
-			});
-			router.push("/dashboard");
+		  toast({
+			title: "Success",
+			description: "Successfully registered for events",
+			variant: "default",
+		  });
+		  router.push("/dashboard");
 		}
 		if (submitError) {
-			toast({
-				title: "Error",
-				variant: "destructive",
-			});
+		  // Extract a descriptive error message if available
+		  const errorMessage =
+			(submitError as { message?: string }).message ||
+			"An unexpected error occurred. Please try again.";
+		  toast({
+			title: "Error",
+			description: errorMessage,
+			variant: "destructive",
+		  });
 		}
-	}, [submitData, submitError]);
+	  }, [submitData, submitError]);
+	  
 
 	const toggleEventSelection = (eventId: string) => {
 		if (registeredEvents.includes(eventId)) return; // Prevent toggling registered events
