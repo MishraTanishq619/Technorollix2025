@@ -22,7 +22,7 @@ const Page = () => {
   ];
 
   const rules = [
-    "Teams need to register themselves before or till the registration last date. After which no registrations would be entertained.",
+    "Teams need to register themselves before or till the last date of registration. After which no registrations would be entertained.",
     "Only the team leader will be able to register his/her team through unstop.",
     "Teams can be formed with minimum 3 members and maximum 4 members.",
     "The online quiz will consist of objective type or short answer type questions.",
@@ -47,7 +47,7 @@ const Page = () => {
 }]
 
   return (
-    <div className="mt-8">
+    <div className="">
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -60,7 +60,7 @@ const Page = () => {
       </div>
 
       {/* Event Intro Section */}
-      <section className="mx-auto max-w-5xl">
+      <section>
         <EventIntro
           imageUrl="/aimbiation-events-logo/bizesawaal.png"
           registrations={0}
@@ -72,18 +72,18 @@ const Page = () => {
       </section>
 
       {/* Rounds Section */}
-      <section className="px-4">
+      <section>
         <RoundSection rounds={rounds} />
       </section>
 
       {/* Rewards and Prizes Section */}
-      <section className="mx-auto max-w-5xl px-4 my-10">
+      <section className="mx-auto max-w-5xl my-32">
         <h2 className="text-4xl sm:text-5xl font-['Poppins'] font-medium uppercase text-center mb-8 text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
           Rewards and Prizes
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">
-          <ul className="list-disc text-2xl sm:text-3xl space-y-4 font-['Inter'] leading-[32px] tracking-[3.75px] text-white">
-            <li className="text-3xl font-bold list-none">Prize Details:</li>
+          <ul className="list-disc text-xl sm:text-2xl space-y-4  leading-[32px] tracking-[3px] text-white">
+            <li className="text-3xl font-bold font-[Inter] list-none">Prize Details:</li>
             <li>1st Prize - Rs. 3,000 + Goodies (worth Rs. 1,000) + Certificates</li>
             <li>2nd Prize - Rs. 2,000 + Goodies (worth Rs. 500) + Certificates</li>
             <li>3rd Prize - Rs. 1,000 + Goodies (worth Rs. 500) + Certificates</li>
@@ -93,7 +93,7 @@ const Page = () => {
       </section>
 
       {/* Bottom Section: Why Participate, Rules, and Event Managers */}
-      <section className="mx-auto max-w-5xl px-4 my-10 space-y-12">
+      <section className="">
         <WhyParticipate reasons={reasons} />
         <RulesAndRegulation rules={rules} />
         <EventManagers managers={managers} />

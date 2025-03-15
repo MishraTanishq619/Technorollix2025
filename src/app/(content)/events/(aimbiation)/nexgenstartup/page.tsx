@@ -13,7 +13,7 @@ const Page: React.FC = () => {
     "One of the team members should be registered as the team leader.",
     "The business plan should not exceed 15 pages (excluding executive summary, cover page & index).",
     "A maximum of 15 slides of PowerPoint presentation is allowed in the final round.",
-    "The participants must follow font size 12 (Times New Roman) for main text and 14 for headings with a line spacing of 1.5.",
+    "The Participants must follow font size 12 (Times New Roman) for main text and 14 for headings with a line spacing of 1.5.",
     "A maximum of 15 minutes will be allowed for a team to present their business idea.",
     "Participants must carry their data backup in a laptop or USB drive.",
   ];
@@ -94,7 +94,7 @@ const Page: React.FC = () => {
   ];
 
   return (
-    <div className="relative  px-4 py-8 space-y-10">
+    <div className="">
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -107,7 +107,7 @@ const Page: React.FC = () => {
       </div>
 
       {/* Event Intro Section */}
-      <section className="mx-auto max-w-5xl">
+      <section>
         <EventIntro
           imageUrl="/aimbiation-events-logo/nexgenstartup.png"
           registrations={0}
@@ -135,12 +135,12 @@ const Page: React.FC = () => {
       </section>
 
       {/* Judgement Criteria Section */}
-      <section className="py-32">
-        <h2 className="text-4xl sm:text-5xl font-['Poppins'] font-medium text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-center mb-8">
+      <section className="my-32">
+        <h2 className="text-2xl sm:text-5xl font-['Poppins'] font-medium text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-center mb-8">
           JUDGEMENT CRITERIA (100%)
         </h2>
-        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg mx-auto max-w-5xl text-white">
-          <ul className="list-disc text-2xl sm:text-3xl leading-9 tracking-[3.75px] space-y-8">
+        <div className="bg-[#33010140] p-6 rounded-lg shadow-lg mx-auto max-w-5xl text-gray-300">
+          <ul className="list-disc text-xl sm:text-2xl space-y-4">
             {judgementCriteria.map((criteria, index) => (
               <li key={index}>
                 <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">
@@ -159,8 +159,8 @@ const Page: React.FC = () => {
           PRIZE DETAILS:
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg mx-auto max-w-5xl">
-          <ul className="list-decimal pl-5 text-2xl sm:text-3xl space-y-6 font-['Inter'] leading-[32px] tracking-[3.75px] text-white">
-            <li className="text-3xl font-bold list-none">Prize Details:</li>
+          <ul className="list-decimal pl-5 text-xl sm:text-3xl space-y-6 font-['Inter'] text-gray-300">
+            <p className="text-3xl font-bold list-none">Prize Details:</p>
             <li>
               Winner: Cash prize of ₹5000 + Incubation Support + Mentorship from
               industry experts.
@@ -176,7 +176,7 @@ const Page: React.FC = () => {
       </section>
 
       {/* Bottom Section: Rules and Event Managers */}
-      <section className="mx-auto max-w-5xl px-4 my-10 space-y-12">
+      <section className="">
         <RulesAndRegulation rules={rules} />
         <EventManagers managers={managers} />
       </section>

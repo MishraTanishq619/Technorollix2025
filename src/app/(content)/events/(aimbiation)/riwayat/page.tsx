@@ -104,8 +104,8 @@ const Page = () => {
       </section>
 
       {/* Why Participate Section */}
-      <section className="space-y-8">
-        <SectionTitle text="WHY PARTICIPATE:" />
+      <section className="space-y-8 mt-32">
+        <SectionTitle text="WHY PARTICIPATE" />
         <ContentContainer>
           <ul className="list-disc pl-5 text-base sm:text-xl md:text-2xl font-inter leading-relaxed tracking-wide text-white space-y-4">
             {reasons.map((item, index) => (

@@ -21,7 +21,7 @@ const EventIntro: React.FC<EventIntroProps> = ({
   venue,
 }) => {
   return (
-    <div className="event-intro">
+    <div className="">
       <div className="relative min-h-screen flex items-center justify-center bg-transparent">
         {/* Time and Venue Overlay */}
         <div className="absolute left-4 sm:left-14 top-16 sm:top-24 z-10 p-4 space-y-4 text-white text-xl sm:text-2xl text-left mb-6">
@@ -40,7 +40,7 @@ const EventIntro: React.FC<EventIntroProps> = ({
         </div>
 
         {/* Main Content */}
-        <div className="relative z-10 bg-transparent flex flex-col items-center p-4 pt-24 sm:pt-36 rounded-lg shadow-lg text-white">
+        <div className="relative z-10 bg-transparent flex flex-col items-center p-4 pt-24 sm:pt-32 rounded-lg shadow-lg text-white">
           <Image
             src={imageUrl}
             width={400}

@@ -40,8 +40,8 @@ const Page = () => {
         registrations={0}
         pricepool={7000}
         time="21-03-2025, 2:30 PM"
-        venue="Bapuji Chawk"
-        description="This is not just any dance competition—it’s a high-energy battle where only the best dancers shine! Get ready for exciting challenges, head-to-head battles, and nonstop fun as you show off your skills, creativity, and confidence.
+        venue="Babuji Chawk"
+        description="This is not just a dance competition—it’s a high-energy battle where only the best dancers can shine! Get ready for exciting challenges, head-to-head battles, and nonstop fun as you show off your skills, creativity, and confidence.
         Open for all departments and even outsiders! If you love dancing and have the moves to impress, this is your chance to step up, own the stage, and become the ‘Beat Battle champion!’"
       />
 

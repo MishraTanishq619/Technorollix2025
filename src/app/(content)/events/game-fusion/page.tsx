@@ -43,7 +43,7 @@ const Page = () => {
   ];
 
   return (
-    <div className="relative space-y-10 px-4 py-8">
+    <div className="">
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -68,23 +68,23 @@ const Page = () => {
       </section>
 
       {/* Theme Section */}
-      <section className="text-center mx-auto max-w-4xl px-4">
-        <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-['Poppins'] font-medium mb-4">
+      <section className="flex flex-col items-center justify-center px-4 my-32">
+        <h2 className="text-transparent mb-10 bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-3xl sm:text-4xl md:text-5xl font-medium tracking-[3.75px] text-center">
           THEME
         </h2>
-        <p className="text-2xl sm:text-3xl text-white font-['Poppins'] tracking-[3.75px]">
-          Unleash the Gaming Warriors: A Battle for Supremacy in the Virtual Realm of Gaming!
-        </p>
+        <div className="text-white text-base sm:text-lg md:text-2xl font-medium text-center tracking-[3.75px]">
+          <p>Unleash the Gaming Warriors: A Batt  le for Supremacy in the Virtual Realm of Gaming!</p>
+        </div>
       </section>
 
       {/* Sub-Events Section */}
-      <section className="mx-auto max-w-5xl px-4">
+      <section className="mx-auto max-w-5xl px-4 mb-32">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-['Poppins'] font-medium uppercase tracking-[3.75px] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-['Poppins'] font-medium uppercase tracking-[3.75px] mb-4">
             Sub-events
           </h2>
-          <p className="text-2xl sm:text-3xl text-white font-['poppins']">
-            The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
+          <p className="text-lg sm:text-2xl text-white font-medium ">
+            Following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -123,10 +123,10 @@ const Page = () => {
                 key={index}
                 className="border-2 border-yellow-500 p-6 rounded-lg text-center text-white bg-opacity-20 bg-black"
               >
-                <h2 className="text-lg font-bold font-['Poppins'] mb-2">
+                <h2 className="text-lg lg:text-3xl font-medium font-['Poppins'] mb-2">
                   {round.title}
                 </h2>
-                <p className="text-sm font-['Poppins']">{round.subtitle}</p>
+                <p className="text-sm lg:text-xl font-['Poppins']">{round.subtitle}</p>
               </div>
             ))}
           </div>

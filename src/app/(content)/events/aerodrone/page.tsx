@@ -35,9 +35,9 @@ const Aerodrone = () => {
   ];
 
   const managers = [
+    { imageUrl: "/managers/Aerodrone/AnkitMandal.jpg", name: "Ankit Mandal", contact: 9693407573 },
     { imageUrl: "/dallE.png", name: "Bhavana Verma", contact: 9407916405 },
     { imageUrl: "/dallE.png", name: "Manisha Patel", contact: 6268539090 },
-    { imageUrl: "/managers/Aerodrone/AnkitMandal.jpg", name: "Ankit Mandal", contact: 9693407573 },
   ];
 
   const participateReasons = [
@@ -48,7 +48,7 @@ const Aerodrone = () => {
   ];
 
   return (
-    <div className="relative space-y-10 px-4 py-8">
+    <div className="">
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -71,7 +71,7 @@ const Aerodrone = () => {
       />
 
       {/* Theme Section */}
-      <section className="flex flex-col items-center justify-center my-10 px-4">
+      <section className="flex flex-col items-center justify-center my-32 px-4">
         <h2 className="w-full max-w-md text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] text-4xl sm:text-5xl font-medium font-['Poppins'] tracking-[3.75px]">
           THEME
         </h2>

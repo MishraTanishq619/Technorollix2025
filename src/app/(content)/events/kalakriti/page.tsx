@@ -28,7 +28,7 @@ const KalaKriti = () => {
       judgementCriteria: ["No Grading"],
     },
     {
-      title: "Drishyaam (Decoration)",
+      title: "Drishyam (Decoration)",
       theme: "Harry Potter World, Meme Corner, Halloween, Sport Fan Club, Bollywood Retro, Incredible India",
       rules: [
         "Theme of the competition is restricted to 'Festivals of India'.",
@@ -151,7 +151,7 @@ const KalaKriti = () => {
 
 
   return (
-    <div className="relative">
+    <div className="">
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -169,7 +169,7 @@ const KalaKriti = () => {
           imageUrl="/techno-events-logo/kalakriti.png"
           registrations={0}
           pricepool={23000}
-          description="Craft is the vehicle for expressing your vision. Craft is the visible edge of Art. Here we are with 'Kalakriti,' which is a unique event driven by our artists' ideas, the context of space, season, and the vibes of the region. You will perceive 'Fiction turning into Reality.' You are going to witness a different field of abstract painting, fine arts photography, sculpture, and many more."
+          description="Craft is the vehicle for expressing your vision. Craft is the visible edge of Art. Here we are with 'Kalakriti,' which is a unique event driven by our artists' ideas, the context of space, season, and the vibes of the region. You will perceive Fiction turning into Reality. You are going to witness a different field of abstract painting, fine arts photography, sculpture, and many more."
           time="21-03-25 , 11:00 am"
           venue="LIBRARY, LAWN, OPPOSITE TO CHEMISTRY LAB"
         />
@@ -199,7 +199,7 @@ const KalaKriti = () => {
           />
           <SubEventCard
             Icon={GiBowTieRibbon}
-            title="Drishyaam (Decoration)"
+            title="Drishyam (Decoration)"
             description="India's rich heritage and vibrant culture come alive in Drishyaam by KalaKriti. Witness the essence of tradition through stunning artistic decor!"
           />
           <SubEventCard
