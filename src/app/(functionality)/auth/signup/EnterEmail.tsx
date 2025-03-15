@@ -26,6 +26,9 @@ export default function EnterEmail({ onNext }: { onNext: () => void }) {
     const onSubmit = async (values: z.infer<typeof emailSchema>) => {
         setLoading(true);
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
+        
+        console.log(otp);
+
         await sendWelcomeEmail(values.email, otp);
         const isOutsider = !values.email.endsWith("@opju.ac.in");
         sessionStorage.setItem("signupEmail", values.email);

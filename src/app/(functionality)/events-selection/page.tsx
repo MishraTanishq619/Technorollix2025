@@ -227,7 +227,8 @@ export default function EventsSelection() {
 						<Button
 							onClick={handleSubmit}
 							disabled={
-								submitLoading || selectedEvents.length === 0 || (isOutsider && selectedEvents?.length + registeredEvents?.length > 7)
+								// submitLoading || selectedEvents.length === 0 || (isOutsider && selectedEvents?.length + registeredEvents?.length > 7)
+								submitLoading || selectedEvents.length === 0
 							}
 							className="w-full max-w-md"
 						>
