@@ -122,7 +122,23 @@ export async function submitEventsAction(data: { eventIds: string[] }) {
 			throw new Error("User not found");
 		}
 
-		if (existingUser.isOutsider && (existingUser.teams.length + data.eventIds.length > 7)) {
+		// Get all the events that the user has registered for
+        const userEvents = await Promise.all(
+            existingUser.teams.map(async (teamId:string) => {
+                const team = await Team.findById(teamId);
+                return team.event.toString();
+            })
+        );
+
+		console.log("z1 userEvents : ",userEvents)
+
+
+		const allEventsArray = [...userEvents,...data.eventIds]
+		console.log("z1 allEventsArray : ",allEventsArray);
+		const mainEventsCount = await getParticipatingEventsCountAction(allEventsArray);
+		console.log("z1 mainEventsCount : ",mainEventsCount);
+
+		if (existingUser.isOutsider && (mainEventsCount.eventCount > 7)) {
 			throw new Error("Outsider Participants are not allowed to register for more than 7 events.");
 		}
 		
@@ -317,6 +333,87 @@ export async function getRegistrationCount(eventName: string): Promise<number> {
             throw new Error(`Failed to fetch registration count for event ${eventName}: ${error.message}`);
         } else {
             throw new Error("Failed to fetch registration count for event");
+        }
+    }
+}
+
+
+
+export async function getParticipatingEventsCountAction(eventIds: string[], newEventId?: string) {
+    try {
+        await connectToDatabase();
+
+        let eventCount = 0;
+        const mainEventNames: string[] = [];
+        let isNewEventIncluded = false;
+
+        for (const eventId of eventIds) {
+            // Check if the eventId is in the main events
+            const mainEvent = eventSubEventData.events.find(
+                (event) => event.event === eventId
+            );
+
+            if (mainEvent) {
+                // If the eventId is a main event and not already in mainEventNames, increment the count and log the event name
+                if (!mainEventNames.includes(mainEvent.eventName)) {
+                    eventCount++;
+                    mainEventNames.push(mainEvent.eventName);
+                }
+            } else {
+                // Check if the eventId is in the sub-events
+                for (const event of eventSubEventData.events) {
+                    const subEvent = event.subEvents.find(
+                        (subEvent) => subEvent.subEvent === eventId
+                    );
+                    if (subEvent) {
+                        // If the eventId is a sub-event and the main event name is not already in mainEventNames, increment the count and log the main event name
+                        if (!mainEventNames.includes(event.eventName)) {
+                            eventCount++;
+                            mainEventNames.push(event.eventName);
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Check if the newEventId's main event is already included
+		console.log("A1 newEventId : ",newEventId);
+        if (newEventId) {
+            const mainEvent = eventSubEventData.events.find(
+                (event) => event.event === newEventId
+            );
+
+            if (mainEvent) {
+                isNewEventIncluded = mainEventNames.includes(mainEvent.eventName);
+				console.log("A1 isNewEventIncluded, mainEventNames : ",isNewEventIncluded, mainEventNames);
+            } else {
+                for (const event of eventSubEventData.events) {
+                    const subEvent = event.subEvents.find(
+                        (subEvent) => subEvent.subEvent === newEventId
+                    );
+                    if (subEvent) {
+                        isNewEventIncluded = mainEventNames.includes(event.eventName);
+						console.log("A1 isNewEventIncluded, mainEventNames : ",isNewEventIncluded, mainEventNames);
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Log the main event names
+        console.log("Main Event Names:", mainEventNames);
+
+        return { eventCount, isNewEventIncluded };
+    } catch (error) {
+        if (error instanceof Error) {
+            throw new Error(
+                `Failed to get participating events count: ${error.message}`
+            );
+        } else {
+            throw new Error(
+                "Failed to get participating events count due to an unknown error"
+            );
         }
     }
 }
