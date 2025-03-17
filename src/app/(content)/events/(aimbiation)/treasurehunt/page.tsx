@@ -54,7 +54,7 @@ const Page = () => {
         registrations={registrationCount}
         pricepool={6000}
         time="20-03-25, 2:30 PM"
-        venue="Opposite the CDC office gardern"
+        venue="Opposite the CDC office garden"
         description={`Get ready for an exciting Treasure Hunt! Follow the clues, solve tricky puzzles, and race to find the hidden treasure. It’s not just about speed—it’s about using your brain, working with your team, and staying sharp. Expect surprises, challenges, and maybe even a few sneaky traps along the way. Think you’ve got what it takes to crack the code and claim the prize? Let the hunt begin! 
         
         Treasure Hunt Event is open for everyone—insiders and outsiders alike! If you’re ready for an adventure full of clues, challenges, and surprises, join the hunt and claim the prize!`}

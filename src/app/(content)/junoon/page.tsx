@@ -93,7 +93,7 @@ export default function Junoon() {
             OPJU Junoon is an annual cultural extravaganza hosted by the O.P.
             Jindal University in Chhattisgarh, India. This vibrant event
             showcases the diverse talents of people across various domains
-            including music and dance. In 2018, we had Shirley Sethia. In 2020,
+            including music and dance. In 2018, we had Shirley Setia. In 2020,
             we had Jubin Nautiyal and Sunburn, and in 2023, we had DJ Perisha.
           </p>
         </div>

@@ -18,9 +18,9 @@ const Antaragni = () => {
     "Participants must submit their chosen song and background video to the event coordinator one day before their audition and performance.",
     "Students should be fully prepared with their song and outfit before the event.",
     "Performances will be judged based on talent, decency, and discipline.",
-    "The judges' decision is final and must be accepted by all participants. No appeals or objections will be entertained.",
+    "Judges' decision is final and must be accepted by all participants. No appeals or objections will be entertained.",
     "Participants will be eliminated after each round based on the judges' evaluation.",
-    "Participants must respect event coordinators, judges, and fellow contestants at all times. Any misbehavior may lead to disqualification.",
+    "Participants must respect the event coordinators, judges, and fellow contestants at all times. Any misbehavior may lead to disqualification.",
   ];
 
   const reasons = [
@@ -60,7 +60,7 @@ const Antaragni = () => {
   }, [])
 
   return (
-    <div className="relative space-y-10 px-4 py-8">
+    <div className="">
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -83,12 +83,12 @@ const Antaragni = () => {
           venue="UNIVERSITY PLAYGROUND"
         />
       </section>
-      <p className="mt-2 text-2xl md:text-4xl font-protest-revolution text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em] text-center">
+      <p className="mt-20 text-2xl md:text-4xl font-protest-revolution text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-white to-gray-400 tracking-[0.15em] text-center">
       Feel the beat, own the street
         </p>
 
       {/* Theme Section */}
-      <section className="flex flex-col items-center text-center mx-auto max-w-4xl px-4">
+      <section className="flex flex-col items-center text-center my-32 mx-auto max-w-4xl">
         <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-['Poppins'] font-medium mb-4">
           THEME
         </h2>
@@ -103,8 +103,8 @@ const Antaragni = () => {
           <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-['Poppins'] font-medium uppercase tracking-wide mb-4">
             Sub-events
           </h2>
-          <p className="text-2xl sm:text-3xl text-white font-normal tracking-wide">
-            The following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
+          <p className="text-xl sm:text-2xl text-white font-normal tracking-wide">
+            Following are the sub-events of this main event. Read the details carefully and choose the ones that best match your interests and expertise. Don&apos;t miss your chance to participate and showcase your skills!
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -135,11 +135,11 @@ const Antaragni = () => {
       <RoundSection rounds={rounds} />
 
       {/* Bottom Section: Why Participate, Rules, and Event Managers */}
-      <section className="mx-auto max-w-5xl px-4 my-10 space-y-12">
+      
         <WhyParticipate reasons={reasons} />
         <RulesAndRegulation rules={rules} />
         <EventManagers managers={managers} />
-      </section>
+  
     </div>
   );
 };

@@ -20,9 +20,21 @@ const Page = () => {
     "A 2-minute query round follows each presentation.",
   ];
   const managers = [
-    { imageUrl: "/managers/Ideathon/Aryan.jpg", name: "Aryan Mishra", contact: 7205993715 },
-    { imageUrl: "/managers/Ideathon/Ashutosh.jpg", name: "Ashutosh Sahu", contact: 9776565942 },
-    { imageUrl: "/managers/Ideathon/Kumkum.jpg", name: "KumKum Singh", contact: 8889702577 }
+    {
+      imageUrl: "/managers/Ideathon/Aryan.jpg",
+      name: "Aryan Mishra",
+      contact: 7205993715,
+    },
+    {
+      imageUrl: "/managers/Ideathon/Ashutosh.jpg",
+      name: "Ashutosh Sahu",
+      contact: 9776565942,
+    },
+    {
+      imageUrl: "/managers/Ideathon/Kumkum.jpg",
+      name: "KumKum Singh",
+      contact: 8889702577,
+    },
   ];
   const reasons = [
     "Win ₹18,000 and gain recognition.",
@@ -35,8 +47,9 @@ const Page = () => {
   const rounds = [
     {
       title: "ROUND 1",
-      description: "There will be a single round."
-    }]
+      description: "There will be a single round.",
+    },
+  ];
 
     const [registrationCount, setRegistrationCount] = useState(0)
   useEffect(() => {
@@ -46,12 +59,12 @@ const Page = () => {
   }, [])
 
   return (
-    <div className="space-y-10">
+    <>
       {/* Background Image Optimized */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
-        width={500}
-        height={500}
+          width={500}
+          height={500}
           src="/background.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
@@ -63,7 +76,7 @@ const Page = () => {
         imageUrl="/techno-events-logo/ideathon.png"
         registrations={registrationCount}
         pricepool={18000}
-        description="An Ideathon is an engaging brainstorming event where individuals collaborate to address pressing challenges through innovative solutions. Participants work in teams, utilizing design thinking to develop viable ideas across diverse subjects like marketing, philosophy, and science."
+        description="Ideathon is an engaging brainstorming event where individuals collaborate to address pressing challenges through innovative solutions. Participants work in teams, utilizing design thinking to develop viable ideas across diverse subjects like marketing, philosophy, and science."
         time="20-03-2025, 11:30 AM"
         venue="EE Seminar Hall(FB-14)"
       />
@@ -72,8 +85,8 @@ const Page = () => {
         <div className="bg-transparent text-white p-6 md:p-12 space-y-32">
           {/* Rounds Section */}
           <section className="px-4">
-        <RoundSection rounds={rounds} />
-      </section>
+            <RoundSection rounds={rounds} />
+          </section>
 
           {/* Judging Criteria Section */}
           <section>
@@ -101,7 +114,7 @@ const Page = () => {
           <EventManagers managers={managers} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ import { getRegistrationCount } from "@/actions/event-actions";
 const Page = () => {
   const managers = [
     { imageUrl: "/managers/Among Us/Priyanshu.jpeg", name: "Priyanshu Dash", contact: 9078942095 },
-    { imageUrl: "/dallE.png", name: "Shomya Sinha", contact: 7091799799 },
+    // { imageUrl: "/dallE.png", name: "Shomya Sinha", contact: 7091799799 },
     { imageUrl: "/managers/Among Us/Mayank Sharma.jpg", name: "Mayank Sharma", contact: 7024189586 },
   ];
 

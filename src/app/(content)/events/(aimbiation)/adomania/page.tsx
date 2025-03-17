@@ -17,9 +17,9 @@ const Page = () => {
     "Exciting prizes up to ₹20000",
     "Opportunity for funding innovative gaming projects (as per OPJU Innovation Centre terms)",
     "Recognition certificates for all participating universities",
-    "Participation certificates for all gamers",
+    "Participation certificates for all participants.",
     "Special category-wise winning prizes",
-    "Hands-on experience in competitive gaming, strategy, and teamwork",
+    "Hands-on experience in creative advertising, strategy and teamwork ",
     "Reimbursement of one-way Sleeper class fare for outside participants",
   ];
 
@@ -59,7 +59,7 @@ Total Points: 50.`,
   }, [])
 
   return (
-    <div className="relative px-4 py-8 space-y-10">
+    <div className="">
       {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
         <Image
@@ -72,7 +72,7 @@ Total Points: 50.`,
       </div>
 
       {/* Event Intro Section */}
-      <section className="mx-auto max-w-5xl">
+      <section className="">
         <EventIntro
           imageUrl="/aimbiation-events-logo/adomania.png"
           registrations={registrationCount}
@@ -88,7 +88,7 @@ Total Points: 50.`,
 
       {/* Judging Criteria Section */}
       <section className="my-32 mx-auto max-w-5xl px-4">
-        <h2 className="text-5xl sm:text-6xl font-['Poppins'] font-medium text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] mb-12">
+        <h2 className="text-5xl sm:text-6xl font-['Poppins'] font-medium text-center text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] mb-16">
           Judging Criteria
         </h2>
         <div className="bg-[#33010140] p-6 rounded-lg shadow-lg">

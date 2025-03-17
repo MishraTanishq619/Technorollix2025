@@ -102,19 +102,19 @@ const BullvsBear = () => {
               Winners will be judged based on:
             </li>
             <li>
-              ✅ <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Portfolio Value:</b>{" "}
+              <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Portfolio Value:</b>{" "}
               Final virtual portfolio worth at the end of the competition.
             </li>
             <li>
-              ✅ <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Risk Management:</b>{" "}
+              <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Risk Management:</b>{" "}
               How well participants balanced their trades to minimize losses.
             </li>
             <li>
-              ✅ <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Diversification:</b>{" "}
+              <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Diversification:</b>{" "}
               A well-structured portfolio, not just random stock picks.
             </li>
             <li>
-              ✅ <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Decision-Making Skills:</b>{" "}
+              <b className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D]">Decision-Making Skills:</b>{" "}
               How traders react to news, volatility, and sudden changes.
             </li>
           </ul>
