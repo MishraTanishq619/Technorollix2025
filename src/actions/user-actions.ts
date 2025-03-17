@@ -180,3 +180,18 @@ export async function getUsersByEmails(
 		}
 	}
 }
+
+export async function getOutsiderUsers(): Promise<IUser[]> {
+	await connectToDatabase();
+
+	try {
+		const outsiderUsers = await User.find({ isOutsider: true }).lean<IUser>();
+		return JSON.parse(JSON.stringify(outsiderUsers));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to fetch outsider users: ${error.message}`);
+		} else {
+			throw new Error("Failed to fetch outsider users");
+		}
+	}
+}
