@@ -99,7 +99,7 @@ export default function PaymentsPage() {
                         </TableHeader>
                         <TableBody>
                             {paymentsData.map((payment, index) => (
-                                <TableRow key={index}>
+                                <TableRow key={index} className={`${payment.payClearance ? "bg-green-200 hover:bg-green-300" : "bg-red-200 hover:bg-red-300"}`}>
                                     <TableCell>{payment.fullName}</TableCell>
                                     <TableCell>{payment.email}</TableCell>
                                     <TableCell>{payment.mobileNumber}</TableCell>
