@@ -86,7 +86,7 @@ export default function Home() {
                 <div className="text-center md:text-left">
                   <h5 className="text-4xl text-white font-semibold">aiMBiAtion 2025</h5>
                   <p className="text-xl font-medium tracking-[3.4px] text-[#CFCFCF] mt-4 w-full max-w-[578px]">
-                  aiMBiAtion isn&apos;t just a management fest—it&apos;s a space where ideas take flight, creativity finds it's voice, and competition turns into camaraderie. Hosted by OP Jindal University,  t&apos;s a perfect blend of business, culture, and fun, bringing together dreamers, doers, and disruptors for an experience 
+                  aiMBiAtion isn&apos;t just a management fest—it&apos;s a space where ideas take flight, creativity finds it&apos;s voice, and competition turns into camaraderie. Hosted by OP Jindal University,  t&apos;s a perfect blend of business, culture, and fun, bringing together dreamers, doers, and disruptors for an experience 
                     <Link href="/about">
                       <b className="text-[#FF9D00] cursor-pointer ml-2 hover:underline">Read more</b>
                     </Link>
