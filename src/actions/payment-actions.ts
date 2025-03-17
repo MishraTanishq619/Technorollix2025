@@ -10,8 +10,6 @@ export async function addTransactionIdAction(transactionId: string, userEmail: s
     try {
         await connectToDatabase();
 
-        console.log("X1 : ", transactionId, userEmail, currentPayAmount);
-
         // Create a new transaction object
         const newTransaction = new Transaction({
             transactionId,
@@ -21,14 +19,10 @@ export async function addTransactionIdAction(transactionId: string, userEmail: s
             acknowledgementByAdmin: false,
             clearanceApproval: false,
         });
-
-        console.log("X1 newTransaction : ", newTransaction);
         
         // Save the transaction to the database
         const savedTransaction = await newTransaction.save();
         
-        console.log("X1 savedTransaction : ", savedTransaction);
-
 		return JSON.parse(JSON.stringify(savedTransaction));
     } catch (error) {
         if (error instanceof Error) {

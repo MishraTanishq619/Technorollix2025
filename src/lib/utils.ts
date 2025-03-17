@@ -45,10 +45,6 @@ export const getMergedEvents = (participatingTeamsData: any[], userEmail: string
 	const leadingTeamsWithOutsiders = participatingTeamsData.filter(
 		(team: any) => team.leader.email === userEmail && team.members.some((member: any) => member.isOutsider)
 	);
-	console.log("y1 leadingTeamsWithOutsiders :",leadingTeamsWithOutsiders);
-
-
-
 	const eventIds = leadingTeamsWithOutsiders.map((team) => team.event._id);
 	const eventNames: any = [];
 
@@ -102,12 +98,5 @@ export const getMergedEvents = (participatingTeamsData: any[], userEmail: string
 		});
 	}
 
-	console.log(
-		"Y1 : ",
-		eventIds,
-		eventNames,
-		mergedTeams,
-		mergedTeamsArray
-	);
 	return mergedTeamsArray;
 };

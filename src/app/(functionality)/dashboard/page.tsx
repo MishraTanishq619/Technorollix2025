@@ -125,10 +125,7 @@ const DashboardPage = () => {
 
 	useEffect(() => {
 		if (participatingTeamsData) {
-			console.log(participatingTeamsData);
-
 			const mergedTeamsArray = getMergedEvents(participatingTeamsData, userData.email);
-
 			setPayAmount(
 				calculatePayAmount(
 					mergedTeamsArray?.filter((event: any) => event.individualSchema).length,

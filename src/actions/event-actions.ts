@@ -130,18 +130,12 @@ export async function submitEventsAction(data: { eventIds: string[] }) {
             })
         );
 
-		console.log("z1 userEvents : ",userEvents)
-
-
 		const allEventsArray = [...userEvents,...data.eventIds]
-		console.log("z1 allEventsArray : ",allEventsArray);
 		const mainEventsCount = await getParticipatingEventsCountAction(allEventsArray);
-		console.log("z1 mainEventsCount : ",mainEventsCount);
 
 		if (existingUser.isOutsider && (mainEventsCount.eventCount > 7)) {
 			throw new Error("Outsider Participants are not allowed to register for more than 7 events.");
-		}
-		
+		}		
 
 		// Loop over the eventIds
 		for (const eventId of data.eventIds) {
@@ -150,7 +144,6 @@ export async function submitEventsAction(data: { eventIds: string[] }) {
 			if (!event) {
 				throw new Error(`Event with ID ${eventId} not found`);
 			}
-
 			// Create a new team object
 			const newTeam = new Team({
 				leader: existingUser.email,
@@ -378,7 +371,6 @@ export async function getParticipatingEventsCountAction(eventIds: string[], newE
         }
 
         // Check if the newEventId's main event is already included
-		console.log("A1 newEventId : ",newEventId);
         if (newEventId) {
             const mainEvent = eventSubEventData.events.find(
                 (event) => event.event === newEventId
@@ -386,7 +378,6 @@ export async function getParticipatingEventsCountAction(eventIds: string[], newE
 
             if (mainEvent) {
                 isNewEventIncluded = mainEventNames.includes(mainEvent.eventName);
-				console.log("A1 isNewEventIncluded, mainEventNames : ",isNewEventIncluded, mainEventNames);
             } else {
                 for (const event of eventSubEventData.events) {
                     const subEvent = event.subEvents.find(
@@ -394,7 +385,6 @@ export async function getParticipatingEventsCountAction(eventIds: string[], newE
                     );
                     if (subEvent) {
                         isNewEventIncluded = mainEventNames.includes(event.eventName);
-						console.log("A1 isNewEventIncluded, mainEventNames : ",isNewEventIncluded, mainEventNames);
                         break;
                     }
                 }
@@ -402,7 +392,6 @@ export async function getParticipatingEventsCountAction(eventIds: string[], newE
         }
 
         // Log the main event names
-        console.log("Main Event Names:", mainEventNames);
 
         return { eventCount, isNewEventIncluded };
     } catch (error) {

@@ -128,24 +128,11 @@ export async function acceptInviteAction(inviteId: string) {
             })
         );
 
-		console.log("z1 userEvents : ", userEvents);
-
 		// Check if the user has already registered for the event if yes, then throw an error
 		if (userEvents.some(event => event == team.event)) {
 			throw new Error("You have already registered for this event.");
 		}
-		console.log("z1 team.event : ",team.event)
 		const mainEventsCount = await getParticipatingEventsCountAction(userEvents, team.event.toString());
-
-		console.log("z1 mainEventsCount : ", mainEventsCount);
-		console.log("z1 mainEventsCount.eventCount > 7 : ", mainEventsCount.eventCount > 7);
-		console.log("z1 mainEventsCount.eventCount == 7 : ", mainEventsCount.eventCount == 7);
-		console.log("z1 mainEventsCount.isNewEventIncluded : ", mainEventsCount.isNewEventIncluded);
-		console.log("z1 !mainEventsCount.isNewEventIncluded : ", !mainEventsCount.isNewEventIncluded);
-		console.log("z1 mainEventsCount.eventCount == 7 && !mainEventsCount.isNewEventIncluded : ", mainEventsCount.eventCount == 7 && !mainEventsCount.isNewEventIncluded);
-		console.log("z1 mainEventsCount.eventCount > 7 || (mainEventsCount.eventCount == 7 && !mainEventsCount.isNewEventIncluded : ", mainEventsCount.eventCount > 7 || (mainEventsCount.eventCount == 7 && !mainEventsCount.isNewEventIncluded));
-		
-
 		
 		if (
 			inviteeUser.isOutsider &&

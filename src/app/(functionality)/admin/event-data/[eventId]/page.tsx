@@ -69,9 +69,6 @@ export default function EventDataPage() {
 		}
 	}, [eventFetchData]);
 
-	useEffect(() => {
-		console.log("usersFetchData : ", usersFetchData);
-	}, [usersFetchData]);
 
 	useEffect(() => {
 		if (eventFetchError || teamsFetchError || usersFetchError) {
