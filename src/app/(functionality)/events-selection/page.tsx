@@ -17,6 +17,9 @@ import { useRouter } from "next/navigation";
 import { getUser } from "@/actions/user-actions";
 // import Image from "next/image";
 
+const registrationClosedEvents:string[] = ["67c16008e3c4c72ebbd45a07"];
+
+
 export default function EventsSelection() {
 	const [selectedEvents, setSelectedEvents] = useState<string[]>([]);
 	const [registeredEvents, setRegisteredEvents] = useState<string[]>([]);
@@ -138,6 +141,9 @@ export default function EventsSelection() {
 		if (registeredEvents.includes(eventId)) {
 			return "registered";
 		}
+		if (registrationClosedEvents.includes(eventId)) {
+			return "closed";
+		}
 		if (selectedEvents.includes(eventId)) {
 			return "selected";
 		}
@@ -160,6 +166,9 @@ export default function EventsSelection() {
 				}`;
 			case "selected":
 				return `${baseClass} ring-2 ring-primary bg-primary/5`;
+			case "closed":
+				return `${baseClass} opacity-75 cursor-not-allowed bg-gray-50`;
+			
 			default:
 				return `${baseClass} hover:bg-gray-50`;
 		}
@@ -206,6 +215,11 @@ export default function EventsSelection() {
 											{status === "selected" && (
 												<Badge className="bg-red-300">
 													Selected
+												</Badge>
+											)}
+											{status === "closed" && (
+												<Badge className="bg-slate-400">
+													Closed
 												</Badge>
 											)}
 										</CardTitle>
