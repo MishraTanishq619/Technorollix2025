@@ -269,13 +269,14 @@ const DashboardPage = () => {
 								</div>
 							) : (
 								<div>
-									<p>Accommodation not availed.</p>
+									{/* <p>Accommodation not availed.</p> */}
 									<p>
-										Note: Avail if you are an outsider participant.
+										{/* Note: Avail if you are an outsider participant. */}
+										Note: Availing of accommodation is closed.
 									</p>
 									<Button
 										className="mt-4"
-										disabled={!userData?.isOutsider}
+										disabled={ true || !userData?.isOutsider}
 										onClick={handleOpenModal}
 									>
 										Add Accommodation
