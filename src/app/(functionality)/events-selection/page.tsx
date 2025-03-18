@@ -18,7 +18,7 @@ import { getUser } from "@/actions/user-actions";
 // import Image from "next/image";
 
 const registrationClosedEvents: string[] = [
-	"67c15c20e3c4c72ebbd459cd",
+	// "67c15c20e3c4c72ebbd459cd",
 	"67c15c91e3c4c72ebbd459d1",
 	"67c15d28e3c4c72ebbd459d3",
 	"67c15d4de3c4c72ebbd459d5",
