@@ -18,11 +18,19 @@ import { getUser } from "@/actions/user-actions";
 // import Image from "next/image";
 
 const registrationClosedEvents: string[] = [
-	// "67c15c20e3c4c72ebbd459cd",
-	// "67c15d97e3c4c72ebbd459d9",
+	"67c15c20e3c4c72ebbd459cd",
+	"67c15c91e3c4c72ebbd459d1",
+	"67c15d28e3c4c72ebbd459d3",
+	"67c15d4de3c4c72ebbd459d5",
+	"67c15d72e3c4c72ebbd459d7",
+	"67c15d97e3c4c72ebbd459d9",
 	"67c15de3e3c4c72ebbd459df",
 	"67c15df2e3c4c72ebbd459e1",
 	"67c15e06e3c4c72ebbd459e3",
+	"67c15e19e3c4c72ebbd459e5",
+	"67c15e32e3c4c72ebbd459e7",
+	"67c15e46e3c4c72ebbd459e9",
+	"67c15e72e3c4c72ebbd459eb",
 	"67c15e8fe3c4c72ebbd459ed",
 	"67c15ea6e3c4c72ebbd459ef",
 	"67c15eb9e3c4c72ebbd459f1",
@@ -35,6 +43,7 @@ const registrationClosedEvents: string[] = [
 	"67c15f7de3c4c72ebbd459ff",
 	"67c15f92e3c4c72ebbd45a01",
 	"67c15fb0e3c4c72ebbd45a03",
+	"67c15fc8e3c4c72ebbd45a05",
 	"67c16008e3c4c72ebbd45a07",
 	"67c16029e3c4c72ebbd45a09",
 	"67c1604de3c4c72ebbd45a0b",
@@ -50,6 +59,7 @@ const registrationClosedEvents: string[] = [
 	"67c161e9e3c4c72ebbd45a1f",
 	"67c1620fe3c4c72ebbd45a21",
 	"67c1623ee3c4c72ebbd45a23",
+	"67d0016d16cb80e1b1588617",
 ];
 
 
@@ -150,6 +160,7 @@ export default function EventsSelection() {
 
 	const toggleEventSelection = (eventId: string) => {
 		if (registeredEvents.includes(eventId)) return; // Prevent toggling registered events
+		if (registrationClosedEvents.includes(eventId)) return; // Prevent toggling registrationClosedEvents events
 
 		setSelectedEvents((prev) =>
 			prev.includes(eventId)
