@@ -104,7 +104,7 @@ const Payments = ({
 								? 0
 								: payAmount - totalRecievedAmount}
 						</p>
-						<Button onClick={handlePay}>
+						<Button onClick={handlePay} disabled={true}>
 							Pay or Add Transaction
 						</Button>
 
