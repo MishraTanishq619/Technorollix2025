@@ -1,35 +1,65 @@
-import React from 'react';
-import EventIntro from '@/components/sub-component/event-intro';
-import SubEventCard from '@/components/sub-component/sub-event-card';
-import ManagerCard from '@/components/sub-component/manager-card';
-import ButtonLanding from '@/components/sub-component/button-landing';
-import { BsAward } from 'react-icons/bs';
+"use client";
+import React,{useState,useEffect} from "react";
+import EventIntro from "@/components/sub-component/event-intro";
+import SubEventCard from "@/components/sub-component/sub-event-card";
+import { BsAward } from "react-icons/bs";
+import EventManagers from "@/components/sub-component/event-managers";
+import Image from "next/image";
+import { getRegistrationCount } from "@/actions/event-actions";
 
 const Page = () => {
+  const managers = [
+    {
+      imageUrl: "/managers/Hackathon/Satendra.jpeg",
+      name: "Satendra Kumar",
+      contact: 9301196473,
+    },
+    {
+      imageUrl: "/managers/Hackathon/Avantika.jpg",
+      name: "Avantika Pal",
+      contact: 7223069988,
+    },
+    {
+      imageUrl: "/managers/Hackathon/PratyushB.jpg",
+      name: "Pratyush Behera",
+      contact: 9692002521,
+    },
+  ];
+
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("HACKATHON").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
   return (
-    <div className="Hackathon">
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <img
+    <div className="relative">
+      {/* Background */}
+      <div className="absolute top-0 w-full h-auto pointer-events-none -z-10">
+        <Image
           src="/background.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
+          width={500}
+          height={500}
         />
       </div>
+      
       <EventIntro
         imageUrl="/techno-events-logo/hackathon.png"
-        title="hackathon"
-        registrations={300}
-        pricepool={60000}
-        time='8 am'
-        venue='MP Hall'
+        registrations={registrationCount}
+        pricepool={50000}
+        time="21-03-25, 2:00 - 6:00 pm"
+        venue="TB-01"
         description="Join us for University Hackathon, a thrilling coding competition where innovative minds come together to solve real-world challenges. Whether you're a beginner or an expert, this is your chance to showcase your skills, collaborate, and create impactful solutions."
       />
 
       <div className="flex flex-col items-center justify-center">
-        <div className="bg-transparent text-white p-6 md:p-12">
-          {/* Rounds */}
+        <div className="bg-transparent text-white p-4 sm:p-6 md:p-12">
+          {/* Rounds Section */}
           <section className="flex flex-col items-center gap-8">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+            <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8 sm:mb-14">
               ROUNDS
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -49,15 +79,15 @@ const Page = () => {
                 description="Teams present their solutions to a panel of judges."
               />
             </div>
-          </section><br/><br/>
+          </section>
 
-          {/* Evaluation Process */}
-          <section className="mb-20">
-            <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
+          {/* Evaluation Process Section */}
+          <section className="my-10 sm:my-20">
+            <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-8 sm:mb-14">
               EVALUATION PROCESS
             </h2>
-            <div className="bg-[#33010140] p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
-              <ul className="list-disc pl-5 text-2xl uppercase tracking-[6.72px]">
+            <div className="bg-[#33010140] p-4 sm:p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+              <ul className="list-disc pl-5 text-xl sm:text-2xl tracking-[3.75px]">
                 <li>Innovation – Creativity and uniqueness of the solution</li>
                 <li>Technical Implementation – Quality of code and feasibility</li>
                 <li>Impact – Relevance and potential real-world application</li>
@@ -69,26 +99,8 @@ const Page = () => {
         </div>
       </div>
 
-      {/* Event Managers */}
-      <section>
-        <div className="flex flex-col items-center justify-center">
-          <div className="text-center text-[#ffad3c] text-5xl font-medium uppercase">
-            EVENT MANAGERS
-          </div><br/><br/>
-          <div className="text-center text-white text-2xl font-normal">
-            For any queries regarding the event, feel free to reach out to any of the managers listed below.
-          </div>
-
-          <div className="flex justify-center space-x-40 items-center mt-20">
-            <ManagerCard imageUrl="/dallE.png" name="Bhavana Verma" contact={9407916405}/>
-            <ManagerCard imageUrl="/dallE.png" name="Manisha Patel" contact={6268539090}/>
-          </div>
-          <div className="mb-10">
-          <ButtonLanding label="Register Now" link="/dashboard" />
-
-          </div>
-        </div>
-      </section>
+      {/* Event Managers Section */}
+      <EventManagers managers={managers} />
     </div>
   );
 };

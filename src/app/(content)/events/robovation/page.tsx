@@ -1,122 +1,114 @@
-import ButtonLanding from "@/components/sub-component/button-landing";
+"use client";
 import EventIntro from "@/components/sub-component/event-intro";
-import ManagerCard from "@/components/sub-component/manager-card";
-import RulesAndRegulation from "@/components/sub-component/rule-regulation";
+import EventManagers from "@/components/sub-component/event-managers";
+// import RulesAndRegulation from "@/components/sub-component/rule-regulation"; // no longer needed here
 import SubEventCard from "@/components/sub-component/sub-event-card";
-import React from "react";
+import Image from "next/image";
+import React,{useState,useEffect} from "react";
 import { BsRobot } from "react-icons/bs";
 import { FaFlagCheckered } from "react-icons/fa";
 import { IoFootballOutline } from "react-icons/io5";
+import { getRegistrationCount } from "@/actions/event-actions";
 
-const page = () => {
-  const rules = [
-    " This is a racing event so the fastest and most balanced robot will win. ",
-    "Robot should be as per the given specifications.",
-    "Each team can have a maximum of Four members.",
-    "Students from different institutes can form a team.",
-    "Each member of the team must contain the identity card of his/her respective institute.",
-    "The robot should not damage the arena.",
-    "No test practice will be allowed in the arena.",
-    "The robot must not leave behind any of its parts during the run; else it will result in disqualification.",
-    "Unethical behavior could lead to disqualification. Faculty coordinators have all the rights to take final decisions for any matter during the event. and Judge's decision will be considered final.",
-    "Certificates of Participation will be given to all the teams participating in the event ,but not to the teams that get disqualified due to disobeying any of the competition rules.Coordination committee reserves the right to add or update any rule.",
+const Page = () => {
+  const managers = [    
+    { imageUrl: "/managers/Robovation/Harsh tiwari.jpg", name: "Harsh Tiwari", contact: 8815612698 },
+    { imageUrl: "/managers/Robovation/Nikhil Prasad.jpg", name: "Nikhil Prasad", contact: 7488057104  },
+    { imageUrl: "/managers/Robovation/Kushal Kumar.jpg", name: "Kushal Kumar Barsiwal", contact: 7987829224  },
+    { imageUrl: "/managers/Robovation/udit vardhan.jpg", name: "Udit vardhan singh", contact: 8298558875 },
   ];
 
-  return (
-    <div>
+  // Define the PDF file path (ensure the file is available in your public folder)
+  const pdfPath = "/rulebookrobovation.pdf";
 
-      
-      <EventIntro
-        venue=" BAPUJI CHOWK (OPJU)"
-        time={"21-03-25 , 10:00 am"}
-        imageUrl="/techno-events-logo/robovation.png"
-        title="Robovation"
-        registrations={0}
-        pricepool={40000}
-        description="OPJU invites you to an extraordinary culinary battleground, where flavors meet creativity and passion transforms into perfection. Step into MasterChef and let the world savor your signature taste!."
-      />
+  const [registrationCount, setRegistrationCount] = useState(0)
+  useEffect(() => {
+    getRegistrationCount("ROBOVATION").then((count) => {
+      setRegistrationCount(count)
+    })
+  }, [])
+
+  return (
+    <div className="relative flex flex-col">
+      {/* Background Image */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <img
+        <Image
           src="/background.svg"
-          className="w-full h-auto opacity-150"
+          className="w-full h-auto opacity-100"
           alt="Scrolling Background"
+          width={500}
+          height={500}
         />
       </div>
-      <div className="mt-16 mb-16"></div>
-      <h1 className="text-5xl text-[#ffad3c] font-medium text-center mb-14 [text-shadow:_0px_4px_10px_rgb(0_0_0_/_0.78)]">
+      
+      <EventIntro
+        venue="BAPUJI CHOWK (OPJU)"
+        time="21-03-25 , 10:00 am"
+        imageUrl="/techno-events-logo/robovation.png"
+        registrations={registrationCount}
+        pricepool={36000}
+        description="OPJU invites you to an electrifying robotics showdown, where innovation meets precision and strategy turns into dominance. Step into Robovation and let your bots conquer the arena!"
+      />
+      
+      {/* Spacing */}
+      <div className="my-8 sm:my-16" />
+
+      {/* Sub Events Header */}
+      <h1 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium text-center mb-6 sm:mb-14">
         SUB EVENTS
       </h1>
-      <p className="text-2xl font-['Inter'] leading-[29.08px] tracking-[6.72px] text-white text-center max-w-4xl mx-auto">
-        Robovation features three exciting sub-events. Robo Race tests speed and
-        precision as robots navigate an obstacle-filled track. Robo Soccer
-        challenges teams to score goals using their self-built bots. Robo War is
-        a fierce battle where combat robots fight to dominate the arena.
+      <p className="text-lg sm:text-2xl font-['Inter'] leading-relaxed tracking-[3.75px] text-white text-center max-w-5xl mx-auto px-4 mb-20">
+        Robovation features three exciting sub-events. Robo Race tests speed and precision as robots navigate an obstacle-filled track. Robo Soccer challenges teams to score goals using their self-built bots. Robo War is a fierce battle where combat robots fight to dominate the arena.
       </p>
-      <div className="flex justify-evenly m-20">
+      
+      {/* Sub-Events Cards */}
+      <div className="grid grid-cols-1 mx-auto md:grid-cols-2 gap-8 px-4">
         <SubEventCard
           Icon={BsRobot}
           title="ROBO WAR"
-          description="Robo war is the most exciting challenge of this event It celebrates the sport of Robotic Combat through a contest of 
-battling machines. This game gives the opportunity to youngsters to design, build and control combat robots to 
-demonstrate their creativity, engineering skills and driving ability. 
-The most rewarding part of designing bots is that students have fun, and work together as a team."
+          description="Robo war is the most exciting challenge of this event. It celebrates the sport of robotic combat through battling machines. This challenge gives youngsters the opportunity to design, build, and control combat robots to demonstrate their creativity, engineering skills, and driving ability. The most rewarding part of designing bots is that students have fun and work together as a team."
         />
         <SubEventCard
           Icon={FaFlagCheckered}
           title="ROBO RACE"
-          description="Design a robot wireless or Bluetooth control within the specified dimensions that can be operated 
-manually and can travel through all turns of the track. The robot that will complete the specified task in the 
-least time will be the winner. and not allowed to skip any obstacles or hurdles."
+          description="Design a robot with wireless or Bluetooth control within the specified dimensions that can be operated manually and navigate every turn of the track. The robot that completes the task in the least time will be the winner, without skipping any obstacles."
         />
-      </div>
-      <div className="flex justify-evenly m-20">
         <SubEventCard
           Icon={IoFootballOutline}
           title="FAST LINE FOLLOWER"
-          description="Team to build own autonomous robot within the specified dimensions to achieve the maximum speed on                              
-given track and reach the destination in minimum time. The robot must start behind the starting point and is considered to have 
-crossed the finishing line if any part of the robot crosses it in a full lap of the course. The robot must follow the black line. The 
-competition area has a special place defined for the robot’s operation."
+          description="Build an autonomous robot within the specified dimensions to achieve maximum speed on the given track and reach the destination in minimum time. The robot must start behind the starting point and is considered to have finished if any part crosses the line on a full lap. It must follow the black line, and the competition area has a designated zone for operation."
         />
         <SubEventCard
           Icon={BsRobot}
           title="ROBO SOCCER"
-          description="DESCRIPTION: 
-Robo soccer is one of the Famous challenges of robovation in this event teams comes with single 
-robot and chase ball around the big size of arena with the aim to kick more goals than the opponent 
-these games give opportunity to youngsters to solve robotic challenges, built creative bots while 
-learning engineering technology. the most rewarding part of designing bots is that student have fun, 
-work together as a team and robot specially design for robo soccer match. the event is aimed at 
-testing the flipping, kicking maneuvering skills and control of the robot. The event mainly consists of 
-ROUND 1 AND ROUND 2."
+          description="Robo soccer is one of the famous challenges of Robovation. In this event, teams compete with a single robot that chases a ball around a large arena to score more goals than the opponent. This challenge encourages solving robotic problems, building creative bots, and learning engineering technology. It tests flipping, kicking, maneuvering skills, and robot control, and consists mainly of two rounds."
         />
       </div>
-      {/* <section className="mb-20">
-        <WhyParticipate reasons={reasons} />
-      </section> */}
 
-      <section className="mt-20">
-        <RulesAndRegulation rules={rules} />
-      </section>
+      {/* Custom Rules & Regulation Section with Download Button */}
+      <section className="mt-8 sm:mt-20 px-4">
+        <div className="text-white my-20 sm:my-40 px-4 text-center">
+          <h2 className="text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-[#FFAE3D] via-[#FFD188] to-[#A6660D] font-medium font-['Poppins'] tracking-[3.75px] mb-10 sm:mb-14">
+            RULES & REGULATION
+          </h2>
+          <div className="bg-[#33010140] p-4 sm:p-6 rounded-lg shadow-lg max-w-5xl mx-auto">
+            <p className="text-xl sm:text-2xl mb-6">
+              Download the PDF file for a detailed view of the rules and regulations.
+            </p>
+            <a
+              href={pdfPath}
+              download="rules-and-regulation.pdf"
+              className="bg-[#FFAE3D] text-white py-2 px-4 rounded inline-block"
+            >
+              Download PDF
+            </a>
+          </div>
+        </div>
 
-      <section className="flex flex-col items-center justify-center">
-        <h2 className="text-5xl text-[#ffad3c] font-medium text-center mb-14">
-          EVENT MANAGERS
-        </h2>
-        <div className="text-white text-2xl text-center tracking-[5.28px]">
-          For any queries regarding the event, feel free to reach out to any of the managers listed below.
-        </div>
-        <div className="flex justify-center space-x-40 items-center mt-20">
-          <ManagerCard imageUrl="/dallE.png" name="" contact={6260294300} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={6371745801} />
-          <ManagerCard imageUrl="/dallE.png" name="Lorem" contact={7853032508} />
-        </div>
-        <div className="mb-10">
-          <ButtonLanding label="Register Now" link="/dashboard"/>
-        </div>
+        <EventManagers managers={managers} />
       </section>
     </div>
   );
 };
 
-export default page;
+export default Page;

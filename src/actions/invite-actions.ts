@@ -6,6 +6,7 @@ import { Invitation } from "@/models/invitation.model";
 import { Team } from "@/models/team.model";
 import { getUser } from "./user-actions";
 import { User } from "@/models/user.model";
+import { getParticipatingEventsCountAction } from "./event-actions";
 
 // Send team invite
 export async function sendTeamInviteAction({
@@ -110,9 +111,7 @@ export async function acceptInviteAction(inviteId: string) {
 		if (team.members.includes(invite.inviteeEmail)) {
 			throw new Error("Invitee is already a member of the team");
 		}
-		team.members.push(invite.inviteeEmail);
-		await team.save();
-
+		
 		// Find the invitee user and append the teamId to the user.teams array
 		const inviteeUser = await User.findOne({ email: invite.inviteeEmail });
 		if (!inviteeUser) {
@@ -120,6 +119,35 @@ export async function acceptInviteAction(inviteId: string) {
 				`Invitee with email ${invite.inviteeEmail} not found`
 			);
 		}
+
+		// Get all the events that the user has registered for
+        const userEvents = await Promise.all(
+            inviteeUser.teams.map(async (teamId:string) => {
+                const team = await Team.findById(teamId);
+                return team.event.toString();
+            })
+        );
+
+		// Check if the user has already registered for the event if yes, then throw an error
+		if (userEvents.some(event => event == team.event)) {
+			throw new Error("You have already registered for this event.");
+		}
+		const mainEventsCount = await getParticipatingEventsCountAction(userEvents, team.event.toString());
+		
+		if (
+			inviteeUser.isOutsider &&
+			(mainEventsCount.eventCount > 7 ||
+				(mainEventsCount.eventCount == 7 &&
+					!mainEventsCount.isNewEventIncluded))
+		) {
+			throw new Error(
+				"Outsider Participants are not allowed to register for more than 7 events."
+			);
+		}
+		
+		team.members.push(invite.inviteeEmail);
+		await team.save();
+
 		inviteeUser.teams = [...inviteeUser.teams, team._id];
 		await inviteeUser.save();
 

@@ -1,4 +1,5 @@
 // import AboutSection from "@/components/aboutSection";
+import Image from "next/image";
 import React from "react";
 // import ButtonLanding from "@/components/sub-component/button-landing";
 
@@ -6,7 +7,9 @@ const About = () => {
   return (
     <div className=" w-full">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <img
+        <Image
+        width={500}
+        height={500}
           src="/aboutpagebackground.svg"
           className="w-full h-auto opacity-150"
           alt="Scrolling Background"
@@ -24,9 +27,11 @@ const About = () => {
         {/* First Event */}
         <div className="flex flex-col md:flex-row mt-20 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
-            <img
-              src="./opjucampus.jpg"
-              alt=""
+            <Image
+              src="/opjucampus.jpg"
+              alt="opju campus"
+              width={500}
+              height={500}
               className="w-full max-w-[700px] h-auto"
             />
           </div>
@@ -65,9 +70,11 @@ const About = () => {
           </div>
 
           <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
-            <img
-              src="./technorollixlogo.png"
-              alt=""
+            <Image
+              src="/technorollixlogo.png"
+              alt="techno logo"
+              width={500}
+              height={500}
               className="w-full max-w-[700px] h-auto"
             />
           </div>
@@ -76,9 +83,11 @@ const About = () => {
         {/* Third Event */}
         <div className="flex flex-col md:flex-row mt-36 items-center">
           <div className="mr-0 md:mr-20 mb-10 md:mb-0">
-            <img
+            <Image
+            width={500}
+            height={500}
               src="/junoonlogo.png"
-              alt=""
+              alt="junoon logo"
               className="w-full max-w-[600px] h-auto"
             />
           </div>
@@ -91,7 +100,7 @@ const About = () => {
               OPJU Junoon is an annual cultural extravaganza hosted by the O.P.
               Jindal University (OPJU) in Chhattisgarh, India. This vibrant
               event showcases the diverse talents of people across various
-              domains including music and dance. In 2018, We had Shirley Sethia.
+              domains including music and dance. In 2018, We had Shirley Setia.
               In 2020, we had Jubin Nautiyal and Sunburn and in the year 2023,
               we had DJ Perisha.
             </p>
@@ -119,9 +128,11 @@ const About = () => {
           </div>
 
           <div className="ml-0 md:ml-20 mb-10 md:mb-0 order-1 md:order-2">
-            <img
+            <Image
+            width={500}
+            height={500}
               src="/ambiation.svg"
-              alt=""
+              alt="aimbiation logo"
               className="w-full max-w-[600px] h-auto"
             />
           </div>

@@ -15,6 +15,7 @@ import {
 } from "@/actions/event-actions";
 import { IEvent } from "@/models/event.model";
 import { User, CalendarDays, ChevronRight, Search } from "lucide-react";
+import { eventOrder } from "@/data/eventOrder";
 
 export default function AdminDashboard() {
 	const router = useRouter();
@@ -61,14 +62,26 @@ export default function AdminDashboard() {
 
 	useEffect(() => {
 		if (eventsFetchData) {
-			setEventsData(eventsFetchData.events);
-			setFilteredEvents(eventsFetchData.events);
+			const sortedEventDetails = eventsFetchData.events.sort((a:IEvent, b:IEvent) => {
+                return (
+                    eventOrder.indexOf(a.name) -
+                    eventOrder.indexOf(b.name)
+                );
+            });
+			setEventsData(sortedEventDetails);
+			setFilteredEvents(sortedEventDetails);
 			setLoading(false);
 		}
 
 		if (managedEventsFetchData) {
-			setEventsData(managedEventsFetchData.events);
-			setFilteredEvents(managedEventsFetchData.events);
+			const sortedManagedEvents = managedEventsFetchData.events.sort((a:IEvent, b:IEvent) => {
+                return (
+                    eventOrder.indexOf(a.name) -
+                    eventOrder.indexOf(b.name)
+                );
+            });
+            setEventsData(sortedManagedEvents);
+            setFilteredEvents(sortedManagedEvents);
 			setLoading(false);
 		}
 	}, [eventsFetchData, managedEventsFetchData]);
@@ -293,6 +306,23 @@ export default function AdminDashboard() {
 											<div className="space-y-1">
 												<p className="font-medium">
 													Payments Data
+												</p>
+											</div>
+											<ChevronRight className="w-5 h-5 text-muted-foreground" />
+										</CardContent>
+									</Card>
+									<Card
+										className="cursor-pointer hover:bg-accent transition-colors"
+										onClick={() =>
+											handleOthersNavigation(
+												"/admin/count-data"
+											)
+										}
+									>
+										<CardContent className="p-4 flex items-center justify-between">
+											<div className="space-y-1">
+												<p className="font-medium">
+													Counts Data of every Event
 												</p>
 											</div>
 											<ChevronRight className="w-5 h-5 text-muted-foreground" />

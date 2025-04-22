@@ -90,6 +90,30 @@ export const userLogin = async (
 	);
 };
 
+export const resetPassword = async (email: string, newPassword: string) => {
+	try {
+		await connectToDatabase();
+
+		// Find user by email
+		const user = await User.findOne({ email });
+
+		if (!user) {
+			throw new Error("User not found");
+		}
+
+		user.password = newPassword;
+		await user.save();
+
+		return JSON.parse(JSON.stringify({ success: true }));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to reset password: ${error.message}`);
+		} else {
+			throw new Error("Failed to reset password");
+		}
+	}
+};
+
 export const getUserFromAuth = async (token: string): Promise<IUser | null> => {
 	await connectToDatabase();
 
@@ -145,7 +169,7 @@ export async function getUsersByEmails(
 	try {
 		await connectToDatabase();
 		const users = await User.find({ email: { $in: emails } })
-			.select("email fullName branch year enrollmentNumber createdAt")
+			// .select("email fullName branch year enrollmentNumber address mobile createdAt")
 			.lean();
 		return JSON.parse(JSON.stringify(users));
 	} catch (error) {
@@ -153,6 +177,21 @@ export async function getUsersByEmails(
 			throw new Error(`Failed to fetch users: ${error.message}`);
 		} else {
 			throw new Error("Failed to fetch users");
+		}
+	}
+}
+
+export async function getOutsiderUsers(): Promise<IUser[]> {
+	await connectToDatabase();
+
+	try {
+		const outsiderUsers = await User.find({ isOutsider: true }).lean<IUser>();
+		return JSON.parse(JSON.stringify(outsiderUsers));
+	} catch (error) {
+		if (error instanceof Error) {
+			throw new Error(`Failed to fetch outsider users: ${error.message}`);
+		} else {
+			throw new Error("Failed to fetch outsider users");
 		}
 	}
 }

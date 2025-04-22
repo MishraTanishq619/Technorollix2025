@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -47,6 +47,8 @@ const formSchema = z
 export default function SignupForm() {
   const router = useRouter();
   const isOutsider = JSON.parse(sessionStorage.getItem("isOutsider") || "true");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -87,7 +89,6 @@ export default function SignupForm() {
 
   useEffect(() => {
     if (userSignupError) {
-      console.log(userSignupError);
       toast({
         title: "Error",
         description: userSignupError.message,
@@ -95,7 +96,6 @@ export default function SignupForm() {
       });
     }
     if (userSignupData) {
-      console.log(userSignupData);
       toast({
         title: "Success",
         description: "Your account has been created successfully!",
@@ -132,6 +132,7 @@ export default function SignupForm() {
                   <Input
                     type="email"
                     placeholder="john@example.com"
+                    className="font-semibold disabled:opacity-70"
                     {...field}
                     disabled
                   />
@@ -147,7 +148,7 @@ export default function SignupForm() {
               <FormItem>
                 <FormLabel>Mobile Number</FormLabel>
                 <FormControl>
-                  <Input placeholder="1234567890" {...field} />
+                  <Input placeholder="Enter your number" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -176,10 +177,7 @@ export default function SignupForm() {
                   <FormItem>
                     <FormLabel>Branch</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="e.g. Software Engineering"
-                        {...field}
-                      />
+                      <Input placeholder="Enter your Branch" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -192,7 +190,7 @@ export default function SignupForm() {
                   <FormItem>
                     <FormLabel>Enrollment Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g. EN12345" {...field} />
+                      <Input placeholder="Enter your Enrolment number" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -207,11 +205,20 @@ export default function SignupForm() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input
-                    type="password"
-                    placeholder="Enter your password"
-                    {...field}
-                  />
+                  <div className="relative">
+                    <Input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Enter your password"
+                      {...field}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword((prev) => !prev)}
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-gray-600"
+                    >
+                      {showPassword ? "Hide" : "Show"}
+                    </button>
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -224,11 +231,20 @@ export default function SignupForm() {
               <FormItem>
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl>
-                  <Input
-                    type="password"
-                    placeholder="Confirm your password"
-                    {...field}
-                  />
+                  <div className="relative">
+                    <Input
+                      type={showConfirmPassword ? "text" : "password"}
+                      placeholder="Confirm your password"
+                      {...field}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword((prev) => !prev)}
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-gray-600"
+                    >
+                      {showConfirmPassword ? "Hide" : "Show"}
+                    </button>
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>

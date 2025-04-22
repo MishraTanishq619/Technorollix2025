@@ -3,6 +3,7 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { Accommodation, IAccommodation } from "@/models/accomodation.model";
 import { getUser } from "./user-actions";
 import { IUser, User } from "@/models/user.model";
+import { ITeam, Team } from "@/models/team.model";
 
 export async function getAccommodationDetailsAction(): Promise<IAccommodation | null> {
 	try {
@@ -33,7 +34,10 @@ interface AccommodationDetails {
 	arrivalTime: Date;
 	departureTime: Date;
 	additionalDetails?: string;
+	universityName: string; // New required field
+	gender: "Male" | "Female" | "Other"; // New required field with restricted values
 }
+
 export async function setAccommodationDetailsAction(
 	details: AccommodationDetails
 ): Promise<IAccommodation> {
@@ -49,9 +53,11 @@ export async function setAccommodationDetailsAction(
 			accommodation.departureTime = details.departureTime;
 			accommodation.additionalDetails =
 				details.additionalDetails || accommodation.additionalDetails;
+			accommodation.universityName = details.universityName;
+			accommodation.gender = details.gender;
 			await accommodation.save();
 		} else {
-			// Create new accommodation
+			// Create new accommodation with all required fields
 			accommodation = new Accommodation(details);
 			await accommodation.save();
 		}
@@ -69,37 +75,45 @@ export async function setAccommodationDetailsAction(
 }
 
 interface AccommodationWithUser {
-	user: IUser;
-	accommodation: IAccommodation;
+    user: IUser;
+    accommodation: IAccommodation;
+    leaders: string[];
 }
 
-export async function getAllAccommodationsWithUsers(): Promise<
-	AccommodationWithUser[]
-> {
-	try {
-		await connectToDatabase();
-		const accommodations = await Accommodation.find().lean();
-		const userIds = accommodations.map(
-			(accommodation) => accommodation.userId
-		);
-		const users = await User.find({ _id: { $in: userIds } }).lean<
-			IUser[]
-		>();
+export async function getAllAccommodationsWithUsers(): Promise<AccommodationWithUser[]> {
+    try {
+        await connectToDatabase();
+        const accommodations = await Accommodation.find().lean<IAccommodation[]>();
+        const userIds = accommodations.map(
+            (accommodation) => accommodation.userId
+        );
+        const users = await User.find({ _id: { $in: userIds } }).lean<IUser[]>();
 
-		const accommodationsWithUsers = accommodations.map((accommodation) => {
-			const user = users.find((user) =>
-				// @ts-expect-error: 'user._id' is of type 'unknown'
-				user._id.equals(accommodation.userId)
-			);
-			return { user, accommodation };
-		});
+        const accommodationsWithUsers = await Promise.all(accommodations.map(async (accommodation) => {
+            const user = users.find((user) =>
+                // @ts-expect-error: 'user._id' is of type 'unknown'
+                user._id.equals(accommodation.userId)
+            );
 
-		return JSON.parse(JSON.stringify(accommodationsWithUsers));
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(`Failed to fetch accommodations: ${error.message}`);
-		} else {
-			throw new Error("Failed to fetch accommodations");
-		}
-	}
+            if (!user) {
+                return { user: null, accommodation, leaders: [] };
+            }
+
+            // Fetch teams where the user is a member
+            const teams = await Team.find({ members: user.email }).lean<ITeam[]>();
+
+            // Get all leaders of those teams
+			const leaders = Array.from(new Set(teams.map((team) => team.leader)));
+
+            return { user, accommodation, leaders: leaders.filter(email => email) };
+        }));
+
+        return JSON.parse(JSON.stringify(accommodationsWithUsers));
+    } catch (error) {
+        if (error instanceof Error) {
+            throw new Error(`Failed to fetch accommodations: ${error.message}`);
+        } else {
+            throw new Error("Failed to fetch accommodations");
+        }
+    }
 }

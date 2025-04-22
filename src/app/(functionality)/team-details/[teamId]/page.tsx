@@ -72,7 +72,6 @@ export default function TeamDetails() {
 
 	useEffect(() => {
 		if (teamData && userData) {
-			console.log("teamData, userData :", teamData, userData);
 			// Check if current user is team leader
 			if (userData?.email === teamData?.team?.leader) {
 				setIsLeader(true);
